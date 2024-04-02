@@ -1,1 +1,2 @@
-2030
+
+            ans.push_back(nums2[0]);

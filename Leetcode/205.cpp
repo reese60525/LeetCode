@@ -6,15 +6,15 @@ bool isIsomorphic(string s, string t) {
     map<char, char> char_Correspondence;
     map<char, bool> is_usedChar;
     for (int i = 0; i < s.length(); ++i) {
+        if (char_Correspondence[s[i]] == t[i]) {
+            continue;
+        }
         if (char_Correspondence[s[i]] == '\0' && !is_usedChar[t[i]]) {
             char_Correspondence[s[i]] = t[i];
             is_usedChar[t[i]] = true;
             continue;
         }
-        if ((char_Correspondence[s[i]] == '\0' && is_usedChar[t[i]] == true) ||
-            char_Correspondence[s[i]] != t[i]) {
-            return false;
-        }
+        return false;
     }
     return true;
 }
