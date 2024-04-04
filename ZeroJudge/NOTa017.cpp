@@ -19,7 +19,7 @@ int fun(vector<int> input_number, vector<char> input_operator) {
     // // 測試
 
     // 處理括號
-    while (check[0] && input_operator.size() > 0 && input_number.size() > 0) {
+    while (check[0] && input_operator.size() > 0 && input_number.size() > 1) {
         int count_num = -1, count_op = -1;
         for (int i = 0; i < input_operator.size(); ++i) {
             if (input_operator[i] == ')') {
@@ -32,9 +32,8 @@ int fun(vector<int> input_number, vector<char> input_operator) {
                 else if (input_operator[count_op] == '/')
                     input_number[count_num] /= input_number[count_num + 1];
                 input_number.erase(input_number.begin() + count_num + 1);
-                input_operator.erase(input_operator.begin() + count_op - 1);
-                input_operator.erase(input_operator.begin() + count_op - 1);
-                input_operator.erase(input_operator.begin() + count_op - 1);
+                input_operator.erase(input_operator.begin() + count_op - 1,
+                                     input_operator.begin() + count_op + 2);
                 break;
             } else if (input_operator[i] == '+' || input_operator[i] == '-' ||
                        input_operator[i] == '*' || input_operator[i] == '/') {
@@ -61,7 +60,7 @@ int fun(vector<int> input_number, vector<char> input_operator) {
     // // 測試
 
     // 處理 */
-    while (check[1] && input_operator.size() > 0 && input_number.size() > 0) {
+    while (check[1] && input_operator.size() > 0 && input_number.size() > 1) {
         int count_num = 0, count_op = 0;
         for (int i = 0; i < input_operator.size(); ++i) {
             if (input_operator[i] == '*' || input_operator[i] == '/') {
@@ -124,14 +123,15 @@ int fun(vector<int> input_number, vector<char> input_operator) {
     //     cout << "break; 後" << endl;
     // }
     // cout << "4. op.size= " << input_operator.size() << endl;
-
-    for (int i = 0; i < input_operator.size(); ++i) {
-        if (input_operator[0] == '+')
-            input_number[0] += input_number[1];
-        else if (input_operator[0] == '-')
-            input_number[0] -= input_number[1];
-        input_number.erase(input_number.begin() + 1);
-        input_operator.erase(input_operator.begin());
+    if (input_number.size() > 1) {
+        for (int i = 0; i < input_operator.size(); ++i) {
+            if (input_operator[0] == '+')
+                input_number[0] += input_number[1];
+            else if (input_operator[0] == '-')
+                input_number[0] -= input_number[1];
+            input_number.erase(input_number.begin() + 1);
+            input_operator.erase(input_operator.begin());
+        }
     }
 
     // // 測試

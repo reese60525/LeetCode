@@ -2,15 +2,12 @@
 #include <vector>
 using namespace std;
 
-string longestCommonPrefix(vector<string> &strs)
-{
+string longestCommonPrefix(vector<string> &strs) {
     string ans = "";
     if (strs.size() < 2) // vector內只有一個或沒有string，直接回傳
         return strs[0];
-    for (int i = 0; i < strs[0].length(); ++i)
-    {
-        for (int j = 1; j < strs.size(); ++j)
-        {
+    for (int i = 0; i < strs[0].length(); ++i) {
+        for (int j = 1; j < strs.size(); ++j) {
             if (strs[0][i] != strs[j][i])
                 return ans;
             if (j == strs.size() - 1)
@@ -20,13 +17,11 @@ string longestCommonPrefix(vector<string> &strs)
     return ans;
 }
 
-int main()
-{
+int main() {
     // cin.sync_with_stdio(false); cin.tie(nullptr);
     string a;
     vector<string> input;
-    for (int i = 0; i < 2; ++i)
-    {
+    for (int i = 0; i < 2; ++i) {
         cin >> a;
         input.push_back(a);
     }
