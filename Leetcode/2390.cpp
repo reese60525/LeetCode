@@ -2,15 +2,14 @@
 #include <vector>
 using namespace std;
 
+// 比較快但空間大
 string removeStars(string s) {
-    int index = 0;
-    string ans = "";
+    vector<char> temp;
     for (int i = 0; i < s.length(); ++i) {
         if (s[i] == '*') {
-
+            temp.erase(temp.end() - 1);
         } else {
-            ans += s[i];
-            ++index;
+            temp.push_back(s[i]);
         }
     }
     string ans = "";
@@ -19,6 +18,21 @@ string removeStars(string s) {
     }
     return ans;
 }
+
+// 比較慢但空間小
+// string removeStars(string s) {
+//     vector<string> temp;
+//     temp.push_back("");
+//     for (int i = 0; i < s.length(); ++i) {
+//         if (s[i] == '*') {
+//             temp[0].erase(temp[0].end() - 1);
+//         } else {
+//             temp[0].push_back(s[i]);
+//         }
+//     }
+//     return temp[0];
+// }
+
 int main() {
     // cin.sync_with_stdio(false); cin.tie(nullptr);
     string input;

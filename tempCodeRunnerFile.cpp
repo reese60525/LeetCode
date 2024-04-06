@@ -1,13 +1,15 @@
-    // if (nums1.size() == 0) {
-    //     if (n % 2 == 0) {
-    //         return float(nums2[(n + 1) / 2] + nums2[(n + 1) / 2 - 1]) / 2;
-    //     } else {
-    //         return float(nums2[(n + 1) / 2 - 1]);
-    //     }
-    // } else if (nums2.size() == 0) {
-    //     if (n % 2 == 0) {
-    //         return float(nums1[(n + 1) / 2] + nums1[(n + 1) / 2 - 1]) / 2;
-    //     } else {
-    //         return float(nums1[(n + 1) / 2 - 1]);
-    //     }
-    // }
+string removeStars(string s) {
+    vector<char> temp;
+    for (int i = 0; i < s.length(); ++i) {
+        if (s[i] == '*') {
+            temp.erase(temp.end() - 1);
+        } else {
+            temp.push_back(s[i]);
+        }
+    }
+    string ans = "";
+    for (int i = 0; i < temp.size(); ++i) {
+        ans += temp[i];
+    }
+    return ans;
+}
