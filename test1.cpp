@@ -14,12 +14,6 @@ vector<vector<int>> threeSum(vector<int> &nums) {
     bool jump[2] = {false, false};
     sort(nums.begin(), nums.end());
 
-    cout << "size:" << nums.size() << '\n';
-    for (auto i : nums) {
-        cout << i << " ";
-    }
-    cout << '\n';
-
     for (int i = 0; i < nums.size() - 2; ++i) {
         if (nums[i] > 0) {
             break;
@@ -35,14 +29,10 @@ vector<vector<int>> threeSum(vector<int> &nums) {
                 continue;
             }
             for (int k = nums.size() - 1; k > j; --k) {
-                cout << "i=" << i << ", j=" << j << ", k=" << k << '\n';
-                cout << nums[i] << ", " << nums[j] << " " << nums[k] << '\n';
                 if (jump[1] && k < nums.size() - 1 & nums[k] == nums[k + 1]) {
-                    cout << "*******" << '\n';
                     continue;
                 }
                 if ((nums[i] + nums[j] + nums[k]) == 0) {
-                    cout << "hi" << '\n';
                     vector<int> temp;
                     temp.push_back(nums[i]);
                     temp.push_back(nums[j]);
