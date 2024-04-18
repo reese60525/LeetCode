@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string>
 #include <vector>
+
 using namespace std;
 
 static const auto io_sync_off = []() {
@@ -8,57 +10,60 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+void recursive_ans(vector<vector<char>> board, string word, bool &ans, int x, int y, char from) {
+    if (board[x][y] != word[0]) {
+        return;
+    }
+    cout << "1from=" << from << ", x=" << x << ", y=" << y << ", word=" << word
+         << ", board[x][y]= " << board[x][y] << '\n';
+    word.erase(0, 1);
+    board[x][y] = '~';
+    if (word.length() == 0) {
+        ans = true;
+        return;
+    }
+    cout << "2from=" << from << ", x=" << x << ", y=" << y << ", word=" << word
+         << ", board[x][y]= " << board[x][y] << '\n';
+    if (x - 1 >= 0 && from != 'u')
+        recursive_ans(board, word, ans, x - 1, y, 'd');
+    X if (x + 1 < board.size() && from != 'd') recursive_ans(board, word, ans, x + 1, y, 'u');
+    if (y - 1 >= 0 && from != 'l')
+        recursive_ans(board, word, ans, x, y - 1, 'r');
+    if (y + 1 < board[0].size() && from != 'r')
+        recursive_ans(board, word, ans, x, y + 1, 'l');
+}
 
-ListNode *removeNthFromEnd(ListNode *head, int n) {
-    ListNode *temp = head;
-    int count = 0;
-    while (temp != nullptr) {
-        ++count;
-        temp = temp->next;
+bool exist(vector<vector<char>> &board, string word) {
+    bool ans = false;
+    for (int i = 0; i < board.size(); ++i) {
+        for (int j = 0; j < board[0].size(); ++j) {
+            recursive_ans(board, word, ans, i, j, 'x');
+        }
     }
-    // count-(n+1)被刪除的node的前一個node
-    // count-(n-1)被刪除的node的後一個node
-    if (count - (n + 1) < 0 && count - (n - 1) > count - 1) {
-        return nullptr;
-    } else if (count - (n + 1) < 0) {
-        return head->next;
-    }
-    temp = head;
-    for (int i = 0; i < count - n - 1; ++i) {
-        temp = temp->next;
-    }
-    if (count - (n - 1) > count - 1) {
-        temp->next = nullptr;
-    } else {
-        temp->next = temp->next->next;
-    }
-    return head;
+    cout << "ans=" << ans << '\n';
+    return ans;
 }
 
 int main() {
-    ListNode *input = new ListNode, *input_head;
-    input_head = input;
-    // int num_input[] = {1, 3, 5, 7, 9, 2, 4, 6, 8, 0};
-    int num_input[] = {1, 2};
-    for (int i = 0; i < size(num_input); ++i) {
-        input->val = num_input[i];
-        if (i < size(num_input) - 1) {
-            input->next = new ListNode;
-            input->next->next = nullptr;
+    vector<vector<char>> input;
+    string word;
+    int i, j;
+    cin >> i >> j >> word;
+    while (i--) {
+        vector<char> temp;
+        for (int k = 0; k < j; ++k) {
+            char a;
+            cin >> a;
+            temp.push_back(a);
         }
-        input = input->next;
+        input.push_back(temp);
     }
-    ListNode *ans = removeNthFromEnd(input_head, 1);
-    while (ans != nullptr) {
-        cout << ans->val << " ";
-        ans = ans->next;
-    }
+    // for (auto x : input) {
+    //     for (auto y : x) {
+    //         cout << y << " ";
+    //     }
+    //     cout << '\n';
+    // }
+    exist(input, word);
     return 0;
 }

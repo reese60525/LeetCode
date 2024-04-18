@@ -25,16 +25,14 @@ ListNode *removeNthFromEnd(ListNode *head, int n) {
     }
     // count-(n+1)被刪除的node的前一個node
     // count-(n-1)被刪除的node的後一個node
-    if (count - (n + 1) < 0 && count - (n - 1) > count - 1) {
-        return nullptr;
-    } else if (count - (n + 1) < 0) {
+    if (count - (n + 1) < 0) {
         return head->next;
     }
     temp = head;
     for (int i = 0; i < count - n - 1; ++i) {
         temp = temp->next;
     }
-    if (count - (n - 1) > count - 1) {
+    if (n == 1) {
         temp->next = nullptr;
     } else {
         temp->next = temp->next->next;
@@ -45,8 +43,8 @@ ListNode *removeNthFromEnd(ListNode *head, int n) {
 int main() {
     ListNode *input = new ListNode, *input_head;
     input_head = input;
-    // int num_input[] = {1, 3, 5, 7, 9, 2, 4, 6, 8, 0};
-    int num_input[] = {1, 2};
+    int num_input[] = {1, 3, 5, 7, 9, 2, 4, 6, 8, 0};
+    // int num_input[] = {1, 2};
     for (int i = 0; i < size(num_input); ++i) {
         input->val = num_input[i];
         if (i < size(num_input) - 1) {
@@ -55,7 +53,7 @@ int main() {
         }
         input = input->next;
     }
-    ListNode *ans = removeNthFromEnd(input_head, 1);
+    ListNode *ans = removeNthFromEnd(input_head, 3);
     while (ans != nullptr) {
         cout << ans->val << " ";
         ans = ans->next;
