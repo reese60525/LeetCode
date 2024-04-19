@@ -10,6 +10,7 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
+// WA，思路也問題
 void recursive_ans(vector<vector<char>> &board, string word, bool &ans, int x, int y) {
     if (board[x][y] != word[0]) {
         return;
