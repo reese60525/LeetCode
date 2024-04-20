@@ -8,4 +8,10 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-int main() { return 0; }
+int main() {
+    int a;
+    while (cin >> a) {
+        cout << (60 - (a - 25)) % 60 << '\n';
+    }
+    return 0;
+}
