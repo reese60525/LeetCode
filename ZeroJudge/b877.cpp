@@ -7,11 +7,9 @@ static const auto io_sync_off = []() {
 }();
 
 int main() {
-    int a = 0, input;
-    while (std::cin >> input) {
-        a *= 10;
-        a += input;
-        std::cout << a << '\n';
+    int now, next;
+    while (std::cin >> now >> next) {
+        std::cout << (100 - (now - next)) % 100 << '\n';
     }
     return 0;
 }

@@ -1,65 +1,45 @@
-#include <iostream>
-#include <string>
-#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-using namespace std;
-
-static const auto io_sync_off = []() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    return nullptr;
-}();
-
-void recursive_ans(vector<vector<char>> &board, string word, bool &ans, int x, int y) {
-    if (board[x][y] != word[0]) {
-        return;
-    }
-    word.erase(0, 1);
-    board[x][y] = '~';
-    if (word.length() == 0) {
-        ans = true;
-        return;
-    }
-    if (x - 1 >= 0)
-        recursive_ans(board, word, ans, x - 1, y);
-    if (x + 1 < board.size())
-        recursive_ans(board, word, ans, x + 1, y);
-    if (y - 1 >= 0)
-        recursive_ans(board, word, ans, x, y - 1);
-    if (y + 1 < board[0].size())
-        recursive_ans(board, word, ans, x, y + 1);
+int set[1234567];
+int findSet(int now) {
+    if (set[now] != now)
+        set[now] = findSet(set[now]);
+    return set[now];
 }
-
-bool exist(vector<vector<char>> &board, string word) {
-    bool ans = false;
-    for (int i = 0; i < board.size(); ++i) {
-        for (int j = 0; j < board[0].size(); ++j) {
-            recursive_ans(board, word, ans, i, j);
-        }
-    }
-    return ans;
-}
-
+int n;
+char str[123456];
 int main() {
-    vector<vector<char>> input;
-    string word;
+    int t;
     int i, j;
-    cin >> i >> j >> word;
-    while (i--) {
-        vector<char> temp;
-        for (int k = 0; k < j; ++k) {
-            char a;
-            cin >> a;
-            temp.push_back(a);
+    int ans[2];
+    scanf("%d", &t);
+    gets(str);
+    gets(str);
+    while (t--) {
+        scanf("%d", &n);
+        gets(str);
+        ans[0] = ans[1] = 0;
+        for (i = 1; i <= n; ++i)
+            set[i] = i;
+        while (gets(str) && str[0] != '\0') {
+            if (str[0] == 'c') {
+                sscanf(&str[1], "%d %d", &i, &j);
+                set[findSet(i)] = findSet(j);
+            }
+            else {
+                sscanf(&str[1], "%d %d", &i, &j);
+                if (findSet(i) == findSet(j))
+                    ++ans[0];
+                else
+                    ++ans[1];
+            }
         }
-        input.push_back(temp);
+        printf("%d,%d\n", ans[0], ans[1]);
+        if (t)
+            puts("");
     }
-    // for (auto x : input) {
-    //     for (auto y : x) {
-    //         cout << y << " ";
-    //     }
-    //     cout << '\n';
-    // }
-    exist(input, word);
+
     return 0;
 }
