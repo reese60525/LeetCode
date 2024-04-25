@@ -1,5 +1,7 @@
-#include <cmath>
+#include <algorithm>
 #include <iostream>
+#include <string>
+#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -7,60 +9,48 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-int main() {
-    long long n;
-    while (std::cin >> n) {
-        std::string temp = std::to_string(n);
-        int non_add_index;
-        long long up = n, down = n;
-        for (int i = 0; i < temp.length(); ++i) {
-            if ((temp[i] - '0') % 2 == 0) {
-                non_add_index = temp.length() - i; // 第幾位是非奇數，ex:1334000，non_add_index=4，也就是由右邊數來第四個數字(4)
-                up = (n + pow(10, non_add_index - 1)) / (pow(10, non_add_index - 1));
-                down = (n - pow(10, non_add_index - 1)) / (pow(10, non_add_index - 1));
-                for (int j = 0; j < non_add_index - 1; ++j) {
-                    up *= 10;
-                    up += 1;
-                    down *= 10;
-                    down += 9;
-                }
-                if (temp[i] == '0') {
-                    while (--i >= 0) {
-                        if (temp[i] != '1') {
-                            down = n / pow(10, temp.length() - i - 1) - 2;
-                            // std::cout << down << '\n';
-                            for (int j = 0; j < temp.length() - i - 1; ++j) {
-                                down *= 10;
-                                down += 9;
-                            }
-                            break;
-                        }
-                    }
-                    if (i < 0) {
-                        down = 0;
-                        for (int j = 0; j < temp.length() - 1; ++j) {
-                            down *= 10;
-                            down += 9;
-                        }
-                        break;
-                    }
-                }
-                break;
-            }
+int recursive_solve(int index, int max_len, std::vector<std::string> co_string) {}
+
+int longestIdealString(std::string s, int k) {
+    int max_length = 0, s_index = s.length() - 1;
+    std::vector<std::string> co_string;
+    int co_size = 1;
+    char co_begin, co_end;
+    // acfgbd 2
+    while (s_index >= 0) {
+        if (co_size == 1) {
+            co_end = s[s_index];
         }
-        // std::cout << "up=" << up << ", down=" << down << '\n';
-        std::cout << ((up - n) < (n - down) ? up - n : n - down) << '\n';
+        if (s_index == 0 || abs(s[s_index] - s[s_index - 1]) > k) {
+            std::string temp = "";
+            co_begin = s[s_index];
+            temp += std::to_string(co_size) + co_begin + co_end;
+            co_string.push_back(temp);
+            co_size = 1;
+            --s_index;
+        }
+        else {
+            ++co_size;
+            --s_index;
+        }
+    }
+    sort(co_string.begin(), co_string.end());
+    for (auto i : co_string) {
+        recursive_solve(i, co_string[i][0] - '0', co_string);
+    }
+    // for (auto i : co_string) {
+    //     std::cout << i << '\n';
+    // }
+    // abbc'z'efh'z'ddd'z'jjj> abcehfjjj
+    // 1zz 1zz 1zz 4ac 3eh 3dd 3jj
+    return 0;
+}
+
+int main() {
+    std::string s;
+    int k;
+    while (std::cin >> s >> k) {
+        longestIdealString(s, k);
     }
     return 0;
 }
-// 1311101
-//  134 135
-//  123 113 133
-//  124 131
-//  224 311 199
-//  2724 3111 1999
-//  52724 53111 51999
-//  19902 19899 19911
-//  11102 9991
-//  1311101 1311099 1310999 1309999 1299999 1199999
-//  1111101 999999
