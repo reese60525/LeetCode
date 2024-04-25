@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-=======
-#include <algorithm>
->>>>>>> ccf7bd4c4936429c9fa24a1c78b036321055aa7a
 #include <iostream>
 #include <string>
-#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -12,65 +7,26 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-<<<<<<< HEAD
-class Solution {
-  public:
-    int tribonacci(int n) {
-        if (n == 0)
-            return 0;
-        if (n == 1)
-            return 1;
-        if (n == 2)
-            return 1;
-        return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+int recursive_solve(int len, std::string head_tail, std::string s, int k) {
+    while (s.length() >= 0) {
+        if (abs(head_tail[1] - s[0]) <= k) {}
     }
-};
-
-int main() { return 0; }
-=======
-int recursive_solve(int index, int max_len, std::vector<std::string> co_string) {}
-
-int longestIdealString(std::string s, int k) {
-    int max_length = 0, s_index = s.length() - 1;
-    std::vector<std::string> co_string;
-    int co_size = 1;
-    char co_begin, co_end;
-    // acfgbd 2
-    while (s_index >= 0) {
-        if (co_size == 1) {
-            co_end = s[s_index];
-        }
-        if (s_index == 0 || abs(s[s_index] - s[s_index - 1]) > k) {
-            std::string temp = "";
-            co_begin = s[s_index];
-            temp += std::to_string(co_size) + co_begin + co_end;
-            co_string.push_back(temp);
-            co_size = 1;
-            --s_index;
-        }
-        else {
-            ++co_size;
-            --s_index;
-        }
-    }
-    sort(co_string.begin(), co_string.end());
-    for (auto i : co_string) {
-        recursive_solve(i, co_string[i][0] - '0', co_string);
-    }
-    // for (auto i : co_string) {
-    //     std::cout << i << '\n';
-    // }
-    // abbc'z'efh'z'ddd'z'jjj> abcehfjjj
-    // 1zz 1zz 1zz 4ac 3eh 3dd 3jj
-    return 0;
 }
-
+int longestIdealString(std::string s, int k) {
+    int largest_len = 0;
+    for (auto i : s) {
+        std::string head_tail = "";
+        head_tail.append(2, i);
+        s.erase(s.begin());
+        int return_len = recursive_solve(1, head_tail, s, k);
+        largest_len = largest_len > return_len ? largest_len : return_len;
+    }
+    return largest_len;
+}
 int main() {
     std::string s;
     int k;
-    while (std::cin >> s >> k) {
-        longestIdealString(s, k);
-    }
+    while (std::cin >> s >> k)
+        std::cout << longestIdealString(s, k);
     return 0;
 }
->>>>>>> ccf7bd4c4936429c9fa24a1c78b036321055aa7a
