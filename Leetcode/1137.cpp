@@ -8,14 +8,14 @@ static const auto io_sync_off = []() {
 
 class Solution {
   public:
+    int Tribonacci[38] = {0, 1, 1};
     int tribonacci(int n) {
         if (n == 0)
             return 0;
-        if (n == 1)
-            return 1;
-        if (n == 2)
-            return 1;
-        return tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+        if (Tribonacci[n] != 0)
+            return Tribonacci[n];
+        Tribonacci[n] = tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
+        return Tribonacci[n];
     }
 };
 
