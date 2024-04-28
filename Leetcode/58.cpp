@@ -1,33 +1,34 @@
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     return nullptr;
 }();
-int lengthOfLastWord(string s) {
-    bool check = false;
-    int ans = 0;
-    for (int i = s.length() - 1; i >= 0; --i) {
-        if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) {
-            cout << s[i] << '\n';
-            check = true;
-        } else if (check) {
-            break;
+
+class Solution {
+  public:
+    int lengthOfLastWord(std::string s) {
+        int ans = 0;
+        bool check = false;
+        for (int i = s.length() - 1; i >= 0; --i) {
+            if (check && s[i] == ' ')
+                break;
+            else if (!check && s[i] != ' ')
+                check = true;
+            if (check)
+                ++ans;
         }
-        if (check) {
-            ++ans;
-        }
+        return ans;
     }
-    return ans;
-}
+};
 
 int main() {
-    string input;
-    while (cin >> input) {
-        cout << lengthOfLastWord(input) << '\n';
-    }
+    Solution solution;
+    std::string s;
+    while (std::cin >> s)
+        std::cout << solution.lengthOfLastWord(s) << '\n';
+
     return 0;
 }
