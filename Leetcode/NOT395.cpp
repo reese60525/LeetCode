@@ -9,14 +9,7 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     int longestSubstring(std::string s, int k) {
-        int ans = 0, letters_count[26];
-        memset(letters_count, 0, sizeof(letters_count));
-
-        for (auto i : s)
-            ++letters_count[i - 'a'];
-
-        for (auto i : letters_count)
-            ans += i < k ? 0 : i;
+        int ans = 0;
 
         return ans;
     }
