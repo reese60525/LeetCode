@@ -1,27 +1,25 @@
+#include <algorithm>
 #include <iostream>
 
-static const auto io_sync_off = []() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    return nullptr;
-}();
+template <int N>
+void printArray(std::string (&array)[N]) {
+    for (auto i : array)
+        std::cout << i << ' ';
+    std::cout << '\n';
+}
 
 int main() {
-    int a[5](1, 2, 3, 4, 5);
-    int b[5](0, 0, 0, 0, 0);
-    int c[5](0, 0, 0, 0, 0);
-    int d[5](0, 0, 0, 0, 0);
-    std::cout << "a_array:";
-    for (auto i : a)
-        std::cout << i << ' ';
-    std::cout << "\nb_array:";
-    for (auto i : b)
-        std::cout << i << ' ';
-
-    std::copy_n(std::begin(a), 3, std::begin(b));
-    std::cout << "\nnew b_array:";
-    for (auto i : b)
-        std::cout << i << ' ';
-
+    std::string a[]("1", "55555", "333", "22", "7777777", "666666");
+    std::string b[]("333", "22", "666666", "1", "7777777", "88888888");
+    printArray(a);
+    printArray(b);
+    // 方法1
+    std::sort(std::begin(a), std::end(a), [](std::string &a, std::string &b) {
+        return a.length() > b.length();
+    });
+    printArray(a);
+    // 方法2
+    std::ranges::sort(b, std::greater {}, &std::string::size);
+    printArray(b);
     return 0;
 }

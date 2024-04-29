@@ -44,9 +44,10 @@ class Solution {
         std::ranges::sort(sub_string, std::greater {}, &std::string::size);
         // 遞迴找解
         for (auto i : sub_string) {
-            ans = longestSubstring(i, k);
-            if (ans > 0)
+            if (ans >= i.length())
                 break;
+            int temp = longestSubstring(i, k);
+            ans = ans > temp ? ans : temp;
         }
         return ans;
     }
