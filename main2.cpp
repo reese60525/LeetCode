@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -7,33 +6,22 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-class Solution {
-  public:
-    int longestIdealString(std::string s, int k) {
-        int dp[26], largest_len = 0;
-        memset(dp, 0, sizeof(dp));
-
-        for (auto i : s) {
-            int new_dp = 0;
-            for (int j = 0; j < 26; ++j) {
-                if (abs(i - 'a' - j) <= k)
-                    new_dp = std::max(new_dp, dp[j]);
-            }
-            dp[i - 'a'] = new_dp + 1;
-        }
-
-        for (auto i : dp)
-            largest_len = std::max(largest_len, i);
-
-        return largest_len;
-    }
-};
-
 int main() {
-    Solution solution;
-    int k;
-    std::string s;
-    while (std::cin >> s >> k)
-        std::cout << solution.longestIdealString(s, k) << '\n';
+    int a[5](1, 2, 3, 4, 5);
+    int b[5](0, 0, 0, 0, 0);
+    int c[5](0, 0, 0, 0, 0);
+    int d[5](0, 0, 0, 0, 0);
+    std::cout << "a_array:";
+    for (auto i : a)
+        std::cout << i << ' ';
+    std::cout << "\nb_array:";
+    for (auto i : b)
+        std::cout << i << ' ';
+
+    std::copy_n(std::begin(a), 3, std::begin(b));
+    std::cout << "\nnew b_array:";
+    for (auto i : b)
+        std::cout << i << ' ';
+
     return 0;
 }
