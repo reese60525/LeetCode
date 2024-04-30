@@ -13,58 +13,53 @@ class Solution {
     int coinChange(std::vector<int> &coins, int amount) {
         // test
         std::cout << "amout:" << amount << '\n';
+        // test
+
         int ans = 0, temp_amount = amount;
         std::vector<int> coins_table(coins.size());
         // 大到小排序
         sort(coins.begin(), coins.end(), std::greater {});
 
-        while (true) {
-            if (coins_table.size() == 1) {
-                if (amount >= coins[0] && amount % coins[0] == 0)
-                    return amount / coins_table[0];
-                else
-                    return -1;
-            }
-            // build coins_table
-            temp_amount = amount;
-            for (int i = 0; i < coins.size(); ++i) {
-                coins_table[i] = temp_amount / coins[i];
-                temp_amount %= coins[i];
-            }
-            // test
-            std::cout << "*************************" << '\n';
-            for (auto i : coins)
-                std::cout << i << ' ';
-            std::cout << '\n';
-            for (auto i : coins_table)
-                std::cout << i << ' ';
-            std::cout << "\n*************************" << "\n\n";
-            // test
-            for (int i = 0; i < coins_table[0]; ++i) {
-                int ans = coins_table[0] - i;
-                std::cout << "amount:" << amount << '\n';
-                temp_amount = (amount % coins[0]) + (coins[0] * i);
-                std::cout << "temp:" << temp_amount << '\n';
-                for (int i = 1; i < coins.size(); ++i) {
-                    coins_table[i] = temp_amount / coins[i];
-                    ans += coins_table[i];
-                    temp_amount %= coins[i];
-                }
-                if (temp_amount == 0) {
-                    return ans;
-                }
-            }
+        // build coins_table
+        temp_amount = amount;
+        for (int i = 0; i < coins.size(); ++i) {
+            coins_table[i] = temp_amount / coins[i];
+            temp_amount %= coins[i];
+        }
+        // 刪除開頭為0的coin_table直到遇見不為0的
+        for (auto i : coins_table) {
+            if (i != 0)
+                break;
             coins.erase(coins.begin());
             coins_table.erase(coins_table.begin());
         }
-        return ans;
-    }
-};
+        // 若amount == 0輸出答案
+        if (temp_amount == 0) {
+            for (auto i : coins_table)
+                ans += i;
+            return ans;
+        }
+        // 若coin_table只剩下1個則輸出-1
+        if (coins.size() == 1)
+            return -1;
+        // 把大錢分給小錢
+        for (int i = coins_table.size() - 2; i >= 0; --i) {}
 
-int main() {
-    Solution solution;
-    std::vector<int> coins {2, 5, 10};
-    int amount = 51;
-    std::cout << solution.coinChange(coins, amount);
-    return 0;
-}
+        // test
+        std::cout << "*************************" << '\n';
+        for (auto i : coins)
+            std::cout << i << ' ';
+        std::cout << '\n';
+        for (auto i : coins_table)
+            std::cout << i << ' ';
+        std::cout << "\n*************************" << "\n\n";
+        // test
+    };
+
+    int main() {
+        Solution solution;
+        std::vector<int> coins {2, 5, 10};
+        int amount = 51;
+        std::cout << solution.coinChange(coins, amount);
+        return 0;
+    }
