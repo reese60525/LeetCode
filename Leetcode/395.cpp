@@ -36,18 +36,16 @@ class Solution {
         // 用來存入s[end]也合法的string
         sub_string.push_back(temp);
         // 若s全都合法，則輸出答案
-        if (check) {
-            ans = s.length();
-            return ans;
-        }
+        if (check)
+            return s.length();
         // 把sub_string中的string以長度排序(大到小)
         std::ranges::sort(sub_string, std::greater {}, &std::string::size);
         // 遞迴找解
         for (auto i : sub_string) {
             if (ans >= i.length())
                 break;
-            int temp = longestSubstring(i, k);
-            ans = ans > temp ? ans : temp;
+            int return_value = longestSubstring(i, k);
+            ans = ans > return_value ? ans : return_value;
         }
         return ans;
     }
