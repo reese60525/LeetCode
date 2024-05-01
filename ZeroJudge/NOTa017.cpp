@@ -32,14 +32,15 @@ int fun(vector<int> input_number, vector<char> input_operator) {
                 else if (input_operator[count_op] == '/')
                     input_number[count_num] /= input_number[count_num + 1];
                 input_number.erase(input_number.begin() + count_num + 1);
-                input_operator.erase(input_operator.begin() + count_op - 1,
-                                     input_operator.begin() + count_op + 2);
+                input_operator.erase(input_operator.begin() + count_op - 1, input_operator.begin() + count_op + 2);
                 break;
-            } else if (input_operator[i] == '+' || input_operator[i] == '-' ||
-                       input_operator[i] == '*' || input_operator[i] == '/') {
+            }
+            else if (input_operator[i] == '+' || input_operator[i] == '-' || input_operator[i] == '*' ||
+                     input_operator[i] == '/') {
                 ++count_num;
                 ++count_op;
-            } else if (input_operator[i] == '(')
+            }
+            else if (input_operator[i] == '(')
                 ++count_op;
             if (i == input_operator.size() - 1)
                 check[0] = false;
@@ -81,7 +82,8 @@ int fun(vector<int> input_number, vector<char> input_operator) {
                 // "op.size= " << input_operator.size() << endl;
 
                 break;
-            } else if (input_operator[i] == '+' || input_operator[i] == '-') {
+            }
+            else if (input_operator[i] == '+' || input_operator[i] == '-') {
                 ++count_num;
                 ++count_op;
             }
@@ -150,6 +152,7 @@ int fun(vector<int> input_number, vector<char> input_operator) {
     return input_number[0];
 }
 
+// 2 * ( ( 3 + 4 ) * 5 + 7 ) * 2
 int main() {
     // cin.sync_with_stdio(false); cin.tie(nullptr);
     string input;
@@ -164,12 +167,13 @@ int main() {
                 check = true;
                 if (i == input.length() - 1)
                     input_number.push_back(num);
-            } else if (check) {
+            }
+            else if (check) {
                 input_number.push_back(num);
                 num = 0;
                 check = false;
             }
-            if (input[i] != ' ' && input[i] < '0' || input[i] > '9')
+            else if (input[i] != ' ')
                 input_operator.push_back(input[i]);
         }
         cout << fun(input_number, input_operator) << endl;

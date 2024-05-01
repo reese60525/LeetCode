@@ -6,4 +6,7 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
+// 1 2 3 4 5 6 k =4
+// 4 3 2 1 5 6
+
 int main() { return 0; }
