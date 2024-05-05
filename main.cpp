@@ -9,44 +9,55 @@ static const auto io_sync_off = []() {
 }();
 class Solution {
   public:
-    int recursive_solve(int target, int index, int dp[], std::vector<int> nums) {
-        // std::cout << "target:" << target << " ,index:" << index << ", nums[index]:" << nums[index] << '\n';
-        if (index >= nums.size() || target < nums[index] || dp[target - nums[index]] != 0)
+    int target = 0;
+    int recursive_solve(int sum, int index, int dp[], std::vector<int> nums) {
+        // std::cout << "sum:" << sum << " ,index:" << index << ", nums[index]:" << nums[index] << '\n';
+        if (index >= nums.size())
+            return 0;
+        if ((sum + nums[index] > target))
             return -1;
-        if (target == nums[index])
+        if (sum + nums[index] == target)
             return 1;
-        if (recursive_solve(target - nums[index], index + 1, dp, nums) == 1 || recursive_solve(target, index + 1, dp, nums) == 1)
+
+        if (dp[sum + nums[index]] == 0)
+            dp[sum + nums[index]] = recursive_solve(sum + nums[index], index + 1, dp, nums);
+        if (dp[sum] == 0)
+            dp[sum] = recursive_solve(sum, index + 1, dp, nums);
+        if (dp[sum + nums[index]] == 1 || dp[sum] == 1)
             return 1;
-        std::cout << "*****dp[" << target - nums[index] << "] = -1*****" << '\n';
-        return dp[target - nums[index]] = -1;
-        // return -1;
+        else {
+            // std::cout << "\n*********************************************" << '\n';
+            // std::cout << "sum:" << sum << " ,index:" << index << ", nums[index]:" << nums[index] << '\n';
+            // std::cout << "dp[" << sum + nums[index] << "] = -1" << ", dp[" << sum << "] = -1" << '\n';
+            // std::cout << "*********************************************" << '\n';
+            return -1;
+        }
     }
 
     bool canPartition(std::vector<int> &nums) {
-        int target = 0;
         sort(nums.begin(), nums.end());
         for (auto i : nums)
             target += i;
         if (target & 1)
             return false;
-        int dp[target / 2 + 1];
+        target /= 2;
+        int dp[target + 1];
         memset(dp, 0, sizeof(dp));
-        if (recursive_solve(target / 2, 0, dp, nums) == 1)
+        if (recursive_solve(0, 0, dp, nums) == 1)
             return true;
         return false;
     }
 };
 int main() {
     Solution solution;
-    std::vector<int> nums {
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,
-        100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 99,  97};
+    std::vector<int> nums {18, 17, 18, 11, 15, 4, 13, 11, 9}; //  (58)
     std::cout << solution.canPartition(nums) << '\n';
     return 0;
 }
+// DATA TEST
+// [1,5,11,5]
+// [1,2,3,5]
+// [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,99,97]
+// [14,9,8,4,3,2]
+// [10,9,9,9,9,8,7,3,1,1]
+// [18,17,18,11,15,4,13,11,9]
