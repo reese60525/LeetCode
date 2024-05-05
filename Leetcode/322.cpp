@@ -16,10 +16,11 @@ class Solution {
         memset(dp, 0x3f, sizeof(dp));
         dp[0] = 0;
 
-        for (int i = 1; i <= amount; ++i) // 計算每個dp[n]的最佳解。
-            for (auto j : coins)
-                if (i >= j)
-                    dp[i] = std::min(dp[i], dp[i - j] + 1);
+        for (int i = 0; i < coins.size(); ++i) {
+            for (int j = coins[i]; j < amount + 1; ++j) { // 計算每個dp[]的最佳解
+                dp[j] = std::min(dp[j], dp[j - coins[i]] + 1);
+            }
+        }
 
         return dp[amount] != 0x3f3f3f3f ? dp[amount] : -1;
     }
