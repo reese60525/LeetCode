@@ -13,7 +13,7 @@ int main() {
     int n;
     std::string input;
     while (std::cin >> n >> input) {
-        int i = 0, j = 0, len = input.length();
+        long long i = 0, j = 0, len = input.length();
         while (i + j < len) {
             std::cout << input[i + j];
             i += n;
