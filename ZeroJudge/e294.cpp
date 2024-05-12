@@ -15,7 +15,7 @@ int main() {
         long long up = n, down = n;
         for (int i = 0; i < temp.length(); ++i) {
             if ((temp[i] - '0') % 2 == 0) {
-                non_add_index = temp.length() - i; // 第幾位是非奇數，ex:1334000，non_add_index=4，也就是由右邊數來第四個數字(4)
+                non_add_index = temp.length() - i; // �ĴX��O�D�_�ơAex:1334000�Anon_add_index=4�A�]�N�O�ѥk��ƨӲĥ|�ӼƦr(4)
                 up = (n + pow(10, non_add_index - 1)) / (pow(10, non_add_index - 1));
                 down = (n - pow(10, non_add_index - 1)) / (pow(10, non_add_index - 1));
                 for (int j = 0; j < non_add_index - 1; ++j) {
