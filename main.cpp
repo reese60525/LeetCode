@@ -1,9 +1,4 @@
-/*
- * é¡Œç›®: https://leetcode.com/problems/number-of-provinces/description/
- * é¡Œç›®è§£é‡‹:
- * æ€è·¯:
- * è§£æ³•:
- */
+#include "myBST.h"
 #include <iostream>
 
 static const auto io_sync_off = []() {
@@ -11,35 +6,61 @@ static const auto io_sync_off = []() {
     std::cin.tie(nullptr);
     return nullptr;
 }();
-class Solution {
-  public:
-    int connect[200];
-    int findRoot(int a) { return connect[a] == a ? a : connect[a] = findRoot(connect[a]); }
-    int findCircleNum(std::vector<std::vector<int>> &isConnected) {
-        int n = isConnected.size();
 
-        for (int i = 0; i < n; ++i) {
-            connect[i] = i;
+int main() {
+    myBST *head = new myBST(5);
+
+    for (int i = 0; i <= 10; i += 2) {
+        head->insertNode(head, i);
+    }
+    for (int i = 1; i <= 10; i += 2) {
+        head->insertNode(head, i);
+    }
+    head->inOrder(head);
+    std::cout << '\n';
+
+    char op;
+    while (std::cin >> op) {
+        int n;
+
+        if (op == 'i') { // insert
+            std::cin >> n;
+            if (head == nullptr) {
+                head = new myBST(n);
+            }
+            else if (head->insertNode(head, n) == nullptr) {
+                std::cout << "­«½Æ¼Æ¦r:" << n << '\n';
+            }
         }
-
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n; ++j) {
-                if (isConnected[i][j] == 1) {
-                    connect[findRoot(i)] = findRoot(j);
+        else if (op == 'd') { // delete
+            std::cin >> n;
+            if (head != nullptr) {
+                head = head->deleteNode(head, n);
+            }
+        }
+        else if (op == 'f') { // find
+            std::cin >> n;
+            if (head != nullptr) {
+                if (head->findNode(head, n) == nullptr) {
+                    std::cout << "§ä¤£¨ì¼Æ¦r:" << n << '\n';
+                }
+                else {
+                    std::cout << "§ä¨ìnode:" << head->findNode(head, n) << ", ¼Æ¦r:" << n << '\n';
                 }
             }
         }
-
-        int ans = 0;
-        std::vector<bool> all_group(n, false);
-        for (int i = 0; i < n; ++i) {
-            int i_root = findRoot(i);
-            if (!all_group[i_root]) {
-                all_group[i_root] = true;
-                ++ans;
-            }
+        else if (op == 'e') { // exit
+            break;
         }
-        return ans;
+        if (head != nullptr) {
+            head->inOrder(head);
+            std::cout << '\n';
+            std::cout << "ROOT:" << head->getValue() << '\n';
+            std::cout << "head:" << head << '\n';
+        }
+        else {
+            std::cout << "head = nullptr" << '\n';
+        }
     }
-};
-int main() { return 0; }
+    return 0;
+}
