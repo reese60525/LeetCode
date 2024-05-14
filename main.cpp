@@ -1,80 +1,94 @@
 /*
- * 題目: https://leetcode.com/problems/path-with-maximum-gold/description/
+ * 題目: https://leetcode.com/problems/n-queens/
  * 題目解釋:
  * 思路:
  * 解法:
  */
 #include <iostream>
-#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     return nullptr;
 }();
-
 class Solution {
   public:
-    std::vector<std::vector<int>> dp;
+    std::vector<std::vector<int>> check_repeat;
+    std::vector<bool> ROWS, COLS, Diagonal1, Diagonal2;
+    std::string printLn = "";
+    int count = 0;
+    // 公式:n, array[2n-1]  (x, y) 左上到右下:array[x+y], 左下到右上:array[(n-1)-(x-y)]
 
-    int recursion_solve(int pos, int cur, int count, std::vector<std::vector<int>> grid) {
-        std::cout << "cur:" << cur << ", count" << count << '\n';
-        int m = grid.size(), n = grid[0].size();
-        int max_gold = 0, value = grid[cur / n][cur % n];
-        std::cout << "row:" << cur / n << ", column:" << cur % n << '\n';
-        if (pos != -1 && dp[cur][pos] > 0) {
-            return dp[cur][pos];
+    bool checkRepeat(const std::vector<std::vector<std::string>> &res) {
+        for (int i = 0; i < res.size(); ++i) {
+            int count = 0;
+            for (int j = 0; j < res[0].size(); ++j) {
+                if (res[i][check_repeat[j][0]][check_repeat[j][1]] != 'Q') {
+                    break;
+                }
+                ++count;
+            }
+            if (count == res[0].size()) {
+                return false;
+            }
         }
-        if (grid[cur / n][cur % n] == 0) {
-            return 0;
-        }
-        grid[cur / n][cur % n] = 0;
-        if (cur - n > -1) {
-            std::cout << "TEST1" << '\n';
-            dp[cur][0] = recursion_solve(0, cur - n, count + 1, grid);
-            max_gold = std::max(max_gold, dp[cur][0]);
-        }
-        if (cur + n < m * n) {
-            std::cout << "TEST2" << '\n';
-            dp[cur][1] = recursion_solve(1, cur - n, count + 1, grid);
-            max_gold = std::max(max_gold, dp[cur][1]);
-        }
-        if (cur % n - 1 > -1) {
-            std::cout << "TEST3" << '\n';
-            dp[cur][2] = recursion_solve(2, cur - n, count + 1, grid);
-            max_gold = std::max(max_gold, dp[cur][2]);
-        }
-        if (cur % n + 1 < n) {
-            std::cout << "TEST4" << '\n';
-            dp[cur][3] = recursion_solve(3, cur - n, count + 1, grid);
-            max_gold = std::max(max_gold, dp[cur][3]);
-        }
-        return value + max_gold;
+        return true;
     }
 
-    int getMaximumGold(std::vector<std::vector<int>> &grid) {
-        int max_gold = 0, row = grid.size(), column = grid[0].size();
-        dp.assign(row * column - 1, std::vector(4, 0));
-
-        for (int i = 0; i < row * column; ++i) {
-            int return_value = recursion_solve(-1, i, 0, grid);
-            std::cout << return_value << '\n';
-            max_gold = std::max(max_gold, return_value);
+    void backTracking(int rank, int n, std::vector<std::vector<std::string>> &res) {
+        if (rank == n && checkRepeat(res)) {
+            ++count;
+            std::vector<std::string> v;
+            for (int i = 0; i < n; ++i) {
+                std::string s = printLn;
+                s[check_repeat[i][1]] = 'Q';
+                v.emplace_back(s);
+            }
+            res.emplace_back(v);
+            return;
         }
-        return max_gold;
+
+        for (int i = 0; i < n; ++i) {
+            if (ROWS[i] == false) {
+                for (int j = 0; j < n; ++j) {
+                    if (COLS[j] == false) {
+                        if (!Diagonal1[i + j] && !Diagonal2[(n - 1) - (i - j)]) {
+                            check_repeat[rank][0] = i, check_repeat[rank][1] = j;
+                            ROWS[i] = true, COLS[j] = true;
+                            Diagonal1[i + j] = true, Diagonal2[(n - 1) - (i - j)] = true;
+
+                            backTracking(rank + 1, n, res);
+
+                            check_repeat[rank][0] = -1, check_repeat[rank][1] = -1;
+                            ROWS[i] = false, COLS[j] = false;
+                            Diagonal1[i + j] = false, Diagonal2[(n - 1) - (i - j)] = false;
+                        }
+                    }
+                }
+            }
+        }
+        return;
+    }
+
+    std::vector<std::vector<std::string>> solveNQueens(int n) {
+        std::vector<std::vector<std::string>> res;
+        check_repeat.assign(n, std::vector<int>(2, -1));
+        ROWS.assign(n, false);
+        COLS.assign(n, false);
+        Diagonal1.assign(2 * n - 1, false);
+        Diagonal2.assign(2 * n - 1, false);
+
+        for (int i = 0; i < n; ++i) {
+            printLn += '.';
+        }
+
+        backTracking(0, n, res);
+        std::cout << count << '\n';
+        return res;
     }
 };
-// {{1,0,7},{2,0,6},{3,4,5},{0,3,0},{9,0,20}}
-
 int main() {
     Solution solution;
-    std::vector<std::vector<int>> grid {
-        {1, 0, 7 },
-        {2, 0, 6 },
-        {3, 4, 5 },
-        {0, 3, 0 },
-        {9, 0, 20}
-    };
-    std::cout << "ans:" << solution.getMaximumGold(grid);
+    solution.solveNQueens(2);
     return 0;
 }
