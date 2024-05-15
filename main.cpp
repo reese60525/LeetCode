@@ -1,5 +1,5 @@
 /*
- * 題目:
+ * 題目: https://leetcode.com/problems/longest-consecutive-sequence/description/
  * 題目解釋:
  * 思路:
  * 解法:
@@ -12,4 +12,48 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-int main() { return 0; }
+class Solution {
+  public:
+    std::unordered_map<int, int> nums_table;
+
+    int longestConsecutive(std::vector<int> &nums) {
+        std::unordered_map<int, int> groups;
+
+        // initialize nums_table and unite neighboring number
+        for (auto &i : nums) {
+            nums_table[i] = i;
+            if (nums_table.count(i - 1)) {
+                unionFind(i, i - 1);
+            }
+            if (nums_table.count(i + 1)) {
+                unionFind(i + 1, i);
+            }
+        }
+
+        // path compression
+        for (auto i : nums_table) {
+            int num = i.first;
+            ++groups[findRoot(num)];
+        }
+
+        // calculate res
+        int res = 0;
+        for (auto &i : groups) {
+            res = std::max(res, i.second);
+        }
+
+        return res;
+    }
+
+  private:
+    int findRoot(int &x) {
+        return x == nums_table[x] ? x : nums_table[x] = findRoot(nums_table[x]);
+    }
+    void unionFind(int x, int y) {
+        nums_table[findRoot(x)] = findRoot(y);
+    }
+};
+
+int main() {
+    return 0;
+}

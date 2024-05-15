@@ -63,4 +63,8 @@ class Solution {
     }
 };
 
-int main() {}
+int main() {
+    Solution s;
+    std::cout << s.totalNQueens(10);
+    return 0;
+}

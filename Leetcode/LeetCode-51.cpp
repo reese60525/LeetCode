@@ -57,8 +57,7 @@ class Solution {
     //     return true;
     // }
 
-    void backTracking(int row, const int &n, std::vector<std::string> &board,
-                      std::vector<std::vector<std::string>> &res) {
+    void backTracking(int row, const int &n, std::vector<std::string> &board, std::vector<std::vector<std::string>> &res) {
         if (row == n) { // 皇后數量滿了
             res.emplace_back(board);
             return;
@@ -69,14 +68,12 @@ class Solution {
             // check目前位置的col和兩個對角線是否有其他queen
             if (!COLS[col] && !Diagonal1[row + col] && !Diagonal2[(n - 1) - (row - col)]) {
                 // 設定走訪過的狀態
-                COLS[col] = true;
-                Diagonal1[row + col] = true, Diagonal2[(n - 1) - (row - col)] = true;
+                COLS[col] = Diagonal1[row + col] = Diagonal2[(n - 1) - (row - col)] = true;
                 board[row][col] = 'Q';
 
                 backTracking(row + 1, n, board, res);
                 // 還原狀態
-                COLS[col] = false;
-                Diagonal1[row + col] = false, Diagonal2[(n - 1) - (row - col)] = false;
+                COLS[col] = Diagonal1[row + col] = Diagonal2[(n - 1) - (row - col)] = false;
                 board[row][col] = '.';
             }
 
@@ -105,6 +102,6 @@ class Solution {
 
 int main() {
     Solution solution;
-    solution.solveNQueens(2);
+    solution.solveNQueens(9);
     return 0;
 }

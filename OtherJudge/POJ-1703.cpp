@@ -11,7 +11,9 @@
 std::vector<int> connect(1e5 + 1), opposition(1e5 + 1);
 // find root，connect[a] = root(connect[a])可以順便更新所有人指向root，
 // 能夠加快之後呼叫找root的速度
-int root(int a) { return connect[a] == a ? a : connect[a] = root(connect[a]); }
+int root(int &a) {
+    return connect[a] == a ? a : connect[a] = root(connect[a]);
+}
 
 // 用C的IO，不然會TLE
 int main() {
