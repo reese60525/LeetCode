@@ -1,61 +1,63 @@
 /*
- * 題目: https://leetcode.com/problems/longest-consecutive-sequence/description/
+ * 題目:
  * 題目解釋:
  * 思路:
  * 解法:
  */
+#include <algorithm>
 #include <iostream>
+#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     return nullptr;
 }();
-
 class Solution {
   public:
-    std::unordered_map<int, int> nums_table;
+    static bool cmp(const std::vector<int> &x, const std::vector<int> &y) {
+        return x[2] < y[2];
+    }
 
-    int longestConsecutive(std::vector<int> &nums) {
-        std::unordered_map<int, int> groups;
-
-        // initialize nums_table and unite neighboring number
-        for (auto &i : nums) {
-            if (!nums_table.count(i)) { // skip the duplicate numbers.
-                nums_table[i] = i;
-                if (nums_table.count(i - 1)) {
-                    unionFind(i, i - 1);
-                }
-                if (nums_table.count(i + 1)) {
-                    unionFind(i + 1, i);
-                }
-            }
-            else {
-                i = 0x3f3f3f3f; // set the duplicate numbers to infinity
-            }
-        }
-        // path compression
-        for (auto i : nums) {
-            if (i != 0x3f3f3f3f)
-                ++groups[findRoot(i)];
-        }
-        // calculate res
+    int spanningTree(int V, std::vector<std::vector<int>> adj[]) {
         int res = 0;
-        for (auto &i : groups) {
-            res = std::max(res, i.second);
+        std::vector<std::vector<int>> edges;
+        std::vector<int> parent(V);
+
+        for (int i = 0; i < V; ++i) {
+            parent[i] = i;
         }
+
+        for (int i = 0; i < V; ++i) {
+            for (auto j : adj[i]) {
+                edges.emplace_back(std::vector<int> {i, j[0], j[1]});
+            }
+        }
+
+        std::sort(edges.begin(), edges.end(), cmp);
+
+        for (auto edge : edges) {
+            if (findRoot(edge[0], parent) != findRoot(edge[1], parent)) {
+                unionFind(edge[0], edge[1], parent);
+                res += edge[2];
+            }
+        }
+
         return res;
     }
 
   private:
-    int findRoot(int &x) {
-        return x == nums_table[x] ? x : nums_table[x] = findRoot(nums_table[x]);
+    int findRoot(int x, std::vector<int> &parent) {
+        while (x != parent[x]) {
+            x = parent[x] = parent[parent[x]];
+        }
+        return x;
     }
-    void unionFind(int x, int y) {
-        nums_table[findRoot(x)] = findRoot(y);
+    void unionFind(int x, int y, std::vector<int> &parent) {
+        parent[findRoot(x, parent)] = findRoot(y, parent);
     }
 };
-
 int main() {
+
     return 0;
 }

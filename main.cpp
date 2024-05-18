@@ -1,59 +1,54 @@
 /*
- * 題目: https://leetcode.com/problems/longest-consecutive-sequence/description/
+ * 題目:
  * 題目解釋:
  * 思路:
  * 解法:
  */
+#include <algorithm>
 #include <iostream>
+#include <queue>
+#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     return nullptr;
 }();
-
 class Solution {
   public:
-    std::unordered_map<int, int> nums_table;
+    struct cmp {
+        bool operator()(const std::pair<int, int> &x, const std::pair<int, int> &y) {
+            return x.second > y.second;
+        }
+    };
 
-    int longestConsecutive(std::vector<int> &nums) {
-        std::unordered_map<int, int> groups;
+    int spanningTree(int V, std::vector<std::vector<int>> adj[]) {
+        int res = 0, visited_count = 0;
+        std::vector<bool> visited(V, 0);
+        std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, cmp> pq;
 
-        // initialize nums_table and unite neighboring number
-        for (auto &i : nums) {
-            nums_table[i] = i;
-            if (nums_table.count(i - 1)) {
-                unionFind(i, i - 1);
+        pq.push({0, 0});
+        while (!pq.empty() && visited_count < V) {
+            int cur_node = pq.top().first;
+            int weight = pq.top().second;
+            pq.pop();
+
+            if (visited[cur_node])
+                continue;
+            visited[cur_node] = true;
+            res += weight;
+            ++visited_count;
+
+            for (auto i : adj[cur_node]) {
+                if (!visited[i[0]]) {
+                    pq.push({i[0], i[1]});
+                }
             }
-            if (nums_table.count(i + 1)) {
-                unionFind(i + 1, i);
-            }
         }
-
-        // path compression
-        for (auto i : nums_table) {
-            int num = i.first;
-            ++groups[findRoot(num)];
-        }
-
-        // calculate res
-        int res = 0;
-        for (auto &i : groups) {
-            res = std::max(res, i.second);
-        }
-
         return res;
     }
-
-  private:
-    int findRoot(int &x) {
-        return x == nums_table[x] ? x : nums_table[x] = findRoot(nums_table[x]);
-    }
-    void unionFind(int x, int y) {
-        nums_table[findRoot(x)] = findRoot(y);
-    }
 };
-
 int main() {
+
     return 0;
 }
