@@ -1,8 +1,21 @@
 /*
  * 題目: https://leetcode.com/problems/search-in-rotated-sorted-array/description/
+ *
  * 題目解釋:
+ * 有一個原本是升序排序的整數array，給定一個pivot_index，大小為1到array.size()-1，從pivot_index之
+ * 後的element移至左邊(包含pivot_index)，EX: nums = {1 ,2 ,3 ,4 ,5 ,6 ,7 ,8, 9}，pivot_index
+ * = 5，nums[pivot_index] = 6，則旋轉後的nums為{6, 7, 8, 9, 1 ,2 ,3 ,4 , 5}。給一個array nums
+ * nums可能會旋轉可能不會，給一個target，求target在nums中的index，若是找不到則return -1。
+ * 題目要求時間複雜度必須為"O(logn)"。
+ *
  * 思路:
+ * 找數字，時間複雜度要O(logn)，很明顯是用binary search。
+ *
  * 解法:
+ * 分成兩次binary search，第一次找出nums的最小值的index，即為旋轉前的nums開頭，假設nums旋轉後為
+ * {6, 7, 8, 9, 1 ,2 ,3 ,4 , 5}，第一次binary search找到最小值為1，index在4，我們可以透過擴展旋轉後的
+ * nums，像是這樣:{6, 7, 8, 9, 1 ,2 ,3 ,4 , 5, 6, 7, 8, 9, 1, 2 ,3 ,4}，以最小的數字為開頭，可以觀
+ * 察
  */
 #include <iostream>
 
@@ -38,17 +51,14 @@ class Solution {
                 return real_mid;
             }
             else if (nums[real_mid] > target) {
-                r = real_mid - 1;
+                r = mid - 1;
             }
             else {
-                l = real_mid + 1;
+                l = mid + 1;
             }
         }
         return -1;
     }
 };
 
-int main() {
-
-    return 0;
-}
+int main() { return 0; }
