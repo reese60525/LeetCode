@@ -12,7 +12,4 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-int main() {
-
-    return 0;
-}
+int main() { return 0; }
