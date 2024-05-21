@@ -26,10 +26,11 @@ int main() {
         for (int i = 0; i < m; ++i) {
             int num, k;
             std::cin >> k >> num;
-            if (table[num].size() < k) // k是出現次數，若table[num]的size比k小代表num沒出現過這麼多次
+            if (table[num].size() < k) { // k是出現次數，若table[num]的size比k小代表num沒出現過這麼多次
                 std::cout << 0 << '\n';
-            else
+            } else {
                 std::cout << table[num][k - 1] << '\n';
+            }
         }
     }
     return 0;
