@@ -30,7 +30,7 @@ class Solution {
     int search(std::vector<int> &nums, int target) {
         int n = nums.size(), l = 0, r = nums.size() - 1;
 
-        while (l < r) { // binary search 找最小值，也就是原本array的開頭
+        while (l < r) { // 找到旋轉後的最小值的index，也就是原本排序陣列的開頭
             int mid = l + (r - l) / 2;
 
             if (nums[mid] > nums[r]) {
@@ -61,4 +61,6 @@ class Solution {
     }
 };
 
-int main() { return 0; }
+int main() {
+    return 0;
+}
