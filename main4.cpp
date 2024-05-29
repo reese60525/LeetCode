@@ -17,6 +17,10 @@ static const auto io_sync_off = []() {
 }();
 
 int main() {
+    std::string a = "12345";
+    std::cout << a << '\n';
+    a.insert(0, 1, 'a');
+    std::cout << a << '\n';
 
     return 0;
 }
