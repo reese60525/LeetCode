@@ -17,7 +17,6 @@ static const auto io_sync_off = []() {
 }();
 
 int main() {
-    std::string s = "hmfttfmhpttmpphmhthfpffphftfhthtmhthhfphfmmm";
-    std::cout << s.length();
+
     return 0;
 }
