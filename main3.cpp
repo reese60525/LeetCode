@@ -15,8 +15,7 @@ static const auto io_sync_off = []() {
     std::cin.tie(nullptr);
     return nullptr;
 }();
-// abbbaac bbbaac
-// abababc bababc
+
 class Solution {
   public:
     int countCompleteSubstrings(std::string word, int k) {
@@ -43,12 +42,11 @@ class Solution {
                     --occurrence[word[j - window_size] - 'a'];
                 }
 
-                std::cout << "i:" << i << ", j:" << j << ", c:" << c << ", check:" << check << '\n';
                 if (cur_size == window_size && i == c && check == 0) {
                     ++res;
                 }
                 if (j != n - 1 && std::abs(word[j] - word[j + 1]) > 2) {
-                    c = cur_size = 0;
+                    c = cur_size = check = 0;
                     memset(occurrence, 0, sizeof(occurrence));
                 }
             }
