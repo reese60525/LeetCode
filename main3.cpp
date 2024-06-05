@@ -22,27 +22,59 @@ class Solution {
     int countCompleteSubstrings(std::string word, int k) {
         int res = 0, n = word.length();
 
-        for (int i = 0; i < n; ++i) {
-            int count = 0;
-            std::vector<bool> table(26, 0);
+        for (int i = 1; i < 27; ++i) {
+            int c = 0, cur_size = 0, check = 0, window_size = k * i;
+            int occurrence[26] {0}; // 計算目前window的字母出現次數
 
-            for (int j = i; j < n; ++j) {
-                if (!table[word[j] - 'a']) {
-                    ++count;
+            if (window_size > n) {
+                break;
+            }
+
+            for (int j = 0; j < n; ++j) {
+                fun(c, check, k, occurrence[word[j] - 'a'], '+');
+
+                ++occurrence[word[j] - 'a'];
+
+                if (cur_size < window_size) {
+                    ++cur_size;
                 }
-                if (count * k < j - i + 1) {
-                    break;
+                else {
+                    fun(c, check, k, occurrence[word[j - window_size] - 'a'], '-');
+                    --occurrence[word[j - window_size] - 'a'];
                 }
-                if (i != j && (word[j] - word[j - 1] > 2 || word[j] - word[j - 1] < -2)) {
-                    break;
-                }
-                if (count * k == j - i + 1) {
+
+                std::cout << "i:" << i << ", j:" << j << ", c:" << c << ", check:" << check << '\n';
+                if (cur_size == window_size && i == c && check == 0) {
                     ++res;
+                }
+                if (j != n - 1 && std::abs(word[j] - word[j + 1]) > 2) {
+                    c = cur_size = 0;
+                    memset(occurrence, 0, sizeof(occurrence));
                 }
             }
         }
 
         return res;
+    }
+
+  private:
+    void fun(int &c, int &check, const int &k, const int &occurrence, char op) {
+        if (op == '+') {
+            if (occurrence == 0) {
+                ++c;
+            }
+            else if (occurrence == k) {
+                ++check;
+            }
+        }
+        else if (op == '-') {
+            if (occurrence == 1) {
+                --c;
+            }
+            else if (occurrence == k + 1) {
+                --check;
+            }
+        }
     }
 };
 
