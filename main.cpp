@@ -9,121 +9,191 @@
  *
  */
 #include <iostream>
-#include <unordered_set>
 
 class Elevator {
-  private:
-    int state = 0;          // 當前電梯行進狀態 0:空 1:上 2:下
-    int requests_count = 0; // requests內的數量
-    int requests[100][2]; // 電梯服務要求，[][0]為客戶樓層，[][1]為客戶目的地樓層
-    int in_count = 0;
-    int in[100]; // 客戶在電梯外按的樓層
-    int out_count = 0;
-    int out[100]; // 客戶在電梯內按的樓層
-    int cur = 1;  // 電梯目前位置
-
   public:
-    // 創建電梯物件時初始化array內容為0
+    int state, cur, des;
+    bool a1[21], a2[21], a3[21]; // a1儲存往上，a2儲存往下，a3儲存例外
+
+    // constructor
     Elevator() {
-        memset(requests, 0, sizeof(requests));
-        memset(in, 0, sizeof(requests));
-        memset(out, 0, sizeof(requests));
+        state = des = 0;
+        cur = 1;
+        memset(a1, 0, sizeof(a1));
+        memset(a2, 0, sizeof(a1));
+        memset(a3, 0, sizeof(a1));
     }
 
-    // 取得目前電梯要執行的request數量+requests array的數量
-    int getCounts() {
-        return requests_count + in_count + out_count;
-    }
+    // // 新增request
+    // void add_request(int start, int end) {
+    //     if (state == 0) { // 電梯當前狀態停止
+    //         if (cur < start) {
+    //             state = 1;
+    //         }
+    //         else if (cur > start) {
+    //             state = 2;
+    //         }
+    //         else if (cur == start) {
+    //             if (cur < end) {
+    //                 state = 1;
+    //                 a1[end] = true;
+    //             }
+    //             else {
+    //                 state = 2;
+    //                 a2[end] = true;
+    //             }
+    //             return;
+    //         }
+    //     }
 
-    // 新增request到requests array
-    void newRequest(int begin, int end) {
-        requests[requests_count][0] = begin;
-        requests[requests_count][1] = end;
-        ++requests_count;
-    }
+    //     if (state == 1) { // 電梯當前狀態往上
+    //         // 設定起始位置
+    //         if (cur < start) { // 客戶位置在電梯路徑上
+    //             a1[start] = true;
+    //             if (start < end) { // 客戶目的地和電梯同方向
+    //                 a1[end] = true;
+    //             }
+    //             else { // 客戶目的地和電梯反方向
+    //                 a2[end] = true;
+    //             }
+    //         }
+    //         else if (cur > start) { // 客戶位置在電梯路徑外
+    //             a2[start] = true;
+    //             if (start < end) { // 客戶目的地和電梯同方向
+    //                 a3[end] = true;
+    //             }
+    //             else { // 客戶目的地和電梯反方向
+    //                 a2[end] = true;
+    //             }
+    //         }
+    //     }
+    //     else if (state == 2) { // 電梯當前狀態往下
+    //         // 設定起始位置
+    //         if (cur > start) { // 客戶位置在電梯路徑上
+    //             a2[start] = true;
+    //             if (start > end) { // 客戶目的地和電梯同方向
+    //                 a2[end] = true;
+    //             }
+    //             else { // 客戶目的地和電梯反方向
+    //                 a1[end] = true;
+    //             }
+    //         }
+    //         else if (cur < start) { // 客戶位置在電梯路徑外
+    //             a1[start] = true;
+    //             if (start > end) { // 客戶目的地和電梯同方向
+    //                 a3[end] = true;
+    //             }
+    //             else { // 客戶目的地和電梯反方向
+    //                 a1[end] = true;
+    //             }
+    //         }
+    //     }
+    // }
+};
 
-    void bubbleSort(bool reverse) {
-        // 將重複樓層設為 0
-        for (int i = 0; i < 100; ++i) {
-            for (int j = i + 1; j < 100; ++j) {
-                if (in[i] == in[j]) {
-                    in[j] = 0;
-                }
-                if (out[i] == out[j]) {
-                    out[j] = 0;
-                }
+class Control {
+  public:
+    static void add_request(Elevator &e, int start, int end) {
+        if (e.state == 0) { // 電梯當前狀態停止
+            if (e.cur < start) {
+                e.state = 1;
             }
-        }
-
-        for (int i = 0; i < 100; ++i) {
-            for (int j = i + 1; j < 100; ++j) {
-                if ((reverse && in[i] < in[j]) || (!reverse && in[i] > in[j])) {
-                    int temp = in[i];
-                    in[i] = in[j];
-                    in[j] = temp;
-                }
-                if ((reverse && out[i] < out[j]) || (!reverse && out[i] > out[j])) {
-                    int temp = out[i];
-                    out[i] = out[j];
-                    out[j] = temp;
-                }
+            else if (e.cur > start) {
+                e.state = 2;
             }
-        }
-    }
-
-    void moveOneFloor(int counter) {
-        std::cout << "count : " << counter << '\n';
-        std::cout << "current floor : " << cur << '\n';
-        for (auto &r : requests) {
-            if (state == 0 && requests_count > 0) {
-                in[0] = requests[0][0];
-                out[0] = requests[0][1];
-                // 設定電梯行進方向
-                if (in[0] - out[0] > 0) {
-                    state = 2;
+            else if (e.cur == start) {
+                if (e.cur < end) {
+                    e.state = 1;
+                    e.a1[end] = true;
                 }
                 else {
-                    state = 1;
+                    e.state = 2;
+                    e.a2[end] = true;
                 }
-
-                --requests_count;
-                ++in_count;
-                ++out_count;
+                return;
             }
-            if (state == 1) {}
+        }
+
+        if (e.state == 1) { // 電梯當前狀態往上
+            // 設定起始位置
+            if (e.cur < start) { // 客戶位置在電梯路徑上
+                e.a1[start] = true;
+                if (start < end) { // 客戶目的地和電梯同方向
+                    e.a1[end] = true;
+                }
+                else { // 客戶目的地和電梯反方向
+                    e.a2[end] = true;
+                }
+            }
+            else if (e.cur > start) { // 客戶位置在電梯路徑外
+                e.a2[start] = true;
+                if (start < end) { // 客戶目的地和電梯同方向
+                    e.a3[end] = true;
+                }
+                else { // 客戶目的地和電梯反方向
+                    e.a2[end] = true;
+                }
+            }
+        }
+        else if (e.state == 2) { // 電梯當前狀態往下
+            // 設定起始位置
+            if (e.cur > start) { // 客戶位置在電梯路徑上
+                e.a2[start] = true;
+                if (start > end) { // 客戶目的地和電梯同方向
+                    e.a2[end] = true;
+                }
+                else { // 客戶目的地和電梯反方向
+                    e.a1[end] = true;
+                }
+            }
+            else if (e.cur < start) { // 客戶位置在電梯路徑外
+                e.a1[start] = true;
+                if (start > end) { // 客戶目的地和電梯同方向
+                    e.a3[end] = true;
+                }
+                else { // 客戶目的地和電梯反方向
+                    e.a1[end] = true;
+                }
+            }
         }
     }
 };
 
 int main() {
-    int requests[][2] = {
-        {2, 6},
-        {4, 1},
-        {6, 3},
-        {5, 7},
-        {8, 2},
-        {2, 6},
-        {7, 3},
-        {4, 5},
-        {2, 8}
+    // 乘客請求電梯
+    std::vector<std::vector<int>> request {
+        {5,  3 },
+        {3,  7 },
+        {4,  18},
+        {20, 11},
+        {13, 6 },
+        {4,  9 }
     };
-    Elevator e;
+    // 要在第n個單位時間發出請求
+    std::vector<int> request_time {2, 3, 4, 7, 13, 22};
 
-    int index = 0; // requests index
-    int counter = 0;
-    std::unordered_set<int> valid_cases = {0, 1, 2, 4, 7, 8, 12, 13, 19};
-    while (e.getCounts() && index < 10) {
-        if (valid_cases.find(counter) != valid_cases.end()) {
-            e.newRequest(requests[index][0], requests[index][1]);
-            ++index;
+    Elevator e1, e2;
+    int t = 0;
+    while (t++ < 200) {
+        if (t == request_time[0]) {
+            int start = request[0][0], end = request[0][1];
+
+            if (e1.state == 0 && e2.state == 0) { // 兩台都沒任務
+                Control::add_request(e1, start, end);
+            }
+            else {
+                int e1_distance = std::abs((2 * e1.des) - e1.cur - start);
+                int e2_distance = std::abs((2 * e2.des) - e2.cur - start);
+
+                if (e1_distance <= e2_distance) {
+                    Control::add_request(e1, start, end);
+                }
+                else {
+                    Control::add_request(e2, start, end);
+                }
+            }
         }
-        e.moveOneFloor();
-        ++counter;
     }
 
     return 0;
 }
-
-// [%album artist% - ]['%album%[ CD%discnumber%][ #%tracknumber%]'- ]%title%[ '//' %track artist%]
-// [%album artist% - ]['['%album%[ CD%discnumber%][ #%tracknumber%]']' ]%title%[ '//' %track
-// %album artist% - %album% CD%discnumber%#%tracknumber% - %title%
