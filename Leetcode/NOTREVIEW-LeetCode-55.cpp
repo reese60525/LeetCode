@@ -19,16 +19,25 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     bool canJump(std::vector<int> &nums) {
-        if (nums[0] == 0) {
-            return false;
+        int n = nums.size();
+
+        if (n == 1) {
+            return true;
         }
 
-        for (int i = nums.size() - 1; i > -1; --i) {
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] >= (n - i - 1)) {
+                return true;
+            }
             if (nums[i] == 0) {
-                while (i > 0 && nums[i] + 1 == nums[i - 1]) {
-                    --i;
+                int j = i;
+                while (j > -1) {
+                    if (nums[j] > (i - j)) {
+                        break;
+                    }
+                    --j;
                 }
-                if (i == 0) {
+                if (j == -1) {
                     return false;
                 }
             }
