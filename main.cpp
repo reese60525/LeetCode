@@ -1,5 +1,5 @@
 /*
- * 題目: https://leetcode.com/problems/jump-game-ii/description/
+ * 題目:
  *
  * 題目解釋:
  *
@@ -20,8 +20,3 @@ int main() {
 
     return 0;
 }
-
-// test
-// [2,3,1,1,4]
-// [2,3,0,1,4]
-// [5,1,1,1,4,1,1,1,1]
