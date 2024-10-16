@@ -32,7 +32,7 @@ class Solution {
 
         for (int i = 0, j = 0; i < n; ++i) {
             while (j < n && worker[i] >= table[j].first) {
-                cur_profit = std::max(cur_profit, table[j].second);
+                cur_profit = cur_profit > table[j].second ? cur_profit : table[j].second;
                 ++j;
             }
             res += cur_profit;
