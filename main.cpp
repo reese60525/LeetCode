@@ -1,112 +1,57 @@
-/*
- * 題目: https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/description/
- *
- * 題目解釋:
- * 給兩組integer array，找出這兩組array各自任選一個integer配對，其prefix最大能為多少bit。
- *
- * 思路:
- * 使用Trie資料結構來解決，把array1當作預載資料insert至Trie中，再將array2當作要搜索的資料，
- * 丟入Trie去計算其最大prefix，把array2全搜尋一次後即可得答案。
- *
- * 解法:
- *
- */
 #include <iostream>
 
-static const auto io_sync_off = []() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    return nullptr;
-}();
+void quickSort(float *array, int l, int r) {
+    int start = l, end = r;
+    float pivot = array[start];
 
-// 解法1: Trie
-class node {
-  public:
-    std::unordered_map<char, node *> children;
-    bool isEnd = false;
-};
-
-class Trie {
-  private:
-    node *root = new node;
-
-  public:
-    void insert(std::string s) {
-        node *current = root;
-        for (char c : s) {
-            if (current->children.find(c) == current->children.end()) {
-                current->children[c] = new node;
-            }
-            current = current->children[c];
+    // 進行排序，將比array[start]大和小的分成兩組
+    while (l < r) {
+        if (array[l] > pivot && array[r] < pivot) {
+            std::swap(array[l], array[r]);
         }
-        current->isEnd = true;
+        if (array[l] <= pivot) {
+            ++l;
+        }
+        if (array[r] >= pivot) {
+            --r;
+        }
     }
 
-    int findLongestPrefix(std::string s) {
-        int count = 0;
-        node *current = root;
-        for (char c : s) {
-            if (current->children.find(c) == current->children.end()) {
-                break;
-            }
-            current = current->children[c];
-            ++count;
-        }
-        return count;
+    if (array[r] > pivot) { // 如果r當前的值比array[start]大，則將r向右移一個位置
+        --r;
     }
-};
+    std::swap(array[start], array[r]); // 將array[start]擺到正確的位置
 
-class Solution {
-  public:
-    int longestCommonPrefix(std::vector<int> &arr1, std::vector<int> &arr2) {
-        int res = 0;
-        Trie trie;
-
-        for (int i : arr1) {
-            trie.insert(std::to_string(i));
-        }
-
-        for (int i : arr2) {
-            int count = trie.findLongestPrefix(std::to_string(i));
-            res = std::max(res, count);
-        }
-
-        return res;
+    if (start < r - 1) { // 若是右邊那組array的數字數量>=兩個再呼叫遞迴排序
+        quickSort(array, start, r - 1);
     }
-};
-
-// // 解法2: unordered_set (時間和空間更優)
-// class Solution {
-//   public:
-//     int longestCommonPrefix(vector<int> &arr1, vector<int> &arr2) {
-//         int res = 0;
-//         std::unordered_set<int> prefixes;
-
-//         for (int i : arr1) {
-//             while (!prefixes.count(i) && i > 0) {
-//                 prefixes.insert(i);
-//                 i /= 10;
-//             }
-//         }
-
-//         for (int i : arr2) {
-//             while (!prefixes.count(i) && i > 0) {
-//                 i /= 10;
-//             }
-//             if (i > 0) {
-//                 res = std::max(res, static_cast<int>(log10(i) + 1));
-//                 // static_cast<int> 用於將double轉為integer
-//             }
-//         }
-
-//         return res;
-//     }
-// };
+    if (end > r + 1) { // 若是左邊那組array的數字數量>=兩個再呼叫遞迴排序
+        quickSort(array, r + 1, end);
+    }
+}
 
 int main() {
-    std::vector<int> arr1 {1, 10, 100}, arr2 {1000};
-    Solution s;
-    int ans = s.longestCommonPrefix(arr1, arr2);
-    std::cout << "ans: " << ans << '\n';
-    return 0;
+    float array[] = {10, 5, 1, 5, 1, 1, 5, 26, 17, 14, 8, 7, 26, 21, 3};
+    // int array[] = {1, 4, 2, 3};
+
+    while (true) {
+        int op, count, max_value, min_value;
+        std::cout << "1執行快速排序法，執行插入排序法，3程式結束。\n請輸入要執行的動作:";
+        std::cin >> op;
+
+        if (op == 1) {
+            quickSort(array, 0, (sizeof(array) / sizeof(array[0])) - 1);
+        }
+        else if (op == 2) {
+            std::cout << "wait" << '\n';
+        }
+        else if (op == 3) {
+            return 0;
+        }
+
+        // std::cout<<"1.所有數字數量:"
+        for (float x : array) {
+            std::cout << x << " ";
+        }
+    }
 }
