@@ -2,12 +2,12 @@
  * 題目: https://leetcode.com/problems/two-sum/description/
  *
  * 題目解釋:
- * 給一組不重複的正整數vector和一個target，找出能vector中兩個數相加等於target
- * 並且return兩數的index。
+ * 給一組不重複的正整數vector和一個target，找出能vector中兩個數相加等於target並且return
+ * 兩數的index。
  *
  * 思路:
- * 使用unordered_map來記錄每個數的index，並且利用target-nums[i]來找尋另一個數
- * 是否存在於vector中。
+ * 使用unordered_map來記錄每個數的index，並且利用target-nums[i]來找尋另一個數是否存在於
+ * vector中。
  */
 #include <iostream>
 #include <unordered_map>

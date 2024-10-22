@@ -7,9 +7,10 @@
  * e.g. l1：1->5->3，l2：4->5->6，相加後為5->0->0->1。
  *
  * 思路:
- * 先將l1和l2持續相加，直到l1或l2的下個node為nullptr時停止。接著判斷l2是否比l1長，是的話就
- * 把l2剩下的部分加到l1的後面。最後依照k的值決定使否要進位，又分成兩種狀況：1.l1->next為nullptr時，
- * 直接將l1->next建立一個新的node，值為k，2.繼續將l1剩餘部分進行進位操作。
+ * 創建一個新的link list來存放l1和l2相加的結果，dummy是一個link list的虛擬頭節點，其指向
+ * 一個link list的head，也就是說dummy->next才是真正的head。遍歷l1和l2將其當前的值和carry
+ * 相加，將得到的值%10存入新的link list中，直到l1和l2遍歷完，若是carry不為0，則將carry加入
+ * 新的link list中。
  */
 #include <iostream>
 
@@ -29,40 +30,29 @@ struct ListNode {
 class Solution {
   public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        int k = 0;           // k用來表示進位
-        ListNode *head = l1; // 紀錄l1的起始位置
+        ListNode dummy(0);          // 創建一個虛擬頭節點
+        ListNode *current = &dummy; // 指向虛擬頭節點的指標
+        int carry = 0;              // 用於保存進位
 
-        while (true) {
-            int sum = l1->val + l2->val + k; // 計算兩個node的值和進位的總和
-            l1->val = sum % 10;              // 計算進位後的值
-            k = sum / 10;                    // 計算進位
+        // 遍歷l1和l2直到兩者都為nullptr，並處理進位
+        while (l1 != nullptr || l2 != nullptr || carry != 0) {
+            int sum = carry; // 初始值為進位
 
-            if (!l1->next || !l2->next) { /// 當l1或l2的下一個node為nullptr時就跳出迴圈
-                break;
+            if (l1 != nullptr) {
+                sum += l1->val; // 加上l1當前節點的值
+                l1 = l1->next;  // 移動到下一個節點
+            }
+            if (l2 != nullptr) {
+                sum += l2->val; // 加上l2當前節點的值
+                l2 = l2->next;  // 移動到下一個節點
             }
 
-            l1 = l1->next;
-            l2 = l2->next;
+            carry = sum / 10;                       // 計算新的進位
+            current->next = new ListNode(sum % 10); // 創建新節點存放相加的結果
+            current = current->next;
         }
 
-        if (l2->next) { // 當l2的長度大於l1時，將l2的剩餘部分加到l1的後面
-            l1->next = l2->next;
-        }
-
-        while (k) {          // 當k不為0時，l1要繼續計算進位
-            if (!l1->next) { // 當l1的下一個node為nullptr時，建立新的node，值為k
-                l1->next = new ListNode(k);
-                break;
-            }
-
-            // 若l1的下一個node不為nullptr，繼續計算進位
-            l1 = l1->next; // 當前l1是已經計算過的，所以要切換至下個node
-            int sum = l1->val + k;
-            l1->val = sum % 10;
-            k = sum / 10;
-        }
-
-        return head;
+        return dummy.next; // 返回結果鏈表（跳過虛擬頭節點）
     }
 };
 
