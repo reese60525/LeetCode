@@ -1,124 +1,72 @@
+/*
+ * 題目: https://leetcode.com/problems/add-two-numbers/description/
+ *
+ * 題目解釋:
+ * 給兩個儲存正整數的link list，各自代表一個整數的倒序，求將兩個link list相加後的倒序結果。
+ * link list的長度不一定等長!
+ * e.g. l1：1->5->3，l2：4->5->6，相加後為5->0->0->1。
+ *
+ * 思路:
+ * 先將l1和l2持續相加，直到l1或l2的下個node為nullptr時停止。接著判斷l2是否比l1長，是的話就
+ * 把l2剩下的部分加到l1的後面。最後依照k的值決定使否要進位，又分成兩種狀況：1.l1->next為nullptr時，
+ * 直接將l1->next建立一個新的node，值為k，2.繼續將l1剩餘部分進行進位操作。
+ */
 #include <iostream>
-using namespace std;
 
-//  Definition for singly-linked list.
-struct ListNode
-{
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
+
+struct ListNode {
     int val;
     ListNode *next;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
+class Solution {
+  public:
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+        int k = 0;           // k用來表示進位
+        ListNode *head = l1; // 紀錄l1的起始位置
 
-ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
-{
-    ListNode *first_l1 = new ListNode;
-    first_l1 = l1;
-    int a = 0; // a:進位
-    while (true)
-    {
-        int temp1 = l1->val, temp2 = l2->val;
-        l1->val = (l1->val + l2->val + a) % 10;
-        // cout << "temp1= " << temp1 << ", tmep2= " << temp2 << ", a_before= " << a;
-        ((temp1 + temp2 + a) >= 10) ? a = 1 : a = 0;
-        // cout << ", a_after= " << a << endl;
-        if (l1->next == NULL || l2->next == NULL)
-            break;
-        l1 = l1->next;
-        l2 = l2->next;
-    }
-    if (l1->next != NULL && l2->next == NULL)
-    {
-        l1 = l1->next;
-        while (true)
-        {
-            int temp = l1->val;
-            l1->val = (l1->val + a) % 10;
-            ((temp + a) >= 10) ? a = 1 : a = 0;
-            if (l1->next == NULL)
+        while (true) {
+            int sum = l1->val + l2->val + k; // 計算兩個node的值和進位的總和
+            l1->val = sum % 10;              // 計算進位後的值
+            k = sum / 10;                    // 計算進位
+
+            if (!l1->next || !l2->next) { /// 當l1或l2的下一個node為nullptr時就跳出迴圈
                 break;
+            }
+
             l1 = l1->next;
-        }
-    }
-    else if (l1->next == NULL && l2->next != NULL)
-    {
-        l2 = l2->next;
-        while (true)
-        {
-            ListNode *newNode = new ListNode;
-            newNode->next = NULL;
-            l1->next = newNode;
-            l1 = l1->next;
-            l1->val = (l2->val + a) % 10;
-            ((l2->val + a) >= 10) ? a = 1 : a = 0;
-            if (l2->next == NULL)
-                break;
             l2 = l2->next;
         }
-    }
-    // cout << "a= " << a << endl;
-    if (a == 1)
-    {
-        ListNode *newNode = new ListNode;
-        newNode->next = NULL;
-        l1->next = newNode;
-        l1 = l1->next;
-        l1->val = 1;
-    }
-    return first_l1;
-}
 
-int main()
-{
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
-    ListNode *l1 = new ListNode, *l2 = new ListNode, *l1_head = new ListNode, *l2_head = new ListNode;
-    l1_head = l1;
-    l2_head = l2;
-    int a[] = {2, 4, 3, 4}, b[] = {5, 6, 4, 8};
-    for (int i = 0; i < 4; ++i)
-    {
-        l1->val = a[i];
-        l2->val = b[i];
-        if (i < 3)
-        {
-            l1->next = new ListNode;
-            l2->next = new ListNode;
-            l1->next->next = NULL;
-            l2->next->next = NULL;
+        if (l2->next) { // 當l2的長度大於l1時，將l2的剩餘部分加到l1的後面
+            l1->next = l2->next;
         }
-        l1 = l1->next;
-        l2 = l2->next;
-    }
 
-    l1 = l1_head;
-    cout << "l1:";
-    while (true)
-    {
-        cout << l1->val << ", ";
-        if (l1->next == NULL)
-            break;
-        l1 = l1->next;
+        while (k) {          // 當k不為0時，l1要繼續計算進位
+            if (!l1->next) { // 當l1的下一個node為nullptr時，建立新的node，值為k
+                l1->next = new ListNode(k);
+                break;
+            }
+
+            // 若l1的下一個node不為nullptr，繼續計算進位
+            l1 = l1->next; // 當前l1是已經計算過的，所以要切換至下個node
+            int sum = l1->val + k;
+            l1->val = sum % 10;
+            k = sum / 10;
+        }
+
+        return head;
     }
-    l2 = l2_head;
-    cout << "\r\nl2:";
-    while (true)
-    {
-        cout << l2->val << ", ";
-        if (l2->next == NULL)
-            break;
-        l2 = l2->next;
-    }
-    cout << endl;
-    ListNode *l3 = new ListNode;
-    l3 = addTwoNumbers(l1_head, l2_head);
-    cout << "l3:";
-    while (true)
-    {
-        cout << l3->val << ", ";
-        if (l3->next == NULL)
-            break;
-        l3 = l3->next;
-    }
+};
+
+int main() {
+
     return 0;
 }
