@@ -1,12 +1,12 @@
 /*
- * 題目: https://leetcode.com/problems/add-two-numbers/description/
+ * 題目：https://leetcode.com/problems/add-two-numbers/description/
  *
- * 題目解釋:
+ * 題目解釋：
  * 給兩個儲存正整數的link list，各自代表一個整數的倒序，求將兩個link list相加後的倒序結果。
  * link list的長度不一定等長!
  * e.g. l1：1->5->3，l2：4->5->6，相加後為5->0->0->1。
  *
- * 思路:
+ * 思路：
  * 創建一個新的link list來存放l1和l2相加的結果，dummy是一個link list的虛擬頭節點，其指向
  * 一個link list的head，也就是說dummy->next才是真正的head。遍歷l1和l2將其當前的值和carry
  * 相加，將得到的值%10存入新的link list中，直到l1和l2遍歷完，若是carry不為0，則將carry加入
