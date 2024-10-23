@@ -1,56 +1,66 @@
+/*
+ * 題目：https://leetcode.com/problems/longest-palindromic-substring/description/
+ *
+ * 題目解釋：
+ * 給一個string，只包含數字和英文字母，回傳最大長度的 palindromic substring (回文子字串)
+ * 回文是指一個string從前面讀和從後面讀一模一樣，e.g. abba。
+ * 思路：
+ * 把string中每個字元當作中心點往兩側尋找迴文，其中又分為奇數迴文和偶數迴文，遍歷string來找到
+ * 最長的迴文。
+ */
 #include <iostream>
-using namespace std;
 
-string longestPalindrome(string s) {
-    int max[2] = {1, 1}, index_begin[2] = {0, 0}, index_end[2] = {0, 0};
-    for (int i = 0; i < s.length(); ++i) {
-        // 處理odd (ex:aba)
-        int count = 1;
-        while (true) {
-            if ((i - count < 0 || i + count >= s.length()) || (s[i - count] != s[i + count])) {
-                int now_count = 2 * (count - 1) + 1;
-                if (now_count > max[0]) {
-                    index_begin[0] = i - (count - 1);
-                    index_end[0] = i + (count - 1);
-                    max[0] = now_count;
-                }
-                break;
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
+
+class Solution {
+  public:
+    std::string longestPalindrome(std::string s) {
+        std::pair<int, int> res_index = {0, 0}; // 最長迴文子字串的起始index和終點index
+
+        for (int i = 0; i < s.length(); ++i) {
+            std::pair<int, int> sub_odd = findPalindromic(i, i, s);      // 奇數回文
+            std::pair<int, int> sub_even = findPalindromic(i, i + 1, s); // 偶數回文
+
+            // 若sub_odd比res_index長，則更新res_index
+            if ((res_index.second - res_index.first) < (sub_odd.second - sub_odd.first)) {
+                res_index = sub_odd;
             }
-            ++count;
-        }
-        // 處理even (ex:aa)
-        count = 1;
-        while (true) {
-            if ((i - count + 1 < 0 || i + count >= s.length()) ||
-                (s[i - count + 1] != s[i + count])) {
-                int now_count = 2 * (count - 1);
-                if (now_count > max[1]) {
-                    index_begin[1] = i - (count - 2);
-                    index_end[1] = i + (count - 1);
-                    max[1] = now_count;
-                }
-                break;
+            // 若sub_even比res_index長，則更新res_index
+            if ((res_index.second - res_index.first) < (sub_even.second - sub_even.first)) {
+                res_index = sub_even;
             }
-            ++count;
         }
+
+        // 將res_index轉成string
+        std::string res = "";
+        for (int i = res_index.first; i <= res_index.second; ++i) {
+            res += s[i];
+        }
+
+        return res;
     }
-    // 選max大的
-    string ans = "";
-    if (max[1] > max[0]) {
-        index_begin[0] = index_begin[1];
-        index_end[0] = index_end[1];
+
+  private:
+    //  尋找以left和right為中心點的回文
+    std::pair<int, int> findPalindromic(int left, int right, std::string &s) {
+        int len = s.length();
+
+        // 判斷邊界條件和兩側字元是否相等
+        while (left > -1 && right < len && s[left] == s[right]) {
+            --left;
+            ++right;
+        }
+
+        // 因為while loop最後會多執行一次，所以left和right要各往中心退一格
+        return {left + 1, right - 1};
     }
-    for (int i = index_begin[0]; i <= index_end[0]; ++i) {
-        ans += s[i];
-    }
-    return ans;
-}
+};
 
 int main() {
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
-    string s;
-    while (cin >> s) {
-        cout << longestPalindrome(s) << endl;
-    }
+
     return 0;
 }
