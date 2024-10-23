@@ -37,10 +37,10 @@ class Solution {
         }
 
         int cur_row = 0, dir = -1; // 初始row為第一層，dir為移動方向
-        std::vector<std::string> temp(numRows, "");
+        std::vector<std::string> res(numRows);
 
         for (int i = 0; i < s.length(); ++i) {
-            temp[cur_row] += s[i];
+            res[cur_row] += s[i];
 
             // 判斷目前row是否處於邊界，是的話則要改變移動方向
             if (cur_row == 0 || cur_row == numRows - 1) {
@@ -49,13 +49,12 @@ class Solution {
             cur_row += dir; // 移動至下一層row
         }
 
-        // 將所有vector[i]串接成string
-        std::string res = "";
-        for (std::string &s : temp) {
-            res += s;
+        // 將所有res[i]串接成到res[0]
+        for (int i = 1; i < numRows; ++i) {
+            res[0] += res[i];
         }
 
-        return res;
+        return res[0];
     }
 };
 
