@@ -1,26 +1,44 @@
+/*
+ * 題目：https://leetcode.com/problems/palindrome-number/description/
+ *
+ * 題目解釋：
+ * 給一個整數，以string的形式來看該整數是不是一個迴文。
+ * e.g. 121 => true， -121 => false，123 => false。
+ *
+ * 思路：
+ * 首先負數一定不是迴文，以input number的bit數來進行奇數迴文或是偶數迴文的判斷。
+ */
 #include <iostream>
-#include <vector>
-using namespace std;
 
-bool isPalindrome(int x)
-{
-    string a = to_string(x);
-    if (x < 0)
-        return false;
-    else if (x > -1 && x < 10)
-        return true;
-    else
-        for (int i = 0; i < a.length() / 2; ++i)
-            if (a[i] != a[a.length() - 1 - i])
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
+
+class Solution {
+  public:
+    bool isPalindrome(int x) {
+        if (x < 0) {
+            return false;
+        }
+
+        std::string s = std::to_string(x);
+        int l = 0, r = s.length() - 1;
+
+        while (l <= r) {
+            if (s[l] != s[r]) {
                 return false;
-    return true;
-}
+            }
+            ++l;
+            --r;
+        }
 
-int main()
-{
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
-    int n;
-    while (cin >> n)
-        cout << isPalindrome(n) << endl;
+        return true;
+    }
+};
+
+int main() {
+
     return 0;
 }
