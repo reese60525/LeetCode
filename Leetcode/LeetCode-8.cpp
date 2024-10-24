@@ -1,46 +1,72 @@
+/*
+ * 題目：https://leetcode.com/problems/string-to-integer-atoi/description/
+ *
+ * 題目解釋：
+ * 給一個string，實做類似Atoi(string s)的function，有以下規則：
+ * 1.無視所有前導空白格。 e.g. "   123" => 123
+ * 2.若遇到'+'，輸出的數字為正數，若遇到'-'，輸出的數字為負數。 e.g. "  -123" => -123
+ * 3.所有前導0都要被無視。 e.g. "  -000032" => 32
+ * 4.若得到的數字超出int範圍，正數輸出INT_MAX，負數輸出INT_MIN。 e.g. " -00999999123444" => INT_MIN
+ * 5.若遇到非數字字元，則結束。 e.g. "  -000032a" => 32， "  -A32S" => 0
+ * 其他範例：" - 0322" => 0 因為正負號後面必須接數字。
+ *
+ * 思路：
+ * 依照題目要求寫一堆if判斷，code內的註解很詳細了，直接看code。
+ */
+#include <climits>
 #include <iostream>
-using namespace std;
 
-int myAtoi(string s) {
-    int is_negative = 1;
-    long long ans = 0;
-    bool read_nums = false, erase_headZero = true;
-    for (int i = 0; i < s.length(); ++i) {
-        // "abc 123" 先文字在數字要return 0
-        if (s[i] != ' ' && s[i] != '+' && s[i] != '-' && (s[i] < 48 || s[i] > 57))
-            break;
-        if (read_nums && (s[i] < 48 || s[i] > 57)) // 讀完一組數字後跳出迴圈
-            break;
-        if (s[i] == '+' && (s[i + 1] < 48 || s[i + 1] > 57)) { // " + 1"正號後不是數字要return 0
-            break;
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
+
+class Solution {
+  public:
+    int myAtoi(std::string s) {
+        bool sign = false; // sign為正負號
+        int i = 0;         // s的index
+        long long res = 0;
+
+        while (i < s.length() && s[i] == ' ') { // 跳過前導空白格
+            ++i;
         }
-        if (s[i] == '-' && (s[i + 1] < 48 || s[i + 1] > 57)) { // " - 1"負號後不是數字要return 0
-            break;
+
+        // 判斷正負號，並讓i+1來跳過符號
+        if (s[i] == '+') {
+            sign = false;
+            ++i;
         }
-        if (erase_headZero && (s[i] >= 49 && s[i] <= 57)) //"000123"的0都跳過
-            erase_headZero = false;
-        if ((s[i] >= 48 && s[i] <= 57)) { // 確認是否開始讀數字
-            if (i > 0 && s[i - 1] == '-') // 確認該數是正還是負
-                is_negative = -1;
-            read_nums = true;
+        else if (s[i] == '-') {
+            sign = true;
+            ++i;
         }
-        if (read_nums && !erase_headZero && (s[i] >= 48 && s[i] <= 57)) {
-            ans = ans * 10 + (s[i] - '0');
-            if (ans * is_negative > INT_MAX) // 超過int範圍就return 0
-                return INT_MAX;
-            if (ans * is_negative < INT_MIN) // 超過int範圍就return 0
+
+        // 開始讀取數字
+        while (i < s.length()) {
+            // 判斷當前字元是否為數字
+            if (s[i] - '0' < 0 || s[i] - '0' > 9) {
+                break;
+            }
+
+            res = res * 10 + (s[i] - '0');
+
+            // 判斷res是否超出int範圍
+            if ((sign && -res < INT_MIN)) {
                 return INT_MIN;
+            }
+            else if (!sign && res > INT_MAX) {
+                return INT_MAX;
+            }
+            ++i;
         }
+
+        return sign ? -res : res; // 根據正負號回傳res或-res
     }
-    return ans * is_negative;
-}
+};
 
 int main() {
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
-    string input = "-12+23";
-    cout << myAtoi(input) << endl;
-    // while (cin >> input) {
-    //     cout << myAtoi(input) << endl;
-    // }
+
     return 0;
 }
