@@ -9,6 +9,8 @@
  * s1 = "abcd" s2 = ".*d"，s2表示「有0~n個'.'加上1個d」，因此這個範例的s2能滿足s1，return true。
  *
  * 思路：
+ * 這網頁的解說寫得不錯：https://reurl.cc/dyZLM2。
+ *
  * 建立dp表，由小段問題開始填表，並觀察dp之間的轉換關係，建立dp狀態轉移公式。
  * dp[i][j]的值表示「 s的前i個字元組成的字串 」能否被「 p的前j個字元組成的字串 」所滿足，
  * e.g. s = "mississippi"、p = "mis*i.*p*i"、dp[5][7] = true，表示"missi"能被"mis*i.*"滿足。
