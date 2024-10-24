@@ -1,38 +1,53 @@
-#include <cmath>
+/*
+ * 題目：https://leetcode.com/problems/reverse-integer/description/
+ *
+ * 題目解釋：
+ * 將整數反轉，如果反轉後超出int範圍，則回傳0。整個code不可用到超過32bit以上的變數。
+ * e.g. 123 -> 321，-123 -> -321，120 -> 21
+ *
+ * 思路：
+ * 紀錄input number的正負，若為負數則先轉正，因為INT_MIN轉換成正數會overflow，所以要
+ * 先判斷x是否等於INT_MIN。在res添加新的digit之前先判斷當前res有沒有超出int範圍，透過
+ * (res * 10 + digit) <= INT_MAX，可得 res <= (INT_MAX - digit) / 10 此判斷條件。
+ */
 #include <iostream>
 
-using namespace std;
-int reverse(int x) {
-    int is_negative = 1, ans = 0;
-    if (x == -2147483648)
-        return 0;
-    if (x < 0) {
-        is_negative = -1;
-        x *= -1;
-    }
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
 
-    if (int(x / pow(10, 9)) > 0) {
-        for (int i = 9; i >= 0; --i) {
-            if (int(x / pow(10, 9 - i)) % 10 > int(INT_MAX / pow(10, i)) % 10) {
-                return 0;
-            } else if (int(x / pow(10, 9 - i)) % 10 < int(INT_MAX / pow(10, i)) % 10) {
-                break;
-            }
+class Solution {
+  public:
+    int reverse(int x) {
+        if (x == INT_MIN) { // 若x為INT_MIN，其-x和反轉x都會超出int範圍，故直接回傳0
+            return 0;
         }
-    }
 
-    while (x > 0) {
-        ans = (ans * 10) + (x % 10);
-        x /= 10;
+        bool sign = 0; // 用於紀錄x的正負
+        int res = 0;
+
+        if (x < 0) {  // 若x為負數則先轉正
+            sign = 1; // sign = 1 表示x為負數
+            x *= -1;
+        }
+
+        while (x > 0) { // 反轉x
+            int digit = x % 10;
+            x /= 10;
+
+            if (res > (INT_MAX - digit) / 10) {
+                return 0;
+            }
+            res = res * 10 + digit;
+        }
+
+        return sign ? -res : res; // 若x為負數則回傳-res，否則回傳res
     }
-    return ans * is_negative;
-}
+};
 
 int main() {
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
-    int x;
-    while (cin >> x) {
-        cout << reverse(x) << endl;
-    }
+
     return 0;
 }
