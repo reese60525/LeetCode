@@ -1,42 +1,60 @@
-#include <algorithm>
+/*
+ * 題目：https://leetcode.com/problems/3sum-closest/description/
+ *
+ * 題目解釋：
+ * 給一個整數array和target，找出array中三相異的數其相加的值最接近target。
+ *
+ * 思路：
+ * 遍歷nums，內部用two pointer來找最接近的值。
+ */
 #include <iostream>
-#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     return nullptr;
 }();
-// two pointer，解法和leetcode 15相似
-int threeSumClosest(std::vector<int> &nums, int target) {
-    int l, r, n = nums.size(), ans = nums[0] + nums[1] + nums[2];
-    sort(nums.begin(), nums.end());
-    for (int i = 0; i < n; ++i) {
-        l = i + 1;
-        r = n - 1;
-        while (l < r) {
-            int sum = nums[i] + nums[l] + nums[r];
-            if (abs(target - ans) > abs(target - sum)) {
-                ans = sum;
+
+class Solution {
+  public:
+    int threeSumClosest(std::vector<int> &nums, int target) {
+        int res = nums[0] + nums[1] + nums[2]; // 初始化res
+        int dis = std::abs(res - target);      // res和target的距離
+
+        // 排序nums讓two pointer能運作
+        std::sort(nums.begin(), nums.end());
+
+        for (int i = 0; i < nums.size(); ++i) {
+            // 重複的num[i]跳過
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
             }
-            if (ans == target) {
-                return ans;
-            }
-            else if (sum < target) {
-                ++l;
-            }
-            else if (sum > target) {
-                --r;
+
+            int l = i + 1, r = nums.size() - 1;
+            while (l < r) {
+                int cur = nums[i] + nums[l] + nums[r];
+                int cur_dis = std::abs(cur - target);
+                if (cur_dis <= dis) { // 判斷cur和target的距離是否比res和target的距離小
+                    res = cur;        // 是的話就更新res和dis
+                    dis = cur_dis;
+                }
+
+                if (cur < target) {
+                    ++l;
+                }
+                else if (cur > target) {
+                    --r;
+                }
+                else { // 如果cur == target，那res就是target，直接回傳
+                    return target;
+                }
             }
         }
+        return res;
     }
-    return ans;
-}
+};
+
 int main() {
-    //-1, -4, 0, 1, 2, 2, 2, -1, -4, 3
-    std::vector<int> input = {-1000, -5, -5, -5, -5, -5, -5, -1, -1, -1};
-    int target;
-    std::cin >> target;
-    std::cout << threeSumClosest(input, target);
+
     return 0;
 }

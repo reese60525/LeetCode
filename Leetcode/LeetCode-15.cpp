@@ -29,6 +29,10 @@ class Solution {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
+            // 當nums[i] > 0時，nums[i] + nums[l] + nums[r]一定 > 0，所以不用繼續做
+            if (nums[i] > 0) {
+                break;
+            }
 
             int l = i + 1, r = nums.size() - 1;
             while (l < r) {
