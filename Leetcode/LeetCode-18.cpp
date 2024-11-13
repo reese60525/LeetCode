@@ -1,7 +1,12 @@
 /*
- * 解法:
- * 和LeetCode第15題3sum的思路是一模一樣，用兩個for迴圈i、j代表兩個數字，再用while跑
- * two pointer找另外兩個數字。
+ * 題目： https://leetcode.com/problems/4sum/description/
+ *
+ * 題目解釋：
+ * 給一組整數array和整數target，找出所有四個整數組合使其總和等於target，並且該組合
+ * 不能重複。
+ *
+ * 思路：
+ * 用雙迴圈遍歷前兩個數的組合，然後在此雙迴圈中用two pointer找另外兩個數字。
  */
 #include <algorithm>
 #include <iostream>
@@ -12,52 +17,63 @@ static const auto io_sync_off = []() {
     std::cin.tie(nullptr);
     return nullptr;
 }();
+
 class Solution {
   public:
     std::vector<std::vector<int>> fourSum(std::vector<int> &nums, int target) {
-        std::vector<std::vector<int>> ans;
-        sort(nums.begin(), nums.end());
-        for (int i = 0; i < signed(nums.size()) - 3; ++i) { // 要用signed的型態，不然遇到nums不到3個都會變成負數，會出錯
-            if (i > 0 && nums[i] == nums[i - 1])            // 重複做過的跳過
-                continue;
-            long long check1 = nums[i] + static_cast<long long>(nums[nums.size() - 1]) * 3;
-            long long check2 = nums[i] + static_cast<long long>(nums[i + 1]) * 3;
-            if (check1 < target || check2 > target) // 超出範圍的就不用再進for(j)浪費時間
-                continue;
+        if (nums.size() < 4) { // array數字數量不足以湊一組
+            return {};
+        }
 
-            for (int j = i + 1; j < signed(nums.size()) - 2; ++j) { // 要用signed的型態，不然遇到nums不到2個都會變成負數，會出錯
-                if (j > i + 1 && nums[j] == nums[j - 1])            // 重複做過的跳過
-                    continue;
-                check1 = static_cast<long long>(nums[i]) + nums[j] + nums[nums.size() - 1] * 2;
-                check2 = static_cast<long long>(nums[i]) + nums[j] + nums[j + 1] * 2;
-                if (check1 < target || check2 > target) // 超出範圍的就不用再進while浪費時間
-                    continue;
+        std::vector<std::vector<int>> res;
 
-                int left = j + 1, right = nums.size() - 1;
-                while (left < right) {
-                    // 先把右式其中一個nums轉成long long type，這樣相加時才不會overflow
-                    long long sum = static_cast<long long>(nums[i]) + nums[right] + nums[j] + nums[left];
-                    if (sum == target) {
-                        ans.emplace_back(std::vector {nums[i], nums[j], nums[left], nums[right]});
-                        while (left < right && nums[left] == nums[left + 1]) { // 重複做過的跳過
-                            ++left;
-                        }
-                        while (left < right && nums[right] == nums[right - 1]) { // 重複做過的跳過
-                            --right;
-                        }
-                        ++left;
-                        --right;
+        std::sort(nums.begin(), nums.end());
+
+        for (int i = 0; i < nums.size() - 3; ++i) {
+            if (i > 0 && nums[i] == nums[i - 1]) { // 重複的數字要跳過
+                continue;
+            }
+
+            long long cur_max = (long long)nums[nums.size() - 1] * 4; // 當前所能達到的最大組合
+            long long cur_min = (long long)nums[i] * 4;               // 當前所能達到的最小組合
+            if (cur_max < target || cur_min > target) {               // 無法滿足target的話就跳出迴圈
+                break;
+            }
+
+            for (int j = i + 1; j < nums.size() - 2; ++j) {
+                if (j > i + 1 && nums[j] == nums[j - 1]) { // 重複的數字要跳過
+                    continue;
+                }
+
+                int l = j + 1, r = nums.size() - 1;
+                while (l < r) {
+                    while (l < r && (long long)nums[i] + nums[j] + nums[l] + nums[r] < target) {
+                        ++l;
                     }
-                    else if (sum < target) {
-                        ++left;
+                    while (l < r && (long long)nums[i] + nums[j] + nums[l] + nums[r] > target) {
+                        --r;
                     }
-                    else {
-                        --right;
+
+                    if (l < r && (long long)nums[i] + nums[j] + nums[l] + nums[r] == target) {
+                        res.push_back({nums[i], nums[j], nums[l], nums[r]});
+                        ++l;
+                        --r;
+                        while (l < r && nums[l] == nums[l - 1]) { // 重複的數字要跳過
+                            ++l;
+                        }
+                        while (l < r && nums[r] == nums[r + 1]) { // 重複的數字要跳過
+                            --r;
+                        }
                     }
                 }
             }
         }
-        return ans;
+
+        return res;
     }
 };
-int main() { return 0; }
+
+int main() {
+
+    return 0;
+}

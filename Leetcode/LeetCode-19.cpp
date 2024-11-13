@@ -34,7 +34,8 @@ ListNode *removeNthFromEnd(ListNode *head, int n) {
     }
     if (n == 1) {
         temp->next = nullptr;
-    } else {
+    }
+    else {
         temp->next = temp->next->next;
     }
     return head;
