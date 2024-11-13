@@ -1,94 +1,55 @@
+/*
+ * 題目： https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
+ *
+ * 題目解釋：
+ * 在電話按鍵上每個數字都有相對應的英文字母組合，給一組數字，找出所有的英文字母組合。
+ *
+ * 思路：
+ * 用backtracking algorithm，依序遞迴每個數字的英文字母，當完成一個組合就放入res中。
+ */
 #include <iostream>
-#include <string>
-#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
     return nullptr;
 }();
-std::vector<std::string> letterCombinations(std::string digits) {
-    int len = 1;
-    std::vector<std::string> ans;
-    std::vector<std::vector<char>> phone_table {
-        {},
-        {},
-        {'a', 'b', 'c'},
-        {'d', 'e', 'f'},
-        {'g', 'h', 'i'},
-        {'j', 'k', 'l'},
-        {'m', 'n', 'o'},
-        {'p', 'q', 'r', 's'},
-        {'t', 'u', 'v'},
-        {'w', 'x', 'y', 'z'}
-    };
-    if (digits.length() == 0) {
-        return ans;
-    }
-    // 總共輸出次數 ex: digits = "234",共有3*3*3個輸出
-    for (int i = 0; i < digits.length(); ++i) {
-        len *= phone_table[(digits[i] - '0')].size();
-    }
-    for (int i = 0; i < len; ++i) {
-        std::string temp = "";
-        int len_temp = len;
-        for (int j = 0; j < digits.length(); ++j) {
-            len_temp /= phone_table[digits[j] - '0'].size(); // len_temp = 幾次一循環
-            int digits_num = digits[j] - '0';
-            temp += phone_table[digits_num][(i / len_temp) % (phone_table[digits_num].size())];
+
+class Solution {
+  public:
+    void backTracking(std::string cur, std::string &digits, std::vector<std::string> &keypad,
+                      std::vector<std::string> &res) {
+        if (cur.length() == digits.length()) { // 一個組合完成，放入res
+            res.push_back(cur);
+            return;
         }
-        std::cout << temp << " ";
-        ans.push_back(temp);
+
+        int n = digits[cur.length()] - '0';              // 當前digit對應到的keypad index
+        for (char ch : keypad[n]) {                      // 遍歷當前digit所對應的英文字母
+            backTracking(cur + ch, digits, keypad, res); // 進入下一層(個)digit
+        }
     }
-    return ans;
-}
+    std::vector<std::string> letterCombinations(std::string digits) {
+        std::vector<std::string> res;
+        std::vector<std::string> keypad {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+
+        if (digits.empty()) {
+            return {};
+        }
+        backTracking("", digits, keypad, res);
+
+        return res;
+    }
+};
 
 int main() {
-    std::string input;
-    std::cin >> input;
-    letterCombinations(input);
+    Solution s;
+    std::string digits = {"235"};
+    std::vector<std::string> res = s.letterCombinations(digits);
+
+    for (std::string &s : res) {
+        std::cout << s << std::endl;
+    }
+
     return 0;
 }
-
-// backtracking algorithm 記憶體使用量大
-// #include <iostream>
-// #include <string>
-// #include <vector>
-
-// static const auto io_sync_off = []() {
-//     std::ios::sync_with_stdio(false);
-//     std::cin.tie(nullptr);
-//     return nullptr;
-// }();
-
-// std::vector<std::string> ans;
-// std::vector<std::string> phone_table {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-
-// void backtracking(std::string digits, std::string temp) {
-//     // 一個answer完成，存進vector
-//     if (digits.empty()) {
-//         // std::cout << temp << ' '; // 印出結果
-//         ans.push_back(temp);
-//         return;
-//     }
-//     // 從digits[0]開始，每個維度對應不同的digits
-//     for (auto letter : phone_table[digits[0] - '2']) {
-//         backtracking(digits.substr(1), temp + letter); // substr(1): digits會從index1到end傳進function
-//     }
-//     return;
-// }
-
-// std::vector<std::string> letterCombinations(std::string digits) {
-//     if (digits.length() == 0) {
-//         return {};
-//     }
-//     backtracking(digits, "");
-//     return ans;
-// }
-
-// int main() {
-//     std::string input;
-//     std::cin >> input;
-//     letterCombinations(input);
-//     return 0;
-// }
