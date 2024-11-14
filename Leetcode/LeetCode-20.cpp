@@ -1,38 +1,54 @@
+/*
+ * 題目： https://leetcode.com/problems/valid-parentheses/description/
+ *
+ * 題目解釋：
+ * 給一個由「大中小括號」組成字串，判斷該字串是否合法。
+ * [] is valid, ][] is not valid, ][ is not valid.
+ *
+ * 思路：
+ * 對於該string，從頭開始遍歷每個字元，當遇到第一個右括號時，其左方的字元必須是相對應的
+ * 左括號，e.g. 對於"(({["接下來的遇到的右括號得是']'，因此可以建立一個stack，當遇到左
+ * 括號時就將其放入stack，若是遇到右括號就判斷stack的top是否為相對應的左括號，是的話就將
+ * stack的top pop掉，整個string遍歷後stack應該為空(每個左括號都有對應到一個右括號)。
+ */
 #include <iostream>
-using namespace std;
+#include <stack>
 
-bool isValid(string s)
-{
-    char sign[] = {'(', ')', '{', '}', '[', ']'};
-    int sign_count[] = {0, 0, 0, 0, 0, 0};
-    for (int i = 0; i < s.length(); ++i) // 預處理字串，把()和{}和[]刪掉
-        if (s[i] == '(' && s[i + 1] == ')' || s[i] == '{' && s[i + 1] == '}' || s[i] == '[' && s[i + 1] == ']')
-        {
-            s.erase(i, 2);
-            --i;
-        }
-    cout << "s: " << s << endl;
-    for (int i = 0; i < s.length(); ++i)
-        for (int j = 0; j < 6; ++j)
-            if (s[i] == sign[j])
-            {
-                ++sign_count[j];
-                if (j % 2 == 0 && s[i + 1] != sign[j + 1] && s[i + 1] != '(' && s[i + 1] != '{' && s[i + 1] != '[') // ex:(],{)
-                    return false;
-                if (j % 2 == 1 && sign_count[j] > sign_count[j - 1]) // 當前右括號的數量比左括號小就false,ex:(()))(
-                    return false;
-                break;
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
+
+class Solution {
+  public:
+    bool isValid(std::string s) {
+        std::stack<char> st;
+
+        for (char &c : s) {
+            if (c == '(' || c == '[' || c == '{') { // 將左括號放入stack
+                st.push(c);
             }
-    if (sign_count[0] != sign_count[1] || sign_count[2] != sign_count[3] || sign_count[4] != sign_count[5]) // 左右括號數量不相等
-        return false;
-    return true;
-}
+            else {
+                if (st.empty()) { // 若stack為空時遇到右括號，e.g. string = ")"，則return false
+                    return false;
+                }
+                // 若stack不為空，則判斷stack的top是否為相對應的左括號，是的話就將stack的top pop掉
+                if (c == ')' && st.top() == '(' || c == ']' && st.top() == '[' || c == '}' && st.top() == '{') {
+                    st.pop();
+                }
+                else {
+                    return false;
+                }
+            }
+        }
 
-int main()
-{
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
-    string input;
-    while (cin >> input)
-        cout << isValid(input) << endl;
+        // 判斷stack是否為空，若為空則代表每個左括號都有對應到一個右括號
+        return (st.empty()) ? true : false;
+    }
+};
+
+int main() {
+
     return 0;
 }
