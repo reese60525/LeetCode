@@ -10,7 +10,6 @@ static const auto io_sync_off = []() {
 }();
 
 int findRoot(int computer_list[], int n) {
-    int root;
     while (computer_list[n] != n) {
         n = computer_list[n];
     }
