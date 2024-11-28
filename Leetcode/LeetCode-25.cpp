@@ -1,3 +1,17 @@
+/*
+ * 題目： https://leetcode.com/problems/reverse-nodes-in-k-group/description/
+ *
+ * 題目解釋：
+ * 給一個linked list和整數k，將linked list的node每k個分成一組，將每組的連接方向反轉，
+ * 不足k個的那組不用反轉，將這些反轉後的linked list串起來並回傳head。
+ * e.g. linked list = {1, 2, 3, 4, 5, 6, 7, 8}，k = 3，分組反轉後會變成
+ * {{3, 2, 1}, {6, 5, 4}, {7, 8}}，串起來得到新的linked list = {3, 2, 1, 6, 5, 4, 7, 8}
+ *
+ * 思路：
+ * 判斷剩餘node有沒有>=k個，不夠的話直接回傳head，夠的話就開始reverse，將每個node都指向前一個node，
+ * 像是1->2->3會變成3->2->1->nullptr，而一開始的head(1)要指向下一組反轉後的head，因此可以用下一組
+ * 的head去遞迴這個reverseKGroup function，將反轉後的head回傳，不斷重複遞迴即可得到答案。
+ */
 #include <iostream>
 
 static const auto io_sync_off = []() {
@@ -17,57 +31,35 @@ struct ListNode {
 class Solution {
   public:
     ListNode *reverseKGroup(ListNode *head, int k) {
-        ListNode *ans = new ListNode, *begin = new ListNode(-1), *next = new ListNode(-1), *pre = new ListNode(-1);
-        bool does_get_ans = false;
-        while (head) {
-            ListNode *check = new ListNode;
-            check = head;
-            // check剩下的node夠不夠reverse
-            for (int i = 1; i < k; ++i) {
-                check = check->next;
-                if (check == nullptr)
-                    return ans;
+        ListNode *cur = head;
+
+        // 檢查剩下的node夠不夠reverse
+        for (int i = 0; i < k; ++i) {
+            if (cur == nullptr) {
+                return head;
             }
-            // build return_head
-            if (!does_get_ans) {
-                ans = check;
-                does_get_ans = true;
-            }
-            // 開始reverse
-            begin->next = check;
-            begin = head;
-            next = head->next;
-            for (int i = 1; i < k; ++i) {
-                pre = head;
-                head = next;
-                next = head->next;
-                head->next = pre;
-            }
-            begin->next = next;
-            head = next;
+            cur = cur->next;
         }
-        return ans;
+
+        // 將所有node指向前一個node，head會先指向nullptr
+        cur = head;
+        ListNode *pre = nullptr;
+        ListNode *next = nullptr;
+        for (int i = 0; i < k; ++i) {
+            next = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        // 將最後一個node(head)指向下一個group反轉後的head
+        head->next = reverseKGroup(cur, k);
+        // 返回反轉後的head
+        return pre;
     }
 };
+
 int main() {
-    Solution solution;
-    ListNode *head = new ListNode, *new_head = new ListNode, *return_node = new ListNode;
-    new_head = head;
-    int k = 4, nums[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
-    for (int i = 0; i < sizeof(nums) / 4; ++i) {
-        head->val = nums[i];
-        if (i == sizeof(nums) / 4 - 1) {
-            head->next = nullptr;
-            break;
-        }
-        ListNode *new_node = new ListNode;
-        head->next = new_node;
-        head = head->next;
-    }
-    return_node = solution.reverseKGroup(new_head, k);
-    while (return_node != nullptr) {
-        std::cout << return_node << ", " << return_node->val << '\n';
-        return_node = return_node->next;
-    }
+
     return 0;
 }
