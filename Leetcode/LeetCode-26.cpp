@@ -1,33 +1,40 @@
+/*
+ * 題目： https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+ *
+ * 題目解釋：
+ * 給一組升序 integer array，將所有不重複的整數存到該 array 的前端，並回傳不重複整數的數量。
+ * e.g. {1, 1, 2, 3, 4, 4, 5} => {1, 2, 3, 4, 5, _, _}，_為不在乎其值，return 5。
+ *
+ * 思路：
+ * 設 idx 表示當前不重複的整數數量，從 index = 1 開始遍歷 array，利用升序 array 的特性，
+ * 如果 array[i] != array[i - 1]，表示 array[i] 是新遇到的不重複整數，將該數存到 array[idx]
+ * ，並將 idx + 1。
+ */
 #include <iostream>
-using namespace std;
 
-int removeDuplicates(vector<int> &nums) {
-    // 超慢寫法 遇到相同的就刪掉一次
-    // int k = 0;
-    // for (int i = 0; i < nums.size() - 1; ++i) {
-    //     if (nums[i] == nums[i + 1]) {
-    //         nums.erase(nums.begin() + i + 1);
-    //         --i;
-    //     } else {
-    //         ++k;
-    //     }
-    // }
-    // return ++k;
+static const auto io_sync_off = []() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    return nullptr;
+}();
 
-    // 比較快的寫法 遇到不同的就一次把相同的整段刪掉
-    int k = 0;
-    for (int i = 0; i < nums.size(); ++i) {
-        if (nums[k] != nums[i]) {
-            nums.erase(nums.begin() + k + 1, nums.begin() + i);
-            ++k;
-            i = k;
+class Solution {
+  public:
+    int removeDuplicates(std::vector<int> &nums) {
+        int idx = 1;
+
+        for (int i = 1; i < nums.size(); ++i) {
+            if (nums[i] != nums[i - 1]) {
+                nums[idx] = nums[i];
+                ++idx;
+            }
         }
+
+        return idx;
     }
-    if (nums[k] == nums[nums.size() - 1])
-        nums.erase(nums.begin() + k + 1, nums.end());
-    return ++k;
-}
+};
 
 int main() {
-    // cin.sync_with_stdio(false); cin.tie(nullptr);
+
+    return 0;
 }
