@@ -33,7 +33,7 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     std::vector<int> findSubstring(std::string s, std::vector<std::string> &words) {
-        std::string_view S(s);
+        std::string_view S(s); // 由於有大量的 substr，因此改用 string_view 提高效率。
         int word_len = words[0].length();
         // 紀錄words中每個word的出現次數
         std::unordered_map<std::string_view, int> words_frequency;
