@@ -33,11 +33,12 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     std::vector<int> findSubstring(std::string s, std::vector<std::string> &words) {
+        std::string_view S(s);
         int word_len = words[0].length();
         // 紀錄words中每個word的出現次數
-        std::unordered_map<std::string, int> words_frequency;
+        std::unordered_map<std::string_view, int> words_frequency;
         for (const std::string &word : words) {
-            ++words_frequency[word];
+            ++words_frequency[std::string_view(word)];
         }
 
         std::vector<int> res;
@@ -45,12 +46,12 @@ class Solution {
             // substring的起始index和substring中的word數量
             int substring_head = i, words_count = 0;
             // 紀錄當前substring中每個word的出現次數
-            std::unordered_map<std::string, int> curr_frequency;
-            for (int j = i; j + word_len <= s.length(); j += word_len) {
-                std::string word = s.substr(j, word_len);
+            std::unordered_map<std::string_view, int> curr_frequency;
+            for (int j = i; j + word_len <= S.length(); j += word_len) {
+                std::string_view word = S.substr(j, word_len);
 
                 // 該word不在words中
-                if (words_frequency.count(word) == 0) {
+                if (words_frequency.find(word) == words_frequency.end()) {
                     // substring起始index移動到下一個word的開頭
                     substring_head = j + word_len;
                     words_count = 0;
@@ -66,7 +67,7 @@ class Solution {
                 // 則要將該word在substring中第一次出現的word以及前面的其他word通通移除
                 while (curr_frequency[word] > words_frequency[word]) {
                     // 取得substring中第一個word，將其出現次數-1，substring起始index移動到下一個word的開頭
-                    std::string first_word = s.substr(substring_head, word_len);
+                    std::string_view first_word = S.substr(substring_head, word_len);
                     --curr_frequency[first_word];
                     --words_count;
                     substring_head += word_len;
