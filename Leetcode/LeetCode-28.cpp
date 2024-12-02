@@ -38,6 +38,7 @@ class Solution {
             while (j > 0 && needle[i] != needle[j]) {
                 j = LPS_table[j - 1];
             }
+
             // 如果匹配，增加 prefix 長度
             if (needle[i] == needle[j]) {
                 ++j;
