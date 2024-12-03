@@ -1,3 +1,20 @@
+/*
+ * 題目： https://leetcode.com/problems/search-insert-position/description/
+ *
+ * 題目解釋：
+ * 給一個 ascending order integer array 和 integer target，求該 target 在 array
+ * 中的 index，若 target 不存在於 array 中，則 return target 在此 array 應該所在的
+ * index。
+ * e.g.
+ * array = {1, 2, 3}，target = 4，return index = 4 because if 4 in array，
+ * array will be {1, 2, 3, 4}，and index of 4 is 4。
+ * array = {1, 2, 4, 5}，target = 3，return index = 2。
+ * array = {1, 3, 4, 5, 6}，target = 5，return index = 3。
+ *
+ * 思路：
+ * binary search 去搜索，若找到直接 return index，找不到則 binary search 結束後，l 的
+ * 位置就是 target 應該在的位置。
+ */
 #include <iostream>
 
 static const auto io_sync_off = []() {
@@ -6,44 +23,31 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-// TEST CASE
-// 1 2 3 4 5 6 7 8 9 10 > 8
-// begin = 0, end = 10, 6 < 8 => begin = (begin+end)/2
-// begin = 5, end = 10, 8 == 8 => return 7
-// 1 2 3 4 5 6 7 9 10 >　8
-// begin = 0, end = 9, 5 < 8 => begin = (begin+end)/2
-// begin = 4, end = 9, 7 < 8 => begin = (begin+end)/2
-// begin = 6, end = 9, 9 > 8 => end = (begin+end)/2
-// begin = 6, end = 7, end - begin == 1 => return nums[begin] > target ? begin : begin + 1
-// 1 3 5 6 > 0
-// begin =0, end = 4, 5 > 0 => end = (begin+end)/2
-// begin = 0, end = 2, 3 > 0 => end = (begin+end)/2
-// begin = 0, end = 1, end - begin == 1 => return nums[begin] > target ? begin : begin + 1
-// 1 3 > 0
-// begin = 0, end = 2, 3 > 0 => end = (begin+end)/2
-// begin = 0, end = 1, end - begin == 1 => return nums[begin] > target ? begin : begin + 1
-
 class Solution {
   public:
     int searchInsert(std::vector<int> &nums, int target) {
-        int begin = 0, end = nums.size();
-        while (true) {
-            if (nums[(begin + end) / 2] == target)
-                return (begin + end) / 2;
-            if (end - begin == 1)
-                return nums[begin] > target ? begin : begin + 1;
-            else if (nums[(begin + end) / 2] < target)
-                begin = (begin + end) / 2;
-            else
-                end = (begin + end) / 2;
+        int l = 0, r = nums.size() - 1;
+        // 要用小於等於，這樣 l = r 時，mid = l = r
+        // 因此不管 nums[mid] 是大於或小於 target，l 都會是 target 應該在的位置
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[mid] < target) {
+                l = mid + 1;
+            }
+            else {
+                r = mid - 1;
+            }
         }
+
+        return l;
     }
 };
 
 int main() {
-    Solution solution;
-    std::vector<int> nums {1, 2, 3, 4, 5, 6, 7, 9, 10};
-    int target = 8;
-    std::cout << solution.searchInsert(nums, target) << '\n';
+
     return 0;
 }
