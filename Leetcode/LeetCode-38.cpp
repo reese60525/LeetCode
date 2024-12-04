@@ -14,7 +14,7 @@
  * "21" + "22" + "13" + "22" + "34" + "12" + "11" = "21221322341211"。
  *
  * 思路：
- * 從 n = 2 開始迭代。
+ * 從本質上來說這是一個遞迴問題，因此只要從 k = 1 時的狀態開始迭代到 k = n 的狀態即可得到答案。
  */
 #include <iostream>
 
@@ -35,7 +35,7 @@ class Solution {
             int count = 1;
             std::string next;
 
-            // 計算當前字串的 RLE
+            // 計算 k = i 的字串，也就是 k = i-1 字串的 RLE
             for (int j = 1; j < cur.length(); ++j) {
                 if (cur[j] != cur[j - 1]) {
                     // 出現次數 + 字元
@@ -44,7 +44,7 @@ class Solution {
                 }
                 ++count;
             }
-            // 別忘了最後一個字元
+            // 加上最後一個字元
             next += std::to_string(count) + cur.back();
             // 更新當前字串
             cur = std::move(next);
