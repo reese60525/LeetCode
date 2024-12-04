@@ -8,7 +8,7 @@
  * 使用backtracking來暴力解，並配合以下兩個方式來優化整體效率：
  * 1. 使用 bitset 來儲存每個 row, col, block 已經填入的數字，以加快檢查的速度。
  * 2. 使用 greedy algorithm 來決定下一個要填入的格子，從當前可以填充的格子中選擇
- *    能填充的數字選項最少的，這樣填錯的機率比較小，以回朔的次數。
+ *    能填充的數字選項最少的，這樣填錯的機率比較小，能減少回朔的次數。
  */
 #include <iostream>
 
@@ -81,9 +81,6 @@ class Solution {
 
     void solveSudoku(std::vector<std::vector<char>> &board) {
         // 初始化三個 bitset<9> 的 vector，這是用來紀錄每個 row, col, block 已經填入的數字
-        check_row = std::vector<std::bitset<9>>(9, std::bitset<9>());
-        check_col = std::vector<std::bitset<9>>(9, std::bitset<9>());
-        check_block = std::vector<std::vector<std::bitset<9>>>(3, std::vector<std::bitset<9>>(3, std::bitset<9>()));
         int remain = 0; // 剩餘要填的格子數量
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
@@ -104,9 +101,9 @@ class Solution {
     }
 
   private:
-    std::vector<std::bitset<9>> check_row;
-    std::vector<std::bitset<9>> check_col;
-    std::vector<std::vector<std::bitset<9>>> check_block;
+    std::bitset<9> check_row[9];
+    std::bitset<9> check_col[9];
+    std::bitset<9> check_block[3][3];
 };
 
 int main() {

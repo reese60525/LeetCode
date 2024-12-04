@@ -24,11 +24,6 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     bool isValidSudoku(std::vector<std::vector<char>> &board) {
-        // 用來 check row column and block 中是否有重複的數字
-        bool check_row[9][9] = {false};
-        bool check_col[9][9] = {false};
-        bool check_block[9][9] = {false};
-
         // 遍歷 board，並且檢查是否有重複的數字
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
@@ -38,17 +33,23 @@ class Solution {
 
                 // 將數字轉換成數字 0 ~ 8 的 index
                 int num = board[i][j] - '1';
-                if (check_row[i][num] || check_col[j][num] || check_block[(i / 3) * 3 + j / 3][num]) {
+                if (check_row[i][num] || check_col[j][num] || check_block[i / 3][j / 3][num]) {
                     return false;
                 }
                 check_row[i][num] = true;
                 check_col[j][num] = true;
-                check_block[(i / 3) * 3 + j / 3][num] = true;
+                check_block[i / 3][j / 3][num] = true;
             }
         }
 
         return true;
     }
+
+  private:
+    // 用來 check row column and block 中是否有重複的數字
+    std::bitset<9> check_row[9];
+    std::bitset<9> check_col[9];
+    std::bitset<9> check_block[3][3];
 };
 
 int main() {
