@@ -1,17 +1,16 @@
 /*
- * 題目: https://leetcode.com/problems/sudoku-solver/description/
+ * 題目： https://leetcode.com/problems/sudoku-solver/description/
  *
- * 題目解釋:
- * 給一組9x9的數獨，請解出答案，題目有說保證只有一組解答。
+ * 題目解釋：
+ * 給一個 9x9 matrix 的數獨題目，保證剛好有一組解，完成這個數獨。
  *
- * 思路:
- * 使用backtracking來暴力解就好。
- *
- * 解法:
- * 用3個2D array來保存行、列、區塊的某數字是否存在，以此來確認數字1~9是否能進入下一層遞迴。
+ * 思路：
+ * 使用backtracking來暴力解，並配合以下兩個方式來優化整體效率：
+ * 1. 使用 bitset 來儲存每個 row, col, block 已經填入的數字，以加快檢查的速度。
+ * 2. 使用 greedy algorithm 來決定下一個要填入的格子，從當前可以填充的格子中選擇
+ *    能填充的數字選項最少的，這樣填錯的機率比較小，以回朔的次數。
  */
 #include <iostream>
-#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -21,65 +20,96 @@ static const auto io_sync_off = []() {
 
 class Solution {
   public:
-    bool row[9][9];
-    bool col[9][9];
-    bool block[9][9];
-    // 確認目前的位置，num是否可以使用
-    bool isValid(int i, int j, int num) {
-        int k = (i / 3) * 3 + (j / 3);
-        return !row[i][num] && !col[j][num] && !block[k][num];
-    }
-    // 標記目前位置已使用了num該數字，並update確認狀態的array
-    void visit(int i, int j, int num) {
-        int k = (i / 3) * 3 + (j / 3); // block的index算法
-        row[i][num] = col[j][num] = block[k][num] = true;
-    }
-    // 和上面做相反的事情，取消標記
-    void unvisit(int i, int j, int num) {
-        int k = (i / 3) * 3 + (j / 3);
-        row[i][num] = col[j][num] = block[k][num] = false;
-    }
-    // 不斷遞迴直到找到解
-    bool backTracking(int i, int j, std::vector<std::vector<char>> &board) {
-        if (i == 9) { // row = 9代表已經都做完了
+    bool dfs(std::vector<std::vector<char>> &board, int remain) {
+        // 剩餘 0 個格子可以填，表示完成數獨了
+        if (remain == 0) {
             return true;
         }
-        if (j == 9) { // 超出每行只有9格，更改i,j
-            return backTracking(i + 1, 0, board);
-        }
-        if (board[i][j] != '.') { // 若是原本已經有數字了則跳過
-            return backTracking(i, j + 1, board);
+
+        // 取得要填充的格子 index
+        auto [i, j] = getNext(board);
+
+        // 填入數字
+        for (int num = 0; num < 9; ++num) {
+            // 檢查該數字是否可以填入
+            if (check_row[i][num] || check_col[j][num] || check_block[i / 3][j / 3][num]) {
+                continue;
+            }
+
+            check_row[i][num] = true;
+            check_col[j][num] = true;
+            check_block[i / 3][j / 3][num] = true;
+            board[i][j] = num + '1';
+
+            if (dfs(board, remain - 1)) {
+                return true;
+            }
+
+            check_row[i][num] = false;
+            check_col[j][num] = false;
+            check_block[i / 3][j / 3][num] = false;
+            board[i][j] = '.';
         }
 
-        for (int num = 0; num < 9; ++num) { // 迭代數字1~9
-            if (isValid(i, j, num)) {       // 該數字合法則可進入下一層遞迴
-                visit(i, j, num);           // 標記目前位置已經使用了num
-                board[i][j] = num + '1';
-                if (backTracking(i, j + 1, board)) { // 當數獨找到解答則會一層一層return true
-                    return true;                     // 不再進續往後找
+        return false;
+    }
+
+    // 找出未填充的格子中，可選擇的數字最少的格子，這樣填錯的機率小，需要回朔的次數也會減少
+    std::pair<int, int> getNext(std::vector<std::vector<char>> &board) {
+        int min_count = 10;
+        std::pair<int, int> next_pos;
+
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                // 跳過已經填充的格子
+                if (board[i][j] != '.') {
+                    continue;
                 }
-                unvisit(i, j, num); // 恢復狀態
-                board[i][j] = '.';
+
+                // 將當前格子的三個 bitset<9> 做 or 運算，會得到當前格子不能填入的數字的 bitset<9>
+                // 接著做 not 運算，得到當前格子能填入的數字的 bitset<9>，用 count() 計算這些數字的數量
+                int cur_count = ~(check_row[i] | check_col[j] | check_block[i / 3][j / 3]).count();
+                if (cur_count < min_count) {
+                    min_count = cur_count;
+                    next_pos = {i, j};
+                }
             }
         }
-        return false; // 若在for中都沒找到正解則return false，一般來說若數獨保證有解則不可能到這邊
+
+        return next_pos;
     }
 
     void solveSudoku(std::vector<std::vector<char>> &board) {
-        memset(row, 0, sizeof(row));
-        memset(col, 0, sizeof(col));
-        memset(block, 0, sizeof(block));
-
-        // initialize array
+        // 初始化三個 bitset<9> 的 vector，這是用來紀錄每個 row, col, block 已經填入的數字
+        check_row = std::vector<std::bitset<9>>(9, std::bitset<9>());
+        check_col = std::vector<std::bitset<9>>(9, std::bitset<9>());
+        check_block = std::vector<std::vector<std::bitset<9>>>(3, std::vector<std::bitset<9>>(3, std::bitset<9>()));
+        int remain = 0; // 剩餘要填的格子數量
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
-                if (board[i][j] != '.') {
-                    visit(i, j, board[i][j] - '1');
+                if (board[i][j] == '.') {
+                    ++remain;
+                    continue;
                 }
+
+                int num = board[i][j] - '1';
+                check_row[i][num] = true;
+                check_col[j][num] = true;
+                check_block[i / 3][j / 3][num] = true;
             }
         }
-        backTracking(0, 0, board);
+
+        // 呼叫 dfs 開始填數字
+        dfs(board, remain);
     }
+
+  private:
+    std::vector<std::bitset<9>> check_row;
+    std::vector<std::bitset<9>> check_col;
+    std::vector<std::vector<std::bitset<9>>> check_block;
 };
 
-int main() {}
+int main() {
+
+    return 0;
+}
