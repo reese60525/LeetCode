@@ -1,21 +1,17 @@
 /*
- * 題目: https://leetcode.com/problems/combination-sum/description/
+ * 題目： https://leetcode.com/problems/combination-sum/description/
  *
- * 題目解釋:
- * 給一組nums和一個target整數，使用nums裡的整數，求所有不重複的組合使得相加起來等於target。
- * EX: nums = {2, 3, 5}， target = 7， 不重複的組合有: {2, 2, 3}、{2, 5}，{2, 3, 2}和{5, 2}之類的
- * 是重複組合，不可使用。
+ * 題目解釋：
+ * 給一組整數 array 和 整數 target，array 中每個 element 都可以選用 0 ~ 無限次，找出所有
+ * 組合使其總和等於 target。
+ * e.g.
+ * array = {2, 3, 6, 7}，target = 7，所有組合 = {{2, 2, 3}, {7}}
  *
- * 思路:
- * backtracking algorithm，對於每個nums都有選和不選兩種選擇，若不選就把當前nums_index + 1，這樣不會有重
- * 複的組合問題。
- *
- * 解法:
- * 如上所說。
+ * 思路：
+ * 使用 backtracking algorithm。
+ * 對於每個 num 都有選和不選兩種選擇，若不選就把當前 array_index + 1，這樣不會有重複的組合問題。
  */
-#include <algorithm>
 #include <iostream>
-#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -25,33 +21,36 @@ static const auto io_sync_off = []() {
 
 class Solution {
   public:
-    std::vector<std::vector<int>> res;
+    void backtrack(std::vector<std::vector<int>> &res, std::vector<int> &temp, std::vector<int> &candidates, int target,
+                   int index) {
+        //  target < 0 則該組合 invalid
+        if (target < 0) {
+            return;
+        }
+        // 找到一組解
+        if (target == 0) {
+            res.push_back(temp);
+            return;
+        }
 
-    std::vector<std::vector<int>> combinationSum(std::vector<int> &candidates, int target) {
-        std::vector<int> temp; // 暫存目前的組合
-
-        std::sort(candidates.begin(), candidates.end()); // 小到大排序
-        backTracking(0, target, temp, candidates);
-        return res;
+        // 遞迴找所有組合
+        for (; index < candidates.size(); ++index) {
+            temp.push_back(candidates[index]);
+            backtrack(res, temp, candidates, target - candidates[index], index);
+            temp.pop_back();
+        }
     }
 
-  private:
-    void backTracking(int index, int target, std::vector<int> &temp, const std::vector<int> &candidates) {
-        // 當前index超過array範圍或是target為負，由於candidates是小到大排序，若減去當前的num會造成負數，後面的num也必為負數
-        if (index == candidates.size() || target - candidates[index] < 0) {
-            return;
-        }
-        if (target == 0) { // 找到合法的組合
-            res.emplace_back(temp);
-            return;
-        }
+    std::vector<std::vector<int>> combinationSum(std::vector<int> &candidates, int target) {
+        // 先排序，方便後面剪枝
+        std::sort(candidates.begin(), candidates.end());
 
-        // 選用當前的num
-        temp.emplace_back(candidates[index]);
-        backTracking(index, target - candidates[index], temp, candidates);
-        temp.pop_back();
-        // 不選當前的num
-        backTracking(index + 1, target, temp, candidates);
+        std::vector<int> temp;
+        std::vector<std::vector<int>> res;
+        // backtracking 找所有組合
+        backtrack(res, temp, candidates, target, 0);
+
+        return res;
     }
 };
 

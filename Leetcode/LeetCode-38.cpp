@@ -6,7 +6,7 @@
  * countAndSay 的定義：
  * countAndSay(1) = "1"
  * countAndSay(n) = countAndSay(n - 1) 的 Run-length encoding。
- * Run-length encoding(RLE) 的定義:
+ * Run-length encoding(RLE) 的定義：
  * 這是一種無損壓縮資料的方式。假設有字串 s = "112232244421"，可以將其依照連續相同字
  * 分組成 {"11", "22", "3", "22", "444", "2", "1"}，計算每組相同字的數量，分別為
  * {2, 2, 1, 2, 3, 1, 1}，而該字串的 RLE 為 {{數量 + 字1}, {數量 + 字2}...}，
