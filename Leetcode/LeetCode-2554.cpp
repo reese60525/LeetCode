@@ -31,18 +31,18 @@ class Solution {
             banned_map[banned[i]] = true;
         }
 
-        int sum = 0, count = 0;
+        int count = 0;
         for (int i = 1; i <= n; ++i) {
             // i 存在於 banned 中則跳過
             if (banned_map[i]) {
                 continue;
             }
             // 總和超過 maxSum 則跳出迴圈
-            if (sum + i > maxSum) {
+            if (maxSum - i < 0) {
                 break;
             }
 
-            sum += i;
+            maxSum -= i;
             ++count;
         }
 
