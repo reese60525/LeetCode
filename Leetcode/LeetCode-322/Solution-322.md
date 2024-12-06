@@ -26,7 +26,7 @@ e.g.
 
 遞迴公式:
 
-\[
+$$
 f(i, sum) =
     \begin{cases}
         0 & \text{if } i < 0\ \ \&\ sum = 0 \\
@@ -34,9 +34,9 @@ f(i, sum) =
         f(i - 1, sum)& \text{if } sum < coins[i] \\
         \min(f(i - 1, sum), f(i, sum - coins[i]) + 1) & \text{otherwise}
     \end{cases}
-\]
+$$
 
-`i` 是 `coins` 的 index，如果 `i = 0` 分成兩種情況，一個是 `sum = 0`，另一個是 `sum < 0`，前者代表已經湊出總額，後者代表湊不出總額，分別 return 0 和 無窮大。
+`i` 是 `coins` 的 index，如果 `i = 0` 分成兩種情況，一個是 `sum = 0`，另一個是 `sum < 0`，前者代表已經湊出總額，後者代表湊不出總額，分別 return 0 和 無窮大。  
 如果 `i > 0` 分成兩種情況，一個是 `sum < coins[i]`，另一個是 `sum >= coins[i]`，前者代表當前硬幣面額大於總額，因此無法使用該硬幣，後者代表當前硬幣面額小於等於總額，因此可以選擇使用該硬幣或是不使用該硬幣，並且取兩者中使用硬幣數較少者。如果使用了硬幣 `coins[i]`，則 `sum` 要減去 `coins[i]`，並且 `i` 不變，因為硬幣可以無限取用。
 
 #### 程式碼
@@ -90,19 +90,19 @@ if (index < 0) {
 }
 ```
 
-將 `dp` 的大小設為 `dp[coins.size() + 1][amount + 1]`，`coins.size() + 1` 多出來的 **1** 是為了處理邊界條件中 `index` 為 **-1** 的情況，防止 `index` out of range，而 `amount + 1` 是因為 `amount` 的範圍為 **[0, amount]** 共 **amount + 1** 種情況。
+將 `dp` 的大小設為 `dp[coins.size() + 1][amount + 1]`，`coins.size() + 1` 多出來的 **1** 是為了處理邊界條件中 `index` 為 **-1** 的情況，防止 `index` out of range，而 `amount + 1` 是因為 `amount` 的範圍為 **[0, amount]** 共 **amount + 1** 種情況。  
 根據遞迴中的邊界條件，可以將 `dp` 的初始值設為 `dp[0][0] = 0`，表示當 `index` 為 **-1** 且 `sum` 為 **0** 時，使用硬幣數為 **0**，而其他位置則初始化為無窮大。
 
 ##### DP 狀態轉移公式
 
-根據遞迴公式，可以將 `dp` 的狀態轉移公式設為:
-\[
+根據遞迴公式，可以將 `dp` 的狀態轉移公式設為:  
+$$
 dp[i, sum] =
     \begin{cases}
         dp[i - 1][sum]& \text{if } sum < coins[i] \\
         \min(dp[i - 1][sum], dp[i][sum - coins[i]] + 1) & \text{otherwise}
     \end{cases}
-\]
+$$
 
 ```c++ {.line-numbers}
 if (j < coins[i]) {
@@ -148,15 +148,15 @@ class Solution {
 
 **在 LeetCode-494 這道題目中已經有詳細分析如何將 DP 空間優化，這裡就不再贅述。**
 
-需要注意的點是，LeetCode-494 中最終將 `dp` 的空間優化成一維陣列，其 `dp[i]` 是從最後面開始往前面計算的。
-而在這個題目， dp 狀態轉移公式是長這樣的:
-\[
+需要注意的點是，LeetCode-494 中最終將 `dp` 的空間優化成一維陣列，其 `dp[i]` 是從最後面開始往前面計算的。  
+而在這個題目， dp 狀態轉移公式是長這樣的:  
+$$
 dp[i, sum] =
     \begin{cases}
         dp[i - 1][sum]& \text{if } sum < coins[i] \\
         \min(dp[i - 1][sum], dp[i][sum - coins[i]] + 1) & \text{otherwise}
     \end{cases}
-\]
+$$
 
 **需要特別注意 `dp[i, sum - coins[i]] + 1`**，`dp[i]` 的狀態是由 **原本的 `dp[i-1]`** 和 **更新後的 `dp[i]`** 來計算的，因此 `dp[i]` 要由最前面開始往後計算才對。
 
@@ -196,19 +196,19 @@ dp[i, sum] =
 | dp[i]   |    1    |    2    |    3    |    4    |    5    |    6    |    7    |
 | dp[i+1] |    1    |    2    |    4    |    6    |    3    |    -    |    -    |
 
-最後，DP 轉移公式從:
-\[
+最後，DP 轉移公式從:  
+$$
 dp[i, sum] =
     \begin{cases}
         dp[i - 1][sum]& \text{if } sum < coins[i] \\
         \min(dp[i - 1][sum], dp[i][sum - coins[i]] + 1) & \text{otherwise}
     \end{cases}
-\]
+$$
 
-被簡化成:
-\[
+被簡化成:  
+$$
 dp[sum] = \min(dp[sum], dp[sum - coins[i]] + 1)
-\]
+$$
 
 ```c++ {.line-numbers}
 // 原本二維的 dp 狀態轉移公式
