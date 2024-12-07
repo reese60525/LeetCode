@@ -72,7 +72,8 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206202646766.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206202646766.png)
 
-這樣的方法時間複雜度是指數級的，因為每個硬幣都有兩種選擇，因此時間複雜度為 $O(2^n)$，其中 $n$ 為硬幣數量。
+時間複雜度: $O(2^{n+m})$，其中 $n$ 為 `coins` 的大小， $m$ 為 `amount`。***(不確定)***  
+空間複雜度: $O(m)$
 
 ### 2. Dynamic Programming
 
@@ -142,6 +143,11 @@ class Solution {
     }
 };
 ```
+
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207175214290.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207175214290.png)
+
+時間複雜度: $O(nm)$，其中 $n$ 為 `coins` 的大小，$m$ 為 `amount`。  
+空間複雜度: $O(nm)$
 
 #### DP 空間優化
 
@@ -269,3 +275,6 @@ class Solution {
 ```
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206214453302.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206214453302.png)
+
+時間複雜度: $O(nm)$，其中 $n$ 為 `coins` 的大小，$m$ 為 `amount`。  
+空間複雜度: $O(m)$

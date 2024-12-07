@@ -93,7 +93,10 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207121820774.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207121820774.png)
 
-當然這樣的方式會 TLE，因此需要優化。
+考慮到最差情況，`nums` 有 $10^4$ 個 $10^9$， $maxOperations = 1$，則 $lower bound = 10^5$，只有當 $lower bound = 10^9$ 時才找到答案，外部迴圈共要執行 $10^9 - 10^5 \approxeq 10^9$ 次，內部迴圈每次要執行 $10^4$ 次。  
+
+時間複雜度: $O(max(nums) \cdot n)$，`n` 為 `nums` 的長度，$max(nums)$ 為 `nums` 中最大的數。  
+空間複雜度: $O(1)$。
 
 ### 2. Binary Search
 
@@ -141,3 +144,6 @@ class Solution {
 ```
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110037985.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110037985.png)
+
+時間複雜度: $O(n \times log(max(nums)))$，`n` 為 `nums` 的長度，`max(nums)` 為 `nums` 中最大的數。  
+空間複雜度: $O(1)$。

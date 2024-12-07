@@ -49,6 +49,9 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180151624.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180151624.png)
 
+時間複雜度: $O(2^n)$，其中 $n$ 為 `nums` 的長度  
+空間複雜度: $O(n)$
+
 ### 2. Dynamic Programming
 
 #### 推導遞迴公式
@@ -110,6 +113,9 @@ class Solution {
 ```
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180028424.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180028424.png)
+
+時間複雜度: $O(2 ^ n)$，其中 $n$ 為 `nums` 的長度  
+空間複雜度: $O(n)$
 
 #### 由遞迴轉換成動態規劃(DP)
 
@@ -209,6 +215,9 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206183655096.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206183655096.png)
 
+時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度，$sum = \dfrac{sum(nums) + target}{2}$  
+空間複雜度: $O(n \times sum)$
+
 #### DP 空間優化
 
 觀察 DP 狀態轉移公式:
@@ -286,6 +295,9 @@ class Solution {
 ```
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206190443154.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206190443154.png)
+
+時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度，$sum = \dfrac{sum(nums) + target}{2}$  
+空間複雜度: $O(sum)$
 
 那麼能不能更進一步優化掉 `dp` 中的 `row` 呢？答案是可以的。  
 根據 $dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i]]$ 來模擬 dp 狀態轉移過程。  
@@ -372,3 +384,6 @@ class Solution {
 ```
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194532028.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194532028.png)
+
+時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度，$sum = \dfrac{sum(nums) + target}{2}$  
+空間複雜度: $O(sum)$
