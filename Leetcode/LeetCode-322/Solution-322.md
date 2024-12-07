@@ -4,8 +4,6 @@
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194949537.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194949537.png)
 
-## 解釋題目
-
 給一個 integer array `coins` 和一個 integer `amount`，`coins` 中的所有硬幣都能使用無限次，請找到湊出 `amount` 所需的最少硬幣數量。若無法湊出，則 return -1。
 
 e.g.
