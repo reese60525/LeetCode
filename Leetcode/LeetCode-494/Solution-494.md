@@ -215,7 +215,7 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206183655096.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206183655096.png)
 
-時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度，$sum = \dfrac{sum(nums) + target}{2}$  
+時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度， $sum = \dfrac{sum(nums) + target}{2}$  
 空間複雜度: $O(n \times sum)$
 
 #### DP 空間優化
@@ -296,7 +296,7 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206190443154.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206190443154.png)
 
-時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度，$sum = \dfrac{sum(nums) + target}{2}$  
+時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度， $sum = \dfrac{sum(nums) + target}{2}$  
 空間複雜度: $O(sum)$
 
 那麼能不能更進一步優化掉 `dp` 中的 `row` 呢？答案是可以的。  
@@ -385,5 +385,5 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194532028.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194532028.png)
 
-時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度，$sum = \dfrac{sum(nums) + target}{2}$  
+時間複雜度: $O(n \times sum)$，其中 $n$ 為 `nums` 的長度， $sum = \dfrac{sum(nums) + target}{2}$  
 空間複雜度: $O(sum)$
