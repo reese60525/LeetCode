@@ -1,6 +1,6 @@
 # <center> [LeetCode - 1760. Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/description/) </center>
 
-## 解釋題目
+## 題目敘述
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110627173.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110627173.png)
 
