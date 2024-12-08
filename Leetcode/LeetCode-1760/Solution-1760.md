@@ -25,7 +25,7 @@ e.g.
 
 首先要找出這個問題的 `lower bound`，`lower bound` 代表該問題的答案最小是多少，`sum` 為 `nums` 的總和，`k` 是指最多能將 `nums` 分成 `k` 份， $k = numsSize + maxOperations$ ，而 $lower bound = \frac{sum}{k}$。
 
-遍歷 `nums`，如果 `nums[i]` 大於 `lower bound`，則要 `nums[i]` 分成 `n` 份使這 `n` 份新的 `num` 都小於等於 `lower bound`，而將一個數分成 `n` 份需要 `x`次操作，將這些 `x` 累加，結束遍歷後如果 `x` 大於 `maxOperations`，表示 `lower bound` 太小，需要將 $lower bound + 1$ 並重新遍歷一次，反之則表示找到答案為 `lower bound`。
+遍歷 `nums`，如果 $nums[i] > lower bound$，則要 `nums[i]` 分成 `n` 份使這 `n` 份新的 `num` 都小於等於 `lower bound`，而將一個數分成 `n` 份需要 `x`次操作，將這些 `x` 累加，結束遍歷後如果 $x > maxOperations$，表示 `lower bound` 太小，需要將 $lower bound + 1$ 並重新遍歷一次，反之則表示找到答案為 `lower bound`。
 
 `n` 和 `x` 的計算方式，由以下例子可以得知:
 
