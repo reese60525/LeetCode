@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207201835687.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207201835687.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160849215.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160849215.png)
 
 給一個 s，找出最長不重複字元的 sub string，回傳其長度。 s 的內容只包含 ascii code 範圍內的字元。
 
@@ -10,7 +10,7 @@ e.g.
 
 1. `s` = "abcabcc"  
 最長不重複的 substring 為 "abc"，長度為 3，return 3。  
-2. `s` = "aaa"  
+1. `s` = "aaa"  
 最長不重複的 substring 為 "a"，長度為 1，return 3。  
 
 ## 解題思路

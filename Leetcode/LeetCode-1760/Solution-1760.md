@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110627173.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110627173.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161159467.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161159467.png)
 
 給一個 integer array `nums` 和一個 integer `maxOperations`，每次操作可以將 `nums` 中的任意一個 element `nums[i]` 分成兩個不為 0 的整數，`maxOperations` 是最多可以進行操作的次數，求對 `nums` 進行操作後，`nums` 中的最大值最小可以是多少。
 
@@ -10,13 +10,13 @@ e.g.
 
 1. `nums` = {9}，`maxOperations` = 2。  
 能操作 2 次，因此能分成 3 部分，`nums` = {3, 3, 3}，因此答案為 3。
-2. `nums` = {10}，`maxOperations` = 2。  
+1. `nums` = {10}，`maxOperations` = 2。  
 能操作 2 次，因此能分成 3 部分，`nums` = {3, 3, 4}，因此答案為 4。
-3. `nums` = {9}，`maxOperations` = 3。  
+1. `nums` = {9}，`maxOperations` = 3。  
 能操作 3 次，因此能分成 4 部分，`nums` = {2, 2, 2, 3}，因此答案為 3。
-4. `nums` = {10}，`maxOperations` = 3。  
+1. `nums` = {10}，`maxOperations` = 3。  
 能操作 3 次，因此能分成 4 部分，`nums` = {2, 2, 3, 3}，因此答案為 3。
-5. `nums` = {2, 4, 8, 2}，`maxOperations` = 4。
+1. `nums` = {2, 4, 8, 2}，`maxOperations` = 4。
 能操作 4 次，因此能分成 5 部分，`nums` = {2, 2, 2, 2, 2, 2, 2, 2}，因此答案為 2。
 
 ## 解題思路

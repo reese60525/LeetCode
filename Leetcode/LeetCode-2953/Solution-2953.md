@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241208233552000.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241208233552000.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161329090.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161329090.png)
 
 給一個只包含小寫英文字母的字串 `word` 和一個整數 `k`，找出 `word` 中所有是 `complete` 的 substring 的數量。  
 

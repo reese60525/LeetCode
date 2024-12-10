@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207133940670.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207133940670.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160705565.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160705565.png)
 
 給一組不重複的正整數 `nums` 和一個 integer `target`，找出能一對不相同的 `num[i]`、`num[j]` 使 $nums[i] + num[j] = target$，並return $[i, j]$。  
 

@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241209141047809.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241209141047809.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161408270.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161408270.png)
 
 給一個 integer array `nums` 和一個 2D integer array `queries`，`queries[i] = {start, end}`，`start` 和 `end` 代表 `nums` 的 subarray 的起始 `index` 和結尾 `index`。如果 `queries[i]` 這範圍所形成的 subarray 是 `special array`，則回傳 `true`，否則回傳 `false`。  
 

@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207203744788.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207203744788.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160943619.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160943619.png)
 
 給兩個已經排序的 integer array `nums1` and `nums2`，找出兩 array 合併後的中位數。  
 **題目要求時間複雜度必須為 $O(log(m+n))$**

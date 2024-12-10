@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241208124858015.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241208124858015.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161243293.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161243293.png)
 
 給一個 array `events` ， $events[i] =\{startTime_i, endTime_i, value_i\}$ 分別表示第 `i` 個事件的開始時間、結束時間和價值。找出**最多兩個 startTime 和 endTime 不重疊**的事件的 $max(value_1 + value_2)$ 並回傳。  
 **注意**: 可以只選擇零個或是一個事件。  

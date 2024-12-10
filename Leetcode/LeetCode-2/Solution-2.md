@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207194113364.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207194113364.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160801270.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160801270.png)
 
 給兩個儲存正整數的link list，各自代表一個整數的倒序，求將兩個link list相加後的倒序結果。  
 **link list的長度不一定等長!**

@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206165801704.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206165801704.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161121016.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161121016.png)
 
 給定一個 integer array `nums` 和一個 integer `target`，對 `nums` 中每個 `nums[i]` 進行**加法**或是**減法**，找出將整個 `nums` 經過**加法**或**減法**後總為 `target` 的方法數。
 
