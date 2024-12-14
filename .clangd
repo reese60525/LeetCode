@@ -1,0 +1,10 @@
+CompileFlags:
+  Add:
+    - -std=c++23
+    - -fsanitize=undefined
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Wconversion
+    - -Wformat=2
+    - -Wshadow

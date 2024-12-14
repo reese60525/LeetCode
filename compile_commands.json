@@ -1,0 +1,7 @@
+[
+    {
+        "directory": "D:/Code/OnlineJudge",
+        "command": "clang++ -std=c++23 -fsanitize=undefined -Wall -Wextra -Wpedantic -Wconversion -Wformat=2 -Wshadow -I\"C:/llvm-mingw-20241203-ucrt-x86_64/include\" -I\"C:/llvm-mingw-20241203-ucrt-x86_64/include/c++/v1\" *.cpp",
+        "file": "*.cpp"
+    }
+]
