@@ -85,4 +85,4 @@ class Solution {
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217135005858.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217135005858.png)
 
 時間複雜度： $O(n)$ ，其中 $n$ 是 `s` 的長度。  
-空間複雜度： $O(k)$ ，其中 $k$ 是 `s` 中不同字元的數量。  
+空間複雜度： $O(k)$ ，其中 $k$ 是 `s` 中不同字元的數量，由於該題 $k$ 固定為 $26$ ，因此可視為 $O(1)$ 。  
