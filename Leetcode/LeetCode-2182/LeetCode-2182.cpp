@@ -6,9 +6,8 @@
  * 思路：
  *
  */
-#include <functional>
 #include <iostream>
-#include <map>
+#include <string>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -19,40 +18,46 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     std::string repeatLimitedString(std::string s, int repeatLimit) {
-        std::map<char, int, std::greater<char>> freq;
-        for (auto c : s) {
-            ++freq[c];
+        // 紀錄字母的出現次數
+        int freq[26] = {0};
+        for (char c : s) {
+            ++freq[c - 'a'];
         }
 
-        auto it = freq.begin();
-        std::string res;
-        while (it != freq.end()) {
-            it = freq.begin();                           // 當前的最大字母
-            int cnt = std::min(it->second, repeatLimit); // 當前字母的可用數量
-
-            // 將字母累加至 res
-            res.append(cnt, it->first);
-            it->second -= cnt;
-
-            // 如果已用完該字母，從 map 中刪除
-            if (it->second == 0) {
-                freq.erase(it->first);
+        int cur = 25, next = 25; // cur: 當前最大字母，next: 當前次大字母
+        s.clear();               // 使用原先題目給的 s 來存放答案
+        while (cur >= 0) {
+            // 找出當前最大字母與次大字母
+            if (freq[cur] == 0) {
+                --cur;
+                continue;
             }
+            if (next >= 0 && (next >= cur || freq[next] == 0)) {
+                --next;
+                continue;
+            }
+
+            // 將當前最大字母加入 s 中
+            int cnt = std::min(freq[cur], repeatLimit); // 最多只能連續 repeatLimit 次，若不足則全部加入
+            s.append(cnt, ('a' + cur));
+            freq[cur] -= cnt;
+
+            // 如果當前最大字母用完，則將其變成次大字母
+            if (freq[cur] == 0) {
+                cur = next;
+            }
+            // 若還有次大字母，則將一個次大字母加入 s 中
+            else if (next >= 0) {
+                s.push_back(('a' + next));
+                --freq[next];
+            }
+            // 如果沒有次大字母了，無須再添加字母到 s 中，結束迴圈
             else {
-                // 如果還有剩餘字母，要插入第二大的字母
-                auto next_it = std::next(it);
-                // 如果已經沒有第二大的字母，則結束迴圈
-                if (next_it == freq.end()) {
-                    break;
-                }
-                res += next_it->first;
-                if (--next_it->second == 0) {
-                    freq.erase(next_it->first);
-                }
+                break;
             }
         }
 
-        return res;
+        return s;
     }
 };
 
