@@ -1,11 +1,10 @@
-/*
- * 題目：
- *
- * 題目解釋：
- *
- * 思路：
- *
- */
+/******************************************
+ *  File        : test.cpp
+ *  Author      : Reese
+ *  Created On  : 2024-12-19 11:40
+ *  Description :
+ ******************************************/
+
 #include <iostream>
 
 static const auto io_sync_off = []() {
