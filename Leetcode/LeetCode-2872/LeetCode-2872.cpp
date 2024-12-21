@@ -39,8 +39,8 @@ class Solution {
 
     int maxKDivisibleComponents(int n, std::vector<std::vector<int>> &edges, std::vector<int> &values, int k) {
         // 清空 adj 鄰接圖表，避免之前的測試資料影響當前測試資料的結果
-        for (auto &a : adj) {
-            a.clear();
+        for (int i = 0; i < n; ++i) {
+            adj[i].clear();
         }
         // 創建鄰接圖表
         for (auto &edge : edges) {

@@ -89,8 +89,8 @@ class Solution {
 
     int maxKDivisibleComponents(int n, std::vector<std::vector<int>> &edges, std::vector<int> &values, int k) {
         // 清空 adj 鄰接圖表，避免之前的測試資料影響當前測試資料的結果
-        for (auto &a : adj) {
-            a.clear();
+        for (int i = 0; i < n; ++i) {
+            adj[i].clear();
         }
         // 創建鄰接圖表
         for (auto &edge : edges) {
@@ -105,7 +105,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221125956333.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221125956333.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221142724028.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221142724028.png)
 
 時間複雜度： $O(n)$ ，其中 $n$ 是節點的數量。  
 空間複雜度： $O(n)$ ，`adj` 鄰接圖表的空間複雜度為 $O(n)$ ，`dfs` 遞迴深度最糟為 $O(n)$ 。
