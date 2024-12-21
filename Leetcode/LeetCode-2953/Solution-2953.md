@@ -21,7 +21,7 @@ e.g.
 
 ## 解題思路
 
-### 1. 分組循環 and Sliding Window
+### 1. Grouped Loop（分組循環） and Sliding Window
 
 先處理 `complete` 中的第二個條件，也就是相鄰字元的絕對值差要小於等於 2。對於這個條件，我們可以遍歷 `word` 中的每個字元，將其進行分組，令 `begin` 為記錄當前 `word` index 的起始點，從 `begin` 開始遍歷 `word`，當遇到 $abs(word[i] - word[i+1]) > 2$ 時，可得到 $index = [begin, i]$ 的 substring，該 substring 能夠滿足 `complete` 中的第二個條件。  
 
