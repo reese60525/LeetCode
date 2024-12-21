@@ -18,7 +18,7 @@ nums = {2, 1, 3, 4, 5, 2}
 
 ## 解題思路
 
-### 1. Combine Sorting and HashMap
+### 1. Combine Sorting and Hash Map
 
 將 `nums[i]` 和其 index `i` 組合成 `std::pair<int,int>`，放入 `std::vector<std::pair<int,int>>` 中，依照 `nums[i]` 由小到大排序。用一個 bool array 紀錄當前已經被標記的 `nums[i]`，接著遍歷這個 combine array，如果 `nums[i]` 沒有被標記，則累加 `nums[i]` 並將其左右標記，最後回傳總和。
 
