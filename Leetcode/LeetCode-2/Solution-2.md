@@ -1,4 +1,4 @@
-# <center> [LeetCode-2 Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/) </center>
+# <center> [LeetCode - 2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/description/) </center>
 
 ## 題目敘述
 
