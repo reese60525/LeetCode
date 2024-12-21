@@ -10,9 +10,9 @@
 
 ## 解題思路
 
-### 1. Hash Table
+### 1. Hash Map
 
-建立 hash table，遍歷 `nums` 將 $\{nums[i], i\}$ 存入，同時檢查 $target - nums[i]$ 是否存在於 hash table 中，若存在則 return $[i, hash[target - nums[i]]]$。
+建立 hash map，遍歷 `nums` 將 $\{nums[i], i\}$ 存入，同時檢查 $target - nums[i]$ 是否存在於 hash map 中，若存在則 return $[i, hash[target - nums[i]]]$。
 
 #### 程式碼
 
