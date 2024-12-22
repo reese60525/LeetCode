@@ -16,6 +16,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
 
+ [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
  [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2982/Solution-2982.md)
@@ -32,6 +34,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md#1-combine-sorting-and-hashmap)
 
+ [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+
 ## Priority Queue
 
  [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)  
@@ -43,6 +47,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [2558. Take Gifts From the Richest Pile](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2558/Solution-2558.md)
 
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
+
+ [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
 
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
@@ -63,6 +69,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md#1-combine-sorting-and-hashmap)
 
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
+
+ [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
 
 ## Grouped Loop
 
@@ -93,6 +101,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [1760. Minimum Limit of Balls in a Bag](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1760/Solution-1760.md)
 
  [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md#1-dynamic-programming-and-binary-search)
+
+ [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
 
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
