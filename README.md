@@ -108,6 +108,10 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2982/Solution-2982.md)
 
+## Simulation
+
+ [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)
+
 ## Backtracking
 
  [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md#1-backtracking-algorithm)
@@ -123,6 +127,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 ## Breadth First Search
 
  [2415. Reverse Odd Levels of Binary Tree](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2415/Solution-2415.md)
+
+ [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)
 
 ## Prefix and Suffix
 
