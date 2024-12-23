@@ -72,6 +72,10 @@ class Solution {
 };
 ```
 
+`Permutation Cycle` 的概念：  
+
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223114338538.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223114338538.png)
+
 因為題目並沒有要求要將節點的值改變，只需要計算交換次數，因此可以用 `Permutation Cycle` 的概念來計算交換次數，而每個 cycle 的邊數量 - 1 就是該 cycle 的最小交換次數，因此可以把以下 code 改寫：  
 
 ```cpp {.line-numbers}
