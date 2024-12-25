@@ -54,6 +54,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2982/Solution-2982.md)
 
+ [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/)
+
  [3264. Final Array State After K Multiplication Operations I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3264/Solution-3264.md#1-priority-queue)
 
 ## Recursion
@@ -79,6 +81,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 ## Two Pointers
 
  [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md#1-dynamic-programming)
+
+ [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/)
 
 ## Sliding Window
 
@@ -159,6 +163,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md#1-dynamic-programming-and-binary-search)
 
  [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md#1-greedy-and-hash-map)
+
+ [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/)
 
 ## Dynamic Programming
 

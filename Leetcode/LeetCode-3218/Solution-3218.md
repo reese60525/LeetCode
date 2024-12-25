@@ -53,8 +53,9 @@ int main() {
     for (int i = 1; i <= 1e5; ++i) {
         for (int j = 1; j <= 1e5; ++j) {
             d.setVal(1001, 1000, i, j);
-            uint64_t cost1 = d.c2 * d.m * d.n + (d.c1 - d.c2) * d.m - d.c1; // 先切 m
-            uint64_t cost2 = d.c1 * d.m * d.n + (d.c2 - d.c1) * d.n - d.c2; // 先切 n
+            uint64_t cost1 = d.c2 * d.m * d.n + (d.c1 - d.c2) * d.m - d.c1; // 水平切割
+            uint64_t cost2 = d.c1 * d.m * d.n + (d.c2 - d.c1) * d.n - d.c2; // 垂直切割
+            // 當 cost1 > cost2 時，代表先切垂直方向的總成本會比較小，與假設矛盾
             if (cost1 > cost2) {
                 std::cout << "cost1 > cost2 in (m, n) = (" << i << ", " << j << ")\n";
                 exit(0);
@@ -63,7 +64,7 @@ int main() {
             ++cnt;
         }
     }
-    std::cout << "沒有發生 cost1 > cost2 的事件，總執行次數: " << cnt << '\n';
+    std::cout << "沒有發生 cost1 > cost2 的事件，驗證假設正確，總執行次數: " << cnt << '\n';
 
     return 0;
 }
@@ -130,9 +131,11 @@ class Solution {
 class Solution {
   public:
     int minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
+        // 要由大排到小
         std::sort(horizontalCut.begin(), horizontalCut.end(), std::greater<int>());
         std::sort(verticalCut.begin(), verticalCut.end(), std::greater<int>());
 
+        // h_cnt 和 v_cnt 分別代表目前水平和垂直方向上有幾個蛋糕
         int i = 0, j = 0, h_cnt = 1, v_cnt = 1, res = 0;
         while (i < m - 1 || j < n - 1) {
             // 邊界判斷避免 index out of range
@@ -150,3 +153,8 @@ class Solution {
     }
 };
 ```
+
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251307217.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251307217.png)
+
+時間複雜度： $O(h \cdot \log h + v \cdot \log v)$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
+空間複雜度： $O(\log h + \log v)$ ，各為 `horizontalCuts` 和 `verticalCuts` 排序所需的空間。
