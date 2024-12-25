@@ -76,6 +76,10 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
 
+ [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
+
+ [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3219/Solution-3219.md)
+
 ## Grouped Loop
 
  [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2953/Solution-2953.md)

@@ -15,7 +15,7 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-// Greedy
+// Greedy and Counting Sort
 class Solution {
   public:
     long long minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {

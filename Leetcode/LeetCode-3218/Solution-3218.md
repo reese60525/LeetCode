@@ -159,7 +159,7 @@ class Solution {
 時間複雜度： $O(h \cdot \log h + v \cdot \log v)$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
 空間複雜度： $O(\log h + \log v)$ ，各為 `horizontalCuts` 和 `verticalCuts` 排序所需的空間。
 
-### 3. Greedy 優化時間複雜度
+### 3. Greedy and Counting Sort
 
 對於上述演算法可以進一步做優化，可以發現如果水平切割或垂直切割有 `k` 個大小相同的 `cost` 就得重複計算 `k` 次，以水平切割為例子，當前切割的總成本為： 水平切割的成本 x 垂直方向的蛋糕數量 = `h_cost` x `v_cnt`，並且切割後會是**水平方向**的蛋糕增加 1 個，垂直方向的蛋糕數量並沒有變，所以若是下一個 `h_cost` 跟上一次一樣，那麼當前切割的總成本也會跟上一次一樣。  
 要如何優化重複計算的部分呢？可以用兩個 integer array `h_freq` 和 `v_freq` 儲存水平和垂直切割的每種 `cost` 出現頻率，並且記錄 `max_cost`，假設水平切割有個 `h_cost` = 50 出現了 12 次，則 `h_freq[50]` = 12。然後從 `max_cost` 開始同時遍歷這兩個 integer array，當前切割總成本會變成： `cost` x `cnt` x `freq[i]`，這樣就能將原本重複 `k` 次的計算變成只要算一次就好，缺點是會需要額外的空間。
