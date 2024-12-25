@@ -118,7 +118,7 @@ class Solution {
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251227743.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251227743.png)
 
-時間複雜度： $O(h \cdot \log h + v \cdot \log v + (h + v) \cdot \log (h + v))$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
+時間複雜度： $O((h + v) \cdot \log (h + v))$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
 空間複雜度： $O(h + v)$ 。
 
 ### 2. Greedy and Sorting and Two Pointer
@@ -159,6 +159,44 @@ class Solution {
 時間複雜度： $O(h \cdot \log h + v \cdot \log v)$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
 空間複雜度： $O(\log h + \log v)$ ，各為 `horizontalCuts` 和 `verticalCuts` 排序所需的空間。
 
----
+### 3. Greedy 優化時間複雜度
+
 對於上述演算法可以進一步做優化，可以發現如果水平切割或垂直切割有 `k` 個大小相同的 `cost` 就得重複計算 `k` 次，以水平切割為例子，當前切割的總成本為： 水平切割的成本 x 垂直方向的蛋糕數量 = `h_cost` x `v_cnt`，並且切割後會是**水平方向**的蛋糕增加 1 個，垂直方向的蛋糕數量並沒有變，所以若是下一個 `h_cost` 跟上一次一樣，那麼當前切割的總成本也會跟上一次一樣。  
-要如何優化重複計算的部分呢？可以用兩個 integer array `h_freq` 和 `v_freq` 儲存水平和垂直切割的每種 `cost` 出現頻率，並且記錄 `max_cost`，假設水平切割有個 `h_cost` = 50 出現了 12 次，則 `h_freq[50]` = 12。然後從 `max_cost` 開始同時遍歷這兩個 integer array，當前切割總成本會變成： `cost` x `cnt` x `freq[i]`，這樣就能將原本重複 `k` 次的計算變成只要算一次就好。
+要如何優化重複計算的部分呢？可以用兩個 integer array `h_freq` 和 `v_freq` 儲存水平和垂直切割的每種 `cost` 出現頻率，並且記錄 `max_cost`，假設水平切割有個 `h_cost` = 50 出現了 12 次，則 `h_freq[50]` = 12。然後從 `max_cost` 開始同時遍歷這兩個 integer array，當前切割總成本會變成： `cost` x `cnt` x `freq[i]`，這樣就能將原本重複 `k` 次的計算變成只要算一次就好，缺點是會需要額外的空間。
+
+#### 程式碼
+
+```cpp {.line-numbers}
+class Solution {
+  public:
+    int minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
+        // 紀錄每個切割成本的出現頻率和最大成本
+        int max_val = 0;
+        std::vector<int> h_freq(1001, 0), v_freq(1001, 0);
+        for (int &n : horizontalCut) {
+            ++h_freq[n];
+            max_val = std::max(max_val, n);
+        }
+        for (int &n : verticalCut) {
+            ++v_freq[n];
+            max_val = std::max(max_val, n);
+        }
+
+        // h_cnt 和 v_cnt 分別計算蛋糕目前在水平方向和垂直方向共被切成幾塊
+        int res = 0, h_cnt = 1, v_cnt = 1;
+        for (size_t cost = max_val; cost != SIZE_MAX; --cost) {
+            res += cost * v_cnt * h_freq[cost];
+            h_cnt += h_freq[cost];
+            res += cost * h_cnt * v_freq[cost];
+            v_cnt += v_freq[cost];
+        }
+
+        return res;
+    }
+};
+```
+
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225185453664.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225185453664.png)
+
+時間複雜度： $O(h + v)$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
+空間複雜度： $O(1)$ ，雖然是 $O(1)$ 但實際上會使用 $O(1001 \cdot 2) = O(2002)$ 的空間，而 `m` 和 `n` 最多為 20，原本的 $O(\log h + \log v)$ 最多只有 $O(4 + 4) = O(8)$ ，因此記憶體使用量是增加的。
