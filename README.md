@@ -8,7 +8,9 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Hash Map
 
- [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1/Solution-1.md)  
+ [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1/Solution-1.md)
+
+ [1525. Number of Good Ways to Split a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1525/Solution-1525.md)
 
  [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
 
