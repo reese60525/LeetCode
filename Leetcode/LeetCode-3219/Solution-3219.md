@@ -1,8 +1,10 @@
-# <center> [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/) </center>
+# <center> [3219. Minimum Cost for Cutting Cake II](https://leetcode.com/problems/minimum-cost-for-cutting-cake-ii/description/) </center>
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251055063.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251055063.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225191342930.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225191342930.png)
+
+**這題是 [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/) 的測資加強版，解法一模一樣**
 
 給一個 `m x n` 矩陣，代表一個蛋糕，可以將蛋糕切小塊，最小能切為 `1 x 1` 的蛋糕，row and column 分別能切 `m-1` 和 `n-1` 次。給兩個 1D array `horizontalCuts` 和 `verticalCuts`，size 分別為 `m-1` 和 `n-1`，分別代表將蛋糕在水平和垂直方向上切割所需要的成本。  
 請找出將蛋糕全部切成 `1 x 1` 的蛋糕所需要的最小成本。  
@@ -81,10 +83,10 @@ int main() {
 #### 程式碼
 
 ```cpp {.line-numbers}
+// Priority Queue
 class Solution {
   public:
-    int minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
-        int h_cnt = 1, v_cnt = 1;                     // 計算蛋糕目前在水平方向和垂直方向共被切成幾塊
+    long long minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
         std::priority_queue<std::pair<int, bool>> pq; // 儲存所有切割成本，queue top 為最大的成本
 
         // 將垂直和水平分割的成本放入 pq 中
@@ -97,8 +99,8 @@ class Solution {
         buildPQ(horizontalCut, true);
         buildPQ(verticalCut, false);
 
-        // 計算總成本
-        int res = 0;
+        // 計算總成本，h_cnt 和 v_cnt 分別計算蛋糕目前在水平方向和垂直方向共被切成幾塊
+        long long res = 0, h_cnt = 1, v_cnt = 1;
         while (!pq.empty()) {
             auto [cost, is_row] = pq.top();
             pq.pop();
@@ -116,7 +118,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251227743.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251227743.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225191816715.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225191816715.png)
 
 時間複雜度： $O((h + v) \cdot \log (h + v))$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
 空間複雜度： $O(h + v)$ 。
@@ -130,13 +132,14 @@ class Solution {
 ```cpp {.line-numbers}
 class Solution {
   public:
-    int minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
+    long long minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
         // 要由大排到小
         std::sort(horizontalCut.begin(), horizontalCut.end(), std::greater<int>());
         std::sort(verticalCut.begin(), verticalCut.end(), std::greater<int>());
 
         // h_cnt 和 v_cnt 分別代表目前水平和垂直方向上有幾個蛋糕
-        int i = 0, j = 0, h_cnt = 1, v_cnt = 1, res = 0;
+        int i = 0, j = 0, h_cnt = 1, v_cnt = 1;
+        long long res = 0;
         while (i < m - 1 || j < n - 1) {
             // 邊界判斷避免 index out of range
             int h_cost = i < m - 1 ? horizontalCut[i] : 0;
@@ -154,7 +157,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251307217.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251307217.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225192108102.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225192108102.png)
 
 時間複雜度： $O(h \cdot \log h + v \cdot \log v)$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
 空間複雜度： $O(\log h + \log v)$ ，各為 `horizontalCuts` 和 `verticalCuts` 排序所需的空間。
@@ -169,7 +172,7 @@ class Solution {
 ```cpp {.line-numbers}
 class Solution {
   public:
-    int minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
+    long long minimumCost(int m, int n, std::vector<int> &horizontalCut, std::vector<int> &verticalCut) {
         // 紀錄每個切割成本的出現頻率和最大成本
         int max_val = 0;
         std::vector<int> h_freq(1001, 0), v_freq(1001, 0);
@@ -183,7 +186,8 @@ class Solution {
         }
 
         // h_cnt 和 v_cnt 分別計算蛋糕目前在水平方向和垂直方向共被切成幾塊
-        int res = 0, h_cnt = 1, v_cnt = 1;
+
+        long long res = 0, h_cnt = 1, v_cnt = 1;
         for (size_t cost = max_val; cost != SIZE_MAX; --cost) {
             res += cost * v_cnt * h_freq[cost];
             h_cnt += h_freq[cost];
@@ -196,7 +200,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225185453664.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225185453664.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225192431309.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225192431309.png)
 
 時間複雜度： $O(h + v)$ ，其中 $h$ 和 $v$ 分別為 `horizontalCuts` 和 `verticalCuts` 的長度。  
-空間複雜度： $O(1)$ ，雖然是 $O(1)$ 但實際上會使用 $O(1001 \cdot 2) = O(2002)$ 的空間，而 `m` 和 `n` 最多為 20，原本的 $O(\log h + \log v)$ 最多只有 $O(4 + 4) = O(8)$ ，因此記憶體使用量是增加的。
+空間複雜度： $O(1)$ ，雖然是 $O(1)$ 但實際上會使用 $O(1001 \cdot 2) = O (2002)$ 的空間，而 `m` 和 `n` 最多為 $10^5$ ，原本的 $O(\log h + \log v)$ 最多只有 $O(316 + 316) = O(632)$ ，因此記憶體使用量是增加的。

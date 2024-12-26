@@ -10,13 +10,13 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1/Solution-1.md)  
 
- [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md#1-greedy-and-hash-map)
+ [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
 
- [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md#1-combine-sorting-and-hashmap)
+ [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md)
 
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
 
- [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+ [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
 
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
@@ -28,39 +28,41 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Monotonic Stack
 
- [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-768/Solution-768.md#1--monotonic-stack)
+ [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-768/Solution-768.md)
 
  [1475. Final Prices With a Special Discount in a Shop](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1475/Solution-1475.md)
 
- [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md#1-combine-sorting-and-hashmap)
+ [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md)
 
- [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+ [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
 
 ## Priority Queue
 
  [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)  
 
- [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md#-leetcode---1792-maximum-average-pass-ratio-)
+ [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md)
 
- [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md#1-dynamic-programming-and-binary-search)
+ [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
  [2558. Take Gifts From the Richest Pile](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2558/Solution-2558.md)
 
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
 
- [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+ [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
 
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
  [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2982/Solution-2982.md)
 
- [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/)
+ [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
 
- [3264. Final Array State After K Multiplication Operations I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3264/Solution-3264.md#1-priority-queue)
+ [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3219/Solution-3219.md)
+
+ [3264. Final Array State After K Multiplication Operations I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3264/Solution-3264.md)
 
 ## Recursion
 
- [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md#1-divide-and-conquer-and-tail-recursion)
+ [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
 
 ## Difference Array
 
@@ -68,21 +70,27 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Sorting
 
- [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md#1-combine-sorting-and-hashmap)
+ [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md)
 
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
 
- [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+ [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
+
+ [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
+
+ [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3219/Solution-3219.md)
 
 ## Grouped Loop
 
- [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2953/Solution-2953.md#1-%E5%88%86%E7%B5%84%E5%BE%AA%E7%92%B0-and-sliding-window)
+ [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2953/Solution-2953.md)
 
 ## Two Pointers
 
- [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md#1-dynamic-programming)
+ [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md)
 
- [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/)
+ [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
+
+ [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3219/Solution-3219.md)
 
 ## Sliding Window
 
@@ -92,7 +100,7 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
 
- [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2953/Solution-2953.md#1-%E5%88%86%E7%B5%84%E5%BE%AA%E7%92%B0-and-sliding-window)
+ [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2953/Solution-2953.md)
 
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
@@ -104,9 +112,9 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1760. Minimum Limit of Balls in a Bag](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1760/Solution-1760.md)
 
- [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md#1-dynamic-programming-and-binary-search)
+ [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
- [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/)
+ [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
 
  [2981. Find Longest Special Substring That Occurs Thrice I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2981/Solution-2981.md)
 
@@ -114,15 +122,15 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Simulation
 
- [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)
+ [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2471/Solution-2471.md)
 
 ## Backtracking
 
- [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md#1-backtracking-algorithm)
+ [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md)
 
 ## Depth First Search
 
- [515. Find Largest Value in Each Tree Row](https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/)
+ [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-515/Solution-515.md)
 
  [2415. Reverse Odd Levels of Binary Tree](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2415/Solution-2415.md)
 
@@ -130,58 +138,60 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2872. Maximum Number of K-Divisible Components](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2872/Solution-2872.md)
 
- [3203. Find Minimum Diameter After Merging Two Trees](https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/description/)
+ [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3203/Solution-3203.md)
 
 ## Breadth First Search
 
- [515. Find Largest Value in Each Tree Row](https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/)
+ [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-515/Solution-515.md)
 
  [2415. Reverse Odd Levels of Binary Tree](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2415/Solution-2415.md)
 
- [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://leetcode.com/problems/minimum-number-of-operations-to-sort-a-binary-tree-by-level/description/)
+ [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2471/Solution-2471.md)
 
- [3203. Find Minimum Diameter After Merging Two Trees](https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/description/)
+ [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3203/Solution-3203.md)
 
 ## Topological Sorting
 
- [3203. Find Minimum Diameter After Merging Two Trees](https://leetcode.com/problems/find-minimum-diameter-after-merging-two-trees/description/)
+ [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3203/Solution-3203.md)
 
 ## Prefix and Suffix
 
- [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-768/Solution-768.md#1--monotonic-stack)
+ [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-768/Solution-768.md)
 
- [3152. Special Array II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3152/Solution-3152.md#1-prefix-sum)
+ [3152. Special Array II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3152/Solution-3152.md)
 
 ## Greedy
 
- [769. Max Chunks To Make Sorted](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-769/Solution-769.md#greedy)
+ [769. Max Chunks To Make Sorted](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-769/Solution-769.md)
 
  [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)  
 
- [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md#-leetcode---1792-maximum-average-pass-ratio-)
+ [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md)
 
- [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md#1-dynamic-programming-and-binary-search)
+ [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
- [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md#1-greedy-and-hash-map)
+ [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
 
- [3218. Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/description/)
+ [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
+
+ [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3219/Solution-3219.md)
 
 ## Dynamic Programming
 
- [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md#1-dynamic-programming)
+ [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md)
 
- [322. Coin Change](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-322/Solution-322.md#2-dynamic-programming)
+ [322. Coin Change](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-322/Solution-322.md)
 
- [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md#1-backtracking-algorithm)
+ [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md)
 
- [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/description/)
+ [518. Coin Change II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-518/Solution-518.md)
 
- [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md#1-dynamic-programming-and-binary-search)
+ [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
 ## Manacher's Algorithm
 
- [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md#1-dynamic-programming)
+ [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md)
 
 ## Bit Manipulation
 
- [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md#1-divide-and-conquer-and-tail-recursion)
+ [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
