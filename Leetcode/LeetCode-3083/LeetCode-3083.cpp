@@ -5,7 +5,6 @@
  */
 
 #include <iostream>
-#include <unordered_map>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -13,18 +12,19 @@ static const auto io_sync_off = []() {
     return nullptr;
 }();
 
-// 'a' 的二進位：01100001
-// 'z' 的二進位：01111010
-
+// Hash Map and Bit Manipulation
 class Solution {
   public:
     bool isSubstringPresent(std ::string s) {
-        std::unordered_map<int, bool> mp;
+        int mp[26] = {0};
 
         for (size_t i = 0; i < s.size() - 1; ++i) {
-            int a = s[i], b = s[i + 1];
-            mp[(a << 10) + b] = true;
-            if (mp.find((b << 10) + a) != mp.end()) {
+            int a = s[i] - 'a', b = s[i + 1] - 'a';
+
+            // 將 0x1 左移到第 b 個 bit 並與 mp[a] 做 bitwise OR
+            mp[a] |= 1 << b;
+            // 將 mp[b] 右移到第 a 個 bit 並與 0x1 做 bitwise AND
+            if ((mp[b] >> a) & 1) {
                 return true;
             }
         }
@@ -32,6 +32,25 @@ class Solution {
         return false;
     }
 };
+
+// // Hash Map
+// class Solution {
+//   public:
+//     bool isSubstringPresent(std ::string s) {
+//         std::bitset<26> mp[26];
+
+//         for (size_t i = 0; i < s.size() - 1; ++i) {
+//             int a = s[i] - 'a', b = s[i + 1] - 'a';
+
+//             mp[a][b] = true;
+//             if (mp[b][a]) {
+//                 return true;
+//             }
+//         }
+
+//         return false;
+//     }
+// };
 
 int main() {
 
