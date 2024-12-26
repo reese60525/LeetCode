@@ -19,6 +19,8 @@
 
 找出這四種情況的最小值就是答案。
 
+#### 程式碼
+
 ```cpp {.line-numbers}
 class Solution {
   public:
@@ -58,6 +60,8 @@ class Solution {
   遍歷 `min_arr` 直到有個 element > `num`，則該 element 可以被 `num` 取代，並且要從該 element 向後更新 `min_arr` 的值，更新後 `min_arr` 為 {1, 1, 2, 3}
 - 更新 `max_arr`：令 `max_arr` = {8, 6, 5, 2}，`num` = 7  
   將 `num` 和 `max_arr` 都乘以 -1，`max_arr` 變為 {-8, -6, -5, -2}，`num` = -7，這樣就可以和 `min_arr` 使用相同的比較判斷邏輯。一樣先找到比 `num` 大的 element，然後從該 element 向後更新 `max_arr` 的值，更新後 `max_arr` 為 {-8, -7, -6, -5}，再將 `max_arr` 乘以 -1 即可得到 {8, 7, 6, 5}，即為更新後的 `max_arr`。實際上只需要在比較時乘以 -1 即可，不需要真的將整個 `max_arr` 乘以 -1。
+
+#### 程式碼
 
 ```cpp {.line-numbers}
 class Solution {
