@@ -22,6 +22,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2982/Solution-2982.md)
 
+ [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
+
 ## Linked List
 
  [2. Add Two Numbers](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2/Solution-2.md)
@@ -195,3 +197,5 @@ I only recently started using Markdown to write solutions, so many problems donâ
 ## Bit Manipulation
 
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
+
+ [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
