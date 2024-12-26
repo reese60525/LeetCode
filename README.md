@@ -84,6 +84,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Grouped Loop
 
+ [6. Zigzag Conversion](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-6/Solution-6.md)
+
  [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2953/Solution-2953.md)
 
 ## Two Pointers
@@ -199,3 +201,7 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
 
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
+
+## Simulation
+
+ [6. Zigzag Conversion](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-6/Solution-6.md)
