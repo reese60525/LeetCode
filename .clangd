@@ -8,3 +8,4 @@ CompileFlags:
     - -Wconversion
     - -Wformat=2
     - -Wshadow
+    # - -Wno-sign-conversion # 禁用隱式型態轉換的警告

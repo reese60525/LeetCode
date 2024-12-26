@@ -72,6 +72,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Sorting
 
+ [1509. Minimum Difference Between Largest and Smallest Value in Three Moves](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1509/Solution-1509.md)
+
  [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md)
 
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
@@ -168,7 +170,9 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [769. Max Chunks To Make Sorted](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-769/Solution-769.md)
 
- [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)  
+ [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)
+
+ [1509. Minimum Difference Between Largest and Smallest Value in Three Moves](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1509/Solution-1509.md)
 
  [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md)
 
