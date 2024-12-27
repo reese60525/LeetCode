@@ -170,7 +170,6 @@ class Solution {
 
         // 初始化 dp
         std::vector<long long> dp(n, 0);
-        // long long dp[n];
         for (int i = 0; i < n; ++i) {
             dp[i] = points[0][i];
         }
