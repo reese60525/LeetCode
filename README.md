@@ -26,6 +26,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
 
+ [3159. Find Occurrences of an Element in an Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3159/Solution-3159.md)
+
 ## Linked List
 
  [2. Add Two Numbers](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2/Solution-2.md)
