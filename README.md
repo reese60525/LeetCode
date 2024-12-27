@@ -200,6 +200,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [518. Coin Change II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-518/Solution-518.md)
 
+ [1937. Maximum Number of Points with Cost](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1937/Solution-1937.md)
+
  [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
 ## Manacher's Algorithm
