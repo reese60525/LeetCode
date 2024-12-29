@@ -10,6 +10,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1/Solution-1.md)
 
+ [1366. Rank Teams by Votes](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1366/Solution-1366.md)
+
  [1525. Number of Good Ways to Split a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1525/Solution-1525.md)
 
  [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
@@ -75,6 +77,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
 
 ## Sorting
+
+ [1366. Rank Teams by Votes](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1366/Solution-1366.md)
 
  [1509. Minimum Difference Between Largest and Smallest Value in Three Moves](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1509/Solution-1509.md)
 
