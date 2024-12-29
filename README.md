@@ -106,6 +106,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [3. Longest Substring Without Repeating Characters](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3/Solution-3.md)
 
+ [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-689/Solution-689.md)
+
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
 
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
@@ -166,6 +168,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Prefix and Suffix
 
+ [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-689/Solution-689.md)
+
  [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-768/Solution-768.md)
 
  [3152. Special Array II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3152/Solution-3152.md)
@@ -199,6 +203,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md)
 
  [518. Coin Change II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-518/Solution-518.md)
+
+ [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-689/Solution-689.md)
 
  [1937. Maximum Number of Points with Cost](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1937/Solution-1937.md)
 
