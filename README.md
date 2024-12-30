@@ -216,6 +216,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
+ [2466. Count Ways To Build Good Strings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2466/Solution-2466.md)
+
 ## Manacher's Algorithm
 
  [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md)
