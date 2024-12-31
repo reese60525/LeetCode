@@ -212,6 +212,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-689/Solution-689.md)
 
+ [983. Minimum Cost For Tickets](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-983/Solution-983.md)
+
  [1639. Number of Ways to Form a Target String Given a Dictionary](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1639/Solution-1639.md)
 
  [1937. Maximum Number of Points with Cost](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1937/Solution-1937.md)
