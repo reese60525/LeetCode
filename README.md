@@ -6,6 +6,8 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 I only recently started using Markdown to write solutions, so many problems don’t have solutions written yet.
 
+# Problem List
+
 ## Hash Map
 
  [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1/Solution-1.md)
