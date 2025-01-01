@@ -114,6 +114,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-689/Solution-689.md)
 
+ [1423. Maximum Points You Can Obtain from Cards](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1423/Solution-1423.md)
+
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
 
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
