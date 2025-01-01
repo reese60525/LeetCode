@@ -244,6 +244,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
 
+ [3280. Convert Date to Binary](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3280/Solution-3280.md)
+
 ## Simulation
 
  [6. Zigzag Conversion](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-6/Solution-6.md)
