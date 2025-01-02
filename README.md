@@ -188,7 +188,7 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-768/Solution-768.md)
 
- [1422. Maximum Score After Splitting a String]((https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1422/Solution-1422.md))
+ [1422. Maximum Score After Splitting a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1422/Solution-1422.md)
 
  [3152. Special Array II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3152/Solution-3152.md)
 
