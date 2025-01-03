@@ -190,6 +190,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1422. Maximum Score After Splitting a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1422/Solution-1422.md)
 
+ [2270. Number of Ways to Split Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2270/Solution-2270.md)
+
  [2559. Count Vowel Strings in Ranges](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2559/Solution-2559.md)
 
  [3152. Special Array II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3152/Solution-3152.md)
