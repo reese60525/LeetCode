@@ -16,6 +16,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1525. Number of Good Ways to Split a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1525/Solution-1525.md)
 
+ [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
+
  [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
 
  [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md)
@@ -190,6 +192,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1422. Maximum Score After Splitting a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1422/Solution-1422.md)
 
+ [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
+
  [2270. Number of Ways to Split Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2270/Solution-2270.md)
 
  [2559. Count Vowel Strings in Ranges](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2559/Solution-2559.md)
@@ -245,6 +249,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 ## Bit Manipulation
 
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
+
+ [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
 
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
 
