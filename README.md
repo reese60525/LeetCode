@@ -78,6 +78,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Difference Array
 
+ [2381. Shifting Letters II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2381/Solution-2381.md)
+
  [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2779/Solution-2779.md)
 
 ## Sorting
@@ -195,6 +197,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
 
  [2270. Number of Ways to Split Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2270/Solution-2270.md)
+
+ [2381. Shifting Letters II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2381/Solution-2381.md)
 
  [2559. Count Vowel Strings in Ranges](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2559/Solution-2559.md)
 
