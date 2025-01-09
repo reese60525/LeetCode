@@ -252,6 +252,10 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md)
 
+## KMP Algorithm
+
+ [1408. String Matching in an Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1408/Solution-1408.md)
+
 ## Bit Manipulation
 
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)

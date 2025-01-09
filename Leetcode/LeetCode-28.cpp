@@ -14,6 +14,7 @@
  */
 #include <iostream>
 #include <string>
+#include <vector>
 
 static const auto io_sync_off = []() {
     std::ios::sync_with_stdio(false);
@@ -30,13 +31,14 @@ class Solution {
         }
 
         // 建構 LPS(Longest Prefix and Suffix) table
-        std::vector<int> LPS_table(needle.size(), 0);
+        // LPS_table[i] = j 表示長度為 i 的字串其 LPS 長度為 j
+        std::vector<int> LPS_table(needle.size() + 1, 0);
         int j = 0; // LPS 的 index
         // i 從 1 開始，因為 needle 長度為 1 的 prefix 的 LPS 長度必為 0
         for (int i = 1; i < needle.size(); ++i) {
             // 如果不匹配，回退到上一個可能的 prefix 位置，從該位置繼續比對
             while (j > 0 && needle[i] != needle[j]) {
-                j = LPS_table[j - 1];
+                j = LPS_table[j];
             }
 
             // 如果匹配，增加 prefix 長度
@@ -44,7 +46,7 @@ class Solution {
                 ++j;
             }
 
-            LPS_table[i] = j;
+            LPS_table[i + 1] = j;
         }
 
         // 開始比對 haystack 和 needle
@@ -52,7 +54,7 @@ class Solution {
         for (int i = 0; i < haystack.size(); ++i) {
             // 如果不匹配，回退到上一個可能的 prefix 位置，從該位置繼續比對
             while (j > 0 && haystack[i] != needle[j]) {
-                j = LPS_table[j - 1];
+                j = LPS_table[j];
             }
 
             // 如果匹配，移動 needle 的 index

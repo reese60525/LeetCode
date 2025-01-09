@@ -8,4 +8,6 @@ CompileFlags:
     - -Wconversion
     - -Wformat=2
     - -Wshadow
-    # - -Wno-sign-conversion # 禁用隱式型態轉換的警告
+    - -Wno-sign-conversion # 禁用隱式型態轉換的警告
+    - -Wno-shorten-64-to-32 # 禁用縮小型態轉換警告。
+    - -Wno-sign-compare # 禁用有符號與無符號型別比較時的警告。
