@@ -196,6 +196,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1422. Maximum Score After Splitting a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1422/Solution-1422.md)
 
+ [1769. Minimum Number of Operations to Move All Balls to Each Box](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1769/Solution-1769.md)
+
  [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
 
  [2270. Number of Ways to Split Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2270/Solution-2270.md)
