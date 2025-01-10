@@ -260,6 +260,10 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1408. String Matching in an Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1408/Solution-1408.md)
 
+## Trie
+
+ [2185. Counting Words With a Given Prefix](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2185/Solution-2185.md)
+
 ## Bit Manipulation
 
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
