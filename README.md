@@ -12,6 +12,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1/Solution-1.md)
 
+ [916. Word Subsets](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-916/Solution-916.md)
+
  [1366. Rank Teams by Votes](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1366/Solution-1366.md)
 
  [1525. Number of Good Ways to Split a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1525/Solution-1525.md)
