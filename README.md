@@ -16,6 +16,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1366. Rank Teams by Votes](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1366/Solution-1366.md)
 
+ [1400. Construct K Palindrome Strings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1400/Solution-1400.md)
+
  [1525. Number of Good Ways to Split a String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1525/Solution-1525.md)
 
  [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
