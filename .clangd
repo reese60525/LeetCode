@@ -1,13 +1,22 @@
 CompileFlags:
   Add:
+    # 使用 C++23 標準
     - -std=c++23
+
+    # 啟用未定義行為檢測（僅用於調試模式）
     - -fsanitize=undefined
-    - -Wall
-    - -Wextra
-    - -Wpedantic
-    - -Wconversion
-    - -Wformat=2
-    - -Wshadow
-    - -Wno-sign-conversion # 禁用隱式型態轉換的警告
-    - -Wno-shorten-64-to-32 # 禁用縮小型態轉換警告。
-    - -Wno-sign-compare # 禁用有符號與無符號型別比較時的警告。
+
+    # 基本警告選項
+    - -Wall                  # 啟用所有基本警告
+    - -Wextra                # 啟用額外警告
+    - -Wpedantic             # 嚴格遵循標準
+
+    # 進階檢測選項
+    - -Wconversion           # 檢測隱式類型轉換的問題
+    - -Wformat=2             # 格式化字符串的更嚴格檢查
+    - -Wshadow               # 避免變量遮蔽
+
+    # 根據項目需求禁用特定警告
+    - -Wno-sign-conversion   # 禁用符號轉換警告
+    - -Wno-shorten-64-to-32  # 禁用縮短警告（主要對於 64 位與 32 位數據）
+    - -Wno-sign-compare      # 禁用有符號/無符號比較警告
