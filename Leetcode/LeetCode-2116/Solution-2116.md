@@ -13,6 +13,14 @@
 
 ## 解題思路
 
+先說一個小技巧，該題目在傳入 `s` 和 `locked` 時是 pass by value，可以將其改成 pass by reference，這樣跑出來的時間和空間成績比較好看。
+
+```cpp {.line-numbers}
+bool canBeValid(std::string s, std::string locked)
+// 改成 pass by reference
+bool canBeValid(std::string &s, std::string &locked)
+```
+
 ### 1. Greedy
 
 - 對於 `locked[i]` 為 `0` 的位置，我們可以將其替換為 `(` 或 `)`，因此我們可以將其視為 `*` 表示為任意括號。
