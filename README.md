@@ -226,6 +226,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
+ [2116. Check if a Parentheses String Can Be Valid](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2116/Solution-2116.md)
+
  [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
 
  [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
