@@ -226,6 +226,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [769. Max Chunks To Make Sorted](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-769/Solution-769.md)
 
+ [921. Minimum Add to Make Parentheses Valid](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-921/Solution-921.md)
+
  [1014. Best Sightseeing Pair](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1014/Solution-1014.md)
 
  [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)
