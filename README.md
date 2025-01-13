@@ -222,6 +222,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Greedy
 
+ [678. Valid Parenthesis String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-678/Solution-678.md)
+
  [769. Max Chunks To Make Sorted](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-769/Solution-769.md)
 
  [1014. Best Sightseeing Pair](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1014/Solution-1014.md)
@@ -251,6 +253,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md)
 
  [518. Coin Change II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-518/Solution-518.md)
+
+ [678. Valid Parenthesis String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-678/Solution-678.md)
 
  [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-689/Solution-689.md)
 
