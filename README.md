@@ -38,6 +38,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [3159. Find Occurrences of an Element in an Array](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3159/Solution-3159.md)
 
+ [3223. Minimum Length of String After Operations](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3223/Solution-3223.md)
+
 ## Linked List
 
  [2. Add Two Numbers](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2/Solution-2.md)
