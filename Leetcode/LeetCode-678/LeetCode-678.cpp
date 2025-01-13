@@ -110,31 +110,37 @@ class Solution {
 //         int n = s.size();
 
 //         // 初始化 dp
-//         bool dp[n][n];
-//         for (int i = 0; i < n; ++i) {
-//             dp[i][i] = s[i] == '*';
-//         }
-//         for (int i = 1; i < n; ++i) {
-//             char c1 = s[i - 1], c2 = s[i];
-//             dp[i - 1][i] = (c1 == '(' || c1 == '*') && (c2 == ')' || c2 == '*');
-//         }
+//         bool dp[n + 1];
+//         std::memset(dp, false, sizeof(dp));
+//         dp[0] = true; // 空字串是合法的括號字串
 
-//         // 從 dp 矩陣的右下角開始，從右往左，從下往上
-//         // 因為 dp[i][j] 會用到 dp[i + 1][j - 1] 和 dp[i][k] && dp[k + 1][j]
-//         for (int i = n - 3; i >= 0; --i) {
-//             for (int j = i + 2; j < n; ++j) {
-//                 dp[i][j] = false;
-//                 if ((s[i] == '(' || s[i] == '*') && (s[j] == ')' || s[j] == '*')) {
-//                     dp[i][j] = dp[i + 1][j - 1];
+//         for (int i = 1; i <= n; ++i) {
+//             char c = s[i - 1]; // 前 i 個字元，對應 s[i-1]
+//             bool pre;          // 用來紀錄上一層 dp[j-1] 的狀態
+//             for (int j = 0; j <= i; ++j) {
+//                 // 需要一個變數將其設為 false 來代替 dp[j] 進行計算
+//                 bool cur = false;
+//                 if (c == '(' && j > 0) {
+//                     cur = pre;
 //                 }
-//                 // !dp[i][j] 表示只有 dp[i][j] 為 false 才會進去迴圈來檢查
-//                 for (int k = i; k < j && !dp[i][j]; ++k) {
-//                     dp[i][j] = dp[i][k] && dp[k + 1][j];
+//                 else if (c == ')' && j < i) {
+//                     cur = dp[j + 1];
 //                 }
+//                 else if (c == '*') {
+//                     cur = dp[j];
+//                     if (j > 0) {
+//                         cur |= pre;
+//                     }
+//                     if (j < i) {
+//                         cur |= dp[j + 1];
+//                     }
+//                 }
+//                 pre = dp[j]; // 紀錄上一層 dp[j-1] 的狀態
+//                 dp[j] = cur; // 將 dp[j] 從上一層更新為當前這一層的狀態
 //             }
 //         }
 
-//         return dp[0][n - 1];
+//         return dp[0];
 //     }
 // };
 

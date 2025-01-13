@@ -174,24 +174,21 @@ class Solution {
 
 ### 3. Dynamic Programming
 
-要判斷一個字串是否為合法的括號字串，可以判斷字串的頭尾字元和中間的字串是否為合法的括號字串。
+令 `dp[i][j]` 表示由字串 `s` 的前 `i` 個字元所組成的子字串，是否能跟 `j` 個 `)` 的形成合法括號字串。  
+例如有 `s` = "( ( ) ) ( ( ( ( ) )"，則 `dp[7][3]` 表示由字串 `s` 的前 7 個字元所組成的子字串 "( ( ) ) ( ( ("，是否能跟 3 個 `)` 的形成合法括號字串，可以看到該子字串有多出三個 `(` 並且任意位置的 `)` 都能找到一個 `(` 來匹配，因此 `dp[7][3]` 為 `true`。
 
-假設字串 `s` 的長度為 `n`，`dp[i][j]` 表示字串 `s[i:j]` 是否為合法的括號字串，則有：
+對於 `dp[i][j]` 的狀態轉移，考慮當前子字串的最後一個字元（`s[i]`），則有以下三種情況：
 
-1. 當子字串長度 = 1，`j - i = 0`，只有 `s' = "*"` 時 `dp[i][i] = true`。
-2. 當子字串長度 = 2，`j - i = 1`，只有 `s' = "()" 或 "*)" 或 "(*" 或 "**"` 時 `dp[i][j] = true`。
-3. 當子字串長度 > 2，`j - i > 1`，則需要判斷頭尾字元和中間的子字串是否都能構成合法的括號字串，又或者 `dp[i][k] = dp[k+1][j] = true` 的話，則 `dp[i][j] = true`。狀態轉移公式為：
+1. `s[i]` = `(`，則 `dp[i][j] = dp[i-1][j-1]`，因為 `dp[i-1][j-1]` 表示前 `i-1` 個字元組成的子字串，是否能跟 `j-1` 個 `)` 的形成合法括號字串，如果可以，則在其後面加上一個 `(` 後，就能多出一個可以和 `)` 匹配的 `(`，因此變成可以和 `j` 個 `)` 形成合法括號字串，若 `dp[i-1][j-1]` 為 `false`，則在其後面加上一個 `(` 後，也無法和 `j` 個 `)` 形成合法括號字串，因為前 `i-1` 個字元組成的子字串就已經是不合法括號字串了。
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131556431.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131556431.png)
+2. `s[i]` = `)`，則 `dp[i][j] = dp[i-1][j+1]`，因為 `dp[i-1][j+1]` 表示前 `i-1` 個字元組成的子字串，是否能跟 `j+1` 個 `)` 的形成合法括號字串，如果可以，則在其後面加上一個 `)` 進行匹配後，仍可以和 `j` 個 `)` 形成合法括號字串，若 `dp[i-1][j+1]` 為 `false`，則在其後面加上一個 `)` 後，也無法和 `j` 個 `)` 形成合法括號字串，因為前 `i-1` 個字元組成的子字串就已經是不合法括號字串了。
 
-$$
-dp[i][j] =
-\begin{cases}
-\text{true}, & \text{if } (s[i], s[j]) \in \{ ("(", ")"), ("*", ")"), ("(", "*"), ("*", "*") \} \, \text{ and } \, dp[i+1][j-1] = \text{true}, \\[10pt]
-\text{true}, & \text{if } \exists k \in [i, j), \ dp[i][k] = \text{true} \, \text{ and } \, dp[k+1][j] = \text{true}, \\[10pt]
-\text{false}, & \text{otherwise}.
-\end{cases}
-$$
+3. `s[i]` = `*`，由於 `*` 可以是 `(`、`)` 或空字串`""`，因此 `dp[i][j]` 的狀態轉移要考慮三種情況：
+    - 將 `*` 視為 `""`，可以匹配的 `)` 數量不變，因此 `dp[i][j] = dp[i-1][j]`。
+    - 將 `*` 視為 `(`，則 `dp[i][j] = dp[i-1][j-1]`
+    - 將 `*` 視為 `)`，則 `dp[i][j] = dp[i-1][j+1]`。
+
+最後，答案會是 `dp[n][0]`，表示由字串 `s` 的前 `n` 個字元所組成的子字串，是否能跟 0 個 `)` 的形成合法括號字串，也就是 `s` 已經沒有可以匹配的 `)` 時是否為合法的括號字串。
 
 #### 程式碼
 
@@ -202,37 +199,96 @@ class Solution {
         int n = s.size();
 
         // 初始化 dp
-        bool dp[n][n];
-        for (int i = 0; i < n; ++i) {
-            dp[i][i] = s[i] == '*';
-        }
-        for (int i = 1; i < n; ++i) {
-            char c1 = s[i - 1], c2 = s[i];
-            dp[i - 1][i] = (c1 == '(' || c1 == '*') && (c2 == ')' || c2 == '*');
-        }
+        bool dp[n + 1][n + 1];
+        std::memset(dp, false, sizeof(dp));
+        dp[0][0] = true; // 空字串是合法的括號字串
 
-        // 從 dp 矩陣的右下角開始，從右往左，從下往上
-        // 因為 dp[i][j] 會用到 dp[i + 1][j - 1] 和 dp[i][k] && dp[k + 1][j]
-        for (int i = n - 3; i >= 0; --i) {
-            for (int j = i + 2; j < n; ++j) {
-                dp[i][j] = false;
-                if ((s[i] == '(' || s[i] == '*') && (s[j] == ')' || s[j] == '*')) {
-                    dp[i][j] = dp[i + 1][j - 1];
+        for (int i = 1; i <= n; ++i) {
+            char c = s[i - 1]; // 前 i 個字元，對應 s[i-1]
+            for (int j = 0; j <= i; ++j) {
+                if (c == '(' && j > 0) {
+                    dp[i][j] = dp[i - 1][j - 1];
                 }
-                // !dp[i][j] 表示只有 dp[i][j] 為 false 才會進去迴圈來檢查
-                for (int k = i; k < j && !dp[i][j]; ++k) {
-                    dp[i][j] = dp[i][k] && dp[k + 1][j];
+                else if (c == ')' && j < i) {
+                    dp[i][j] = dp[i - 1][j + 1];
+                }
+                else if (c == '*') {
+                    dp[i][j] = dp[i - 1][j];
+                    if (j > 0) {
+                        dp[i][j] |= dp[i - 1][j - 1];
+                    }
+                    if (j < i) {
+                        dp[i][j] |= dp[i - 1][j + 1];
+                    }
                 }
             }
         }
 
-        return dp[0][n - 1];
+        return dp[n][0];
     }
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131541466.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131541466.png)
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131732158.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131732158.png)
 
-時間複雜度： $O(n^3)$ ，其中 $n$ 為 `s` 的大小，共要計算 $O(n^2)$ 個狀態，最差情況是每個狀態需要 $O(n)$ 的時間來迭代 $[i, j)$ 區間的狀態檢查 `dp[i][k]` 和 `dp[k + 1][j]`。
+時間複雜度： $O(n^2)$ ，其中 $n$ 為 `s` 的大小。
 
 空間複雜度： $O(n^2)$ 。
+
+---
+由於 `dp[i][j]` 只和 `dp[i-1][]` 有關，因此可以將 `dp` 從二維壓縮成一維，空間複雜度優化為 $O(n)$ 。
+
+需要注意的細節：
+
+- 由於 `j-1`、`j`和`j+1` 這些舊資料都可能會被用到，因此如果是從左往右遍歷，需要用一個變數紀錄 `dp[j-1]`，如果是從右往左遍歷，則需要紀錄 `dp[j+1]`，否則會覆蓋掉舊資料，導致計算錯誤。
+- 在原本二維 `dp` 中，當前遍歷到的 `dp[i][j]` 一定是 `false`，但在一維中，當前遍歷到的 `dp[j]` 保存的是上一層的狀態，不一定是 `false`，所以需要一個變數 `cur` 將其設為 false 來代替 `dp[j]` 進行計算，計算完後再將 `cur` 賦值給 `dp[j]`。
+
+#### 程式碼
+
+```cpp {.line-numbers}
+class Solution {
+  public:
+    bool checkValidString(std::string s) {
+        int n = s.size();
+
+        // 初始化 dp
+        bool dp[n + 1];
+        std::memset(dp, false, sizeof(dp));
+        dp[0] = true; // 空字串是合法的括號字串
+
+        for (int i = 1; i <= n; ++i) {
+            char c = s[i - 1]; // 前 i 個字元，對應 s[i-1]
+            bool pre;          // 用來紀錄上一層 dp[j-1] 的狀態
+            for (int j = 0; j <= i; ++j) {
+                // 需要一個變數將其設為 false 來代替 dp[j] 進行計算
+                bool cur = false;
+                if (c == '(' && j > 0) {
+                    cur = pre;
+                }
+                else if (c == ')' && j < i) {
+                    cur = dp[j + 1];
+                }
+                else if (c == '*') {
+                    cur = dp[j];
+                    if (j > 0) {
+                        cur |= pre;
+                    }
+                    if (j < i) {
+                        cur |= dp[j + 1];
+                    }
+                }
+                pre = dp[j]; // 紀錄上一層 dp[j-1] 的狀態
+                dp[j] = cur; // 將 dp[j] 從上一層更新為當前這一層的狀態
+            }
+        }
+
+        return dp[0];
+    }
+};
+```
+
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131806356.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131806356.png)
+
+時間複雜度： $O(n^2)$ ，其中 $n$ 為 `s` 的大小。
+
+空間複雜度： $O(n)$ 。
