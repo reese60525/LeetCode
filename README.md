@@ -156,9 +156,13 @@ I only recently started using Markdown to write solutions, so many problems don�
 
 ## Backtracking
 
+ [301. Remove Invalid Parentheses](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-301/Solution-301.md)
+
  [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-494/Solution-494.md)
 
-## Depth First Search
+## Depth First Search（DFS）
+
+ [301. Remove Invalid Parentheses](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-301/Solution-301.md)
 
  [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-515/Solution-515.md)
 
@@ -174,7 +178,9 @@ I only recently started using Markdown to write solutions, so many problems don�
 
  [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3203/Solution-3203.md)
 
-## Breadth First Search
+## Breadth First Search（BFS）
+
+ [301. Remove Invalid Parentheses](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-301/Solution-301.md)
 
  [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-515/Solution-515.md)
 
