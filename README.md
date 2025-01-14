@@ -236,6 +236,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1509. Minimum Difference Between Largest and Smallest Value in Three Moves](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1509/Solution-1509.md)
 
+ [1541. Minimum Insertions to Balance a Parentheses String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1541/Solution-1541.md)
+
  [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md)
 
  [1963. Minimum Number of Swaps to Make the String Balanced](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1963/Solution-1963.md)
