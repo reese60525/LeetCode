@@ -238,6 +238,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md)
 
+ [1963. Minimum Number of Swaps to Make the String Balanced](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1963/Solution-1963.md)
+
  [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2054/Solution-2054.md)
 
  [2116. Check if a Parentheses String Can Be Valid](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2116/Solution-2116.md)
