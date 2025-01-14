@@ -26,6 +26,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2593. Find Score of an Array After Marking All Elements](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2593/Solution-2593.md)
 
+ [2657. Find the Prefix Common Array of Two Arrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2657/Solution-2657.md)
+
  [2762. Continuous Subarrays](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2762/Solution-2762.md)
 
  [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2940/Solution-2940.md)
