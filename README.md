@@ -224,6 +224,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Greedy
 
+ [55. Jump Game](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-55/Solution-55.md)
+
  [678. Valid Parenthesis String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-678/Solution-678.md)
 
  [769. Max Chunks To Make Sorted](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-769/Solution-769.md)
@@ -255,6 +257,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 ## Dynamic Programming
 
  [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-5/Solution-5.md)
+
+ [55. Jump Game](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-55/Solution-55.md)
 
  [322. Coin Change](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-322/Solution-322.md)
 
