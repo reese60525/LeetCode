@@ -234,6 +234,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1014. Best Sightseeing Pair](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1014/Solution-1014.md)
 
+ [1249. Minimum Remove to Make Valid Parentheses](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1249/Solution-1249.md)
+
  [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)
 
  [1509. Minimum Difference Between Largest and Smallest Value in Three Moves](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1509/Solution-1509.md)
