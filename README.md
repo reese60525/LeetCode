@@ -250,6 +250,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2182. Construct String With Repeat Limit](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2182/Solution-2182.md)
 
+ [2429. Minimize XOR](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2429/Solution-2429.md)
+
  [3218. Minimum Cost for Cutting Cake I](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3218/Solution-3218.md)
 
  [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3219/Solution-3219.md)
@@ -297,6 +299,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
 
  [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
+
+ [2429. Minimize XOR](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2429/Solution-2429.md)
 
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
 
