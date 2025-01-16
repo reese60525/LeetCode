@@ -302,6 +302,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
 
+ [2425. Bitwise XOR of All Pairings](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2425/Solution-2425.md)
+
  [2429. Minimize XOR](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2429/Solution-2429.md)
 
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
