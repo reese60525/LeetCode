@@ -306,6 +306,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [2429. Minimize XOR](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2429/Solution-2429.md)
 
+ [2683. Neighboring Bitwise XOR](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2683/Solution-2683.md)
+
  [3083. Existence of a Substring in a String and Its Reverse](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3083/Solution-3083.md)
 
  [3280. Convert Date to Binary](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3280/Solution-3280.md)
