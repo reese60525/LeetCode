@@ -49,6 +49,43 @@ class Solution {
 };
 ```
 
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182134134.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182134134.png)
+
+時間複雜度： $O(\lfloor log_{10}|x| \rfloor + 1)$ 。
+
+空間複雜度： $O(1)$ 。
+
+---
+第二種做法和第一種類似，但判斷條件稍微不同，並且不需要做正負號的轉換，更簡潔易懂。
+
+#### 程式碼
+
+```cpp {.line-numbers}
+class Solution {
+  public:
+    int reverse(int x) {
+        int res = 0;
+        while (x != 0) {
+            // 判斷正數是否會 overflow
+            if (res > INT_MAX / 10 || (res == INT_MAX / 10 && x % 10 > 7)) {
+                return 0;
+            }
+            // 判斷負數是否會 overflow
+            if (res < INT_MIN / 10 || (res == INT_MIN / 10 && x % 10 < -8)) {
+                return 0;
+            }
+
+            res = res * 10 + x % 10;
+            x /= 10;
+        }
+
+        return res;
+    }
+};
+```
+
+[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182151706.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182151706.png)
+
 時間複雜度： $O(\lfloor log_{10}|x| \rfloor + 1)$ 。
 
 空間複雜度： $O(1)$ 。
