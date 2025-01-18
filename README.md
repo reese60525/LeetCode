@@ -188,11 +188,17 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
  [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-515/Solution-515.md)
 
+ [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1368/Solution-1368.md)
+
  [2415. Reverse Odd Levels of Binary Tree](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2415/Solution-2415.md)
 
  [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-2471/Solution-2471.md)
 
  [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3203/Solution-3203.md)
+
+## Dijkstra's Algorithm
+
+ [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1368/Solution-1368.md)
 
 ## Union Find
 
