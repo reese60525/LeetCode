@@ -304,6 +304,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Bit Manipulation
 
+ [7. Reverse Integer](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-7/Solution-7.md)
+
  [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-50/Solution-50.md)
 
  [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1930/Solution-1930.md)
