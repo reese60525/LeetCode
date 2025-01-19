@@ -58,6 +58,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
 
 ## Priority Queue
 
+ [407. Trapping Rain Water II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-407/Solution-407.md)
+
  [1405. Longest Happy String](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1405/Solution-1405.md)  
 
  [1792. Maximum Average Pass Ratio](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1792/Solution-1792.md)
@@ -197,6 +199,8 @@ I only recently started using Markdown to write solutions, so many problems donâ
  [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-3203/Solution-3203.md)
 
 ## Dijkstra's Algorithm
+
+ [407. Trapping Rain Water II](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-407/Solution-407.md)
 
  [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-1368/Solution-1368.md)
 
