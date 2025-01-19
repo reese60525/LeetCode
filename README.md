@@ -327,3 +327,7 @@ I only recently started using Markdown to write solutions, so many problems don�
 ## Simulation
 
  [6. Zigzag Conversion](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-6/Solution-6.md)
+
+## Deterministic Finite Automaton（DFA）
+
+ [8. String to Integer (atoi)](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-8/Solution-8.md)
