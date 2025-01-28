@@ -6,23 +6,23 @@
 
 給一個字串陣列 `words` 裡面所有的 string 長度都一樣，以及一個字串 `target`，能從 `words` 選擇一個字串的特定位置的字母來組成 `target`，例如：選擇了 `words[3][6]` 來組成 `target[3]` 的字母，但是只要選了 `words[i][j]` 後，所有的字串都不能再使用小於 `j` 的位置的字母，像是我選了 `words[3][6]` 後，則 `words[0][0]` 到 `words[0][6]` 到 `words[n][0]` 到 `words[n][6]` 這些字母都不能再被使用，請問能組成 `target` 的組合共有幾種。
 
-**組合數量可能會很大，請回傳 `10^9 + 7` 的餘數。**
+**組合數量可能會很大，請回傳 $\text{mod } 10^9 + 7$ 後的餘數。**
 
 e.g.
 
-`words` = {"acca", "bbbb", "caca"}，`target` = "bab"
+$words = ["acca", "bbbb", "caca"]$ ， $target = "bab"$
 
-- "aba" -> index 0 ("<u>'a'</u>cca")，index 1 ("b<u>'b'</u>bb")，index 3 ("cac<u>'a'</u>")
+- `"aba"` -> index 0：`"'a'cca"`，index 1：`"b'b'bb"`，index 3：`"cac'a'"`
 
-- "aba" -> index 0 ("<u>'a'</u>cca")，index 2 ("bb<u>'b'</u>b")，index 3 ("cac<u>'a'</u>")
+- `"aba"` -> index 0：`"'a'cca"`，index 2：`"bb'b'b"`，index 3：`"cac'a'"`
 
-- "aba" -> index 0 ("<u>'a'</u>cca")，index 1 ("b<u>'b'</u>bb")，index 3 ("acc<u>'a'</u>")
+- `"aba"` -> index 0：`"'a'cca"`，index 1：`"b'b'bb"`，index 3：`"acc'a'"`
 
-- "aba" -> index 0 ("<u>'a'</u>cca")，index 2 ("bb<u>'b'</u>b")，index 3 ("acc<u>'a'</u>")
+- `"aba"` -> index 0：`"'a'cca"`，index 2：`"bb'b'b"`，index 3：`"acc'a'"`
 
-- "aba" -> index 1 ("c<u>'a'</u>ca")，index 2 ("bb<u>'b'</u>b")，index 3 ("acc<u>'a'</u>")
+- `"aba"` -> index 1：`"c'a'ca"`，index 2：`"bb'b'b"`，index 3：`"acc'a'"`
 
-- "aba" -> index 1 ("c<u>'a'</u>ca")，index 2 ("bb<u>'b'</u>b")，index 3 ("cac<u>'a'</u>")
+- `"aba"` -> index 1：`"c'a'ca"`，index 2：`"bb'b'b"`，index 3：`"cac'a'"`
 
 `''`內的是選擇的字母，共有六種組合，所以答案是 6。
 
@@ -30,7 +30,7 @@ e.g.
 
 ### 1. Dynamic Programming
 
-典型的 0/1 背包問題，令 `words` 裡的字串長度為 `m`，每次都能選或不選第 `x` 層的字母，而一共有 `m`層、`m` 種選擇。假如選了第 `x` 層的字母來組成 `target[k]`，則 `words[0][x]` 到 `words[n][x]` 中 `target[k]` 這個字母出現的次數就是選擇了這層後能組合的數量，以題目解釋的範例來說，假設我選了第 0 層的 'a'、第 1 層的 'b'、第 3 層的 'a' 來組成 "aba"，那麼這樣的層數選擇能得到組合的總數量就是每一層該字母的出現次數相乘，'a' 在 `words[0][0]` 到 `words[3][0]` 出現一次，'b' 在 `words[0][1]` 到 `words[3][1]` 出現一次，'a' 在 `words[0][3]` 到 `words[3][3]` 出現兩次，共 $1 \times 1 \times 2 = 2$ 種組合。
+典型的 0-1 背包問題，令 `words` 裡的字串長度為 `m`，每次都能選或不選第 `x` 層的字母，而一共有 `m`層、`m` 種選擇。假如選了第 `x` 層的字母來組成 `target[k]`，則 `words[0][x]` 到 `words[n][x]` 中 `target[k]` 這個字母出現的次數就是選擇了這層後能組合的數量，以題目解釋的範例來說，假設我選了第 0 層的 `'a'`、第 1 層的 `'b'`、第 3 層的 `'a'` 來組成 `"aba"`，那麼這樣的層數選擇能得到組合的總數量就是每一層該字母的出現次數相乘，`'a'` 在 `words[0][0]` 到 `words[3][0]` 出現一次，`'b'` 在 `words[0][1]` 到 `words[3][1]` 出現一次，`'a'` 在 `words[0][3]` 到 `words[3][3]` 出現兩次，共 $1 \times 1 \times 2 = 2$ 種組合。
 
 DFS 寫法如下：
 

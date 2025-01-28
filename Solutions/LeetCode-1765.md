@@ -4,9 +4,10 @@
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222158795.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222158795.png)
 
-給一個二為整數陣列 `isWater`，其中 `isWater[i][j]` 如果是 0 表示是陸地，如果是 1 表示是水域，需要根據以下規則來分配每個位置的高度：
+給一個二維整數陣列 `isWater`，其中 `isWater[i][j]` 如果是 0 表示是陸地，如果是 1 表示是水域，需要根據以下規則來分配每個位置的高度：
 
 1. 每個水域的高度必須是 0。
+
 2. 每個相鄰區域（上下左右）的高度差最多為 1。
 
 請找出能讓矩陣中的最高高度最大化的分配方式。
@@ -74,7 +75,7 @@ class Solution {
 
 #### 複雜度分析
 
-令 `m` 為 `isWater` 的列數，`n` 為 `isWater` 的行數。
+令 $m$ 、 $n$ 各為 `isWater` 的列數和行數。
 
 - 時間複雜度： $O(m \cdot n)$
 
@@ -189,7 +190,7 @@ class Solution {
 
 #### 複雜度分析
 
-令 `m` 為 `isWater` 的列數，`n` 為 `isWater` 的行數。
+令 $m$ 、 $n$ 各為 `isWater` 的列數和行數。
 
 - 時間複雜度： $O(m \cdot n)$
 

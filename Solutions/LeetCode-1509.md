@@ -62,17 +62,17 @@ class Solution {
 
 優化方法一，由於我們只需要知道最大和最小的四個數，因此可以創建兩個 array 分別儲存最大和最小的四個數，遍歷 `nums` 時更新這兩個 array 即可，不需要排序整個 `nums`。
 
-在底下的程式碼中，`func` 用於更新 `min_arr` 和 `max_arr`，`flag` 用於判斷現在的 array 是 `min_arr` 還是 `max_arr`，如果是 `max_arr` 則 `flag` = -1，反之 `flag` = 1，當更新 `max_arr` 時，在比較 `num` 和 `arr[idx]` 時各乘以 -1 來讓其比較的判斷邏輯和 `min_arr` 相同。
+在底下的程式碼中，`func` 用於更新 `min_arr` 和 `max_arr`，`flag` 用於判斷現在的 array 是 `min_arr` 還是 `max_arr`，如果是 `max_arr` 則 $flag = -1$ ，反之 $flag = 1$ ，當更新 `max_arr` 時，在比較 `num` 和 `arr[idx]` 時各乘以 -1 來讓其比較的判斷邏輯和 `min_arr` 相同。
 
 例如：
 
-- 更新 `min_arr`：令 `min_arr` = {1, 2, 3, 5}，`num` = 1
+- 更新 `min_arr`：令 $min\_arr = [1, 2, 3, 5]$ ， $num = 1$
 
-  遍歷 `min_arr` 直到有個 element > `num`，則該 element 可以被 `num` 取代，並且要從該 element 向後更新 `min_arr` 的值，更新後 `min_arr` 為 {1, 1, 2, 3}
+  遍歷 `min_arr` 直到有個 element > `num`，則該 element 可以被 `num` 取代，並且要從該 element 向後更新 `min_arr` 的值，更新後 $min\_arr = [1, 1, 2, 3]$ 。
 
-- 更新 `max_arr`：令 `max_arr` = {8, 6, 5, 2}，`num` = 7
+- 更新 `max_arr`：令 $max\_arr = [8, 6, 5, 2]$ ， $num = 7$
 
-  將 `num` 和 `max_arr` 都乘以 -1，`max_arr` 變為 {-8, -6, -5, -2}，`num` = -7，這樣就可以和 `min_arr` 使用相同的比較判斷邏輯。一樣先找到比 `num` 大的 element，然後從該 element 向後更新 `max_arr` 的值，更新後 `max_arr` 為 {-8, -7, -6, -5}，再將 `max_arr` 乘以 -1 即可得到 {8, 7, 6, 5}，即為更新後的 `max_arr`。實際上只需要在比較時乘以 -1 即可，不需要真的將整個 `max_arr` 乘以 -1。
+  將 `num` 和 `max_arr` 都乘以 -1， $max\_arr = [-8, -6, -5, -2]$ ， $num = -7$ ，這樣就可以和 `min_arr` 使用相同的比較判斷邏輯。一樣先找到比 `num` 大的 element，然後從該 element 向後更新 `max_arr` 的值，更新後 $max\_arr = [-8, -7, -6, -5]$ ，再將 `max_arr` 乘以 -1 即可得到 `[8, 7, 6, 5]`，即為更新後的 `max_arr`。實際上只需要在比較時乘以 -1 即可，不需要真的將整個 `max_arr` 乘以 -1。
 
 #### 程式碼
 

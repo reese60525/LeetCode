@@ -50,7 +50,7 @@ class Solution {
 
 ### 2. KMP Algorithm
 
-對於配對 substring 的問題，我們可以使用 `KMP Algorithm` 來加速配對的過程，使得時間複雜度從 $O(m^2)$ 降為 $O(m)$ 。
+對於配對 substring 的問題，我們可以使用 KMP Algorithm 來加速配對的過程，使字串對配對 substring 的時間複雜度從 $O(m^2)$ 降為 $O(m)$ 。
 
 #### 程式碼
 

@@ -4,25 +4,25 @@
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215104556830.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215104556830.png)
 
-給一個二維整數陣列 `classes`， $classes[i] = [pass_i, total_i]$ ，代表第 `i` 個班級有 `pass_i` 個人通過考試，該班級總共有 `total_i` 個人 。還給一個 integer `extraStudents`，代表你可以額外分配 `extraStudents` 個學生到任何班級，這些學生都會通過考試，求將這些學生分配到班級後，將每個班級的通過率加總並平均的最大值。
+給一個二維整數陣列 `classes`， $classes[i] = [pass_i, total_i]$ ，代表第 `i` 個班級有 `pass_i` 個人通過考試，該班級總共有 `total_i` 個人 。以及一個整數 `extraStudents`，代表你可以額外分配 `extraStudents` 個學生到任何班級，這些學生一定會通過考試，將這些學生分配到班級後，將每個班級的通過率加總並平均後的最大值是多少？
 
 e.g.
 
-`classes` = {{1, 2}, {3, 5}, {2, 2}}，`extraStudents` = 2
+$classes = [[1, 2], [3, 5], [2, 2]]$ ， $extraStudents = 2$
 
-將兩個學生都分配到第一個班級，通過率為 $\frac{1+2}{2+2} = \frac{3}{4}$ = 0.75
+將兩個學生都分配到第一個班級，通過率為 $\frac{1+2}{2+2} = \frac{3}{4} = 0.75$
 
 接著將所有班級的通過率加總後除以班級數，得到平均通過率為 $\frac{0.75 + 0.6 + 1}{3} = 0.78333$
 
-該平均通過率為任意分配學生的方式中的最大值
+該平均通過率為任意分配學生的方式中的最大值。
 
 ## 解題思路
 
 ### 1. Greedy and Priority Queue
 
-這題的關鍵在於如何保證分配學生後的通過率最大，假設某個班級的 `pass` 和 `total` 分別為 `p` 和 `t`，則該班級的通過率為 $\frac{p}{t}$ 。當分配一個學生到該班級，則通過率為 $\frac{p+1}{t+1}$ ，我們可以發現，分配學生後的通過率增加量為 $\frac{p+1}{t+1} - \frac{p}{t} = \frac{t(p+1) - p(t+1)}{t(t+1)} = \frac{t-p}{t(t+1)}$ ，因此可以創建一個 `max heap` `priority queue` 存放 `classes` 並以通過率增加量來做排序，每次從 `priority queue` 中取出通過率增加量最大的班級，將學生分配到該班級，直到所有學生都被分配完為止，這樣就能保證分配學生後的通過率是最大的。  
+這題的關鍵在於如何保證分配學生後的通過率最大，假設某個班級的 `pass` 和 `total` 分別為 `p` 和 `t`，則該班級的通過率為 $\frac{p}{t}$ 。當分配一個學生到該班級，則通過率為 $\frac{p+1}{t+1}$ ，我們可以發現，分配學生後的通過率增加量為 $\frac{p+1}{t+1} - \frac{p}{t} = \frac{t(p+1) - p(t+1)}{t(t+1)} = \frac{t-p}{t(t+1)}$ ，因此可以創建一個 max heap 的 priority queue 存放 `classes` 以**通過率增加量**來做排序，每次從 priority queue 中取出通過率增加量**最大**的班級，將學生分配到該班級，直到所有學生都被分配完為止，這樣就能保證分配學生後的通過率是最大的。
 
-而兩個班級的通過率增加量的比較公式為: $\frac{t_1-p_1}{t_1(t_1+1)} > \frac{t_2-p_2}{t_2(t_2+1)}$ ，可以將兩邊同乘 $t_1(t_1+1)$ 和 $t_2(t_2+1)$ ，得到 $(t_1-p_1)t_2(t_2+1) > (t_2-p_2)t_1(t_1+1)$ ，通過這樣的比較方式可以避免除法浮點數的誤差。
+而兩個班級的通過率增加量的比較公式為： $\frac{t_1-p_1}{t_1(t_1+1)} > \frac{t_2-p_2}{t_2(t_2+1)}$ ，可以將兩邊同乘 $t_1(t_1+1)$ 和 $t_2(t_2+1)$ ，得到 $(t_1-p_1)t_2(t_2+1) > (t_2-p_2)t_1(t_1+1)$ ，通過這樣的比較方式可以避免除法浮點數的誤差。
 
 #### 程式碼
 
@@ -70,12 +70,12 @@ class Solution {
 
 令 $n$ 為 `classes` 的長度， $k$ 為 `extraStudents` 的值。
 
-- 時間複雜度: $O((n+k) \log n)$
+- 時間複雜度: $O((n+k) \cdot \log n)$
 
 - 空間複雜度: $O(n)$
 
 ---
-對於這個方式，每次操作 `priority queue` 時都必須將每個 `class` 的通過率增加量**全部重新計算一次**，導致效能低下，因此可以改變 `priority queue` 的資料結構，從原本的 $[pass, total]$ 改為 $[ratio, (pass, total)]$ ，其中 `ratio` 為通過率增加量，這樣就可以在操作 `priority queue` 之後的維護可以不用每個 element 都呼叫 `cmp` 來比較，直接用 `ratio` 來比較即可，減少許多除法運算。
+對於這個方式，每次操作 priority queue 時都必須將每個 `class` 的通過率增加量**全部重新計算一次**，導致效能低下，因此可以改變 priority queue 的資料結構，從原本的 `[pass, total]` 改為 `[ratio, (pass, total)]` ，其中 `ratio` 為通過率增加量，這樣就可以在操作 priority queue 之後的維護可以不用每個 element 都呼叫 `cmp` 來比較，直接用 `ratio` 來比較即可，減少許多運算。
 
 #### 程式碼
 
@@ -122,6 +122,6 @@ class Solution {
 
 令 $n$ 為 `classes` 的長度， $k$ 為 `extraStudents`
 
-- 時間複雜度: $O((n+k) \log n)$
+- 時間複雜度: $O((n+k) \cdot \log n)$
 
 - 空間複雜度: $O(n)$

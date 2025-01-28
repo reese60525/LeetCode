@@ -4,25 +4,25 @@
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217170008995.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217170008995.png)
 
-給三個整數 `a`、`b`、`c`，分別代表三個字母 'a'、'b'、'c' 的數量，請找出由這些 'a'、'b'、'c' 所組成的最長 happy string。
+給三個整數 `a`、`b`、`c`，分別代表三個字母 `'a'`、`'b'`、`'c'` 的數量，請找出由這些 `'a'`、`'b'`、`'c'` 所組成的最長 happy string。
 
 happy string 的定義為：
 
-- 字串中不能有連續三個或以上的相同相鄰字母，e.g. "aaa"、"aaaa" ...
+- 字串中不能有連續三個或以上的相同相鄰字母，e.g. `"aaa"`、`"aaaa"` ...
 
-- 字串中只能有 'a'、'b'、'c' 這三種字母
+- 字串中只能有 `'a'`、`'b'`、`'c'` 這三種字母
 
 **最長 happy string 可能不只有一種！回傳任意一種就好**
 
 e.g.
 
-1. `a` = 1，`b` = 1，`c` = 7
+1. $a = 1$ ， $b = 1$ ， $c = 7$
 
-    最長的 happy string 為 "ccaccbcc" 或是 "ccbccacc"。
+    最長的 happy string 為 `"ccaccbcc"` 或是 `"ccbccacc"`。
 
-2. `a` = 7，`b` = 1，`c` = 0
+2. $a = 7$ ， $b = 1$ ， $c = 0$
 
-    最長的 happy string 為，"aabaa"。
+    最長的 happy string 為，`"aabaa"`。
 
 ## 解題思路
 

@@ -8,9 +8,9 @@
 
 ## 解題思路
 
-### 1. Hash Map
+### 1. Hash Table
 
-創建兩個 `Hash Map` 用於紀錄當前左右兩邊的 substring 中每個字元的出現頻率，先計算出 `s` 中每個字元的出現頻率和種類數並賦值給左邊的 substring，接著從頭到尾遍歷 `s`，依序更新左右兩邊的 substring 的字元出現頻率和字元種類數，若左右兩邊的 substring 的字元種類數相同，則 `res` 加一。
+創建兩個 hash map 用於紀錄當前左右兩邊的 substring 中每個字元的出現頻率，先計算出 `s` 中每個字元的出現頻率和種類數並賦值給左邊的 substring，接著從頭到尾遍歷 `s`，依序更新左右兩邊的 substring 的字元出現頻率和字元種類數，若左右兩邊的 substring 的字元種類數相同，則 $res + 1$ 。
 
 #### 程式碼
 
