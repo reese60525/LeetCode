@@ -6,13 +6,13 @@
 
 給一個 `MyCalendar` class，裡面有 `book(int start, int end)` function，用來新增一個時間區間，如果新增的時間區間與已經存在的時間區間有重疊，則回傳 false，否則回傳 true，請完成這個 class。
 
-- 時間區間為 $[start, end)$ ，也就是說，`start` 是包含在時間區間內，而 `end` 則不包含在時間區間內。
+- 時間區間為 `[start, end)` ，也就是說，`start` 是包含在時間區間內，而 `end` 則不包含在時間區間內。
 
 ## 解題思路
 
 ### 1. Binary Search
 
-對於新輸入進來的時間區間 $[s_i, e_i)$ ，如果任意的已存在的時間區間 $[s_k, e_k)$ 都沒有和其有重疊，表示 $e_i \leq s_k$ 或是 $s_i \geq e_k$ ，因此可以將所有時間區間存放到 `binary search tree` 中，將要新增的時間區間和 `binary search tree` 中的時間區間做比較，若都沒有重疊，則將其新增到 `binary search tree` 中並 return true，反之 return false。
+對於新輸入進來的時間區間 `[s_i, e_i)`，如果任意的已存在的時間區間 `[s_k, e_k)` 都沒有和其有重疊，表示 $e_i \leq s_k$ 或是 $s_i \geq e_k$ ，因此可以將所有時間區間存放到 binary search tree 中，將要新增的時間區間和 binary search tree 中的時間區間做比較，若都沒有重疊，則將其新增到 binary search tree 中並 return true，反之 return false。
 
 #### 程式碼
 
@@ -63,7 +63,7 @@ class MyCalendar {
 
 #### 複雜度分析
 
-令 $n$ 為目前 `binary search tree` 中的節點數量。
+令 $n$ 為目前 binary search tree 中的節點數量。
 
 - 時間複雜度： $O(n \log n)$
 
@@ -71,9 +71,9 @@ class MyCalendar {
 
 ---
 
-除了手寫一個 `binary search tree` 外，也可以使用 `C++` 內建的 `set` 來實作。
+除了手寫一個 binary search tree 外，也可以使用 C++ 內建的 `std::set` 來實作。
 
-找出 `set` 中第一個結束時間大於等於 `endTime` 的時間區段 `it`，如果 `set` 為空，或是 `it` 的前一個區間的結束時間小於等於 `startTime`，則可以插入。
+找出 `std::set` 中第一個結束時間大於等於 `endTime` 的時間區段 `it`，如果 `std::set` 為空，或是 `it` 的前一個區間的結束時間小於等於 `startTime`，則可以插入。
 
 #### 程式碼
 
@@ -102,7 +102,7 @@ class MyCalendar {
 
 #### 複雜度分析
 
-令 $n$ 為目前 `binary search tree` 中的節點數量。
+令 $n$ 為目前 binary search tree 中的節點數量。
 
 - 時間複雜度： $O(n \log n)$
 

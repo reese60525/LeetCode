@@ -4,7 +4,7 @@
 
 [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181312535.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181312535.png)
 
-給一個 `m x n` 的二維整數矩陣 `grid` ，其中 `grid[i][j]` 共有 4 種可能的值代表四種方向，表示該位置下一步能夠通往的方向：
+給一個 $m \times n$ 的二維整數矩陣 `grid` ，其中 `grid[i][j]` 共有 4 種可能的值代表四種方向，表示該位置下一步能夠通往的方向：
 
 - `1`：表示當前位置可向右走。
 
@@ -20,7 +20,7 @@
 
 ### 1. Dijkstra's Algorithm
 
-對於這題，將所有 `grid[i][j]` 視為一個點，並且每個點都和其鄰近的點連接（上下左右），而連接的權重為 0 或 1，形成一個有 $m \times n$ 個點和 $4 \times m \times n$ 條邊的有向圖，那使用最短路徑演算法要如何保證每個位置最多只會被修改一次?假設有以下的最短路徑：
+對於這題，將所有 `grid[i][j]` 視為一個點，並且每個點都和其鄰近的點連接（上下左右），而連接的權重為 0 或 1，形成一個有 $m \times n$ 個點和 $4 \times m \times n$ 條邊的有向圖，那使用最短路徑演算法要如何保證每個位置最多只會被修改一次？假設有以下的最短路徑：
 
 $$
 P_0, P_1, ..., P_K, P_{K_{11}}, P_{K_{12}}, ..., P_{K_{1X}}, P_K, P_{K_{21}}..., P_{K_{2Y}}
@@ -99,7 +99,7 @@ class Solution {
 
 #### 複雜度分析
 
-令 $V$ 和 $E$ 分別是有向圖中的節點數和邊數。
+令 $m$ 和 $n$ 分別為 `grid` 的列數、行數， $V$ 和 $E$ 分別是有向圖中的節點數和邊數， $V = m \cdot n$ 、 $E = 4 \cdot m \cdot n$。
 
 - 時間複雜度： $O(m \cdot n \cdot \log(m \cdot n))$
 
@@ -173,7 +173,7 @@ class Solution {
 
 #### 複雜度分析
 
-令 $V$ 和 $E$ 分別是有向圖中的節點數和邊數。
+令 $m$ 和 $n$ 分別為 `grid` 的列數、行數。
 
 - 時間複雜度： $O(m \cdot n \cdot \log(m \cdot n))$
 
@@ -238,7 +238,7 @@ class Solution {
 
 #### 複雜度分析
 
-令 $V$ 和 $E$ 分別是有向圖中的節點數和邊數。
+令 $m$ 和 $n$ 分別為 `grid` 的列數、行數。
 
 - 時間複雜度： $O(m \cdot n)$
 
