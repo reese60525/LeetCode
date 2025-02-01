@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160849215.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160849215.png)
+[![](https://i.imgur.com/vqSnN6G.png)](https://i.imgur.com/vqSnN6G.png)
 
 給一個字串 `s`，找出最長不重複字元的 substring，回傳其長度。
 
@@ -58,7 +58,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501211343940.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501211343940.png)
+[![](https://i.imgur.com/4Z4mvqg.png)](https://i.imgur.com/4Z4mvqg.png)
 
 #### 複雜度分析
 

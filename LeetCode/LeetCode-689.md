@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412290245584.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412290245584.png)
+[![](https://i.imgur.com/yHrkP6F.png)](https://i.imgur.com/yHrkP6F.png)
 
 給一個整數 `k` 和整數陣列 `nums`，找出三個長度為 `k` 且不重疊的 subarray，使其相加的總和最大，回傳每個 subarray 的起始 index，若有多組解則回傳 index 字典序最小的一組。
 
@@ -120,7 +120,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412291417149.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412291417149.png)
+[![](https://i.imgur.com/n32Fp0A.png)](https://i.imgur.com/n32Fp0A.png)
 
 #### 複雜度分析
 
@@ -208,7 +208,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412291609594.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412291609594.png)
+[![](https://i.imgur.com/Dfx6dMR.png)](https://i.imgur.com/Dfx6dMR.png)
 
 #### 複雜度分析
 
@@ -304,7 +304,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412291952158.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412291952158.png)
+[![](https://i.imgur.com/YQ2dhZ4.png)](https://i.imgur.com/YQ2dhZ4.png)
 
 #### 複雜度分析
 

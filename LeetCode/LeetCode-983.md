@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412311259189.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412311259189.png)
+[![](https://i.imgur.com/0ePgFDi.png)](https://i.imgur.com/0ePgFDi.png)
 
 給一個整數陣列 `days` 代表要旅遊的日期，以及一個大小為 3 的整數陣列 `costs` 代表三種票價，`costs[0]` 到 `costs[3]` 分別代表 1、7、30 天的票價，請計算出完成每一天旅遊的最小車票成本。
 
@@ -72,7 +72,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412311334629.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412311334629.png)
+[![](https://i.imgur.com/wvHrLes.png)](https://i.imgur.com/wvHrLes.png)
 
 #### 複雜度分析
 

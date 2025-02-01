@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131822996.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131822996.png)
+[![](https://i.imgur.com/7otffXN.png)](https://i.imgur.com/7otffXN.png)
 
 給一個只由 `(`、`)` 組成的字串`s`，請計算出最少需要添加幾個 `(` 和 `)` 才能讓這個字串變成合法的括號字串。
 
@@ -41,7 +41,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131834576.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131834576.png)
+[![](https://i.imgur.com/TGH9iVc.png)](https://i.imgur.com/TGH9iVc.png)
 
 #### 複雜度分析
 
@@ -77,7 +77,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131831811.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131831811.png)
+[![](https://i.imgur.com/U7cTC1j.png)](https://i.imgur.com/U7cTC1j.png)
 
 #### 複雜度分析
 

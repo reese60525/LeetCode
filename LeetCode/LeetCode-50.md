@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412160815457.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412160815457.png)
+[![](https://i.imgur.com/5vRfH2e.png)](https://i.imgur.com/5vRfH2e.png)
 
 實現 `std::pow(x,n)` 函式。
 
@@ -78,7 +78,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161058801.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161058801.png)
+[![](https://i.imgur.com/KS9EjM3.png)](https://i.imgur.com/KS9EjM3.png)
 
 #### 複雜度分析
 
@@ -136,7 +136,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161119906.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161119906.png)
+[![](https://i.imgur.com/tpKTx18.png)](https://i.imgur.com/tpKTx18.png)
 
 #### 複雜度分析
 

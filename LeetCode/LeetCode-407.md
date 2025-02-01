@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191635725.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191635725.png)
+[![](https://i.imgur.com/tQzoExg.png)](https://i.imgur.com/tQzoExg.png)
 
 給一個 `m x n` 的二維整數陣列 `heightMap`，`heightMap[i][j]` 代表每個柱子的高度，求該矩陣可以裝多少雨水。
 
@@ -45,11 +45,11 @@
 
 用下圖來解釋：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191645770.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191645770.png)
+[![](https://i.imgur.com/xojmZaQ.png)](https://i.imgur.com/xojmZaQ.png)
 
 矩陣初始的邊界為最外圍的柱子，而這之中最短的柱子決定了該矩陣能接住多少雨水，從高度為 4 的柱子出發，查找四周不是邊界的柱子，可以發現一個高度為 3 的柱子，並且該柱子的高度小於 4，因此可以接住雨水，接完雨水後的高度會變成 4，此時將該柱子加入至邊界中，而柱子 (0, 2) 則從邊界中移除，以此來更新邊界，縮小範圍。
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191702621.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191702621.png)
+[![](https://i.imgur.com/TZBC9Rj.png)](https://i.imgur.com/TZBC9Rj.png)
 
 接著繼續從邊界中選擇最短的柱子，從高度為 4 的柱子出發，檢查四周柱子，可以發現有高度為 1 和高度為 4 的柱子還沒接雨水，計算接完雨水後的高度，將其加入邊界中，並將柱子 (1, 2) 從邊界中移除。
 
@@ -133,7 +133,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191720718.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191720718.png)
+[![](https://i.imgur.com/lvALpcd.png)](https://i.imgur.com/lvALpcd.png)
 
 #### 複雜度分析
 
@@ -208,7 +208,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191746147.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501191746147.png)
+[![](https://i.imgur.com/a2ZgW8w.png)](https://i.imgur.com/a2ZgW8w.png)
 
 #### 複雜度分析
 

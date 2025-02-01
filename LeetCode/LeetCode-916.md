@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100911550.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100911550.png)
+[![](https://i.imgur.com/3d3Ri4I.png)](https://i.imgur.com/3d3Ri4I.png)
 
 給兩個字串陣列 `words1` 和 `words2`，找出所有 `words1` 中滿足 `words1[i]` 是 `words2` 中**所有字串**的父集合的字串。
 
@@ -63,7 +63,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100931396.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100931396.png)
+[![](https://i.imgur.com/V6Nr2mr.png)](https://i.imgur.com/V6Nr2mr.png)
 
 #### 複雜度分析
 

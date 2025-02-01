@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221224726360.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221224726360.png)
+[![](https://i.imgur.com/pxvPND4.png)](https://i.imgur.com/pxvPND4.png)
 
 給一組整數陣列 `coins` 和整數 `amount`，分別代表硬幣的種類和要湊齊的總金額，每種硬幣都可以**無限取用**，找出所有能湊出 `amount` 的組合數量。
 
@@ -130,7 +130,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221231105913.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221231105913.png)
+[![](https://i.imgur.com/bnlX52P.png)](https://i.imgur.com/bnlX52P.png)
 
 #### 複雜度分析
 

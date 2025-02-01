@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412250939162.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412250939162.png)
+[![](https://i.imgur.com/cjOgBqW.png)](https://i.imgur.com/cjOgBqW.png)
 
 給一個 binary tree，找出每一層最大的值。
 
@@ -56,7 +56,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412250956800.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412250956800.png)
+[![](https://i.imgur.com/2BQZzvG.png)](https://i.imgur.com/2BQZzvG.png)
 
 #### 複雜度分析
 
@@ -117,7 +117,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412250942842.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412250942842.png)
+[![](https://i.imgur.com/Z8WKAXs.png)](https://i.imgur.com/Z8WKAXs.png)
 
 #### 複雜度分析
 

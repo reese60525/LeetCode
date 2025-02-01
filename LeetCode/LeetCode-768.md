@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412191435756.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412191435756.png)
+[![](https://i.imgur.com/eI2R9m2.png)](https://i.imgur.com/eI2R9m2.png)
 
 給一個整數陣列 `arr`，將其進行以下操作:
 
@@ -93,7 +93,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219183530320.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219183530320.png)
+[![](https://i.imgur.com/kLYG8IE.png)](https://i.imgur.com/kLYG8IE.png)
 
 #### 複雜度分析
 
@@ -131,23 +131,23 @@ $arr = [2, 1, 5, 2, 3, 4, 7, 8]$ ， $prefixMax = [2, 2, 5, 5, 5, 5, 7, 8]$ ， 
 
 [圖片來源](https://leetcode.cn/problems/max-chunks-to-make-sorted-ii/solutions/1744296/zui-duo-neng-wan-cheng-pai-xu-de-kuai-by-z0wz/)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193336220.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193336220.png)
+[![](https://i.imgur.com/7Ye0e3W.png)](https://i.imgur.com/7Ye0e3W.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193426384.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193426384.png)
+[![](https://i.imgur.com/tC7mokA.png)](https://i.imgur.com/tC7mokA.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193443300.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193443300.png)
+[![](https://i.imgur.com/LEIaJcT.png)](https://i.imgur.com/LEIaJcT.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193459398.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193459398.png)
+[![](https://i.imgur.com/LCeW6pK.png)](https://i.imgur.com/LCeW6pK.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193510697.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193510697.png)
+[![](https://i.imgur.com/GaLSJEX.png)](https://i.imgur.com/GaLSJEX.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193528245.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193528245.png)
+[![](https://i.imgur.com/87TvSfg.png)](https://i.imgur.com/87TvSfg.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193542520.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193542520.png)
+[![](https://i.imgur.com/1H0nM2T.png)](https://i.imgur.com/1H0nM2T.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193558083.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193558083.png)
+[![](https://i.imgur.com/2I1Qgsa.png)](https://i.imgur.com/2I1Qgsa.png)
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193611826.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219193611826.png)
+[![](https://i.imgur.com/BcYjJSp.png)](https://i.imgur.com/BcYjJSp.png)
 
 #### 程式碼
 
@@ -177,7 +177,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219194324984.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219194324984.png)
+[![](https://i.imgur.com/7yw4PwB.png)](https://i.imgur.com/7yw4PwB.png)
 
 #### 複雜度分析
 

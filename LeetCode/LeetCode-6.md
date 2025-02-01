@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226140426327.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226140426327.png)
+[![](https://i.imgur.com/EU7qZ1Q.png)](https://i.imgur.com/EU7qZ1Q.png)
 
 給一個字串 `s` 和正整數 `numRows`，令 `s` 以高度為 `numRows` 的鋸齒狀呈現，回傳以橫列由上而下讀所得到的字串。
 
@@ -59,7 +59,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226143427916.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226143427916.png)
+[![](https://i.imgur.com/MDaM09I.png)](https://i.imgur.com/MDaM09I.png)
 
 #### 複雜度分析
 
@@ -115,7 +115,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226181354152.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226181354152.png)
+[![](https://i.imgur.com/yXXENJ1.png)](https://i.imgur.com/yXXENJ1.png)
 
 #### 複雜度分析
 

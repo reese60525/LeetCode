@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161038953.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161038953.png)
+[![](https://i.imgur.com/MCQo1jw.png)](https://i.imgur.com/MCQo1jw.png)
 
 給一個整數陣列 `coins` 和一個整數 `amount`，`coins` 中的所有硬幣都能使用無限次，請找到湊出 `amount` 所需的最少硬幣數量。若無法湊出，則 return -1。
 
@@ -73,7 +73,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206202646766.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206202646766.png)
+[![](https://i.imgur.com/TmJfo9i.png)](https://i.imgur.com/TmJfo9i.png)
 
 #### 複雜度分析
 
@@ -149,7 +149,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207175214290.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207175214290.png)
+[![](https://i.imgur.com/1wQ4xnV.png)](https://i.imgur.com/1wQ4xnV.png)
 
 #### 複雜度分析
 
@@ -283,7 +283,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206214453302.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206214453302.png)
+[![](https://i.imgur.com/UzuBqLb.png)](https://i.imgur.com/UzuBqLb.png)
 
 #### 複雜度分析
 

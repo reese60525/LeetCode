@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181753746.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181753746.png)
+[![](https://i.imgur.com/MaCqdkQ.png)](https://i.imgur.com/MaCqdkQ.png)
 
 給一個整數 `x`，將其反轉後回傳，如果反轉後的數會 overflow 則回傳 0。
 
@@ -49,7 +49,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182134134.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182134134.png)
+[![](https://i.imgur.com/zOfgep9.png)](https://i.imgur.com/zOfgep9.png)
 
 #### 複雜度分析
 
@@ -87,7 +87,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182151706.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182151706.png)
+[![](https://i.imgur.com/HjTN0NP.png)](https://i.imgur.com/HjTN0NP.png)
 
 #### 複雜度分析
 

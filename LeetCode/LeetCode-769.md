@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412191132682.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412191132682.png)
+[![](https://i.imgur.com/qROfqdp.png)](https://i.imgur.com/qROfqdp.png)
 
 給一個由 `[0, n-1]` 不重複的整數組成的array `arr`，將其進行以下操作：
 
@@ -76,7 +76,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412191133990.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412191133990.png)
+[![](https://i.imgur.com/Ggapjio.png)](https://i.imgur.com/Ggapjio.png)
 
 #### 複雜度分析
 

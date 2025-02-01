@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501122006121.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501122006121.png)
+[![](https://i.imgur.com/OPQI2MH.png)](https://i.imgur.com/OPQI2MH.png)
 
 給一個由小寫字母和左右括號組成的字串，可以移除任意的字元，找出所有**最長且不重複的**有效括號字串。
 
@@ -168,7 +168,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501130049686.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501130049686.png)
+[![](https://i.imgur.com/cdvn8Ts.png)](https://i.imgur.com/cdvn8Ts.png)
 
 #### 複雜度分析
 
@@ -259,7 +259,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501130702514.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501130702514.png)
+[![](https://i.imgur.com/H9Y4X2x.png)](https://i.imgur.com/H9Y4X2x.png)
 
 #### 複雜度分析
 
@@ -352,7 +352,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501130912600.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501130912600.png)
+[![](https://i.imgur.com/rgFzius.png)](https://i.imgur.com/rgFzius.png)
 
 #### 複雜度分析
 

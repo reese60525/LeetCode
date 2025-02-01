@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501142018987.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501142018987.png)
+[![](https://i.imgur.com/aFTqLXV.png)](https://i.imgur.com/aFTqLXV.png)
 
 給一個長度為 `n` 的整數陣列 `nums` 代表該位置最多可以往後跳躍的距離，請問能否從 `nums[0]` 跳到 `nums[n-1]`？
 
@@ -38,7 +38,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501150018328.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501150018328.png)
+[![](https://i.imgur.com/ZT7mb6p.png)](https://i.imgur.com/ZT7mb6p.png)
 
 #### 複雜度分析
 
@@ -75,7 +75,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501142159769.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501142159769.png)
+[![](https://i.imgur.com/ZleczA3.png)](https://i.imgur.com/ZleczA3.png)
 
 #### 複雜度分析
 
@@ -110,7 +110,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501150014436.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501150014436.png)
+[![](https://i.imgur.com/Vol5Xmt.png)](https://i.imgur.com/Vol5Xmt.png)
 
 #### 複雜度分析
 

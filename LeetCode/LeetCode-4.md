@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160943619.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160943619.png)
+[![](https://i.imgur.com/Jf2Hmqm.png)](https://i.imgur.com/Jf2Hmqm.png)
 
 給兩個已經排序的整數陣列 `nums1` and `nums2`，找出兩陣列合併後的中位數。
 
@@ -110,7 +110,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207224855419.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207224855419.png)
+[![](https://i.imgur.com/pRO0rGF.png)](https://i.imgur.com/pRO0rGF.png)
 
 #### 複雜度分析
 
@@ -270,7 +270,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241208102053419.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241208102053419.png)
+[![](https://i.imgur.com/y4al53B.png)](https://i.imgur.com/y4al53B.png)
 
 #### 複雜度分析
 

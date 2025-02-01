@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182009394.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501182009394.png)
+[![](https://i.imgur.com/u1InTaC.png)](https://i.imgur.com/u1InTaC.png)
 
 請實現 `atoi` 這個函式，用於將字串轉換成整數，`atoi` 有以下五個規則：
 
@@ -76,7 +76,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501192007811.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501192007811.png)
+[![](https://i.imgur.com/GyaFAEk.png)](https://i.imgur.com/GyaFAEk.png)
 
 #### 複雜度分析
 
@@ -90,7 +90,7 @@ class Solution {
 
 建立一個確定狀態的有限自動機，在每一個時刻都會有一個狀態，並且根據當前輸入進來的字元來決定下一個狀態，根據題目給的條件可以建立如下圖的 DFA：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501192014250.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501192014250.png)
+[![](https://i.imgur.com/wCMdmhQ.png)](https://i.imgur.com/wCMdmhQ.png)
 
 將上圖的 DFA 狀態以圖表呈現：
 
@@ -178,7 +178,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501231354770.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501231354770.png)
+[![](https://i.imgur.com/3Zvfbpt.png)](https://i.imgur.com/3Zvfbpt.png)
 
 #### 複雜度分析
 

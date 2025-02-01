@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501251429398.png)
+[![](https://i.imgur.com/VvM0Gk2.png)](https://i.imgur.com/VvM0Gk2.png)
 
 給一個二維整數陣列 `graph` 表示一個有向圖，`graph[i]` 存放節點 `i` 所指向的所有節點。
 
@@ -82,7 +82,7 @@ class Solution {
 };
 ```
 
-![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501251459835.png)
+[![](https://i.imgur.com/WbYIovz.png)](https://i.imgur.com/WbYIovz.png)
 
 #### 複雜度分析
 
@@ -271,7 +271,7 @@ class Solution {
 };
 ```
 
-![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501261525370.png)
+[![](https://i.imgur.com/00Xzrnq.png)](https://i.imgur.com/00Xzrnq.png)
 
 #### 複雜度分析
 

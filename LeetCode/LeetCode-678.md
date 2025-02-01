@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131408104.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131408104.png)
+[![](https://i.imgur.com/ErsWpd6.png)](https://i.imgur.com/ErsWpd6.png)
 
 給一個只由 `*`、`(`、`)` 組成的字串 `s`，`*` 可以視為 `(`、`)` 或空字串 `""`，請問 `s` 是否為合法的括號字串？
 
@@ -58,7 +58,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131416181.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131416181.png)
+[![](https://i.imgur.com/BirNcSs.png)](https://i.imgur.com/BirNcSs.png)
 
 #### 複雜度分析
 
@@ -121,7 +121,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131459812.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131459812.png)
+[![](https://i.imgur.com/EqWFFN2.png)](https://i.imgur.com/EqWFFN2.png)
 
 #### 複雜度分析
 
@@ -181,7 +181,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131503523.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131503523.png)
+[![](https://i.imgur.com/7S1bKuz.png)](https://i.imgur.com/7S1bKuz.png)
 
 #### 複雜度分析
 
@@ -251,7 +251,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131732158.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131732158.png)
+[![](https://i.imgur.com/JATZaNk.png)](https://i.imgur.com/JATZaNk.png)
 
 #### 複雜度分析
 
@@ -315,7 +315,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131806356.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131806356.png)
+[![](https://i.imgur.com/s48iHiJ.png)](https://i.imgur.com/s48iHiJ.png)
 
 #### 複雜度分析
 

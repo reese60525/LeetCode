@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161121016.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161121016.png)
+[![](https://i.imgur.com/w3nkJfq.png)](https://i.imgur.com/w3nkJfq.png)
 
 給定一個整數陣列 `nums` 和一個整數 `target`，對 `nums` 中每個 `nums[i]` 進行**加法**或是**減法**，找出將整個 `nums` 經過**加法**或**減法**後總為 `target` 的方法數。
 
@@ -51,7 +51,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180151624.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180151624.png)
+[![](https://i.imgur.com/4aBev0F.png)](https://i.imgur.com/4aBev0F.png)
 
 #### 複雜度分析
 
@@ -125,7 +125,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180028424.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206180028424.png)
+[![](https://i.imgur.com/hz52Djt.png)](https://i.imgur.com/hz52Djt.png)
 
 #### 複雜度分析
 
@@ -230,7 +230,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206183655096.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206183655096.png)
+[![](https://i.imgur.com/mFkRKUI.png)](https://i.imgur.com/mFkRKUI.png)
 
 #### 複雜度分析
 
@@ -332,7 +332,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206190443154.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206190443154.png)
+[![](https://i.imgur.com/sft91JW.png)](https://i.imgur.com/sft91JW.png)
 
 #### 複雜度分析
 
@@ -436,7 +436,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194532028.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241206194532028.png)
+[![](https://i.imgur.com/YEalfOG.png)](https://i.imgur.com/YEalfOG.png)
 
 #### 複雜度分析
 

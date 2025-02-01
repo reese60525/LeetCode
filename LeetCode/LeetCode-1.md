@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160705565.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160705565.png)
+[![](https://i.imgur.com/BKK8m1E.png)](https://i.imgur.com/BKK8m1E.png)
 
 給一組不重複的整數陣列 `nums` 和一個整數 `target`，找出能一對不相同的 `[num[i], num[j]]` 使 $nums[i] + num[j] = target$ ，並return `[i, j]`。
 
@@ -37,7 +37,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207142153702.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207142153702.png)
+[![](https://i.imgur.com/I6skfi1.png)](https://i.imgur.com/I6skfi1.png)
 
 #### 複雜度分析
 

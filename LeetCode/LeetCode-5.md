@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220213441064.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220213441064.png)
+[![](https://i.imgur.com/1bUQFv7.png)](https://i.imgur.com/1bUQFv7.png)
 
 給一個字串 `s`，找出最長的回文子字串。
 
@@ -51,7 +51,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221000024843.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221000024843.png)
+[![](https://i.imgur.com/I5GRkPR.png)](https://i.imgur.com/I5GRkPR.png)
 
 #### 複雜度分析
 
@@ -115,7 +115,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221005256689.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221005256689.png)
+[![](https://i.imgur.com/dyUp2xj.png)](https://i.imgur.com/dyUp2xj.png)
 
 #### 複雜度分析
 
@@ -171,7 +171,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221010101592.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221010101592.png)
+[![](https://i.imgur.com/AoONU2F.png)](https://i.imgur.com/AoONU2F.png)
 
 #### 複雜度分析
 
@@ -276,7 +276,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221034653137.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221034653137.png)
+[![](https://i.imgur.com/tR3n9oU.png)](https://i.imgur.com/tR3n9oU.png)
 
 #### 複雜度分析
 

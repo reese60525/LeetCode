@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160801270.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210160801270.png)
+[![](https://i.imgur.com/HrVDpEh.png)](https://i.imgur.com/HrVDpEh.png)
 
 給兩個儲存正整數的 linked lists，各自代表一個整數的倒序，求將兩個link list相加後的倒序結果。
 
@@ -60,7 +60,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207201049415.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207201049415.png)
+[![](https://i.imgur.com/y5730At.png)](https://i.imgur.com/y5730At.png)
 
 #### 複雜度分析
 
