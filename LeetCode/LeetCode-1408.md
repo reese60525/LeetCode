@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501092123929.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501092123929.png)
+[![](https://i.imgur.com/VVHreL8.png)](https://i.imgur.com/VVHreL8.png)
 
 給一個大小為 `n` 的字串陣列 `words`，找出所有能成為其他字串的 substring 的字串。
 
@@ -36,7 +36,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501092128499.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501092128499.png)
+[![](https://i.imgur.com/KOk7WRO.png)](https://i.imgur.com/KOk7WRO.png)
 
 #### 複雜度分析
 
@@ -112,7 +112,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501092358737.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501092358737.png)
+[![](https://i.imgur.com/LEHeiZB.png)](https://i.imgur.com/LEHeiZB.png)
 
 #### 複雜度分析
 

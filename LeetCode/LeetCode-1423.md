@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011008077.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011008077.png)
+[![](https://i.imgur.com/1o8Ni6x.png)](https://i.imgur.com/1o8Ni6x.png)
 
 給一組整數陣列 `cardPoints` 和整數 `k`，分別代表每張卡片的點數和要取幾張，每次都可以選擇從 `cardPoints` 的頭或尾取一張卡片，直到取完 `k` 張卡片，請問可以得到的最大點數總和是多少？
 
@@ -56,7 +56,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011034819.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011034819.png)
+[![](https://i.imgur.com/agNdqLB.png)](https://i.imgur.com/agNdqLB.png)
 
 #### 複雜度分析
 
@@ -97,7 +97,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011037538.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011037538.png)
+[![](https://i.imgur.com/xjLj876.png)](https://i.imgur.com/xjLj876.png)
 
 #### 複雜度分析
 

@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501111049339.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501111049339.png)
+[![](https://i.imgur.com/i0wZX0e.png)](https://i.imgur.com/i0wZX0e.png)
 
 給一個由小寫英文字母組成的字串 `s` 和一個整數 `k`，請判斷能否使用 `s` 中**所有**的字元來組成 `k` 個回文。
 
@@ -63,7 +63,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501111142434.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501111142434.png)
+[![](https://i.imgur.com/TYX9d8t.png)](https://i.imgur.com/TYX9d8t.png)
 
 #### 複雜度分析
 

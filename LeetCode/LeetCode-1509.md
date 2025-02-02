@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226200042708.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226200042708.png)
+[![](https://i.imgur.com/7dTPDdS.png)](https://i.imgur.com/7dTPDdS.png)
 
 給一個整數陣列`nums`，最多可以選擇三個 element 將其值改為任意值，求操作後 `nums` 中最大值與最小值的差值最小是多少。
 
@@ -46,7 +46,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226202205657.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226202205657.png)
+[![](https://i.imgur.com/80TCDcK.png)](https://i.imgur.com/80TCDcK.png)
 
 #### 複雜度分析
 
@@ -119,7 +119,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226204749003.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226204749003.png)
+[![](https://i.imgur.com/XecPj8r.png)](https://i.imgur.com/XecPj8r.png)
 
 #### 複雜度分析
 

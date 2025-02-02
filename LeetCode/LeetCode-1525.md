@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226211329473.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226211329473.png)
+[![](https://i.imgur.com/RO2fsen.png)](https://i.imgur.com/RO2fsen.png)
 
 給一個字串 `s`，將其分割兩個**不為空**的 substring，若這兩個 substring 的字元種類數相同，則稱為一個 good split，請找出 `s` 有幾個 good split。
 
@@ -48,7 +48,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226212014869.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241226212014869.png)
+[![](https://i.imgur.com/xbY9xmO.png)](https://i.imgur.com/xbY9xmO.png)
 
 #### 複雜度分析
 

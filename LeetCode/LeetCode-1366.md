@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292154781.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292154781.png)
+[![](https://i.imgur.com/LXNUdHI.png)](https://i.imgur.com/LXNUdHI.png)
 
 給一個由大寫字母組成的字串陣列 `votes`，每個大寫字母代表一個隊伍的代號，`votes[i]` 代表第 `i` 個投票者所投的票，當一個隊伍的代號在 `votes[i]` 中越靠前，代表該隊伍在第 `i` 位投票者的的投票排名中越前面，而隊伍的總體排名則是根據每個隊伍在每個投票位置的排名來決定，如果在同樣的投票位置上，有兩個隊伍的排名相同，則繼續比較下一個投票位置，直到找到一個隊伍的排名比另一個隊伍的排名高為止，若全部投票位置的排名都一樣，則代號小的隊伍排名較高，回傳總體排名由高到低的隊伍代號字串。
 
@@ -90,7 +90,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292221680.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292221680.png)
+[![](https://i.imgur.com/qCcdh1m.png)](https://i.imgur.com/qCcdh1m.png)
 
 #### 複雜度分析
 

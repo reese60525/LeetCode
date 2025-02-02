@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011044557.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011044557.png)
+[![](https://i.imgur.com/ANb6bvt.png)](https://i.imgur.com/ANb6bvt.png)
 
 給一個只包含 0 和 1 的字串 `s`，可以將字串分成任意**非空**的兩個子字串，計算左邊子字串 0 的數量加上右邊子字串 1 的數量的最大值。
 
@@ -38,7 +38,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011105106.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011105106.png)
+[![](https://i.imgur.com/o6NdNNc.png)](https://i.imgur.com/o6NdNNc.png)
 
 #### 複雜度分析
 
@@ -71,7 +71,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011104032.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011104032.png)
+[![](https://i.imgur.com/iuLIMCp.png)](https://i.imgur.com/iuLIMCp.png)
 
 #### 複雜度分析
 

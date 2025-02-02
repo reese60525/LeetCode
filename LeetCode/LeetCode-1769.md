@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100759663.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100759663.png)
+[![](https://i.imgur.com/hnNFHS8.png)](https://i.imgur.com/hnNFHS8.png)
 
 給一個由 `'0'` 和 `'1'` 組成的字串 `boxes`，`boxes[i]` 代表該盒子裡面有或是沒有球，算出將所有球移動到每個盒子所需要的最小距離。
 
@@ -44,7 +44,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100817527.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501100817527.png)
+[![](https://i.imgur.com/IGbPpG7.png)](https://i.imgur.com/IGbPpG7.png)
 
 #### 複雜度分析
 

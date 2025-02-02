@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161159467.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161159467.png)
+[![](https://i.imgur.com/DprVjIg.png)](https://i.imgur.com/DprVjIg.png)
 
 給一個整數陣列 `nums` 和一個整數 `maxOperations`，每次操作可以將 `nums` 中的任意一個 element `nums[i]` 分成兩個不為 0 的整數，`maxOperations` 是最多可以進行操作的次數，求對 `nums` 進行操作後，`nums` 中的最大值最小可以是多少。
 
@@ -112,7 +112,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207121820774.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207121820774.png)
+[![](https://i.imgur.com/V6CV8FV.png)](https://i.imgur.com/V6CV8FV.png)
 
 #### 複雜度分析
 
@@ -172,7 +172,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110037985.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241207110037985.png)
+[![](https://i.imgur.com/PkIScxl.png)](https://i.imgur.com/PkIScxl.png)
 
 #### 複雜度分析
 

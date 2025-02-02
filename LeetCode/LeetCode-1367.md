@@ -2,6 +2,8 @@
 
 ## 題目敘述
 
+[![](https://i.imgur.com/9mzp1NJ.png)](https://i.imgur.com/9mzp1NJ.png)
+
 給一個 binary tree 和一個 linked list，判斷 binary tree 中是否存在一個路徑，其順序和 linked list 相同。
 
 ## 解題思路
@@ -43,7 +45,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412302048431.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412302048431.png)
+[![](https://i.imgur.com/YOFRpNF.png)](https://i.imgur.com/YOFRpNF.png)
 
 #### 複雜度分析
 
@@ -96,7 +98,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412302100310.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412302100310.png)
+[![](https://i.imgur.com/I0z2iFU.png)](https://i.imgur.com/I0z2iFU.png)
 
 #### 複雜度分析
 
@@ -154,7 +156,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412302132048.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412302132048.png)
+[![](https://i.imgur.com/E4Vbcjg.png)](https://i.imgur.com/E4Vbcjg.png)
 
 #### 複雜度分析
 

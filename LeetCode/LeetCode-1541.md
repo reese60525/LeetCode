@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501141340412.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501141340412.png)
+[![](https://i.imgur.com/Su1U0ps.png)](https://i.imgur.com/Su1U0ps.png)
 
 給一個由 `(` 和 `)` 組成的字串 `s`，每一個 `(` 需要有對應的 `))` 來組成合法的括號字串，對於 `s` 可以插入任意數量的 `(` 和 `)` 來讓 `s` 變成合法的括號字串，求最少需要插入幾個字元。
 
@@ -52,7 +52,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501141348224.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501141348224.png)
+[![](https://i.imgur.com/YEVOq7d.png)](https://i.imgur.com/YEVOq7d.png)
 
 #### 複雜度分析
 

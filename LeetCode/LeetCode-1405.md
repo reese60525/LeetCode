@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217170008995.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217170008995.png)
+[![](https://i.imgur.com/e8CNX0j.png)](https://i.imgur.com/e8CNX0j.png)
 
 給三個整數 `a`、`b`、`c`，分別代表三個字母 `'a'`、`'b'`、`'c'` 的數量，請找出由這些 `'a'`、`'b'`、`'c'` 所組成的最長 happy string。
 
@@ -79,7 +79,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217174241472.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241217174241472.png)
+[![](https://i.imgur.com/tFfilWI.png)](https://i.imgur.com/tFfilWI.png)
 
 #### 複雜度分析
 

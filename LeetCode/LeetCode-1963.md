@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501140940848.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501140940848.png)
+[![](https://i.imgur.com/tPa7nhk.png)](https://i.imgur.com/tPa7nhk.png)
 
 給一個只由 `[` 和 `]` 組成的字串 `s`，`s` 中的 `[` 和 `]` 數量相同，且 `s` 長度為偶數，可以對 `s` 中的 element 進行交換的操作，請問最少需要交換幾次才能讓 `s` 變成合法的括號字串。
 
@@ -48,7 +48,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501141003494.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501141003494.png)
+[![](https://i.imgur.com/9XRSVbA.png)](https://i.imgur.com/9XRSVbA.png)
 
 #### 複雜度分析
 

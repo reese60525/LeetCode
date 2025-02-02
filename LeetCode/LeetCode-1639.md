@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292030281.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292030281.png)
+[![](https://i.imgur.com/nKNh9XQ.png)](https://i.imgur.com/nKNh9XQ.png)
 
 給一個字串陣列 `words` 裡面所有的 string 長度都一樣，以及一個字串 `target`，能從 `words` 選擇一個字串的特定位置的字母來組成 `target`，例如：選擇了 `words[3][6]` 來組成 `target[3]` 的字母，但是只要選了 `words[i][j]` 後，所有的字串都不能再使用小於 `j` 的位置的字母，像是我選了 `words[3][6]` 後，則 `words[0][0]` 到 `words[0][6]` 到 `words[n][0]` 到 `words[n][6]` 這些字母都不能再被使用，請問能組成 `target` 的組合共有幾種。
 
@@ -197,7 +197,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292133202.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412292133202.png)
+[![](https://i.imgur.com/hbGdhKe.png)](https://i.imgur.com/hbGdhKe.png)
 
 #### 複雜度分析
 

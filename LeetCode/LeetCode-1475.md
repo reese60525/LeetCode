@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219172659099.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219172659099.png)
+[![](https://i.imgur.com/shYGt68.png)](https://i.imgur.com/shYGt68.png)
 
 給一個整數陣列 `prices`，代表每個商品的價格，對於每個商品都可以享有一個折扣，如果存在一個商品 `prices[j]` 滿足 $prices[j] \leq prices[i]$ 且 $j > i$，則可以享有 $prices[j]$ 的折扣，如果有多個 `j` 滿足則取最小的 `j`，若沒有符合條件的商品，則不享有折扣。回傳每個商品最終的價格。
 
@@ -72,7 +72,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219175249021.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241219175249021.png)
+[![](https://i.imgur.com/F8H0hHU.png)](https://i.imgur.com/F8H0hHU.png)
 
 #### 複雜度分析
 

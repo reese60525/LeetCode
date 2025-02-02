@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501041734002.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501041734002.png)
+[![](https://i.imgur.com/maFRPXK.png)](https://i.imgur.com/maFRPXK.png)
 
 給一個只包含小寫英文字母的字串 `s`，請找出所有**長度為 3** 並且是回文的**不重複子序列**，回傳所有可能的不重複回文子序列數量。
 
@@ -51,7 +51,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501041804863.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501041804863.png)
+[![](https://i.imgur.com/jWHnvNZ.png)](https://i.imgur.com/jWHnvNZ.png)
 
 #### 複雜度分析
 
@@ -106,7 +106,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501041805421.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501041805421.png)
+[![](https://i.imgur.com/8vMy2fJ.png)](https://i.imgur.com/8vMy2fJ.png)
 
 #### 複雜度分析
 

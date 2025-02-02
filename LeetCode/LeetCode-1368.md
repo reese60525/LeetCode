@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181312535.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181312535.png)
+[![](https://i.imgur.com/ySCFyT8.png)](https://i.imgur.com/ySCFyT8.png)
 
 給一個 $m \times n$ 的二維整數矩陣 `grid` ，其中 `grid[i][j]` 共有 4 種可能的值代表四種方向，表示該位置下一步能夠通往的方向：
 
@@ -95,7 +95,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181600952.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181600952.png)
+[![](https://i.imgur.com/nmw2EvM.png)](https://i.imgur.com/nmw2EvM.png)
 
 #### 複雜度分析
 
@@ -169,7 +169,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181606679.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181606679.png)
+[![](https://i.imgur.com/pyXUZ1O.png)](https://i.imgur.com/pyXUZ1O.png)
 
 #### 複雜度分析
 
@@ -234,7 +234,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181608554.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501181608554.png)
+[![](https://i.imgur.com/1pmm1J0.png)](https://i.imgur.com/1pmm1J0.png)
 
 #### 複雜度分析
 

@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501231844211.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501231844211.png)
+[![](https://i.imgur.com/6A7WhRI.png)](https://i.imgur.com/6A7WhRI.png)
 
 給一個 $m \times n$ 的二維整數陣列 `grid` 表示伺服器的分布狀況，若 $grid[i][j] = 1$ 表示在 (i, j) 有一台伺服器，反之則沒有。
 
@@ -46,7 +46,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501231852238.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501231852238.png)
+[![](https://i.imgur.com/zYMTHuy.png)](https://i.imgur.com/zYMTHuy.png)
 
 #### 複雜度分析
 

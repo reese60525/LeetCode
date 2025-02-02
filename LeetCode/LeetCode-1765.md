@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222158795.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222158795.png)
+[![](https://i.imgur.com/ZWsaJr4.png)](https://i.imgur.com/ZWsaJr4.png)
 
 給一個二維整數陣列 `isWater`，其中 `isWater[i][j]` 如果是 0 表示是陸地，如果是 1 表示是水域，需要根據以下規則來分配每個位置的高度：
 
@@ -71,7 +71,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222214391.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222214391.png)
+[![](https://i.imgur.com/CNmvUSL.png)](https://i.imgur.com/CNmvUSL.png)
 
 #### 複雜度分析
 
@@ -79,11 +79,11 @@ class Solution {
 
 - 時間複雜度： $O(m \cdot n)$
 
-    需要遍歷整個 `m x n` 矩陣。
+    需要遍歷整個 $m \times n$ 矩陣。
 
 - 空間複雜度： $O(m \cdot n)$
 
-    最壞情況下所有位置都是水域，此時需要將整個 `m x n` 矩陣加入 queue 中。
+    最壞情況下所有位置都是水域，此時需要將整個 $m \times n$ 矩陣加入 queue 中。
 
 ### 2. Dynamic Programming（DP）
 
@@ -145,7 +145,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222254322.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222254322.png)
+[![](https://i.imgur.com/4Nn6QGY.png)](https://i.imgur.com/4Nn6QGY.png)
 
 也可以使用 lambda 函式來簡化程式碼，但判斷條件變多因此效率較差
 
@@ -186,7 +186,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222301619.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222301619.png)
+[![](https://i.imgur.com/vfmajx0.png)](https://i.imgur.com/vfmajx0.png)
 
 #### 複雜度分析
 
@@ -194,8 +194,8 @@ class Solution {
 
 - 時間複雜度： $O(m \cdot n)$
 
-    需要遍歷整個 `m x n` 矩陣。
+    需要遍歷整個 $m \times n$ 矩陣。
 
 - 空間複雜度： $O(m \cdot n)$
 
-    需要使用一個 `m x n` 的矩陣來儲存每個位置到最近水域的距離。
+    需要使用一個 $m \times n$ 的矩陣來儲存每個位置到最近水域的距離。

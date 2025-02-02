@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312134148.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312134148.png)
+[![](https://i.imgur.com/VjFQOMl.png)](https://i.imgur.com/VjFQOMl.png)
 
 給一個整數 `n` 表示有共有 `n` 台電腦，和一個整數陣列 `connections`，其中 $connections[i] = [ai, bi]$ 表示電腦 `ai` 和 `bi` 之間有一條線連接。對於每個連接的電腦，可以將連接線拿走並拿給別的電腦使其連接，請問最少需要幾次操作才能讓所有電腦連接在一起，如果無法連接所有電腦，則回傳 -1。
 
@@ -14,7 +14,7 @@ $n = 12$ ， $connections = [[0, 1], [0, 2], [0, 3], [4, 5], [4, 6], [4, 7], [5,
 
 將圖畫出來：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312139758.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312139758.png)
+[![](https://i.imgur.com/mbvua1W.png)](https://i.imgur.com/mbvua1W.png)
 
 可以發現要將所有電腦連接在一起，需要將整張圖變成一個連通圖，圖中共有 4 個連通分量，所以最少需要 3 條線 3 次操作才能將所有電腦連接在一起。
 
@@ -70,7 +70,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312200214.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312200214.png)
+[![](https://i.imgur.com/x0nwWL4.png)](https://i.imgur.com/x0nwWL4.png)
 
 #### 複雜度分析
 
@@ -133,7 +133,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312358207.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412312358207.png)
+[![](https://i.imgur.com/UNW1rK8.png)](https://i.imgur.com/UNW1rK8.png)
 
 #### 複雜度分析
 

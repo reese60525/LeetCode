@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227105051282.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227105051282.png)
+[![](https://i.imgur.com/GpNiCA1.png)](https://i.imgur.com/GpNiCA1.png)
 
 給一個整數陣列 `values`，其中 `values[i]` 代表第 `i` 個景點的評分，而兩個景點 `i` 和 `j` 的**觀光價值**為兩景點的評分減去距離也就是 $values[i] + values[j] - (j - i)$ ，`i` 必須小於 `j`，請找出最大的觀光價值。
 
@@ -35,7 +35,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227111548328.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227111548328.png)
+[![](https://i.imgur.com/K4x6Mx1.png)](https://i.imgur.com/K4x6Mx1.png)
 
 #### 複雜度分析
 

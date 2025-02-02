@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151954494.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151954494.png)
+[![](https://i.imgur.com/SNnznIL.png)](https://i.imgur.com/SNnznIL.png)
 
 給一個由小寫英文字母和 `(` 、 `)` 組成的字串 `s`，請刪除最少的字元，使得字串變成合法的括號字串，並回傳刪除後的字串。
 
@@ -49,7 +49,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501152007728.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501152007728.png)
+[![](https://i.imgur.com/dI7oJrT.png)](https://i.imgur.com/dI7oJrT.png)
 
 #### 複雜度分析
 
@@ -98,7 +98,7 @@ public:
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501152011189.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501152011189.png)
+[![](https://i.imgur.com/L1rX85e.png)](https://i.imgur.com/L1rX85e.png)
 
 #### 複雜度分析
 

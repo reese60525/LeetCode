@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215104556830.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215104556830.png)
+[![](https://i.imgur.com/1ROdn1G.png)](https://i.imgur.com/1ROdn1G.png)
 
 給一個二維整數陣列 `classes`， $classes[i] = [pass_i, total_i]$ ，代表第 `i` 個班級有 `pass_i` 個人通過考試，該班級總共有 `total_i` 個人 。以及一個整數 `extraStudents`，代表你可以額外分配 `extraStudents` 個學生到任何班級，這些學生一定會通過考試，將這些學生分配到班級後，將每個班級的通過率加總並平均後的最大值是多少？
 
@@ -64,7 +64,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215112102327.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215112102327.png)
+[![](https://i.imgur.com/d0jCuMm.png)](https://i.imgur.com/d0jCuMm.png)
 
 #### 複雜度分析
 
@@ -116,7 +116,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215115130556.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241215115130556.png)
+[![](https://i.imgur.com/ZdKqzBL.png)](https://i.imgur.com/ZdKqzBL.png)
 
 #### 複雜度分析
 

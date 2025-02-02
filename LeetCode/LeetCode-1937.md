@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227155639613.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227155639613.png)
+[![](https://i.imgur.com/tvTTi0t.png)](https://i.imgur.com/tvTTi0t.png)
 
 給一個大小為 $m \times n$ 的整數矩陣 `points`，對於每一個 row 都能選一個 element，且相鄰 row 選中的 element 如果在不同 column，則會有個成本 `cost`，例如選了 `points[2][5]` 和 `points[3][2]`，則 $cost = abs(j_{row2} - j_{row3}) = abs(5 - 2) = 3$ ，求將所有選中的 element 相加並減去所有 cost 後的最大值。
 
@@ -175,7 +175,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227184025150.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227184025150.png)
+[![](https://i.imgur.com/x1a1erV.png)](https://i.imgur.com/x1a1erV.png)
 
 #### 複雜度分析
 
@@ -230,7 +230,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227184133347.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227184133347.png)
+[![](https://i.imgur.com/8uylXk0.png)](https://i.imgur.com/8uylXk0.png)
 
 #### 複雜度分析
 
