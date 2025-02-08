@@ -2,17 +2,17 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501020944112.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501020944112.png)
+[![](https://i.imgur.com/TZyptUV.png)](https://i.imgur.com/TZyptUV.png)
 
-給一個只包含小寫英文字母字串陣列 `words` 和 二維整數陣列 `queries`，請回答 `queries` 中的每個查詢，`queries[i] = [a,b]` 表示查詢 `words` 的 index 在 $[a, b]$ 範圍間，有多少字串的開頭是**母音**。
+給一個只包含小寫英文字母字串陣列 `words` 和 二維整數陣列 `queries`，請回答 `queries` 中的每個查詢， $queries[i] = [a,b]$ 表示查詢 `words` 的 index 在 `[a, b]` 範圍間，有多少字串的開頭是 **母音**。
 
-- 母音：指的是英文字母中的 `a`, `e`, `i`, `o`, `u` 。
+- 母音：指的是英文字母中的 `a`、`e`、`i`、`o`、`u`。
 
 ## 解題思路
 
 ### 1. Prefix Sum
 
-計算出 `words` 的合法字串的 `Prefix Sum`，令 `prefix[i]` 表示 `words` 中前 `i` 個字串中合法字串的數量，那麼對於 `queries[i] = [a, b]`，答案就是 `prefix[b+1] - prefix[a]`。
+計算出 `words` 的合法字串的 `Prefix Sum`，令 `prefix[i]` 表示 `words` 中前 `i` 個字串中合法字串的數量，那麼對於 $queries[i] = [a, b]$ ，答案就是 $prefix[b+1] - prefix[a]$ 。
 
 #### 程式碼
 
@@ -43,7 +43,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501020956402.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501020956402.png)
+[![](https://i.imgur.com/ynLeds4.png)](https://i.imgur.com/ynLeds4.png)
 
 #### 複雜度分析
 

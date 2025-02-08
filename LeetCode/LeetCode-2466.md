@@ -2,9 +2,9 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412301526775.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412301526775.png)
+[![](https://i.imgur.com/fdAimDx.png)](https://i.imgur.com/fdAimDx.png)
 
-給四個整數 `low`, `high`, `zero`, `one`，請通過以下操作來構建長度在 `low` 和 `high` 之間（包含兩端）的字串：  
+給四個整數 `low`、`high`、`zero`、`one`，請通過以下操作來構建長度在 `low` 和 `high` 之間（包含兩端）的字串：
 
 - 初始字串為空
 
@@ -20,7 +20,7 @@
 
 這是一種和爬樓梯非常像的問題，可以使用動態規劃來解決。
 
-令當前建構的字串長度為 `k`、合法的字串數量為 `res`，如果 $low \leq k \leq high$，則表示當前分支是合法的字串， $res + 1$ ，反之則不合法，繼續往下走找到合法的字串。先用 DFS 來實現，如下程式碼所示：
+令當前建構的字串長度為 `k`、合法的字串數量為 `res`，如果 $low \leq k \leq high$ ，則表示當前分支是合法的字串， $res + 1$ ，反之則不合法，繼續往下走找到合法的字串。先用 DFS 來實現，如下程式碼所示：
 
 ```cpp
 class Solution {
@@ -109,7 +109,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412301621680.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412301621680.png)
+[![](https://i.imgur.com/LrqSyZY.png)](https://i.imgur.com/LrqSyZY.png)
 
 #### 複雜度分析
 
@@ -119,7 +119,7 @@ class Solution {
 
 ---
 
-對於這樣的演算法可以進一步做優化，假設 `zero` 和 `one` 的 GCD 為 `g`，那麼 $[low, high]$ 之間的數字就會是 $a \cdot g$ 和 $b \cdot g$ ，其中 $a$ 和 $b$ 是任意整數，因此可以將查找的範圍壓縮，如下所示：
+對於這樣的演算法可以進一步做優化，假設 `zero` 和 `one` 的 GCD 為 `g`，那麼 `[low, high]` 之間的數字就會是 $a \cdot g$ 和 $b \cdot g$ ，其中 $a$ 和 $b$ 是任意整數，因此可以將查找的範圍壓縮，如下所示：
 
 $$
 \begin{cases}
@@ -171,7 +171,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412301709644.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412301709644.png)
+[![](https://i.imgur.com/TbZfWmR.png)](https://i.imgur.com/TbZfWmR.png)
 
 #### 複雜度分析
 

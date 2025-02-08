@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223093409008.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223093409008.png)
+[![](https://i.imgur.com/FDSjFG8.png)](https://i.imgur.com/FDSjFG8.png)
 
 給一個 value 不重複的 binary tree，對每一層的節點進行升序排序，請問最少需要幾次交換節點的操作才能將整個 tree 每層都排序。
 
@@ -10,7 +10,7 @@
 
 ### 1. BFS and Simulation
 
-BFS 每一層的節點，將節點的值和 index 存入一個 array `vec` 中，對 `vec` 排序，然後模擬將排序後的 `vec` 復原至排序前的 `vec`，如果排序後的 `vec[i]` 其 `i` 不等於排序前的 index，則需要將該節點換到原本的位置，直到節點當前 index 和原本的一樣。
+BFS 每一層的節點，將節點的值和 index 存入一個整數陣列 `vec` 中，對 `vec` 排序，然後模擬將排序後的 `vec` 復原至排序前的 `vec`，如果排序後的 `vec[i]` 其 `i` 不等於排序前的 index，則需要將該節點換到原本的位置，直到節點當前 index 和原本的一樣。
 
 #### 程式碼
 
@@ -66,11 +66,11 @@ class Solution {
 };
 ```
 
-`Permutation Cycle` 的概念：
+Permutation Cycle 的概念：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223114338538.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223114338538.png)
+[![](https://i.imgur.com/B479xqZ.png)](https://i.imgur.com/B479xqZ.png)
 
-因為題目並沒有要求要將節點的值改變，只需要計算交換次數，因此可以用 `Permutation Cycle` 的概念來計算交換次數，而每個 cycle 的邊數量 - 1 就是該 cycle 的最小交換次數，因此可以把以下 code 改寫：
+因為題目並沒有要求要將節點的值改變，只需要計算交換次數，因此可以用 Permutation Cycle 的概念來計算交換次數，而每個 cycle 的邊數量 - 1 就是該 cycle 的最小交換次數，因此可以把以下 code 改寫：
 
 ```cpp {.line-numbers}
 // 模擬還原排序後的節點
@@ -104,7 +104,7 @@ for (size_t i = 0; i < vec.size(); ++i) {
 }
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223095351095.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241223095351095.png)
+[![](https://i.imgur.com/gmaLsRQ.png)](https://i.imgur.com/gmaLsRQ.png)
 
 #### 複雜度分析
 

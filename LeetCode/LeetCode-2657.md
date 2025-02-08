@@ -2,13 +2,13 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501140853971.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501140853971.png)
+[![](https://i.imgur.com/bptTC0Y.png)](https://i.imgur.com/bptTC0Y.png)
 
-給兩個由 $[1, n]$ 範圍所組成的整數陣列 `A` 和 `B`，請回傳一個陣列 `C`，其中 `C[i]` 代表 `A` 和 `B` 在 index `i` 之前（含）的共同 element 數量。
+給兩個由 `[1, n]` 範圍所組成的整數陣列 `A` 和 `B`，請回傳一個陣列 `C`，其中 `C[i]` 代表 `A` 和 `B` 在 index `i` 之前（含）的共同 element 數量。
 
 - `A` 和 `B` 長度相同。
 
-- `A` 和 `B` 只包含 $[1, n]$ 範圍內的整數，並且這些 element 都不重複。
+- `A` 和 `B` 只包含 `[1, n]` 範圍內的整數，並且這些 element 都不重複。
 
 ## 解題思路
 
@@ -43,7 +43,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501140901745.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501140901745.png)
+[![](https://i.imgur.com/Jb6KDyO.png)](https://i.imgur.com/Jb6KDyO.png)
 
 #### 複雜度分析
 

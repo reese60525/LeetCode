@@ -2,21 +2,21 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151157200.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151157200.png)
+[![](https://i.imgur.com/GnN7LpE.png)](https://i.imgur.com/GnN7LpE.png)
 
-給兩個正整數 `num1` 和 `num2`，令 `n2` 表示 `num2` 的二進位表示法中 `1` 的數量，請找出一個正整數 `x` 其二進位表示法中 `1` 的數量 = `n2`，且 `x XOR num1` 的值要是最小的。
+給兩個正整數 `num1` 和 `num2`，令 `n2` 表示 `num2` 的二進位表示法中 `1` 的數量，請找出一個正整數 `x` 其二進位表示法中 `1` 的數量 = `n2`，且 $x \oplus num1$ 的值要是最小的。
 
 ## 解題思路
 
 ### 1. Greedy and Bit Manipulation
 
-想要讓 `x XOR num1` 的值最小，代表要讓 `num1` 的二進位表示法中**高位數**的 `1` 的數量要盡可能的少，用以下的例子來解釋：
+想要讓 $x \oplus num1$ 的值最小，代表要讓 `num1` 的二進位表示法中 **高位數** 的 `1` 的數量要盡可能的少，用以下的例子來解釋：
 
-`num1` = 0x53 = 0b110101，`num2` = 0x13 = 0b001101  
+$num1 = 0x53 = 0b110101$ ， $num2 = 0x13 = 0b001101$
 
-- 先計算出 `num2` 的二進位表示法中 `1` 的數量 `n2` = 3，因此 `x` 的二進位表示法中 `1` 的數量也要是 3。
+- 先計算出 `num2` 的二進位表示法中 `1` 的數量 $n2 = 3$ ，因此 `x` 的二進位表示法中 `1` 的數量也要是 3。
 
-- 接著想要讓 `x XOR num1` 的值最小，可以將 `num1` 中 bit 為 1 的高位數 bit 和 `x` 的 1 進行 `XOR` 運算使該 bit 變成 0，因此 `x` 的 1 要從 `num1` 的最高位依序對應到 value = 1 的 bit，如下所示：
+- 接著想要讓 $x \oplus num1$ 的值最小，可以將 `num1` 中 bit 為 1 的高位數 bit 和 `x` 的 1 進行 XOR 運算使該 bit 變成 0，因此 `x` 的 1 要從 `num1` 的最高位依序對應到 $value = 1$ 的 bit，如下所示：
 
     ```text
     num1     = 0b110101
@@ -24,7 +24,7 @@
     x ^ num1 = 0b000001
     ```
 
-- 最後，假如 `n2` 大於 `num1` 二進位表示法中 `1` 的數量 `n1`，那麼把 `num1` 的 1 都變為 0 之後 `x` 還會有剩下的 1 要填入，所以要將 `x` 從最第低位依序把 value = 0 的 bit 改為 1。
+- 最後，令 `num1` 的二進位表示法中 `1` 的數量為 `n1`，假如 $n2 > n1$ ，那麼把 `num1` 的 1 都變為 0 之後 `x` 還會有剩下的 1 要填入，所以要將 `x` 從最第低位依序把 $value = 0$ 的 bit 改為 1。
 
 #### 程式碼
 
@@ -64,11 +64,11 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151307331.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151307331.png)
+[![](https://i.imgur.com/sF4A92a.png)](https://i.imgur.com/sF4A92a.png)
 
 #### 複雜度分析
 
-令 $n$ 為 `max(num1, num2)`。
+令 $n = \max(num1, num2)$ 。
 
 - 時間複雜度： $O(\log n)$
 
@@ -78,20 +78,20 @@ class Solution {
 
 我們可以反向思考，令 `n1` 和 `n2` 分別表示 `num1` 和 `num2` 的二進位表示法中 `1` 的數量，由於 `x` 的 `n2` 個 1 都會和 `num1` 的高位數 1 在相同的位置，分別以下三種情況：
 
-- `n1` = `n2`：此時 `x = num1`，因此 `num1` 就是答案。
+- $n1 = n2$ ：此時 $x = num1$ ，因此 `num1` 就是答案。
 
-- `n1` > `n2`：將 `n2` 個 1 都填入 `x` 後，`num1` 中剩下的未被對應到的 1 在 `x` 都會是 0，因此只要從 `num1` 最低位開始，將 `n1 - n2` 個 0 取代原本是 1 的 bit 就會得到 `x`。
+- $n1 > n2$ ：將 `n2` 個 1 都填入 `x` 後，`num1` 中剩下的未被對應到的 1 在 `x` 都會是 0，因此只要從 `num1` 最低位開始，將 $n1 - n2$ 個 0 取代原本是 1 的 bit 就會得到 `x`。
 
-    例如：`num1` = 0x53 = 0b110101，`num2` = 0x5 = 0b000101
+    例如： $num1 = 0x53 = 0b110101$ ， $num2 = 0x5 = 0b000101$
 
     ```text
     num1     = 0b110101
     x        = 0b110000
     x ^ num1 = 0b000101
 
-- `n1` < `n2`：將 `n1` 個 1 都填入 `x` 後，此時 `x = num1`，並且還有 `n2 - n1` 個 1 要填入 `x` 中，這些 1 會從 `x` 的最低位開始依序將原本是 0 的 bit 變成 1，因此只要從 `num1` 的最低位開始，將 `n2 - n1` 個 0 取代原本是 1 的 bit 就會得到 `x`。
+- $n1 < n2$ ：將 `n1` 個 1 都填入 `x` 後，此時 $x = num1$ ，並且還有 $n2 - n1$ 個 1 要填入 `x` 中，這些 1 會從 `x` 的最低位開始依序將原本是 0 的 bit 變成 1，因此只要從 `num1` 的最低位開始，將 $n2 - n1$ 個 0 取代原本是 1 的 bit 就會得到 `x`。
 
-    例如：`num1` = 0x149 = 0b10010101，`num2` = 0x63 = 0b00111111
+    例如： $num1 = 0x149 = 0b10010101$ ， $num2 = 0x63 = 0b00111111$
 
     ```text
     num1     = 0b10010101
@@ -101,7 +101,7 @@ class Solution {
 
 而要將某個數 `n` 的最低位 1 變成 0 或是 0 變成 1，可以透過以下的技巧：
 
-- 最低位 1 變成 0：`n & (n - 1)`，`n - 1` 可以讓 `n` 的最低位 1 變成 0，並且將其後面的 0 變成 1，例如：
+- 最低位 1 變成 0： $n \& (n - 1)$ ， $n - 1$ 可以讓 `n` 的最低位 1 變成 0，並且將其後面的 0 變成 1，例如：
 
     ```text
     n           = 0b1011000
@@ -109,7 +109,7 @@ class Solution {
     n & (n - 1) = 0b1010000
     ```
 
-- 最低位 0 變成 1：`n | (n + 1)`，`n + 1` 可以讓 `n` 的最低位 0 變成 1，並且將其後面的 1 變成 0，例如：
+- 最低位 0 變成 1： $n | (n + 1)$ ， $n + 1$ 可以讓 `n` 的最低位 0 變成 1，並且將其後面的 1 變成 0，例如：
 
     ```text
     n           = 0b1000111
@@ -140,11 +140,11 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151306766.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501151306766.png)
+[![](https://i.imgur.com/lDc3cjH.png)](https://i.imgur.com/lDc3cjH.png)
 
 #### 複雜度分析
 
-令 $n$ 為 `max(num1, num2)`。
+令 $n = \max(num1, num2)$ 。
 
 - 時間複雜度： $O(\log n)$
 

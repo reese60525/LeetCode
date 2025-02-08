@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501101021070.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501101021070.png)
+[![](https://i.imgur.com/zVWDSpQ.png)](https://i.imgur.com/zVWDSpQ.png)
 
 給一個字串陣列 `words` 和一個字串 `pref`，回傳 `words` 中以 `pref` 為前綴的字串數量。
 
@@ -30,7 +30,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501101028325.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501101028325.png)
+[![](https://i.imgur.com/iellycr.png)](https://i.imgur.com/iellycr.png)
 
 #### 複雜度分析
 
@@ -49,7 +49,6 @@ class Solution {
 #### 程式碼
 
 ```cpp {.line-numbers}
-// Trie
 class Trie {
   private:
     int node_cnt = 0;
@@ -96,7 +95,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501101034430.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501101034430.png)
+[![](https://i.imgur.com/0EgxMbA.png)](https://i.imgur.com/0EgxMbA.png)
 
 #### 複雜度分析
 

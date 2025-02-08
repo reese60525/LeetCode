@@ -2,11 +2,11 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241211092427758.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241211092427758.png)
+[![](https://i.imgur.com/hBqvu1m.png)](https://i.imgur.com/hBqvu1m.png)
 
-給一個 integer array `nums` 和一個 integer `k`，可以對 `nums` 做以下操作：
+給一個整數陣列 `nums` 和一個整數 `k`，可以對 `nums` 做以下操作：
 
-- 選擇一個 index `i`，將 `nums[i]` 替換成 `nums[i] + x`， $-k \leq x \leq k$。
+- 選擇一個 index `i`，將 $nums[i] = nums[i] + x$ ， $-k \leq x \leq k$ 。
 
 - 每個 `nums[i]` 最多只能被操作一次。
 
@@ -18,25 +18,25 @@
 
 e.g.
 
-1. `nums` = {4, 6, 1, 2}，`k` = 2
+1. $nums = [4, 6, 1, 2]$ ， $k = 2$
 
-   - 可以選擇 {4, 6, 2} 各自經過操作後會變成 {4, 4, 4}，因此 `beauty subsequence` 的最大長度為 3。
+   - 可以選擇 `[4, 6, 2]` 各自經過操作後會變成 `[4, 4, 4]`，因此 `beauty subsequence` 的最大長度為 3。
 
-2. `nums` = {1, 1, 1, 1}，`k` = 10
+2. $nums = [1, 1, 1, 1]$ ， $k = 10$
 
-   - 可以選擇 {1, 1, 1, 1} 各自經過操作後會變成 {1, 1, 1, 1}，因此 `beauty subsequence` 的最大長度為 4。
+   - 可以選擇 `[1, 1, 1, 1]` 各自經過操作後會變成 `[1, 1, 1, 1]`，因此 `beauty subsequence` 的最大長度為 4。
 
 ## 解題思路
 
 ### 1. Sorting and Sliding Window
 
-對於 `nums[i]`來說，經過操作後 `nums[i]` 的範圍可以變成 $[nums[i] - k, nums[i] + k]$ ，在這個範圍內的 `nums[j]` 都能和 `nums[i]` 組合成 `beauty subsequence`，因此只要兩數之間的距離為 $abs(nums[i] - num[j]) \leq 2k$ ，則能保證兩數能組合成 `beauty subsequence`。
+對於 `nums[i]` 來說，經過操作後 `nums[i]` 的範圍可以變成 `[nums[i] - k, nums[i] + k]`，在這個範圍內的 `nums[j]` 都能和 `nums[i]` 組合成 `beauty subsequence`，因此只要兩數之間的距離為 $abs(nums[i] - num[j]) \leq 2k$ ，則能保證兩數能組合成 `beauty subsequence`。
 
-因此，我們可以先對 `nums` 做排序，接著使用 `sliding window` 來遍歷 `nums`，對於 `nums[i]` 而言，只要其後面的 `nums[j]` 和 `nums[i]` 的距離小於等於 $2k$ 就能組合成 `beauty subsequence`，把符合條件的 `nums[j]` 加入 `sliding window` 中，並且將 `sliding window` 的右邊界向右移動，直到 `nums[j]` 和 `nums[i]` 的距離大於 $2k$ 為止，此時 `sliding window` 的長度即為包含 `nums[i]` 的 `beauty subsequence` 的最大長度，也就是 $j - i + 1$。
+因此，我們可以先對 `nums` 做排序，接著使用 sliding window 來遍歷 `nums`，對於 `nums[i]` 而言，只要其後面的 `nums[j]` 和 `nums[i]` 的距離小於等於 $2k$ 就能組合成 `beauty subsequence`，把符合條件的 `nums[j]` 加入 sliding window 中，並且將 sliding window 的右邊界向右移動，直到 `nums[j]` 和 `nums[i]` 的距離大於 $2k$ 為止，此時 sliding window 的長度即為包含 `nums[i]` 的 `beauty subsequence` 的最大長度，也就是 $j - i + 1$ 。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     int maximumBeauty(std::vector<int> &nums, int k) {
@@ -58,7 +58,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241211095106678.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241211095106678.png)
+[![](https://i.imgur.com/E2HA3i3.png)](https://i.imgur.com/E2HA3i3.png)
 
 #### 複雜度分析
 
@@ -70,11 +70,11 @@ class Solution {
 
 ### 2. Difference Array（差分數組）
 
-對 `nums[i]` 經過操作後 `nums[i]` 的範圍可以變成 $[nums[i] - k, nums[i] + k]$ ，可以理解成在這個範圍內的數字的出現次數都 +1，因此可以用差分數組來紀錄發生變化的區間位置，`nums[i]` 出現次數增加的起始位置為 `nums[i] - k`，結束位置為 `nums[i] + k + 1`，只記錄起始位置和結束位置的變化，最後再計算 prefix sum 即可得到每個 element 的出現頻率，最大值即為答案。
+對 `nums[i]` 經過操作後 `nums[i]` 的範圍可以變成 `[nums[i] - k, nums[i] + k]`，可以理解成在這個範圍內的數字的出現次數都 + 1，因此可以用差分數組來紀錄發生變化的區間位置，`nums[i]` 出現次數增加的起始位置為 $nums[i] - k$ ，結束位置為 $nums[i] + k + 1$ ，只記錄起始位置和結束位置的變化，最後再計算 prefix sum 即可得到每個 element 的出現頻率，最大值即為答案。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     int maximumBeauty(std::vector<int> &nums, int k) {
@@ -100,7 +100,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241211101221705.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241211101221705.png)
+[![](https://i.imgur.com/kPoDd4T.png)](https://i.imgur.com/kPoDd4T.png)
 
 #### 複雜度分析
 

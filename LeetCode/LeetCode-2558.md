@@ -2,9 +2,9 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412121331831.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412121331831.png)
+[![](https://i.imgur.com/HjPN0Jh.png)](https://i.imgur.com/HjPN0Jh.png)
 
-給一個正整數 array `gifts`，代表有 `n` 個禮物，每個禮物都有一個值，代表這個禮物的價值，以及一個正整數 `k`，代表可以執行 `k` 次操作，每次操作可以選擇將一個**價值最大**的禮物將值變成它的平方根，求執行完 `k` 次操作後，剩餘所有禮物的總和。
+給一個正整數陣列 `gifts`，代表有 `n` 個禮物，每個禮物都有一個值，代表這個禮物的價值，以及一個正整數 `k`，代表可以執行 `k` 次操作，每次操作可以選擇將一個 **價值最大** 的禮物將值變成它的平方根，求執行完 `k` 次操作後，剩餘所有禮物的總和。
 
 - 如果最大的值有兩個以上，則可以任選其中一個。
 
@@ -14,11 +14,11 @@
 
 ### 1. Priority Queue
 
-用一個 max heap 的 `priority queue` 來儲存所有禮物的值，每次操作時，將最大值取出，並將其平方根的值放回 `priority queue` 中，最後將所有禮物的值加總即為答案。
+用一個 max heap 的 priority queue 來儲存所有禮物的值，每次操作時，將最大值取出，並將其平方根的值放回 priority queue 中，最後將所有禮物的值加總即為答案。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     long long pickGifts(std::vector<int> &gifts, int k) {
@@ -41,7 +41,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412121336442.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412121336442.png)
+[![](https://i.imgur.com/Fl0iH9G.png)](https://i.imgur.com/Fl0iH9G.png)
 
 #### 複雜度分析
 
@@ -53,7 +53,7 @@ class Solution {
 
 ### 2. Inplace Heapify（原地堆化）
 
-相較於方法 1 額外創一個 `priority queue`，可以直接將 `gifts` 變成一個 max heap，這樣不用額外的空間，空間複雜度變成 $O(1)$ ，每次操作時，將最大值取出，並將其平方根的值放回 `gifts` 中，最後將所有禮物的值加總即為答案。
+相較於方法 1 額外創一個 priority queue，可以直接將 `gifts` 變成一個 max heap，這樣不用額外的空間，空間複雜度變成 $O(1)$ ，每次操作時，將最大值取出，並將其平方根的值放回 `gifts` 中，最後將所有禮物的值加總即為答案。
 
 #### 程式碼
 
@@ -75,7 +75,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412121400640.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412121400640.png)
+[![](https://i.imgur.com/tfMiJxT.png)](https://i.imgur.com/tfMiJxT.png)
 
 #### 複雜度分析
 

@@ -2,27 +2,27 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221120413913.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221120413913.png)
+[![](https://i.imgur.com/dkbbdKi.png)](https://i.imgur.com/dkbbdKi.png)
 
-給一個有 `n` 個節點的 **無向多叉樹 （Undirected Multiway Tree）**，節點編號為 `0` 到 `n-1`，以及一個 1D integer array `values` 和 2D integer array `edges`，`values[i]` 代表 `node i` 的值，`edge[i] = {u, v}` 代表 `node u` 和 `node v` 相連通，和一個除數 `k`。
+給一個有 `n` 個節點的 **無向多叉樹 （Undirected Multiway Tree）**，節點編號為 $0$ 到 $n - 1$ ，以及一維整數陣列 `values`、二維整數陣列 `edges`、除數 `k`，`values[i]` 代表 `node i` 的值， $edge[i] = [u, v]$ 代表節點 `u` 和 `v` 連通。
 
 可以對任意相連的節點進行切割，切割後的每個子樹的總和必須可以被 `k` 給整除，求最多可以切割出幾個子樹。
 
-- **保證 `values` 的合可以被 `k` 整除**
+- 保證 `values` 的合可以被 `k` 整除
 
-- **保證 `edges` 是無向樹**
+- 保證 `edges` 是無向樹
 
 e.g.
 
-1. `n` = 5, `edges` = {{0, 2}, {1, 2}, {1, 3}, {2, 4}}, values = {1, 8, 1, 4, 4}, k = 6
+1. $n = 5$ ， $edges = [[0, 2], [1, 2], [1, 3], [2, 4]]$ ， $values = [1, 8, 1, 4, 4]$ ， $k = 6$
 
-    [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221121726010.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221121726010.png)
+    [![](https://i.imgur.com/DhYD0Dn.png)](https://i.imgur.com/DhYD0Dn.png)
 
     最多可以將 `node 1` 和 `node 2` 進行切割，切割後的子樹總和分別為 6 和 12，都可以被 6 整除，子樹共 2 個所以答案為 2。
 
-2. `n` = 7, `edges` = {{0, 1}, {0, 2}, {1, 3}, {1, 4}, {2, 5}, {2, 6}}, `values` = {3, 0, 6, 1, 5, 2, 1}, `k` = 3
+2. $n = 7$ ， $edges = [[0, 1], [0, 2], [1, 3], [1, 4], [2, 5], [2, 6]]$ ， $values = [3, 0, 6, 1, 5, 2, 1]$ ， $k = 3$
 
-    [![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221122008728.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221122008728.png)
+    [![](https://i.imgur.com/iPLLrf4.png)](https://i.imgur.com/iPLLrf4.png)
 
     最多可以將 `node 0` 和 `node 1` 以及 `node 0` 和 `node 2` 切割，切割後的子樹總和分別為 0、6、9，都可以被 3 整除，子樹共 3 個所以答案為 3。
 
@@ -36,25 +36,25 @@ e.g.
 
 2. 當前節點的子樹總和不可以被 `k` 整除：如果將該子樹分割，那麼整棵樹的總合就會變成 $treeSum - subTreeSum$ ，此時 `treeSum` 就無法被 `k` 整除，而且 `subTreeSum` 也無法被 `k` 整除，因此不能將該子樹進行切割。
 
-由於這是一個無向樹，因此可以選任何一個節點當  `root`，這邊選擇 `node 0` 作為 `root`，因為整個 tree 可能只有一個節點，以 `node 0` 作為 `root` 可以保證這個 `root` 一定存在。
+由於這是一個無向樹，因此可以選任何一個節點當 `root`，這邊選擇 `node 0` 作為 `root`，因為整個 tree 可能只有一個節點，以 `node 0` 作為 `root` 可以保證這個 `root` 一定存在。
 
 實際例子操作如下：
 
-`n` = 5, `edges` = {{0, 2}, {1, 2}, {1, 3}, {2, 4}}, `values` = {1, 8, 1, 4, 4}, `k` = 6
+$n = 5$ ， $edges = [[0, 2], [1, 2], [1, 3], [2, 4]]$ ， $values = [1, 8, 1, 4, 4]$ ， $k = 6$
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221121726010.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221121726010.png)
+[![](https://i.imgur.com/6BwI54s.png)](https://i.imgur.com/6BwI54s.png)
 
 由於是以 `node 0` 為 `root`，因此樹實際上會以這樣來處理：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221124607819.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221124607819.png)
+[![](https://i.imgur.com/Tggio7c.png)](https://i.imgur.com/Tggio7c.png)
 
 用 DFS 計算每個節點的子樹總和：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221125101369.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221125101369.png)
+[![](https://i.imgur.com/280D6h1.png)](https://i.imgur.com/280D6h1.png)
 
 可以看到 `node 1` 的子樹總合是 12 能被 `k` 整除，因此將其切割。
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221125452127.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221125452127.png)
+[![](https://i.imgur.com/TXOnKN7.png)](https://i.imgur.com/TXOnKN7.png)
 
 剩餘的節點子樹總和只有 `root` 可以 `k` 整除，因此共可以分成 2 個子樹，答案為 2。
 
@@ -103,7 +103,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221142724028.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221142724028.png)
+[![](https://i.imgur.com/NEqk3cx.png)](https://i.imgur.com/NEqk3cx.png)
 
 #### 複雜度分析
 

@@ -2,15 +2,15 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501211003255.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501211003255.png)
+[![](https://i.imgur.com/SToFoqF.png)](https://i.imgur.com/SToFoqF.png)
 
-給一個 `2 x n` 的整數矩陣 `grid`，現在有兩個機器人 `A` 和 `B`，倆機器人的起點和終點都是 `grid[0][0]`、`grid[1][n-1]`，並且每次移動只能向右和向下走，這兩個機器人的目標分別為：
+給一個 $2 \times n$ 的整數矩陣 `grid`，現在有兩個機器人 `A` 和 `B`，倆機器人的起點和終點都是 `grid[0][0]`、`grid[1][n-1]`，並且每次移動只能向右和向下走，這兩個機器人的目標分別為：
 
-- `A` 機器人：其經過的 `grid[i][j]` 會變成 0，目標是要讓 `B` 機器人所經過的**路徑總和最小**。
+- `A` 機器人：其經過的 `grid[i][j]` 會變成 0，目標是要讓 `B` 機器人所經過的路徑總和 **最小**。
 
-- `B` 機器人：目標是要讓自己所經過的路徑總和最大。
+- `B` 機器人：目標是要讓自己所經過的路徑總和 **最大**。
 
-`A` 機器人會先出發，接著才是 `B` 機器人，兩個機器人所走的路徑都是**最佳路線**。
+`A` 機器人會先出發，接著才是 `B` 機器人，兩個機器人所走的路徑都是 **最佳路線**。
 
 ## 解題思路
 
@@ -63,7 +63,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501211023773.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501211023773.png)
+[![](https://i.imgur.com/gPRwL9O.png)](https://i.imgur.com/gPRwL9O.png)
 
 #### 複雜度分析
 

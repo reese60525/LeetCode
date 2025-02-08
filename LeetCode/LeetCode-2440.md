@@ -2,11 +2,11 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221145310615.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221145310615.png)
+[![](https://i.imgur.com/pJPtyn2.png)](https://i.imgur.com/pJPtyn2.png)
 
-給一個有 `n` 個節點的 **無向多叉樹 （Undirected Multiway Tree）**，節點編號為 `0` 到 `n-1`，以及一個一維整數陣列 `nums` 和二維整數陣列 `edges`，`nums[i]` 代表 `node i` 的值，`edge[i] = {u, v}` 代表 `node u` 和 `node v` 互相連通，可以對任意相連的節點進行切割，切割後的每個子樹的總和相同，求最多可以切割出幾個子樹。
+給一個有 `n` 個節點的 **無向多叉樹（Undirected Multiway Tree）**，節點編號為 `0` 到 `n-1`，以及一個一維整數陣列 `nums` 和二維整數陣列 `edges`，`nums[i]` 代表節點 `i` 的值， $edge[i] = [u, v]$ 代表節點 `u` 和節點 `v` 互相連通，可以對任意相連的節點進行切割，切割後的每個子樹的總和相同，求最多可以切割出幾個子樹。
 
-**題目保證 `edges` 是無向樹**
+- 題目保證 `edges` 是無向樹
 
 ## 解題思路
 
@@ -14,7 +14,7 @@
 
 這道題目和 [LeetCode - 2872. Maximum Number of K-Divisible Components](https://leetcode.com/problems/maximum-number-of-k-divisible-components/description/) 類似，都是樹形 DP 的題目，寫法幾乎一樣，這邊只討論不同的地方。
 
-題目要求切割後的每個子樹的總和相同，因為有 `n` 個節點，因此會有 `n` 種切割方法，首先算出 tree 的總和 `sum`，然後嘗試每一種方法，如果 `sum` 可以被 `n` 整除，表示該方法是有機會成功的，因此以 $k = \frac{sum}{n}$ 為每個子樹的總和目標，然後用 DFS 計算每個節點的子樹總和，如果子樹總和為 `k` 就代表該子樹可以被切割，只要有任何一個子樹總和超過 `k` 就代表該方法無法成功，繼續嘗試下一種方法。
+題目要求切割後的每個子樹的總和相同，`n` 個節點會有 `n` 種切割方法，首先算出 tree 的總和 `sum`，然後嘗試每一種方法，如果 `sum` 可以被 `n` 整除，表示該方法是有機會成功的，因此以 $k = \frac{sum}{n}$ 為每個子樹的總和目標，然後用 DFS 計算每個節點的子樹總和，如果子樹總和為 `k` 就代表該子樹可以被切割，只要有任何一個子樹總和超過 `k` 就代表該方法無法成功，繼續嘗試下一種方法。
 
 #### 程式碼
 
@@ -76,7 +76,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221151933713.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241221151933713.png)
+[![](https://i.imgur.com/PX09UJ5.png)](https://i.imgur.com/PX09UJ5.png)
 
 #### 複雜度分析
 

@@ -2,11 +2,11 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501221621048.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501221621048.png)
+[![](https://i.imgur.com/Vi4D3Xa.png)](https://i.imgur.com/Vi4D3Xa.png)
 
 給一個二維整數陣列 `piles` 和整數 `k` 分別表示有數堆的硬幣 stack 和要從中取出的硬幣數量，`piles[i][j]` 代表第 `i` 堆硬幣中由 stack 頂部往下數的第 `j` 個硬幣，現在要從這些硬幣中選出 `k` 個硬幣，求出這些硬幣的總和最大值。
 
-**每次從 stack 中取出硬幣必須是從 stack 頂部取出硬幣，不能從中間取。**
+- 每次從 stack 中取出硬幣必須是從 stack 頂部取出硬幣，不能從中間取。
 
 ## 解題思路
 
@@ -93,7 +93,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222035776.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501222035776.png)
+[![](https://i.imgur.com/Vd4mBAh.png)](https://i.imgur.com/Vd4mBAh.png)
 
 #### 複雜度分析
 
@@ -107,9 +107,9 @@ class Solution {
 
 ---
 
-要進一步優化 DP 算法，可以發現 `dp[i][j]` 只和 `dp[i - 1][]` 有關，因此可以將 `dp` 壓縮成一維陣列，由於需要用到 `dp[][j - l - 1]`，所以要從後往前更新 `dp`，而不選擇當前硬幣堆的情況： `dp[i][j]` = `dp[i - 1][j]` 變成 `dp[j]` = `dp[j]`，可以直接省略。
+要進一步優化 DP 算法，可以發現 `dp[i][j]` 只和 `dp[i - 1][]` 有關，因此可以將 `dp` 壓縮成一維陣列，由於需要用到 `dp[][j - l - 1]`，所以要從後往前更新 `dp`，而不選擇當前硬幣堆的情況： $dp[i][j] = dp[i - 1][j]$ 變成 $dp[j] = dp[j]$ ，可以直接省略。
 
-接著考慮到前 `i` 個硬幣堆中共有 `x` 個硬幣，要是 `k` 大於 `x` 時有必要從 `k` 開始往前更新 `dp` 嗎？答案是不用的，因為當前最多就只能取出 `x` 個硬幣，因此可以用一個變數 `x` 來記錄前 `i` 個硬幣堆中共有多少個硬幣，在更新 `dp` 時 `j` 只要從 `min(x, k)` 開始往前更新就好。
+接著考慮到前 `i` 個硬幣堆中共有 `x` 個硬幣，要是 $k > x$ 時有必要從 `k` 開始往前更新 `dp` 嗎？答案是不用的，因為當前最多就只能取出 `x` 個硬幣，因此可以用一個變數 `x` 來記錄前 `i` 個硬幣堆中共有多少個硬幣，在更新 `dp` 時 `j` 只要從 `min(x, k)` 開始往前更新就好。
 
 #### 程式碼
 
@@ -143,7 +143,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501221858820.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501221858820.png)
+[![](https://i.imgur.com/4pEeIOd.png)](https://i.imgur.com/4pEeIOd.png)
 
 #### 複雜度分析
 

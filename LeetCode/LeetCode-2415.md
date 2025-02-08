@@ -2,15 +2,15 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220121346325.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220121346325.png)
+[![](https://i.imgur.com/Wf154mv.png)](https://i.imgur.com/Wf154mv.png)
 
 給一個 perfect binary tree，將 odd level 的所有 node value 反轉。
 
 perfect binary tree 定義：
 
-- 所有 parent node 都有兩個 children node
+- 所有 parent node 都有兩個 children node。
 
-- 所有 leaf node 都在同個 level
+- 所有 leaf node 都在同個 level。
 
 ## 解題思路
 
@@ -71,7 +71,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220122150896.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220122150896.png)
+[![](https://i.imgur.com/h4NHp1M.png)](https://i.imgur.com/h4NHp1M.png)
 
 #### 複雜度分析
 
@@ -126,7 +126,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220123201458.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241220123201458.png)
+[![](https://i.imgur.com/4KumM5Y.png)](https://i.imgur.com/4KumM5Y.png)
 
 #### 複雜度分析
 

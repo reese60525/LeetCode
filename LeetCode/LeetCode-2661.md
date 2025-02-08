@@ -2,17 +2,17 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501200955692.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501200955692.png)
+[![](https://i.imgur.com/MHSXtMz.png)](https://i.imgur.com/MHSXtMz.png)
 
-給一個長度為 `m x n` 的一維整數陣列 `arr` 和一個 `m x n` 的二維整數陣列 `mat`，其中 `arr` 和 `mat` 的 element 都是 `1` 到 `m * n` 之間的整數，且沒有重複的數字。
+給一個長度為 $m \times n$ 的一維整數陣列 `arr` 和一個 $m \times n$ 的二維整數陣列 `mat`，其中 `arr` 和 `mat` 的 element 都是 $1$ 到 $m \times n$ 之間的整數，且沒有重複的數字。
 
-從 index = 0 開始遍歷 `arr`，將 `arr[i]` 的 element 對應到 `mat` 相同 element，將其標記為已經被走訪過，請問要讓 `mat` 的某一行或某一列完全被走訪過，至少需要遍歷幾個 `arr` 中的 element？回傳 `arr` 中第一個完全走訪過 `mat` 的某一行或某一列的 element 的 index。
+從 $index = 0$ 開始遍歷 `arr`，將 `arr[i]` 的 element 對應到 `mat` 相同 element，將其標記為已經被走訪過，請問要讓 `mat` 的某一行或某一列完全被走訪過，至少需要遍歷幾個 `arr` 中的 element？回傳 `arr` 中第一個完全走訪過 `mat` 的某一行或某一列的 element 的 index。
 
 ## 解題思路
 
 ### 1. Hash Map
 
-我們可以創建兩個大小分別是 `m` 和 `n` 的陣列 `row` 和 `col` 用於紀錄每行每列當前有幾個 element 已經被走訪過，`row[i]` 表示第 `i` 列有幾個 element 被走訪過，`col[i]` 表示第 `i` 行有幾個 element 被走訪過，然後創建一個陣列 `pos`，`pos[i]` 表示整數 `i` 在 `mat` 中的 index，接著遍歷 `arr`，依序將 `arr[i]` 對應的 `row` 和 `col` 的值 + 1，如果 `row[i]` = `n` 或 `col[i]` = `m` 表示這一行或這一列已經完全被走訪過，return `i`。
+我們可以創建兩個大小分別是 `m` 和 `n` 的陣列 `row` 和 `col` 用於紀錄每行每列當前有幾個 element 已經被走訪過，`row[i]` 表示第 `i` 列有幾個 element 被走訪過，`col[i]` 表示第 `i` 行有幾個 element 被走訪過，然後創建一個陣列 `pos`，`pos[i]` 表示整數 `i` 在 `mat` 中的 index，接著遍歷 `arr`，依序將 `arr[i]` 對應的 `row` 和 `col` 的值 + 1，如果 $row[i] = n$ 或 $col[i] = m$ 表示這一行或這一列已經完全被走訪過，return `i`。
 
 #### 程式碼
 
@@ -48,7 +48,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501201011498.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501201011498.png)
+[![](https://i.imgur.com/1rJcEmi.png)](https://i.imgur.com/1rJcEmi.png)
 
 #### 複雜度分析
 

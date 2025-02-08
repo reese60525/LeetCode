@@ -2,31 +2,31 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214175430567.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214175430567.png)
+[![](https://i.imgur.com/eWLwCMe.png)](https://i.imgur.com/eWLwCMe.png)
 
-給一個 integer array `nums`，找出所有 `continuous` subarray 並回傳數量。
+給一個整數陣列 `nums`，找出所有 `continuous subarray` 並回傳數量。
 
-`continuous` subarray 的定義為：
+continuous subarray 的定義為：
 
 - subarray 是連續且非空的子序列
 
-- 對於 index : $i \leq i_1, i_2 \leq j$ 的 subarray，滿足 $abs(nums[i_1] - nums[i_2] \leq 2)$
+- 對於 index : $i \leq i_1 \text{，} i_2 \leq j$ 的 subarray，滿足 $abs(nums[i_1] - nums[i_2] \leq 2)$
 
 e.g.
 
-`nums` = {5, 4, 3, 3, 2, 4}
+$nums = [5, 4, 3, 3, 2, 4]$
 
-- 長度為 1 的 `continuous` subarray 有 6 個：{5}, {4}, {3}, {3}, {2}, {4}
+- 長度為 1 的 continuous subarray 有 6 個：`[[5], [4], [3], [3], [2], [4]]`
 
-- 長度為 2 的 `continuous` subarray 有 5 個：{5, 4}, {4, 3}, {3, 3}, {3, 2}, {2, 4}
+- 長度為 2 的 continuous subarray 有 5 個：`[[5, 4], [4, 3], [3, 3], [3, 2], [2, 4]]`
 
-- 長度為 3 的 `continuous` subarray 有 4 個：{5, 4, 3}, {4, 3, 3}, {3, 3, 2}, {3, 2, 4}
+- 長度為 3 的 continuous subarray 有 4 個：`[[5, 4, 3], [4, 3, 3], [3, 3, 2], [3, 2, 4]]`
 
-- 長度為 4 的 `continuous` subarray 有 3 個：{5, 4, 3, 3}, {4, 3, 3, 2}, {3, 3, 2, 4}
+- 長度為 4 的 continuous subarray 有 3 個：`[[5, 4, 3, 3], [4, 3, 3, 2], [3, 3, 2, 4]]`
 
-- 長度為 5 的 `continuous` subarray 有 1 個：{4, 3, 3, 2, 4}
+- 長度為 5 的 continuous subarray 有 1 個：`[[4, 3, 3, 2, 4]]`
 
-- 長度為 6 的 `continuous` subarray 有 0 個：
+- 長度為 6 的 continuous subarray 有 0 個：
 
 總共為 19 個。
 
@@ -34,33 +34,33 @@ e.g.
 
 ### 1. Sliding Window and Hash Map
 
-用 `hash map` 紀錄目前 window 內的數字，並用 `left` 和 `right` 兩個 pointer 來維護 window 的範圍，當 `hash map` 內的最大值和最小值相差超過 2 時，將 `left` 往右移動，直到 `hash map` 內的最大值和最小值相差小於等於 2 為止。
+用 hash map 紀錄目前 window 內的數字，並用 `left` 和 `right` 來維護 window 的範圍，當 hash map 內的最大值和最小值相差超過 2 時，將 `left` 往右移動，直到 hash map 內的最大值和最小值相差小於等於 2 為止。
 
-而要計算 `continuous subarray` 的數量，可以累加 `right - left + 1` 的值，如下舉例:
+而要計算 continuous subarray 的數量，可以累加 $right - left + 1$ 的值，如下舉例：
 
-`nums` = {1,2,3}，此時所有可能的 subarray 有 {{1}, {2}, {3}, {1, 2}, {2, 3}, {1, 2, 3}}，共 6 個。
+$nums = [1, 2, 3]$ ，此時所有可能的 subarray 有 `[[1], [2], [3], [1, 2], [2, 3], [1, 2, 3]]` 共 6 個。
 
 當加進來一個新的數字 4 時，數字 4 可以選擇不和前面的數字組成 subarray，也可以選擇和前面連續 1、2、3 個數字組成 subarray，因此多出來的 subarray 組合就會是加入數字 4 後當前 array 的長度。
 
-新增的 subarray 組合有: {{4}, {3, 4}, {2, 3, 4}, {1, 2, 3, 4}}，共 4 個。
+新增的 subarray 組合有：`[[4], [3, 4], [2, 3, 4], [1, 2, 3, 4]]` 共 4 個。
 
 完整的操作流程如下：
 
-`nums` == {5, 4, 3, 3, 2, 4}
+$nums = [5, 4, 3, 3, 2, 4]$
 
-- 當 `left` 為 0，`right` 為 0 時，`hash map` 內的數字為 {5}，最大值和最小值相差 0，`continuous` subarray 的數量為 (r - l + 1) = 1。
+- 當 $left = 0 \text{、} right = 0$ 時，hash map 內的數字為 `[5]`，最大值和最小值相差 0，continuous subarray 的數量為 $(r - l + 1) = 1$ 。
 
-- 當 `left` 為 0，`right` 為 1 時，`hash map` 內的數字為 {5, 4}，最大值和最小值相差 1，`continuous` subarray 的數量為 (r - l + 1) = 2。
+- 當 $left = 0 \text{、} right = 1$ 時，hash map 內的數字為 `[5, 4]`，最大值和最小值相差 1，continuous subarray 的數量為 $(r - l + 1) = 2$ 。
 
-- 當 `left` 為 0，`right` 為 2 時，`hash map` 內的數字為 {5, 4, 3}，最大值和最小值相差 2，`continuous` subarray 的數量為 (r - l + 1) = 3。
+- 當 $left = 0 \text{、} right = 2$ 時，hash map 內的數字為 `[5, 4, 3]`，最大值和最小值相差 2，continuous subarray 的數量為 $(r - l + 1) = 3$ 。
 
-- 當 `left` 為 0，`right` 為 3 時，`hash map` 內的數字為 {5, 4, 3, 3}，最大值和最小值相差 2，`continuous` subarray 的數量為 (r - l + 1) = 4。
+- 當 $left = 0 \text{、} right = 3$ 時，hash map 內的數字為 `[5, 4, 3, 3]`，最大值和最小值相差 2，continuous subarray 的數量為 $(r - l + 1) = 4$ 。
 
-- 當 `left` 為 0，`right` 為 4 時，`hash map` 內的數字為 {5, 4, 3, 3, 2}，最大值和最小值相差 3，將 `left` 往右移動直到最大最小值相差不超過 2，此時 `left` 為 1，`continuous` subarray 的數量為 (r - l + 1) = 4。
+- 當 $left = 0 \text{、} right = 4$ 時，hash map 內的數字為 `[5, 4, 3, 3, 2]`，最大值和最小值相差 3，將 `left` 往右移動直到最大最小值相差不超過 2，此時 $left = 1$ ，continuous subarray 的數量為 $(r - l + 1) = 4$ 。
 
-- 當 `left` 為 1，`right` 為 5 時，`hash map` 內的數字為 {4, 3, 3, 2, 4}，最大值和最小值相差 2，`continuous` subarray 的數量為 (r - l + 1) = 5。
+- 當 $left = 1 \text{、} right = 5$ 時，hash map 內的數字為 `[4, 3, 3, 2, 4]`，最大值和最小值相差 2，continuous subarray 的數量為 $(r - l + 1) = 5$ 。
 
-將這些數量加總起來，即可得到 `continuous` subarray 的總數量為 19。
+將這些數量加總起來，即可得到 continuous subarray 的總數量為 19。
 
 #### 程式碼
 
@@ -93,23 +93,23 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214193328225.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214193328225.png)
+[![](https://i.imgur.com/e08WdDn.png)](https://i.imgur.com/e08WdDn.png)
 
 #### 複雜度分析
 
-令 $n$ 為 `nums` 的長度， $k$ 為 `hash map` 內的 element 數量。
+令 $n$ 為 `nums` 的長度， $k$ 為 hash map 內的 element 數量。
 
 - 時間複雜度： $O(n)$
 
-    原本為 $O(n \log k)$ ，由於最多只會有 4 個 element，因此 $k$ 為常數，故時間複雜度最終為 $O(n)$。
+    原本為 $O(n \log k)$ ，由於最多只會有 4 個 element，因此 $k$ 為常數，故時間複雜度最終為 $O(n)$ 。
 
 - 空間複雜度： $O(1)$
 
-    原本為 $O(k)$ ，由於最多只會有 4 個 element，因此 $k$ 為常數，故空間複雜度最終為 $O(1)$。
+    原本為 $O(k)$ ，由於最多只會有 4 個 element，因此 $k$ 為常數，故空間複雜度最終為 $O(1)$ 。
 
 ### 2. Sliding Window and Multiset
 
-一樣的概念，只是將 `hash map` 改成 `multiset` 來儲存 window 內的數字。
+一樣的概念，只是將 hash map 改成 multiset 來儲存 window 內的數字。
 
 #### 程式碼
 
@@ -137,23 +137,23 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214183416675.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214183416675.png)
+[![](https://i.imgur.com/qf43bYK.png)](https://i.imgur.com/qf43bYK.png)
 
 #### 複雜度分析
 
-令 $n$ 為 `nums` 的長度， $k$ 為 `multiset` 內的 element 數量。
+令 $n$ 為 `nums` 的長度， $k$ 為 multiset 內的 element 數量。
 
 - 時間複雜度： $O(n \log n)$
 
-    原本為 $O(n \log k)$ ，由於最多只會有 $n$ 個 element，因此時間複雜度最終為 $O(n \log n)$。
+    原本為 $O(n \log k)$ ，由於 multiset 中最多只會有 $n$ 個 element，因此時間複雜度最終為 $O(n \log n)$。
 
 - 空間複雜度： $O(n)$
 
-    原本為 $O(k)$ ，由於最多只會有 $n$ 個 element，因此空間複雜度最終為 $O(n)$。
+    原本為 $O(k)$ ，由於 multiset 中最多只會有 $n$ 個 element，因此空間複雜度最終為 $O(n)$。
 
 ### 3. Sliding Window and Priority Queue
 
-也是一樣的概念，只是將 `hash map` 改成 `priority queue` 來儲存 window 內的數字。
+也是一樣的概念，只是將 hash map 改成 priority queue 來儲存 window 內的數字。
 
 #### 程式碼
 
@@ -196,7 +196,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214184944790.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214184944790.png)
+[![](https://i.imgur.com/rU3smjj.png)](https://i.imgur.com/rU3smjj.png)
 
 #### 複雜度分析
 
@@ -212,7 +212,7 @@ class Solution {
 
 ### 4. Sliding Window
 
-不用任何資料結構，直接使用 `sliding window` 來維護當前 window 的最大值和最小值。
+不用任何資料結構，直接使用 sliding window 來維護當前 window 的最大值和最小值。
 
 #### 程式碼
 
@@ -266,7 +266,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214192340223.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241214192340223.png)
+[![](https://i.imgur.com/89AREcf.png)](https://i.imgur.com/89AREcf.png)
 
 #### 複雜度分析
 
