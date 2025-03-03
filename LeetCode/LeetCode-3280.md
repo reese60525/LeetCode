@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011147005.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011147005.png)
+[![](https://i.imgur.com/iZzGrS1.png)](https://i.imgur.com/iZzGrS1.png)
 
 給一個字串 `date` 代表一個日期，格式為 `YYYY-MM-DD`，請將其轉換為二進位表示。
 
@@ -12,7 +12,7 @@
 
 將三個整數 `year`、`month`、`day` 從字串中取出，然後再透過位元運算將其轉換為二進位表示。
 
-要算出整數 `n` 的二進制，可以用一個整數 `flag` 來和 `n` 做 `&` 運算，令 `flag` 為 `0...010..0` 的形式，1 的位置為 `n` 二進制中 1 的最高位位置，如果 `n & flag = 0` 則代表 $n$ 在 $flag$ 前導 1 的位置是 0，否則為 1，由此可得出 `n` 的二進制，而 `n` 最高位 1 的位置就會是 $\lfloor \log_2 n \rfloor$ 。
+要算出整數 `n` 的二進制，可以用一個整數 `flag` 來和 `n` 做 `&` 運算，令 `flag` 為 `0...010..0` 的形式，1 的位置為 `n` 二進制中 1 的最高位位置，如果 $n\text{ \& }flag = 0$ 則代表 $n$ 在 $flag$ 前導 1 的位置是 0，否則為 1，由此可得出 `n` 的二進制，而 `n` 最高位 1 的位置就會是 $\lfloor \log_2 n \rfloor$ 。
 
 7 的二進制表示為 `0...0111`， $\lfloor \log_2 7 \rfloor = 2$ ，8 的二進制表示為 `0...01000`， $\lfloor \log_2 8 \rfloor = 3$，因此可以透過 $\lfloor \log_2 n \rfloor$ 來取得整數 `n` 的二進制表示中最高位 1 的位置。
 
@@ -57,7 +57,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011221249.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011221249.png)
+[![](https://i.imgur.com/0OmXYT2.png)](https://i.imgur.com/0OmXYT2.png)
 
 #### 複雜度分析
 
@@ -96,7 +96,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011227586.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501011227586.png)
+[![](https://i.imgur.com/tsCahMl.png)](https://i.imgur.com/tsCahMl.png)
 
 #### 複雜度分析
 

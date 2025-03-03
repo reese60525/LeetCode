@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227085002385.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227085002385.png)
+[![](https://i.imgur.com/J1OAAwA.png)](https://i.imgur.com/J1OAAwA.png)
 
 給一個整數 `x` 和兩個整數陣列 `nums` and `queries`，找出所有 `nums` 中第 `queries[i]` 個 `x` 的 index，若不存在則為 -1。
 
@@ -37,7 +37,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227090241006.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241227090241006.png)
+[![](https://i.imgur.com/HfwTNpu.png)](https://i.imgur.com/HfwTNpu.png)
 
 #### 複雜度分析
 

@@ -2,13 +2,13 @@
 
 ## 題目敘述
 
-![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501271853782.png)
+[![](https://i.imgur.com/8JS4mmF.png)](https://i.imgur.com/8JS4mmF.png)
 
 給一個整數陣列 `nums` 和整數 `limit`，對於 `nums[i]` 和 `nums[j]`，如果 $i \neq j \text{ and } abs(nums[i] - nums[j]) \leq limit$ ，則 `nums[i]` 可以和 `nums[j]` 進行交換操作。
 
-請找出將 `nums` 陣列進行交換操作後所能得到的**最小字典序**結果。
+請找出將 `nums` 陣列進行交換操作後所能得到的 **最小字典序** 結果。
 
-假如 $nums = [22, 21, 111, 9]$ ，則**最小字典序**為 `[9, 21, 22, 111]`。
+假如 $nums = [22, 21, 111, 9]$ ，則 **最小字典序** 為 `[9, 21, 22, 111]`。
 
 ## 解題思路
 
@@ -38,7 +38,7 @@
 
     > 將所有整數分好組別後，`groupsIndex` 用於將每個組別的整數由小到大填入至要 return 的答案中。  
     以 $nums = [8, 5, 2 ,14, 55, 33, 16] \text{、}limit = 4$ 為例：  
-    將 `nums` 排序後會變成 `[2, 5, 8 ,14, 16, 33, 55]`，能分組成：`[[2, 5, 8], [14, 16], [33], [55]]`，而 `groupsIndex` 會記錄 `nums` 排序後每一組的起始 index， $groupsIndex = [0, 3, 5, 6]$ ，這麼一來後續在填入答案時，假使當前 `nums[i]` 是 group 0、 $groupsIndex[0] = 0$ ，則 `nums[i]` 會填入 $sortedNums[groupsIndex[0]] = sortedNums[0]$ 也就是 group 0 最小的整數，然後將 $groupsIndex[0] + 1$ ，下次再遇到 group 0 就會把該組第二小的整數填入，以此來完成**最小字典序**。
+    將 `nums` 排序後會變成 `[2, 5, 8 ,14, 16, 33, 55]`，能分組成：`[[2, 5, 8], [14, 16], [33], [55]]`，而 `groupsIndex` 會記錄 `nums` 排序後每一組的起始 index， $groupsIndex = [0, 3, 5, 6]$ ，這麼一來後續在填入答案時，假使當前 `nums[i]` 是 group 0、 $groupsIndex[0] = 0$ ，則 `nums[i]` 會填入 $sortedNums[groupsIndex[0]] = sortedNums[0]$ 也就是 group 0 最小的整數，然後將 $groupsIndex[0] + 1$ ，下次再遇到 group 0 就會把該組第二小的整數填入，以此來完成 **最小字典序**。
 
 2. 遍歷 `nums`，檢查 `nums[i]` 和 `nums[i-1]` 是否可以交換，如果不能就將 $groupId + 1$ 表示新組別。接著更新 `nums[i] = groupId` 用來紀錄 `nums[i]` 的組別。
 
@@ -89,7 +89,7 @@ class Solution {
 };
 ```
 
-![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202501271936805.png)
+[![](https://i.imgur.com/orXxZAO.png)](https://i.imgur.com/orXxZAO.png)
 
 #### 複雜度分析
 

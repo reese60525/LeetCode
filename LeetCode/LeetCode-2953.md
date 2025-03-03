@@ -2,9 +2,9 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161329090.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210161329090.png)
+[![](https://i.imgur.com/FUaYv5g.png)](https://i.imgur.com/FUaYv5g.png)
 
-給一個只包含小寫英文字母的字串 `word` 和一個整數 `k`，找出 `word` 中所有是 `complete` 的 substring 的數量。
+給一個只包含小寫英文字母的字串 `word` 和一個整數 `k`，找出 `word` 中所有是 complete 的 substring 的數量。
 
 complete substring 的定義為：
 
@@ -14,25 +14,25 @@ complete substring 的定義為：
 
 e.g.
 
-1. `word` = "igigee"，`k` = 2
+1. $word = "igigee"$ ， $k = 2$
 
-    符合條件的 complete substring 有 {"ee", "igig", "igigee"}，所以答案是 3。
+    符合條件的 complete substring 有 `["ee", "igig", "igigee"]`，所以答案是 3。
 
-2. `word` = "aaabbbccc"，`k` = 3
+2. $word = "aaabbbccc"$ ， $k = 3$
 
-    符合條件的 complete substring 有 {"aaa", "bbb", "ccc", "aaabbb", "bbbccc", "aaabbbccc"}，所以答案是 6。
+    符合條件的 complete substring 有 `["aaa", "bbb", "ccc", "aaabbb", "bbbccc", "aaabbbccc"]`，所以答案是 6。
 
 ## 解題思路
 
 ### 1. Grouped Loop（分組循環） and Sliding Window
 
-先處理 `complete` 中的第二個條件，也就是相鄰字元的絕對值差要小於等於 2。對於這個條件，我們可以遍歷 `word` 中的每個字元，將其進行分組，令 `begin` 為記錄當前 `word` index 的起始點，從 `begin` 開始遍歷 `word`，當遇到 $abs(word[i] - word[i+1]) > 2$ 時，可得到 $index = [begin, i]$ 的 substring，該 substring 能夠滿足 `complete` 中的第二個條件。
+先處理 complete 中的第二個條件，也就是相鄰字元的絕對值差要小於等於 2。對於這個條件，我們可以遍歷 `word` 中的每個字元，將其進行分組，令 `begin` 為記錄當前 `word` index 的起始點，從 `begin` 開始遍歷 `word`，當遇到 $abs(word[i] - word[i+1]) > 2$ 時，可得到 $index = [begin, i]$ 的 substring，該 substring 能夠滿足 complete 中的第二個條件。
 
-接著處理 `complete` 中的第一個條件，也就是每個字母在 substring 中都正好出現 `k` 次。`word` 是由 26個 小寫字母所組成的，因此能滿足第一個條件的所有 substring 的可能長度為 $[1 \cdot k,26 \cdot k]$ 。舉例來說，如果 $k = 3$ 則長度為 9 的 `complete` substring 一定正好包含三種不同的字母，如果不是剛好包含三種字母的話，則一定不會是 `complete`。同理，若是 $k = 3$ ，則長度為 11 的 substring 必不可能是`complete`，因為包含三種字母的 `complete` substring 長度為 9，而包含四種字母的 `complete` substring 長度為 12。
+接著處理 complete 中的第一個條件，也就是每個字母在 substring 中都正好出現 `k` 次。`word` 是由 26個 小寫字母所組成的，因此能滿足第一個條件的所有 substring 的可能長度為 $[1 \cdot k,2 \cdot k, ..., 26 \cdot k]$ 。舉例來說，如果 $k = 3$ 則長度為 9 的 complete substring 一定正好包含三種不同的字母，如果不是剛好包含三種字母的話，則一定不會是 complete。同理，若是 $k = 3$ ，則長度為 11 的 substring 必不可能是 complete，因為包含三種字母的 complete substring 長度為 9，而包含四種字母的 complete substring 長度為 12。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     int slidingWindow(std::string_view s, int k) {
@@ -95,7 +95,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241209003727921.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241209003727921.png)
+[![](https://i.imgur.com/0doKcW5.png)](https://i.imgur.com/0doKcW5.png)
 
 #### 複雜度分析
 

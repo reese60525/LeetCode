@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131037545.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131037545.png)
+[![](https://i.imgur.com/T3Btitc.png)](https://i.imgur.com/T3Btitc.png)
 
 給一個由小寫字母組成的字串 `s` ，可以對其進行以下操作數次：
 
@@ -42,7 +42,7 @@
 
 3. 同個字元數量為偶數，經過操作後最短長度為 2。
 
-因此可以用 `Hash Map` 紀錄每個字元出現的次數，並判斷該字元數量為 0、奇數或偶數，將所有字元經過操作後的最短長度加總即可得到答案。
+因此可以用 hash map 紀錄每個字元出現的次數，並判斷該字元數量為 0、奇數或偶數，將所有字元經過操作後的最短長度加總即可得到答案。
 
 #### 程式碼
 
@@ -71,7 +71,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131048505.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/ForPicGo/Pictures/202501131048505.png)
+[![](https://i.imgur.com/H8Lcr4e.png)](https://i.imgur.com/H8Lcr4e.png)
 
 #### 複雜度分析
 

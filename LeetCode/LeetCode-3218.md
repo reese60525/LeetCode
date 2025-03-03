@@ -2,23 +2,23 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251055063.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251055063.png)
+[![](https://i.imgur.com/EuG2EJ8.png)](https://i.imgur.com/EuG2EJ8.png)
 
-給一個 `m x n` 矩陣，代表一個蛋糕，可以將蛋糕切小塊，最小能切為 `1 x 1` 的蛋糕，row and column 分別能切 `m-1` 和 `n-1` 次。給兩個一維整數陣列 `horizontalCuts` 和 `verticalCuts`，size 分別為 `m-1` 和 `n-1`，分別代表將蛋糕在水平和垂直方向上切割所需要的成本。
+給一個 $m \times n$ 矩陣，代表一個蛋糕，可以將蛋糕切小塊，最小能切為 $1 \times 1$ 的蛋糕，row and column 分別能切 $m - 1$ 和 $n - 1$ 次。給兩個一維整數陣列 `horizontalCuts` 和 `verticalCuts`，size 分別為 $m - 1$ 和 $n - 1$ ，分別代表將蛋糕在水平和垂直方向上切割所需要的成本。
 
-請找出將蛋糕全部切成 `1 x 1` 的蛋糕所需要的最小成本。
+請找出將蛋糕全部切成 $1 \times 1$ 的蛋糕所需要的最小成本。
 
 **蛋糕切塊後就算變小塊，但該蛋糕切割所需要的成本仍然是原本的成本，不會因為切塊後而改變。**
 
-- 比如說有一個 `2 x 5` 的蛋糕，垂直方向的成本為 `{1, 2, 3, 4}`，如果在第二個垂直切割點（成本為 3）將其切成 `2 x 2` 和 `2 x 3` 的蛋糕，則對於 `2 x 2` 的蛋糕，其垂直方向切割成本為 `{1}`，而 `2 x 3` 的蛋糕，其成本為 `{3, 4}`。
+- 比如說有一個 $2 \times 5$ 的蛋糕，垂直方向的成本為 `[1, 2, 3, 4]`，如果在第二個垂直切割點（成本為 3）將其切成 $2 \times 2$ 和 $2 \times 3$ 的蛋糕，則對於 $2 \times 2$ 的蛋糕，其垂直方向切割成本為 `[1]`，而 $2 \times 3$ 的蛋糕，其成本為 `[3, 4]`。
 
 ## 解題思路
 
 ### 1. Greedy and Priority Queue
 
-一個簡單直接的想法，反正最後每個切割點都必須要切，那就先將成本最大的先切。假設有一個 `m x n` 的蛋糕，如果已經切到變成 `m` 個 `1 x 2` 和 `m x (n-2)` 個 `1 x 1` 的蛋糕，現在只剩下一個垂直切割能切，令其成本為 `k`，此時切下去的總成本為 `cost = k x m`，我們要想辦法讓這個 `cost` 最小，所以這個 `k` 要越小越好，也就是說成本越小的切割點要留到最後再切。
+一個簡單直接的想法，反正最後每個切割點都必須要切，那就先將成本最大的先切。假設有一個 $m \times n$ 的蛋糕，如果已經切到變成 $m$ 個 $1 \times 2$ 和 $m \times (n - 2)$ 個 $1 \times 1$ 的蛋糕，現在只剩下一個垂直切割能切，令其成本為 `k`，此時切下去的總成本為 $cost = k x m$ ，我們要想辦法讓這個 `cost` 最小，所以這個 `k` 要越小越好，也就是說成本越小的切割點要留到最後再切。
 
-驗證：假設有一個矩陣為 `m x n`，`horizontalCuts` 和 `verticalCuts` 分別為 `{c1, c1, ..., c1}` 和 `{c2, c2, ..., c2}`，分別計算以下兩種切割方式：
+驗證：假設有一個矩陣為 $m \times n$ ，`horizontalCuts` 和 `verticalCuts` 分別為 `[c1, c1, ..., c1]` 和 `[c2, c2, ..., c2]`，分別計算以下兩種切割方式：
 
 1. 先全部切水平方向，再切垂直方向，總成本為：
 
@@ -32,7 +32,7 @@
     cost2 = c2 \cdot (n-1) + (c1 \cdot n) \cdot (m-1) = c1 \cdot m \cdot n + (c2 - c1) \cdot n - c2
     $$
 
-令 `c1` = 1001、`c2` = 1000，`m` 和 `n` 的範圍為 $[1, 10^5]$ ，用以下程式碼驗證是否有 $cost1 > cost2$ 的情況。
+令 `c1` = 1001、`c2` = 1000，`m` 和 `n` 的範圍為 `[1, 10^5]`，用以下程式碼驗證是否有 $cost1 > cost2$ 的情況。
 
 ```cpp {.line-numbers}
 #include <cstdint>
@@ -124,7 +124,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251227743.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251227743.png)
+[![](https://i.imgur.com/FzIfWyX.png)](https://i.imgur.com/FzIfWyX.png)
 
 #### 複雜度分析
 
@@ -136,7 +136,7 @@ class Solution {
 
 ### 2. Greedy and Sorting and Two Pointer
 
-和方法一一樣的概念，將 `horizontalCuts` 和 `verticalCuts` 排序，用 `two pointer` 迭代 `horizontalCuts` 和 `verticalCuts`，將成本較大的先切割，直到 `horizontalCuts` 和 `verticalCuts` 都迭代完為止。
+和方法一一樣的概念，將 `horizontalCuts` 和 `verticalCuts` 排序，用 two pointer 迭代 `horizontalCuts` 和 `verticalCuts`，將成本較大的先切割，直到 `horizontalCuts` 和 `verticalCuts` 都迭代完為止。
 
 #### 程式碼
 
@@ -167,7 +167,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251307217.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412251307217.png)
+[![](https://i.imgur.com/Ada5IFq.png)](https://i.imgur.com/Ada5IFq.png)
 
 #### 複雜度分析
 
@@ -181,9 +181,15 @@ class Solution {
 
 ### 3. Greedy and Counting Sort
 
-對於上述演算法可以進一步做優化，可以發現如果水平切割或垂直切割有 `k` 個大小相同的 `cost` 就得重複計算 `k` 次，以水平切割為例子，當前切割的總成本為： 水平切割的成本 x 垂直方向的蛋糕數量 = `h_cost` x `v_cnt`，並且切割後會是**水平方向**的蛋糕增加 1 個，垂直方向的蛋糕數量並沒有變，所以若是下一個 `h_cost` 跟上一次一樣，那麼當前切割的總成本也會跟上一次一樣。
+對於上述演算法可以進一步做優化，可以發現如果水平切割或垂直切割有 `k` 個大小相同的 `cost` 就得重複計算 `k` 次，以水平切割為例子，當前切割的總成本為：
 
-要如何優化重複計算的部分呢？可以用兩個整數陣列 `h_freq` 和 `v_freq` 儲存水平和垂直切割的每種 `cost` 出現頻率，並且記錄 `max_cost`，假設水平切割有個 `h_cost` = 50 出現了 12 次，則 `h_freq[50]` = 12。然後從 `max_cost` 開始同時遍歷這兩個整數陣列，當前切割總成本會變成： `cost` x `cnt` x `freq[i]`，這樣就能將原本重複 `k` 次的計算變成只要算一次就好，缺點是會需要額外的空間。
+$$
+\text{水平切割的成本} \times \text{垂直方向的蛋糕數量} = \text{h\_cost} \times \text{v\_cnt}
+$$
+
+並且切割後會是 **水平方向** 的蛋糕增加 1 個，垂直方向的蛋糕數量並沒有變，所以若是下一個 `h_cost` 跟上一次一樣，那麼當前切割的總成本也會跟上一次一樣。
+
+要如何優化重複計算的部分呢？可以用兩個整數陣列 `h_freq` 和 `v_freq` 儲存水平和垂直切割的每種 `cost` 出現頻率，並且記錄 `max_cost`，假設水平切割有個 $h_cost = 50$ 出現了 12 次，則 $h_freq[50] = 12$ 。然後從 `max_cost` 開始同時遍歷這兩個整數陣列，當前切割總成本會變成： $cost \times cnt \times freq[i]$ ，這樣就能將原本重複 `k` 次的計算變成只要算一次就好，缺點是會需要額外的空間。
 
 #### 程式碼
 
@@ -217,7 +223,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225185453664.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241225185453664.png)
+[![](https://i.imgur.com/gceJ4mR.png)](https://i.imgur.com/gceJ4mR.png)
 
 #### 複雜度分析
 

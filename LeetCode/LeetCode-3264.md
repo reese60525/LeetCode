@@ -2,21 +2,21 @@
 
 # 题目描述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161204401.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161204401.png)
+[![](https://i.imgur.com/FhLl8wy.png)](https://i.imgur.com/FhLl8wy.png)
 
-給一個整數陣列 `nums`、整數 `k`、整數 `multiplier`，可以對 `nums` 做 `k` 次 操作，每次操作對 `nums` 中最小值乘以 `multiplier`，若有數個相同的最小值則選擇 index 最小的。
+給一個整數陣列 `nums`、整數 `k`、整數 `multiplier`，可以對 `nums` 做 `k` 次操作，每次操作對 `nums` 中最小值乘以 `multiplier`，若有數個相同的最小值則選擇 index 最小的。
 
 e.g.
 
-`nums` = {1, 2, 3, 4, 5}，`k` = 4，`multiplier` = 2
+$nums = [1, 2, 3, 4, 5]$ ， $k = 4$ ， $multiplier = 2$
 
-- 第一次操作：`nums = [2, 2, 3, 4, 5]`
+- 第一次操作：$nums = [2, 2, 3, 4, 5]$
 
-- 第二次操作：`nums = [4, 2, 3, 4, 5]`
+- 第二次操作：$nums = [4, 2, 3, 4, 5]$
 
-- 第三次操作：`nums = [4, 4, 3, 4, 5]`
+- 第三次操作：$nums = [4, 4, 3, 4, 5]$
 
-- 第四次操作：`nums = [4, 4, 6, 4, 5]`
+- 第四次操作：$nums = [4, 4, 6, 4, 5]$
 
 ## 解題思路
 
@@ -52,7 +52,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161211404.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412161211404.png)
+[![](https://i.imgur.com/GRtKSZG.png)](https://i.imgur.com/GRtKSZG.png)
 
 #### 複雜度分析
 

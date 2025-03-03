@@ -2,7 +2,7 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224155539935.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224155539935.png)
+[![](https://i.imgur.com/5hQG4y5.png)](https://i.imgur.com/5hQG4y5.png)
 
 給兩個 undirected tree，`edges1` 和 `edges2` 分別代表兩個 tree 的每個邊，tree 的節點數量分別是 `n`、`m`，邊的數量為 `n-1`、`m-1`，且節點編號從 0 遞增。可以在兩個 tree 中各選一個節點相連，將兩個 tree 合併成一個 tree，求合併後 tree 的最小 diameter。
 
@@ -24,23 +24,25 @@ undirected tree 的 diameter 定義：
 
 要如何求 tree 的 diameter 呢？
 
-可以用 DFS 從 node 0 開始遍歷整個 tree，對於某個 node `k` 來說，以 `k` 為 root 且經過 `k` 的最長路徑長度會等於 `k` 所有子樹中**深度**最大的兩個相加。例如：
+可以用 DFS 從 node 0 開始遍歷整個 tree，對於某個 node `k` 來說，以 `k` 為 root 且經過 `k` 的最長路徑長度會等於 `k` 所有子樹中 **深度** 最大的兩個相加。
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224163921862.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224163921862.png)
+例如：
 
-node `k` 共有四個子樹，深度分別為 {5, 4, 2, 3}，前二大的深度為 {5, 4}，因此以 `k` 為 root 且經過 `k` 的最長路徑長度為 5 + 4 = 9。
+[![](https://i.imgur.com/uUNXLQB.png)](https://i.imgur.com/uUNXLQB.png)
 
-對於節點 `root`，`root` 的子樹有三個，深度為 {6, 1, 2}，因此經過 `root` 的最長路徑長度為 6 + 2 = 8。
+node `k` 共有四個子樹，深度分別為 `[5, 4, 2, 3]`，前二大的深度為 `[5, 4]`，因此以 `k` 為 root 且經過 `k` 的最長路徑長度為 $5 + 4 = 9$ 。
+
+對於節點 `root`，`root` 的子樹有三個，深度為 `[6, 1, 2]`，因此經過 `root` 的最長路徑長度為 $6 + 2 = 8$ 。
 
 以這樣的方式遍歷整棵樹，比較所有 node 的最長路徑長度，最大的就是 tree 的 diameter。
 
 知道如何求一棵樹的 diameter 了，接下來要如何求兩棵樹合併後的 diameter 呢？
 
-由前面提到的第三種情況可知，因為要求合併後**最小** diameter，那麼 tree1 和 tree2 相連的節點選擇是重點。要在 tree 中選一個點，使得該點到 tree 中任意點的最長路徑長度是**最短的**，那麼這個點就會在 diameter 的中間點上。由下圖來證明：
+由前面提到的第三種情況可知，因為要求合併後 **最小** diameter，那麼 tree1 和 tree2 相連的節點選擇是重點。要在 tree 中選一個點，使得該點到 tree 中任意點的最長路徑長度是 **最短的**，那麼這個點就會在 diameter 的中間點上。由下圖來證明：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224172943572.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224172943572.png)
+[![](https://i.imgur.com/ILWhE0b.png)](https://i.imgur.com/ILWhE0b.png)
 
-數字表示兩點之間的距離，虛線表示省略顯示兩點之間的樹節點，實線表示真的點對點，因此距離也會是 1，紅色的兩條虛線就是 diameter 路徑。`A` 共有四個子樹，深度分別為 {1001, 99, 98, 97}，而 `B` 有三個子樹，深度分別為 {1000, 50, 101}，diameter 為 `F` 到 `H` 的距離。
+數字表示兩點之間的距離，虛線表示省略顯示兩點之間的樹節點，實線表示真的點對點，因此距離也會是 1，紅色的兩條虛線就是 diameter 路徑。`A` 共有四個子樹，深度分別為 `[1001, 99, 98, 97]`，而 `B` 有三個子樹，深度分別為 `[1000, 50, 101]`，diameter 為 `F` 到 `H` 的距離。
 
 由於 `F` 到 `H` 是整棵樹中任意兩點的最長距離，在 `F` 到 `H` 之間任選一個節點 `X`，`X` 到 `H` 的距離始終都能比 `X` 到 `F` 以外的任何節點還要長，如果有節點 `K` 使 `X` 到 `K` 比 `X` 到 `H` 長，那麼 diameter 就會是 `F` 到 `K` 而不是 `F` 到 `H` 了，因此我們可以將節點不斷往 `F` 靠近，直到 `X` 到 `F`和 `X` 到 `H` 的距離相等或差一時，`X` 到樹中任意點的最長路徑長度就會是最短的。
 
@@ -110,7 +112,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224213211604.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224213211604.png)
+[![](https://i.imgur.com/K0JLqp0.png)](https://i.imgur.com/K0JLqp0.png)
 
 #### 複雜度分析
 
@@ -122,11 +124,11 @@ class Solution {
 
 ### 2. BFS
 
-對於 diameter 的兩端節點 node `a` 和 node `b` 來說，令 `root` 到 `a` 和 `b` 的最小共同子樹距離為 `d0`（可以是 0），`a` 和 `b` 到最小共同子樹的距離是 `d1` 和 `d2`，假設有一個 node `c` 和 `root` 距離是 `d3`，如果滿足 $d3 > d1 \text{ or } d3 > d2$ ，那麼 `c` 一定能取代 `a` 或是 `b` 成為新的 diameter 的端點，因為這樣的 node `c` 能讓 diameter 的長度更長，這就和 diameter 是 tree 中任意兩端點**最長**的距離這個定義產生了矛盾，因此 `a` 或是 `b` 一定是 `root` 所能到達的最遠 node。所以可以先用 BFS 求出 `root` 的最遠 node `a`，若有多個則任取一個，然後再用 BFS 求 `a` 的最遠 node `b`，`a` 到 `b` 的距離就是 tree 的 diameter。
+對於 diameter 的兩端節點 node `a` 和 node `b` 來說，令 `root` 到 `a` 和 `b` 的最小共同子樹距離為 `d0`（可以是 0），`a` 和 `b` 到最小共同子樹的距離是 `d1` 和 `d2`，假設有一個 node `c` 和 `root` 距離是 `d3`，如果滿足 $d3 > d1 \text{ or } d3 > d2$ ，那麼 `c` 一定能取代 `a` 或是 `b` 成為新的 diameter 的端點，因為這樣的 node `c` 能讓 diameter 的長度更長，這就和 diameter 是 tree 中任意兩端點 **最長** 的距離這個定義產生了矛盾，因此 `a` 或是 `b` 一定是 `root` 所能到達的最遠 node。所以可以先用 BFS 求出 `root` 的最遠 node `a`，若有多個則任取一個，然後再用 BFS 求 `a` 的最遠 node `b`，`a` 到 `b` 的距離就是 tree 的 diameter。
 
 證明：
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224211421473.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224211421473.png)
+[![](https://i.imgur.com/dEeOcd1.png)](https://i.imgur.com/dEeOcd1.png)
 
 虛線是省略的樹節點，node `A` 和 `B` 是 tree 的 diameter 的兩端點， $diameter = d1 + d2$ ，假設 $d3 > d1$ ，那麼 $d3 + d0 + d2$ 這個新的距離絕對會大於 $d1 +d2$ ，因此就和 diameter 的定義產生矛盾，可得證 `A` 或 `B` 其中一個一定是 `root` 所能到達的最遠 node。
 
@@ -201,7 +203,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224213317419.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224213317419.png)
+[![](https://i.imgur.com/AjIkt3Y.png)](https://i.imgur.com/AjIkt3Y.png)
 
 #### 複雜度分析
 
@@ -291,7 +293,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224214841319.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241224214841319.png)
+[![](https://i.imgur.com/kqZDYFZ.png)](https://i.imgur.com/kqZDYFZ.png)
 
 #### 複雜度分析
 

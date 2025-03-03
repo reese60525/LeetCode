@@ -25,7 +25,7 @@ static const auto io_sync_off = []() {
 class Solution {
   public:
     int dp[100][100]; // dp[i][j]，i和j為當前index
-    int backTracking(int i, int j, std::vector<std::vector<int>> &grid) {
+    int backTracking(int i, int j, std::vector<std::vector<int>>& grid) {
         if (i >= grid.size() || j >= grid[0].size() || grid[i][j] == 1) { // 邊界和障礙物確認
             return 0;
         }
@@ -39,7 +39,7 @@ class Solution {
         return dp[i][j];
     }
 
-    int uniquePathsWithObstacles(std::vector<std::vector<int>> &obstacleGrid) {
+    int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid) {
         memset(dp, -1, sizeof(dp)); // initialize dp
         return backTracking(0, 0, obstacleGrid);
     }

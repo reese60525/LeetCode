@@ -2,9 +2,9 @@
 
 ## 題目敘述
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412101114767.png)]((https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures202412101114767.png))
+[![](https://i.imgur.com/yjaosWz.png)](https://i.imgur.com/yjaosWz.png)
 
-給一個只有小寫英文字母的字串 `s`，找出至少出現三次的最長 `special` substring 的長度，如果找不到則 return -1。
+給一個只有小寫英文字母的字串 `s`，找出至少出現三次的最長 special substring 的長度，如果找不到則 return -1。
 
 special substring 的定義：
 
@@ -12,7 +12,7 @@ special substring 的定義：
 
 e.g.
 
-1. s = "aaaa"
+1. $s = "aaaa"$
 
    - "a" 出現四次，長度為 1。
 
@@ -22,33 +22,33 @@ e.g.
 
    - "aaaa" 出現一次，長度為 4。
 
-    因此至少出現三次的最長 `special` substring 是 "aa"，長度為 2。
+    因此至少出現三次的最長 special substring 是 "aa"，長度為 2。
 
-2. s = "abcd"
+2. $s = "abcd"$
 
-   因為沒有任何 `special` substring 出現三次以上，所以 return -1。
+   因為沒有任何 special substring 出現三次以上，所以 return -1。
 
-3. s = "abcaba"
+3. $s = "abcaba"$
 
    - "a" 出現三次，長度為 1。
 
-   因此至少出現三次的最長 `special` substring 是 "a"，長度為 1。
+   因此至少出現三次的最長 special substring 是 "a"，長度為 1。
 
 ## 解題思路
 
 ### 1. Sliding Window and Hash Map
 
-對於長度為 $n$ 的 `special` substring，可以發現該 `special` substring 可以構成同樣字母且長度為 $[1, n]$ 的 `special` substring，以 `s` = "aaaa" 為例，"a" 出現四次、"aa" 出現三次、"aaa" 出現兩次、"aaaa" 出現一次，可以發現這是遞減的。
+對於長度為 `n` 的 special substring，可以發現該 special substring 可以構成同樣字母且長度為 `[1, n]` 的 special substring，以 $s = "aaaa"$ 為例，"a" 出現四次、"aa" 出現三次、"aaa" 出現兩次、"aaaa" 出現一次，可以發現這是遞減的。
 
-利用這個特性遍歷 `s` 用 `sliding window` 的方式將其切成多個 `special` substring，對於每個 `special` substring 將其所有可能的 `special` substring 長度的次數存進 `hash map` 中，同時從 `hash map` 中確認當前長度的 `special` substring 是否出現三次以上，如果是則將其和當前的答案 `res` 做比較取較大值。
+利用這個特性遍歷 `s` 用 sliding window 的方式將其切成多個 special substring，對於每個 special substring 將其所有可能的 special substring 長度的次數存進 hash map 中，同時從 hash map 中確認當前長度的 special substring 是否出現三次以上，如果是則將其和當前的答案 `res` 做比較取較大值。
 
 e.g.
 
-s = "aaabbaaaa"，`res` 初始化為 -1。
+$s = "aaabbaaaa"$ ， $res = -1$ 。
 
-   1. 首先將 `s` 切成 {"aaa", "bb", "aaaa"}
+   1. 首先將 `s` 切成 `["aaa", "bb", "aaaa"]`
 
-   2. 對於每個 `special` substring 將其所有可能的 `special` string 長度的次數存進 `hash map` 中，同時確認該字母當前長度的 `special` string 是否出現三次以上，如果是則將其和當前的答案 `res` 做比較取較大值。
+   2. 對於每個 special substring 將其所有可能的 special string 長度的次數存進 hash map 中，同時確認該字母當前長度的 special string 是否出現三次以上，如果是則將其和當前的答案 `res` 做比較取較大值。
 
       - "aaa" 可以構成 "a" 出現三次、"aa" 出現兩次、"aaa" 出現一次。
 
@@ -62,11 +62,11 @@ s = "aaabbaaaa"，`res` 初始化為 -1。
 
         - "aaa" 共出現三次，長度為 3，`res` 更新為 3。
 
-   3. 遍歷完 `s` 後，`res` 為 3，return 3。
+   3. 遍歷完 `s` 後， $res = 3$ ，return 3。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     int maximumLength(std::string s) {
@@ -96,7 +96,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210134516818.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210134516818.png)
+[![](https://i.imgur.com/UAUXjDd.png)](https://i.imgur.com/UAUXjDd.png)
 
 #### 複雜度分析
 
@@ -110,31 +110,31 @@ class Solution {
 
 ### 2. Sliding Window and Priority Queue
 
-假設字母 'a' 分別有最大長度為 {a[0], a[1], a[2]} 的 `special` substring， $a[0] \geq a[1] \geq a[2]$ ，可以觀察到以下規則:
+假設字母 `a` 分別有最大長度為 `[a[0], a[1], a[2]]` 的 special substring， $a[0] \geq a[1] \geq a[2]$ ，可以觀察到以下規則:
 
 1. 對於長度最長的 `a[0]`
 
-   - 可以切出出現三次且長度為 $a[0] -2$ 的 `special` substring。
+   - 可以切出出現三次且長度為 $a[0] - 2$ 的 special substring。
 
 2. 對於長度最長的 `a[0]` 和第二長的 `a[1]`
 
-   - 如果 $a[0] = a[1]$，可以切出出現四次且長度為 $a[0] -1$ 的 `special` substring。
+   - 如果 $a[0] = a[1]$ ，可以切出出現四次且長度為 $a[0] - 1$ 的 special substring。
 
-   - 如果 $a[0] > a[1]$，可以切出出現超過三次且長度為 $a[1]$ 的 `special` substring。
+   - 如果 $a[0] > a[1]$ ，可以切出出現超過三次且長度為 $a[1]$ 的 special substring。
 
-   - 可以將這兩種情況合併為 $min(a[0]-1, a[1])$ 。
+   - 可以將這兩種情況合併為 $\min(a[0] - 1, a[1])$ 。
 
 3. 對於長度最長的 `a[0]`、第二長的 `a[1]` 和第三長的 `a[2]`
 
-   - 這三種長度可以切出出現超過三次且長度為 $a[2]$ 的 `special` substring。
+   - 這三種長度可以切出出現超過三次且長度為 $a[2]$ 的 special substring。
 
-因此對於以上所有情況可以總結為字母 'a' 的最大長度 `special` substring 為 $max(a[0]-2, min(a[0]-1, a[1]), a[2])$ 。
+因此對於以上所有情況可以總結為字母 `a` 的最大長度 special substring 為 $\max(a[0] - 2, min(a[0] - 1, a[1]), a[2])$ 。
 
-實作上，遍歷 `s`，將當前字母的 `special` substring 長度加入 min heap 的 `priority queue` 中，並且維護 `priority queue` 的大小為 3。接著遍歷 `priority queue`，若不為空，將 `priority queue` 中的 element 取出，算出該字母的最長 `special` substring 並且將其和當前的答案 `res` 做比較取較大值。
+實作上，遍歷 `s`，將當前字母的 special substring 長度加入 min heap 的 priority queue 中，並且維護 priority queue 的大小為 3。接著遍歷 priority queue，若不為空，將 priority queue 中的 element 取出，算出該字母的最長 special substring 並且將其和當前的答案 `res` 做比較取較大值。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     int maximumLength(std::string s) {
@@ -192,7 +192,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210145847968.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210145847968.png)
+[![](https://i.imgur.com/GbihdVK.png)](https://i.imgur.com/GbihdVK.png)
 
 #### 複雜度分析
 
@@ -208,11 +208,11 @@ class Solution {
 
 ### 3. Sliding Window and Binary Search
 
-令 $n$ 為 `s` 的長度，對長度區間 $[1, n]$ 進行 `binary search`，對於每種長度可以使用 `sliding window`來找出現超過三次的 `special` substring。`binary search` 結束後 `l - 1` 就是最長的 `special` substring 的長度。
+令 `n` 為 `s` 的長度，對長度區間 `[1, n]` 進行 binary search，對於每種長度可以使用 sliding window 來找出現超過三次的 special substring。binary search 結束後 `l - 1` 就是最長的 special substring 的長度。
 
 #### 程式碼
 
-```c++ {.line-numbers}
+```cpp {.line-numbers}
 class Solution {
   public:
     // 搜索長度為 k 的 special substring
@@ -264,7 +264,7 @@ class Solution {
 };
 ```
 
-[![](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210153801342.png)](https://raw.githubusercontent.com/reese60525/ForPicGo/main/Pictures/20241210153801342.png)
+[![](https://i.imgur.com/nvpnbZz.png)](https://i.imgur.com/nvpnbZz.png)
 
 #### 複雜度分析
 
@@ -272,7 +272,7 @@ class Solution {
 
 - 時間複雜度： $O(n \log n)$
 
-    `binary search` 的時間複雜度為 $O(\log n)$ ，`sliding window` 的時間複雜度為 $O(n)$ 。
+    binary search 的時間複雜度為 $O(\log n)$ ，sliding window 的時間複雜度為 $O(n)$ 。
 
 - 空間複雜度： $O(1)$
 
