@@ -1,4 +1,4 @@
-# <center> [LeetCode - 518. Coin Change II](https://leetcode.com/problems/coin-change-ii/description/) </center>
+# <center> [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/description/) </center>
 
 ## 題目敘述
 
@@ -10,7 +10,7 @@
 
 ### 1. Dynamic Programming（DP）
 
-這題和 [LeetCode - 322. Coin Change](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-322/Solution-322.md#2-dynamic-programming) 是相似題，差別在於這題是求組合數量，而不是求最小硬幣數量。
+這題和 [322. Coin Change](https://github.com/reese60525/LeetCode/blob/main/Leetcode/LeetCode-322/Solution-322.md#2-dynamic-programming) 是相似題，差別在於這題是求組合數量，而不是求最小硬幣數量。
 
 令 `i` 為 `coins` 的 index，`i` 從 $n-1$ 開始，`j` 為目前剩餘的總金額，根據題目要求，我們可以寫出以下遞迴 code：
 

@@ -1,4 +1,4 @@
-# <center> [LeetCode - 494. Target Sum](https://leetcode.com/problems/target-sum/description/) </center>
+# <center> [94. Target Sum](https://leetcode.com/problems/target-sum/description/) </center>
 
 ## 題目敘述
 

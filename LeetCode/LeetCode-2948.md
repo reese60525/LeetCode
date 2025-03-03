@@ -12,7 +12,7 @@
 
 ## 解題思路
 
-### 1. Sorting
+### 1. Sorting and Disjoint Set Union（DSU）
 
 假如有 $nums = [1, 4, 9]$ 以及 $limit = 5$ ，1 和 4 以及 4 和 9 都可以進行交換操作，那麼1 和 9 可以交換嗎？答案是可以的，如下所示：
 

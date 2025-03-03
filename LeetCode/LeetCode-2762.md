@@ -1,4 +1,4 @@
-# <center> [LeetCode - 2762. Continuous Subarrays](https://leetcode.com/problems/continuous-subarrays/description/) </center>
+# <center> [2762. Continuous Subarrays](https://leetcode.com/problems/continuous-subarrays/description/) </center>
 
 ## 題目敘述
 

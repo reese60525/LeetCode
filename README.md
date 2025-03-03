@@ -12,6 +12,8 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [916. Word Subsets](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-916.md)
 
+[1267. Count Servers that Communicate](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1267.md)
+
 [1366. Rank Teams by Votes](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1366.md)
 
 [1400. Construct K Palindrome Strings](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1400.md)
@@ -168,7 +170,13 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 ## Depth First Search（DFS）
 
+[200. Number of Islands](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-200.md)
+
 [301. Remove Invalid Parentheses](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-301.md)
+
+[802. Find Eventual Safe States](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-802.md)
+
+[827. Making A Large Island](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-827.md)
 
 [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-515.md)
 
@@ -186,11 +194,15 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 ## Breadth First Search（BFS）
 
+[200. Number of Islands](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-200.md)
+
 [301. Remove Invalid Parentheses](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-301.md)
 
 [515. Find Largest Value in Each Tree Row](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-515.md)
 
 [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1368.md)
+
+[1765. Map of Highest Peak](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1765.md)
 
 [2415. Reverse Odd Levels of Binary Tree](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2415.md)
 
@@ -204,13 +216,27 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1368.md)
 
-## Union Find
+## Floyd-Warshall Algorithm
 
-[1319. Number of Operations to Make Network Connected](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1319.md)
+[1462. Course Schedule IV](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1462.md)
 
 ## Topological Sorting
 
+[802. Find Eventual Safe States](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-802.md)
+
+[1462. Course Schedule IV](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1462.md)
+
 [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3203.md)
+
+## Disjoint Set Union（DSU）
+
+[684. Redundant Connection](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-684.md)
+
+[827. Making A Large Island](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-827.md)
+
+[1319. Number of Operations to Make Network Connected](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1319.md)
+
+[2948. Make Lexicographically Smallest Array by Swapping Elements](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2948.md)
 
 ## Prefix and Suffix
 
@@ -225,6 +251,8 @@ Problems are categorized based on the algorithms and data structures used to sol
 [1930. Unique Length-3 Palindromic Subsequences](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1930.md)
 
 [2017. Grid Game](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2017.md)
+
+[2218. Maximum Value of K Coins From Piles](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2218.md)
 
 [2270. Number of Ways to Split Array](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2270.md)
 
@@ -290,9 +318,13 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [1639. Number of Ways to Form a Target String Given a Dictionary](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1639.md)
 
+[1765. Map of Highest Peak](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1765.md)
+
 [1937. Maximum Number of Points with Cost](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1937.md)
 
 [2054. Two Best Non-Overlapping Events](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2054.md)
+
+[2218. Maximum Value of K Coins From Piles](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2218.md)
 
 [2466. Count Ways To Build Good Strings](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2466.md)
 

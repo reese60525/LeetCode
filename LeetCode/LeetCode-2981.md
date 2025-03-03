@@ -1,4 +1,4 @@
-# <center> [LeetCode - 2981. Find Longest Special Substring That Occurs Thrice I](https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i/description/) </center>
+# <center> [981. Find Longest Special Substring That Occurs Thrice I](https://leetcode.com/problems/find-longest-special-substring-that-occurs-thrice-i/description/) </center>
 
 ## 題目敘述
 

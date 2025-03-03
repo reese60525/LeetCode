@@ -1,4 +1,4 @@
-# <center> [LeetCode - 2440. Create Components With Same Value](https://leetcode.com/problems/create-components-with-same-value/description/) </center>
+# <center> [2440. Create Components With Same Value](https://leetcode.com/problems/create-components-with-same-value/description/) </center>
 
 ## 題目敘述
 
@@ -12,7 +12,7 @@
 
 ### 1. DFS
 
-這道題目和 [LeetCode - 2872. Maximum Number of K-Divisible Components](https://leetcode.com/problems/maximum-number-of-k-divisible-components/description/) 類似，都是樹形 DP 的題目，寫法幾乎一樣，這邊只討論不同的地方。
+這道題目和 [2872. Maximum Number of K-Divisible Components](https://leetcode.com/problems/maximum-number-of-k-divisible-components/description/) 類似，都是樹形 DP 的題目，寫法幾乎一樣，這邊只討論不同的地方。
 
 題目要求切割後的每個子樹的總和相同，`n` 個節點會有 `n` 種切割方法，首先算出 tree 的總和 `sum`，然後嘗試每一種方法，如果 `sum` 可以被 `n` 整除，表示該方法是有機會成功的，因此以 $k = \frac{sum}{n}$ 為每個子樹的總和目標，然後用 DFS 計算每個節點的子樹總和，如果子樹總和為 `k` 就代表該子樹可以被切割，只要有任何一個子樹總和超過 `k` 就代表該方法無法成功，繼續嘗試下一種方法。
 

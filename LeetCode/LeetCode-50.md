@@ -1,4 +1,4 @@
-# <center> [LeetCode - 50. Pow(x, n)](https://leetcode.com/problems/powx-n/description/) </center>
+# <center> [50. Pow(x, n)](https://leetcode.com/problems/powx-n/description/) </center>
 
 ## 題目敘述
 

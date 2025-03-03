@@ -1,4 +1,4 @@
-# <center> [LeetCode - 2415. Reverse Odd Levels of Binary Tree](https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/submissions/1483423209/?envType=daily-question&envId=2024-12-20) </center>
+# <center> [2415. Reverse Odd Levels of Binary Tree](https://leetcode.com/problems/reverse-odd-levels-of-binary-tree/submissions/1483423209/?envType=daily-question&envId=2024-12-20) </center>
 
 ## 題目敘述
 

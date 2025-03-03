@@ -1,4 +1,4 @@
-# <center> [LeetCode - 769. Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/description/) </center>
+# <center> [769. Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/description/) </center>
 
 ## 題目敘述
 

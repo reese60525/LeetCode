@@ -98,7 +98,7 @@ class Solution {
 
     紀錄島嶼面積 `groupSize` 需要 $O(n^2)$ 空間。
 
-### 2. DSU
+### 2. Disjoint Set Union（DSU）
 
 思路一樣，將 DFS 改用 DSU 來做。
 

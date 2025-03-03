@@ -1,4 +1,4 @@
-# <center> [LeetCode - 1760. Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/description/) </center>
+# <center> [1760. Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/description/) </center>
 
 ## 題目敘述
 

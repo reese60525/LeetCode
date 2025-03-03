@@ -1,4 +1,4 @@
-# <center> [LeetCode - 1792. Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/description/) </center>
+# <center> [1792. Maximum Average Pass Ratio](https://leetcode.com/problems/maximum-average-pass-ratio/description/) </center>
 
 ## 題目敘述
 

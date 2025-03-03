@@ -1,4 +1,4 @@
-# <center> [LeetCode - 2558. Take Gifts From the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description/) </center>
+# <center> [2558. Take Gifts From the Richest Pile](https://leetcode.com/problems/take-gifts-from-the-richest-pile/description/) </center>
 
 ## 題目敘述
 

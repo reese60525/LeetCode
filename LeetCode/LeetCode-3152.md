@@ -1,4 +1,4 @@
-# <center> [LeetCode - 3152. Special Array II](https://leetcode.com/problems/special-array-ii/description/https://leetcode.com/problems/special-array-ii/description/) </center>
+# <center> [3152. Special Array II](https://leetcode.com/problems/special-array-ii/description/https://leetcode.com/problems/special-array-ii/description/) </center>
 
 ## 題目敘述
 

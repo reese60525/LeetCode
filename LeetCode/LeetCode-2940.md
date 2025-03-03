@@ -1,4 +1,4 @@
-# <center> [LeetCode - 2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/) </center>
+# <center> [2940. Find Building Where Alice and Bob Can Meet](https://leetcode.com/problems/find-building-where-alice-and-bob-can-meet/description/) </center>
 
 ## 題目敘述
 

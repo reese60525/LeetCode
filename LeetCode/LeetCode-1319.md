@@ -80,7 +80,7 @@ class Solution {
 
 - 空間複雜度： $O(n + m)$
 
-### 2. Union Find
+### 2. Disjoint Set Union（DSU）
 
 可以將有相同 `root` 的節點視為同一個連通分量，並用 Union Find 來計算連通分量的數量。
 
