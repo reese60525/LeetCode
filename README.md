@@ -4,8 +4,6 @@ This repository contains my solutions to various LeetCode problems, with detaile
 
 Problems are categorized based on the algorithms and data structures used to solve them, and some problems may appear in multiple categories.
 
-I only recently started using Markdown to write solutions, so many problems don’t have solutions written yet.
-
 # Problem List
 
 ## Hash Map
