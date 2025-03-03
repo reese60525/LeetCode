@@ -24,7 +24,7 @@ $votes = ["WXYZ", "XYZW"]$
 
 ## 解題思路
 
-### 1. Hash Table and Sorting
+### 1. Hash Map and Sorting
 
 遍歷 `votes` 中的每個投票，並使用一個 hash map `cnt` 來記錄每個隊伍在每個投票位置的得票數，然後自定義一個排序函數 `cmp`，將每個隊伍的得票數從高到低排序，最後將排序後的隊伍代號拼接成一個字串並回傳。
 

@@ -20,9 +20,9 @@ e.g.
 
 ## 解題思路
 
-### 1. Sliding Window and Hash Table
+### 1. Sliding Window and Hash Map
 
-用 hash table 紀錄每個字元最新出現的 index，並用一個變數紀錄當前 substring 的起始 index。遍歷 `s`，如果當前出現的字元其上次出現的 index 位置在 substring 的範圍內，代表當前字元為重複字元，而新的 substring的起始 index 為當前字元上次出現的 $index + 1$ 。
+用 hash map 紀錄每個字元最新出現的 index，並用一個變數紀錄當前 substring 的起始 index。遍歷 `s`，如果當前出現的字元其上次出現的 index 位置在 substring 的範圍內，代表當前字元為重複字元，而新的 substring的起始 index 為當前字元上次出現的 $index + 1$ 。
 
 e.g.
 
@@ -39,7 +39,7 @@ class Solution {
         int max_len = 0, begin = 0; // begin 為 substring 的起始 index
         int char_table[128];        // 紀錄該字元最新出現的 index，128 為 ascii code 數量
 
-        for (int &n : char_table) { // 初始化 hash table
+        for (int &n : char_table) { // 初始化 hash map
             n = -1;
         }
 
@@ -70,4 +70,4 @@ class Solution {
 
 - 空間複雜度： $O(1)$
 
-    $O(128)$ ，即 $O(1)$（使用固定大小的 hash table 儲存 ASCII 字元）。
+    $O(128)$ ，即 $O(1)$（使用固定大小的 hash map 儲存 ASCII 字元）。

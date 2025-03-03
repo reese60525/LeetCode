@@ -10,7 +10,7 @@
  *
  * 思路：
  * 以上面的例子來看，原本可選擇 {1, 2, 3, 4, 5, 6, 7, 8}，去除掉 banned 中的數字後，
- * 變成 {x, 2, x, 4, x, x, 7, 8}，因此可以先將 banned 建立 hash table，然後遍歷
+ * 變成 {x, 2, x, 4, x, x, 7, 8}，因此可以先將 banned 建立 hash map，然後遍歷
  * 1 ~ n，如果當前數字沒有在 banned 中，就將其加入總和，直到總和超過 maxSum 為止。
  */
 #include <iostream>
@@ -24,7 +24,7 @@ static const auto io_sync_off = []() {
 
 class Solution {
   public:
-    int maxCount(std::vector<int> &banned, int n, int maxSum) {
+    int maxCount(std::vector<int>& banned, int n, int maxSum) {
         // std::unordered_map<int, bool> banned_map; // 很慢，190 ms
         std::bitset<10001> banned_map; // 0 ms
         for (int i = 0; i < banned.size(); ++i) {
