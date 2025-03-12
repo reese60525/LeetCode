@@ -1,6 +1,6 @@
 # Welcome to my LeetCode LeetCodes repository
 
-This repository contains my LeetCodes to various LeetCode problems, with detailed explanations and comments to help you understand the code. Since my English isn’t strong, the explanations are in Chinese.
+This repository contains my solutions to various LeetCode problems, with detailed explanations and comments to help you understand the code. Since my English is not strong, the explanations are written in Chinese.
 
 Problems are categorized based on the algorithms and data structures used to solve them, and some problems may appear in multiple categories.
 
