@@ -1,0 +1,35 @@
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Empty
+AlignArrayOfStructures: Left
+AlignTrailingComments: true
+BasedOnStyle: LLVM
+BreakBeforeBraces: Custom
+BreakTemplateDeclarations: Yes
+BraceWrapping:
+    AfterClass: false
+    AfterControlStatement: false
+    AfterEnum: false
+    AfterFunction: false
+    AfterNamespace: false
+    AfterStruct: false
+    AfterUnion: false
+    BeforeCatch: false
+    BeforeElse: false
+    IndentBraces: false
+ColumnLimit: 100
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+IndentCaseLabels: true
+IndentExternBlock: Indent
+IndentWidth: 4
+IncludeBlocks: Merge
+Language: Cpp
+NamespaceIndentation: All
+PointerAlignment: Left
+RequiresClausePosition: WithPreceding
+SortIncludes: CaseInsensitive
+SpaceBeforeCpp11BracedList: true
+UseTab: Never

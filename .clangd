@@ -1,0 +1,54 @@
+CompileFlags:
+  Add:
+    - "-xc++"
+    - "-std=c++26"                    # 使用 C++26 標準
+    - "-O2"                           # O2 最佳化，產生的可執行檔速度較快，但編譯時間也會變長。
+    - "-g"                            # 啟用除錯資訊輸出，方便 Debug。
+    - "-fno-omit-frame-pointer"       # 保留函式呼叫堆疊的 fp (frame pointer)，在某些分析工具或除錯時比較好用，較好回溯呼叫堆疊。
+    - "-fsanitize=undefined"          # 啟用未定義行為檢測。建議在開發或測試版本使用，正式版可關。
+    - "-Wall"                         # 開啟大部分一般警告。
+    - "-Wextra"                       # 啟用額外警告。
+    - "-Wpedantic"                    # 執行嚴格符合 C++ 標準的檢查。
+    - "-Wconversion"                  # 警告隱式類型轉換引起的問題 (例如 int -> float, float -> double...)。
+    - "-Wformat=2"                    # 對 printf/scanf 等格式化函式做更嚴謹的格式檢查。
+    - "-Wshadow"                      # 檢查是否有變數名與區域變數/成員變數等互相遮蔽 (shadowing) 的情形。
+    - "-Wno-sign-conversion"          # 停用有號/無號轉換的警告。
+    - "-Wno-shorten-64-to-32"         # 停用將 64 位整數縮短到 32 位時的警告。
+    - "-Wno-sign-compare"             # 停用有號/無號比較的警告。
+
+Diagnostics:
+  UnusedIncludes: Strict              # 更嚴格地檢查並警告任何未使用的標頭。
+  ClangTidy:
+    Add:
+      - "clang-diagnostic-*"    # 啟用 Clang 診斷相關檢查項目，包括語法錯誤、代碼風格問題等
+      - "clang-analyzer-*"      # 啟用 Clang 靜態分析器檢查，用於檢測潛在的邏輯錯誤
+      - "modernize-*"           # 啟用現代化建議，幫助將代碼提升到更現代的 C++ 標準
+      - "performance-*"         # 啟用性能優化相關檢查，幫助發現可能導致性能下降的代碼
+      - "cppcoreguidelines-*"   # 啟用 C++ 核心指導方針檢查，幫助代碼符合 C++ Core Guidelines
+      - "readability-*"         # 代碼可讀性檢查
+      - "bugprone-*"            # 潛在 Bug 的檢查
+      - "misc-*"                # 一些雜項檢查，包括實用性和警告增強
+      - "portability-*"         # 提高代碼可移植性的檢查
+      - "hicpp-*"               # 高完整性 C++ 的檢查
+      - "cert-*"                # 安全規範檢查，主要防止安全漏洞、未定義行為。
+      - "llvm-*"                # LLVM 的代碼風格與最佳化檢查。
+    Remove:
+      - "readability-identifier-length"               # 排除變數名稱長度檢查
+      - "cppcoreguidelines-avoid-magic-numbers"       # 排除直接使用數字常數而非變數的檢查
+      - "readability-magic-numbers"                   # 排除直接使用數字常數而非變數的檢查
+
+Index:
+  Background: Build # 啟用後台索引，Clangd 會自動在後台對專案進行索引，讓自動完成和跳轉更快更完整。
+
+Completion:
+  AllScopes: true # 自動完成時列出所有可見範圍內的識別字。
+
+Hover:
+  ShowAKA: true  # 顯示 typedef 或 `using` 的底層類型
+
+# 可讓 IDE 在程式碼顯示推導型別或函式引數名稱提示，使閱讀及維護性提升。
+InlayHints:
+  Enabled: true         # 啟用內嵌提示
+  ParameterNames: true  # 在函數呼叫時顯示參數名稱
+  DeducedTypes: true    # 顯示 auto 或 template 推導型別
+  Designators: true     # 在結構初始化時顯示成員名稱
