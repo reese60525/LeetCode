@@ -1,4 +1,4 @@
-# <center> [2182. Construct String With Repeat Limit](https://leetcode.com/problems/construct-string-with-repeat-limit/description/) </center>
+# [2182. Construct String With Repeat Limit](https://leetcode.com/problems/construct-string-with-repeat-limit/description/)
 
 ## 題目敘述
 

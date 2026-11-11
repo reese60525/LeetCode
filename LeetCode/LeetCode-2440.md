@@ -1,4 +1,4 @@
-# <center> [2440. Create Components With Same Value](https://leetcode.com/problems/create-components-with-same-value/description/) </center>
+# [2440. Create Components With Same Value](https://leetcode.com/problems/create-components-with-same-value/description/)
 
 ## 題目敘述
 

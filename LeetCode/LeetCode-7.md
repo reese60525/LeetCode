@@ -1,4 +1,4 @@
-# <center> [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/description/) </center>
+# [7. Reverse Integer](https://leetcode.com/problems/reverse-integer/description/)
 
 ## 題目敘述
 

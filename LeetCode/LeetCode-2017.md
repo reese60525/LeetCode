@@ -1,4 +1,4 @@
-# <center> [2017. Grid Game](https://leetcode.com/problems/grid-game/submissions/1515225870/) </center>
+# [2017. Grid Game](https://leetcode.com/problems/grid-game/submissions/1515225870/)
 
 ## 題目敘述
 

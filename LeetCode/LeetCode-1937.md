@@ -1,4 +1,4 @@
-# <center> [1937. Maximum Number of Points with Cost](https://leetcode.com/problems/maximum-number-of-points-with-cost/description/) </center>
+# [1937. Maximum Number of Points with Cost](https://leetcode.com/problems/maximum-number-of-points-with-cost/description/)
 
 ## 題目敘述
 

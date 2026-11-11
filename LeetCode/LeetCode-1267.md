@@ -1,4 +1,4 @@
-# <center> [1267. Count Servers that Communicate](https://leetcode.com/problems/count-servers-that-communicate/description/) </center>
+# [1267. Count Servers that Communicate](https://leetcode.com/problems/count-servers-that-communicate/description/)
 
 ## 題目敘述
 

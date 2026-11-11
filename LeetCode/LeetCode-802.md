@@ -1,4 +1,4 @@
-# <center> [802. Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/description/) </center>
+# [802. Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/description/)
 
 ## 題目敘述
 

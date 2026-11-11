@@ -1,4 +1,4 @@
-# <center> [2953. Count Complete Substrings](https://leetcode.com/problems/count-complete-substrings/description/) </center>
+# [2953. Count Complete Substrings](https://leetcode.com/problems/count-complete-substrings/description/)
 
 ## 題目敘述
 

@@ -1,4 +1,4 @@
-# <center> [1400. Construct K Palindrome Strings](https://leetcode.com/problems/construct-k-palindrome-strings/description/) </center>
+# [1400. Construct K Palindrome Strings](https://leetcode.com/problems/construct-k-palindrome-strings/description/)
 
 ## 題目敘述
 

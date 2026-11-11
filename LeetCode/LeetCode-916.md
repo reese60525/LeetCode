@@ -1,4 +1,4 @@
-# <center> [916. Word Subsets](https://leetcode.com/problems/word-subsets/description/) </center>
+# [916. Word Subsets](https://leetcode.com/problems/word-subsets/description/)
 
 ## 題目敘述
 

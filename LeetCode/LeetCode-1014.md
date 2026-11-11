@@ -1,4 +1,4 @@
-# <center> [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/description/) </center>
+# [1014. Best Sightseeing Pair](https://leetcode.com/problems/best-sightseeing-pair/description/)
 
 ## 題目敘述
 

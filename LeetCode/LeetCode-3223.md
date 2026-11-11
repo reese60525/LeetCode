@@ -1,4 +1,4 @@
-# <center> [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/description/) </center>
+# [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/description/)
 
 ## 題目敘述
 

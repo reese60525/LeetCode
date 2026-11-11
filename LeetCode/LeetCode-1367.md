@@ -1,4 +1,4 @@
-# <center> [1367. Linked List in Binary Tree](https://leetcode.com/problems/linked-list-in-binary-tree/description/) </center>
+# [1367. Linked List in Binary Tree](https://leetcode.com/problems/linked-list-in-binary-tree/description/)
 
 ## 題目敘述
 

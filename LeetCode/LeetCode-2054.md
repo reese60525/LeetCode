@@ -1,4 +1,4 @@
-# <center> [2054. Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/description/) </center>
+# [2054. Two Best Non-Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/description/)
 
 ## 題目敘述
 

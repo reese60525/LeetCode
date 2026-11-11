@@ -1,4 +1,4 @@
-# <center> [1765. Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/description/) </center>
+# [1765. Map of Highest Peak](https://leetcode.com/problems/map-of-highest-peak/description/)
 
 ## 題目敘述
 

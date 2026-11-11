@@ -1,4 +1,4 @@
-# <center> [55. Jump Game](https://leetcode.com/problems/jump-game/description/) </center>
+# [55. Jump Game](https://leetcode.com/problems/jump-game/description/)
 
 ## 題目敘述
 

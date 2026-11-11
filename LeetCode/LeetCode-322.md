@@ -1,4 +1,4 @@
-# <center> [322. Coin Change](https://leetcode.com/problems/coin-change/description/) </center>
+# [322. Coin Change](https://leetcode.com/problems/coin-change/description/)
 
 ## 題目敘述
 

@@ -1,4 +1,4 @@
-# <center> [3280. Convert Date to Binary](https://leetcode.com/problems/convert-date-to-binary/description/) </center>
+# [3280. Convert Date to Binary](https://leetcode.com/problems/convert-date-to-binary/description/)
 
 ## 題目敘述
 

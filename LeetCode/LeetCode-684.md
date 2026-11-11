@@ -1,4 +1,4 @@
-# <center> [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/description/) </center>
+# [684. Redundant Connection](https://leetcode.com/problems/redundant-connection/description/)
 
 ## 題目敘述
 

@@ -1,4 +1,4 @@
-# <center> [827. Making A Large Island](https://leetcode.com/problems/making-a-large-island/description/) </center>
+# [827. Making A Large Island](https://leetcode.com/problems/making-a-large-island/description/)
 
 ## 題目敘述
 

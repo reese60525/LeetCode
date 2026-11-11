@@ -1,4 +1,4 @@
-# <center> [1. Two Sum](https://leetcode.com/problems/two-sum/description/) </center>
+# [1. Two Sum](https://leetcode.com/problems/two-sum/description/)
 
 ## 題目敘述
 
@@ -6,7 +6,7 @@
 
 給一組不重複的整數陣列 `nums` 和一個整數 `target`，找出能一對不相同的 `[num[i], num[j]]` 使 $nums[i] + num[j] = target$ ，並return `[i, j]`。
 
-**題目保證洽有一個解**
+**題目保證洽有一個解。**
 
 ## 解題思路
 

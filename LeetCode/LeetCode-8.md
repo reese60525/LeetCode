@@ -1,4 +1,4 @@
-# <center> [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/description/) </center>
+# [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/description/)
 
 ## 題目敘述
 

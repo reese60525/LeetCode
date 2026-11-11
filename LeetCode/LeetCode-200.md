@@ -1,4 +1,4 @@
-# <center> [200. Number of Islands](https://leetcode.com/problems/number-of-islands/description/) </center>
+# [200. Number of Islands](https://leetcode.com/problems/number-of-islands/description/)
 
 ## 題目敘述
 

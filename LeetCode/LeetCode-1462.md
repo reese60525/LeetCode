@@ -1,4 +1,4 @@
-# <center> [1462. Course Schedule IV](https://leetcode.com/problems/course-schedule-iv/description/) </center>
+# [1462. Course Schedule IV](https://leetcode.com/problems/course-schedule-iv/description/)
 
 ## 題目敘述
 

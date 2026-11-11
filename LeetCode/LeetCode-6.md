@@ -1,4 +1,4 @@
-# <center> [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/description/) </center>
+# [6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/description/)
 
 ## 題目敘述
 

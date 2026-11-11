@@ -1,4 +1,4 @@
-# <center> [2429. Minimize XOR](https://leetcode.com/problems/minimize-xor/description/) </center>
+# [2429. Minimize XOR](https://leetcode.com/problems/minimize-xor/description/)
 
 ## 題目敘述
 

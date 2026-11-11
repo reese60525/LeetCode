@@ -1,4 +1,4 @@
-# <center> [1405. Longest Happy String](https://leetcode.com/problems/longest-happy-string/description/) </center>
+# [1405. Longest Happy String](https://leetcode.com/problems/longest-happy-string/description/)
 
 ## 題目敘述
 

@@ -1,4 +1,4 @@
-# <center> [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/description/) </center>
+# [518. Coin Change II](https://leetcode.com/problems/coin-change-ii/description/)
 
 ## 題目敘述
 

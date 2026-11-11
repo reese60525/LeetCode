@@ -1,4 +1,4 @@
-# <center> [983. Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/description/) </center>
+# [983. Minimum Cost For Tickets](https://leetcode.com/problems/minimum-cost-for-tickets/description/)
 
 ## 題目敘述
 

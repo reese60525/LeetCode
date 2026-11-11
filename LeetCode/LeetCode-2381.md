@@ -1,4 +1,4 @@
-# <center> [2381. Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/description/) </center>
+# [2381. Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/description/)
 
 ## 題目敘述
 
