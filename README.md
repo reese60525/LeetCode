@@ -4,9 +4,9 @@ This repository contains my solutions to various LeetCode problems, with detaile
 
 Problems are categorized based on the algorithms and data structures used to solve them, and some problems may appear in multiple categories.
 
-# Problem List
+## Problem List
 
-## Hash Map
+### Hash Map
 
 [1. Two Sum](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1.md)
 
@@ -44,11 +44,11 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3223. Minimum Length of String After Operations](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3223.md)
 
-## Linked List
+### Linked List
 
 [2. Add Two Numbers](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2.md)
 
-## Monotonic Stack
+### Monotonic Stack
 
 [768. Max Chunks To Make Sorted II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-768.md)
 
@@ -58,7 +58,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [2940. Find Building Where Alice and Bob Can Meet](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2940.md)
 
-## Priority Queue
+### Priority Queue
 
 [407. Trapping Rain Water II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-407.md)
 
@@ -84,17 +84,17 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3264. Final Array State After K Multiplication Operations I](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3264.md)
 
-## Recursion
+### Recursion
 
 [50. Pow(x, n)](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-50.md)
 
-## Difference Array
+### Difference Array
 
 [2381. Shifting Letters II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2381.md)
 
 [2779. Maximum Beauty of an Array After Applying Operation](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2779.md)
 
-## Sorting
+### Sorting
 
 [1366. Rank Teams by Votes](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1366.md)
 
@@ -110,13 +110,13 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3219.md)
 
-## Grouped Loop
+### Grouped Loop
 
 [6. Zigzag Conversion](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-6.md)
 
 [2953. Count Complete Substrings](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2953.md)
 
-## Two Pointers
+### Two Pointers
 
 [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-5.md)
 
@@ -124,7 +124,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3219.md)
 
-## Sliding Window
+### Sliding Window
 
 [3. Longest Substring Without Repeating Characters](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3.md)
 
@@ -142,7 +142,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2982.md)
 
-## Binary Search
+### Binary Search
 
 [4. Median of Two Sorted Arrays](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-4.md)
 
@@ -158,17 +158,17 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [2982. Find Longest Special Substring That Occurs Thrice II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2982.md)
 
-## Simulation
+### Simulation
 
 [2471. Minimum Number of Operations to Sort a Binary Tree by Level](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2471.md)
 
-## Backtracking
+### Backtracking
 
 [301. Remove Invalid Parentheses](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-301.md)
 
 [494. Target Sum](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-494.md)
 
-## Depth First Search（DFS）
+### Depth First Search（DFS）
 
 [200. Number of Islands](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-200.md)
 
@@ -192,7 +192,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3203.md)
 
-## Breadth First Search（BFS）
+### Breadth First Search（BFS）
 
 [200. Number of Islands](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-200.md)
 
@@ -210,17 +210,17 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3203.md)
 
-## Dijkstra's Algorithm
+### Dijkstra's Algorithm
 
 [407. Trapping Rain Water II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-407.md)
 
 [1368. Minimum Cost to Make at Least One Valid Path in a Grid](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1368.md)
 
-## Floyd-Warshall Algorithm
+### Floyd-Warshall Algorithm
 
 [1462. Course Schedule IV](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1462.md)
 
-## Topological Sorting
+### Topological Sorting
 
 [802. Find Eventual Safe States](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-802.md)
 
@@ -228,7 +228,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3203. Find Minimum Diameter After Merging Two Trees](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3203.md)
 
-## Disjoint Set Union（DSU）
+### Disjoint Set Union（DSU）
 
 [684. Redundant Connection](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-684.md)
 
@@ -238,7 +238,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [2948. Make Lexicographically Smallest Array by Swapping Elements](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2948.md)
 
-## Prefix and Suffix
+### Prefix and Suffix
 
 [689. Maximum Sum of 3 Non-Overlapping Subarrays](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-689.md)
 
@@ -262,7 +262,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3152. Special Array II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3152.md)
 
-## Greedy
+### Greedy
 
 [55. Jump Game](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-55.md)
 
@@ -298,7 +298,7 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3219. Minimum Cost for Cutting Cake II](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3219.md)
 
-## Dynamic Programming
+### Dynamic Programming
 
 [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-5.md)
 
@@ -328,19 +328,19 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [2466. Count Ways To Build Good Strings](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2466.md)
 
-## Manacher's Algorithm
+### Manacher's Algorithm
 
 [5. Longest Palindromic Substring](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-5.md)
 
-## KMP Algorithm
+### KMP Algorithm
 
 [1408. String Matching in an Array](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-1408.md)
 
-## Trie
+### Trie
 
 [2185. Counting Words With a Given Prefix](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-2185.md)
 
-## Bit Manipulation
+### Bit Manipulation
 
 [7. Reverse Integer](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-7.md)
 
@@ -358,10 +358,10 @@ Problems are categorized based on the algorithms and data structures used to sol
 
 [3280. Convert Date to Binary](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-3280.md)
 
-## Simulation
+### Simulation
 
 [6. Zigzag Conversion](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-6.md)
 
-## Deterministic Finite Automaton（DFA）
+### Deterministic Finite Automaton（DFA）
 
 [8. String to Integer (atoi)](https://github.com/reese60525/LeetCode/blob/main/LeetCode/LeetCode-8.md)
